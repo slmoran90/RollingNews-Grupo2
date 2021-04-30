@@ -1,35 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Card, Carousel, ListGroup } from "react-bootstrap";
+import { Card, ListGroup } from "react-bootstrap";
 import './dolar.css';
 import DolarListItem from "./DolarListItem";
 
 const Dolar = () => {
-    //const [dolar, setDolar] = useState({});
+    const [dolar, setDolar] = useState({});
 
     useEffect(() => {
-        //consultarAPI();
+        consultarAPI();
     }, []);
 
+    var count = 0;
     const consultarAPI = async () => {
-        const token =
-            "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTEyMzc1MjMsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJHb256YS5zYy5nc0BnbWFpbC5jb20ifQ.c-Amh6RhmL46X9YqHQwfn_l-9NUHbWlZqXdKLmj1NE5hu-yDO_CUo_7iLyF_dmJfK2K_1VOiwlO_9nCyBZkReg";
-
-        const myHeader = {
-            Authorization: "BEARER" + token,
-        };
-
-        const pedidoAutenticado = {
-            method: "GET",
-            headers: myHeader,
-            mode: "cors",
-            cache: "default",
-        };
-
         const response = await fetch(
-            "https://api.estadisticasbcra.com",
-            pedidoAutenticado
+            "https://api.bluelytics.com.ar/v2/latest"
         );
-        console.log(response);
+        var answer = await response.json();
+        console.log(answer, 'answer');
+        const datoACargar = await JSON.parse(JSON.stringify(answer));
+        if (count === 0) {
+            setDolar({...datoACargar});
+            count = count + 1;
+            console.log(count, 'count')
+        }
+        console.log(dolar, 'dolar');
     };
 
     return (
@@ -50,13 +44,13 @@ const Dolar = () => {
                             <div>
                                 <h5>Compra</h5>
                             </div>
-                            <h3 className="rounded bg-success">$154</h3>
+                            <h3 className="rounded bg-success">${/*dolar.blue.value_buy*/}</h3>
                         </div>
                         <div className="mx-2 text-center">
                             <div>
                                 <h5>Venta</h5>
                             </div>
-                            <h3 className="rounded bg-success">$160</h3>
+                            <h3 className="rounded bg-success">${/*dolar.blue.value_sell*/}</h3>
                         </div>
                     </span>
                     <div className="text-center mt-3 font-italic">
@@ -70,9 +64,9 @@ const Dolar = () => {
                     className="border border-success shadow-lg"
                     variant="flush"
                 >
-                    <DolarListItem />
-                    <DolarListItem />
-                    <DolarListItem />
+                     {/* <DolarListItem moneda={dolar.oficial}/>
+                    <DolarListItem moneda={dolar.blue_euro}/>
+                    <DolarListItem moneda={dolar.oficial_euro}/>  */}
                 </ListGroup>
             </Card>
         </div>
