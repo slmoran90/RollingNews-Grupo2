@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Card, ListGroup } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "./dolar.css";
 import DolarListItem from "./DolarListItem";
 
 const Dolar = () => {
     const [dolar, setDolar] = useState({});
-    var count = 0;
+    const [date, setDate] = useState([]);
 
     useEffect(() => {
         consultarAPI();
@@ -14,9 +14,13 @@ const Dolar = () => {
     const consultarAPI = async () => {
         const response = await fetch("https://api.bluelytics.com.ar/v2/latest");
         var answer = await response.json();
-        console.log(answer, "answer");
+       
+        var fechaAPI = answer.last_update.split('T');
+        setDate(fechaAPI[0].split('-'));
+       
+        
         setDolar({ ...answer });
-        console.log(dolar, "dolar");
+        //console.log(dolar, "dolar");
         /* setTimeout(() => {
 
         }, 1000); */
@@ -27,7 +31,7 @@ const Dolar = () => {
             console.log(count, "count");
         } while (count <= 1);  */
     };
-
+    
     return (
         <div className="d-flex p-auto ">
             <Card className="mx-3   dolar" style={{ width: "18rem" }}>
@@ -57,13 +61,13 @@ const Dolar = () => {
                         </div>
                     </span>
                     <div className="text-center mt-3 font-italic">
-                        <p className="mb-0 ">actualizado el 30/04/2021</p>
+                        <p className="mb-0 ">Actualizado el {date && `${date[2]}/${date[1]}/${date[0]}`}</p>
                     </div>
                     <Card.Link href="#">Más info</Card.Link>
                 </Card.Body>
             </Card>
 
-            <div className=" d-flex flex-column justify-content-between dolar-list shadow-lg">
+            <div className=" d-flex flex-column justify-content-between dolar-list">
                 <DolarListItem
                     moneda={dolar.oficial}
                     nombre={"Dólar oficial"}
