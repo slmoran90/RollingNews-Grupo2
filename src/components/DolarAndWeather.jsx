@@ -6,7 +6,7 @@ const DolarAndWeather = () => {
     return (
         <div id={'dywdiv'} className='d-flex'>
             <Dolar />
-            <Weather />
+            {/* <Weather /> */}
         </div>
     );
 };

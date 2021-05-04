@@ -1,3 +1,21 @@
 .font-list {
     font-size: .6875rem;
 }
+
+.dolar-img {
+    border-radius: 0 0 10px 0 ;
+}
+
+.dolar {
+    
+    border-top:  solid rgb(1, 184, 1) 8px!important;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
+}
+
+/* .dolar-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+} */

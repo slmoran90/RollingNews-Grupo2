@@ -1,41 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { Card, ListGroup } from "react-bootstrap";
-import './dolar.css';
+import "./dolar.css";
 import DolarListItem from "./DolarListItem";
 
 const Dolar = () => {
     const [dolar, setDolar] = useState({});
+    var count = 0;
 
     useEffect(() => {
         consultarAPI();
     }, []);
 
-    var count = 0;
     const consultarAPI = async () => {
-        const response = await fetch(
-            "https://api.bluelytics.com.ar/v2/latest"
-        );
+        const response = await fetch("https://api.bluelytics.com.ar/v2/latest");
         var answer = await response.json();
-        console.log(answer, 'answer');
-        const datoACargar = await JSON.parse(JSON.stringify(answer));
-        if (count === 0) {
-            setDolar({...datoACargar});
+        console.log(answer, "answer");
+        setDolar({ ...answer });
+        console.log(dolar, "dolar");
+        /* setTimeout(() => {
+
+        }, 1000); */
+        /* do {
+            setDolar({ ...answer });
+            console.log(dolar, "dolar");
             count = count + 1;
-            console.log(count, 'count')
-        }
-        console.log(dolar, 'dolar');
+            console.log(count, "count");
+        } while (count <= 1);  */
     };
 
     return (
-        <div className="d-flex align-items-start ">
-            <Card
-                className="mx-3 border border-success  shadow-lg"
-                style={{ width: "18rem" }}
-            >
+        <div className="d-flex p-auto ">
+            <Card className="mx-3   dolar" style={{ width: "18rem" }}>
                 <img
                     src={process.env.PUBLIC_URL + "dolar.jpg"}
                     alt="dolar img"
-                    className="rounded"
+                    className="dolar-img"
                 ></img>
                 <Card.Body className="card-img-overlay d-flex flex-column  justify-content-between ">
                     <Card.Title className="text-center">DÓLAR BLUE</Card.Title>
@@ -44,13 +43,17 @@ const Dolar = () => {
                             <div>
                                 <h5>Compra</h5>
                             </div>
-                            <h3 className="rounded bg-success">${/*dolar.blue.value_buy*/}</h3>
+                            <h3 className="rounded bg-success">
+                                ${dolar.blue && dolar.blue.value_buy}
+                            </h3>
                         </div>
                         <div className="mx-2 text-center">
                             <div>
                                 <h5>Venta</h5>
                             </div>
-                            <h3 className="rounded bg-success">${/*dolar.blue.value_sell*/}</h3>
+                            <h3 className="rounded bg-success">
+                                ${dolar.blue && dolar.blue.value_sell}
+                            </h3>
                         </div>
                     </span>
                     <div className="text-center mt-3 font-italic">
@@ -59,16 +62,17 @@ const Dolar = () => {
                     <Card.Link href="#">Más info</Card.Link>
                 </Card.Body>
             </Card>
-            <Card>
-                <ListGroup
-                    className="border border-success shadow-lg"
-                    variant="flush"
-                >
-                     {/* <DolarListItem moneda={dolar.oficial}/>
-                    <DolarListItem moneda={dolar.blue_euro}/>
-                    <DolarListItem moneda={dolar.oficial_euro}/>  */}
-                </ListGroup>
-            </Card>
+
+            <div className=" d-flex flex-column justify-content-between dolar-list shadow-lg">
+                <DolarListItem
+                    moneda={dolar.oficial}
+                    nombre={"Dólar oficial"}
+                />
+                <DolarListItem moneda={dolar.blue_euro} nombre={"Euro Blue"} />
+                <DolarListItem moneda={dolar.oficial_euro}  nombre=
+                {"Euro oficial"} />
+
+            </div>
         </div>
     );
 };
