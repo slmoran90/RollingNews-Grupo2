@@ -1,6 +1,5 @@
 import { Route, Router, Switch } from "react-router";
 import "./App.css";
-import PaginaAdmin from "./components/PaginaAdmin";
 
 function App() {
     return (
@@ -11,11 +10,14 @@ function App() {
                 <Route exact path="/">
                     {/*  <PaginaPrincipal /> */}
                 </Route>
-                
-                {/* Elegir entre las rutas. La barra / es la pagina principal del proyecto (idem index.hml) */}
-                <Route exact path="/administracion">
-                    {/* llamar al componente inicio de administración*/}
-                    <PaginaAdmin />
+                <Route>
+                  {/* <Categorias /> */}
+                </Route>
+                <Route>
+                 {/*  <AcercaDeNosotros /> */}
+                </Route>
+                <Route>
+                  {/* <Contacto /> */}
                 </Route>
                 <Route exact path="/categorias/nueva">
                     {/*  <NuevaCategoria
