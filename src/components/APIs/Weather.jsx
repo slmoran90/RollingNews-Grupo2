@@ -12,11 +12,7 @@ const Weather = () => {
             country: "Argentina",
         },
     };
-    var geoOptions = {
-        enableHighAccuracy: true,
-        timeout: 1,
-        maximumAge: 0,
-    };
+    
 
     const geoSuccess = (position) => {
         setCoordenadas({
@@ -31,7 +27,11 @@ const Weather = () => {
         alert("Hubo un error", error.code);
     };
 
-    
+    var geoOptions = {
+        enableHighAccuracy: true,
+        timeout: 1,
+        maximumAge: 0,
+    };
 
     const consultaAPI = async () => {
         
