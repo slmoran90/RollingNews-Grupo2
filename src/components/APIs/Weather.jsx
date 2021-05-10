@@ -7,23 +7,22 @@ const Weather = () => {
     const [userIP, setUserIP] = useState("");
     const [mainTemp, setMainTemp] = useState({}); */
     const [weatherApi, setWeatherApi] = useState({});
-    const city = weatherApi.name.split(' ');
-    const cityName = city[0];
+    const [posit, setPosit] = useState({});
     useEffect(() => {
         consultarApiClima();
+        navigator.geolocation.getCurrentPosition(async position => {
+            setPosit({
+                lat: position.coords.latitude,
+                lon: position.coords.longitude
+            });
+            return;
+        });
     }, [])
-        
-
+    console.log(posit && posit, 'posicion');
+    
+    
     const consultarApiClima = async () => {
-        // este comentario está para seguir desarrollando un widget de clima geolocalizado, donde se necesita un servidor https
-        /* const consultaAPIIP = await fetch('https://api.ipify.org?format=json');
-        const respuestaIP = await consultaAPIIP.json();
-        setUserIP(`${respuestaIP.ip}`);
-
-        const consultaAPIGeo = await fetch(`https://api.ipgeolocationapi.com/geolocate/186.158.177.87`);
-        //const respuestaGeo = await consultaAPIGeo.json();
-
-        console.log(consultaAPIGeo, 'geo'); */
+        
         /* const tucumanCoordenadas = {
             id: 3833578,
             name: "Tucumán Province",
@@ -31,23 +30,28 @@ const Weather = () => {
             country: "AR",
             coord: { lon: -65.5, lat: -27.0 },
         };
-        const apiKeyOW = 'd69142f6fdc12970e9278747e7d64051'; */
+        const apiKeyOW = 'd69142f6fdc12970e9278747e7d64051'; 
+        este fetch busca los datos de la api por geolocalización, sale error de sintáxis.
+        const resp = await fetch('api.openweathermap.org/data/2.5/weather?lat='+posit.lat+'&lon='+posit.lon+'&appid=d69142f6fdc12970e9278747e7d64051');
+        */
         
         const resp = await fetch(`http://api.openweathermap.org/data/2.5/weather?&id=3833578&appid=d69142f6fdc12970e9278747e7d64051&units=metric&lang=es`);
         console.log(resp, 'resp');
-
+        
         try {
             if(resp.status === 200){
                 const resultado = await resp.json();
                 setWeatherApi(resultado);
             };
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-        };
-
+    };
+    const city = weatherApi.name && weatherApi.name.split(' ');
+    const cityName = city && city[0];
     
-
+    
+    
     return (
         <div className="city">
             <h2 className="city-name">
