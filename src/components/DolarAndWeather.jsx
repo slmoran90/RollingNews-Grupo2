@@ -5,7 +5,7 @@ import './dolarAndWeather.css';
 const DolarAndWeather = () => {
     return (
         <div id={'dywdiv'} className='d-flex'>
-            {/* <Dolar /> */}
+            <Dolar />
             <Weather />
         </div>
     );

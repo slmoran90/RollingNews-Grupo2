@@ -7,19 +7,12 @@ const Weather = () => {
     const [userIP, setUserIP] = useState("");
     const [mainTemp, setMainTemp] = useState({}); */
     const [weatherApi, setWeatherApi] = useState({});
-
+    const city = weatherApi.name.split(' ');
+    const cityName = city[0];
     useEffect(() => {
         consultarApiClima();
     }, [])
-    /* const weather = {
-        name: "Yerba Buena",
-        main: {
-            temp: 22,
-        },
-        sys: {
-            country: "Argentina",
-        },
-    }; */
+        
 
     const consultarApiClima = async () => {
         // este comentario está para seguir desarrollando un widget de clima geolocalizado, donde se necesita un servidor https
@@ -58,7 +51,7 @@ const Weather = () => {
     return (
         <div className="city">
             <h2 className="city-name">
-                <span>{weatherApi && weatherApi.name}</span>
+                <span>{weatherApi && cityName}</span>
                 <sup>{weatherApi.sys && weatherApi.sys.country}</sup>
             </h2>
             <div className="city-temp">
@@ -66,8 +59,8 @@ const Weather = () => {
                 <sup>&deg;C</sup>
             </div>
             <div className="info">
-                <img className="city-icon" src={`https://openweathermap.org/img/wn/${weatherApi.weather[0].icon}@2x.png`} alt={weatherApi.weather[0].description} />
-                <p>{weatherApi.weather[0].description}</p>
+                <img className="city-icon" src={`https://openweathermap.org/img/wn/${weatherApi.weather && weatherApi.weather[0].icon}@2x.png`} alt={weatherApi.weather && weatherApi.weather[0].description} />
+                <p>{weatherApi.weather && weatherApi.weather[0].description}</p>
             </div>
         </div>
     );
