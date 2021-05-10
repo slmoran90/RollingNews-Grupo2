@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Axios from 'axios';
 
 import "./weather.css";
 const Weather = () => {
-    const [coordenadas, setCoordenadas] = useState({});
-    const weather = {
+    /* const [coordenadas, setCoordenadas] = useState({});
+    const [userIP, setUserIP] = useState("");
+    const [mainTemp, setMainTemp] = useState({}); */
+    const [weatherApi, setWeatherApi] = useState({});
+
+    useEffect(() => {
+        consultarApiClima();
+    }, [])
+    /* const weather = {
         name: "Yerba Buena",
         main: {
             temp: 22,
@@ -11,71 +19,55 @@ const Weather = () => {
         sys: {
             country: "Argentina",
         },
-    };
-    
+    }; */
 
-    const geoSuccess = (position) => {
-        setCoordenadas({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-        });
-        console.log(position);
-        return;
-    };
+    const consultarApiClima = async () => {
+        // este comentario está para seguir desarrollando un widget de clima geolocalizado, donde se necesita un servidor https
+        /* const consultaAPIIP = await fetch('https://api.ipify.org?format=json');
+        const respuestaIP = await consultaAPIIP.json();
+        setUserIP(`${respuestaIP.ip}`);
 
-    const geoError = (error) => {
-        alert("Hubo un error", error.code);
-    };
+        const consultaAPIGeo = await fetch(`https://api.ipgeolocationapi.com/geolocate/186.158.177.87`);
+        //const respuestaGeo = await consultaAPIGeo.json();
 
-    var geoOptions = {
-        enableHighAccuracy: true,
-        timeout: 1,
-        maximumAge: 0,
-    };
-
-    const consultaAPI = async () => {
+        console.log(consultaAPIGeo, 'geo'); */
+        /* const tucumanCoordenadas = {
+            id: 3833578,
+            name: "Tucumán Province",
+            state: "",
+            country: "AR",
+            coord: { lon: -65.5, lat: -27.0 },
+        };
+        const apiKeyOW = 'd69142f6fdc12970e9278747e7d64051'; */
         
-        
-        //navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions); 
-        
-        const consulta1 = await fetch(
-            "http://api.openweathermap.org/data/2.5/weather?lat=-26.808539&lon=-65.28562649999999&appid=d69142f6fdc12970e9278747e7d64051&units=metric"
-        );
-        /* console.log(coordenadas);
-        const consulta2 = await fetch(
-            `api.openweathermap.org/data/2.5/weather?lat=${coordenadas.latitude}&lon=${coordenadas.longitude}&appid=d69142f6fdc12970e9278747e7d64051&units=metric`
-        ); */
-        /* console.log(" consulta", consulta1); */
-        console.log(" consulta2", consulta1);
+        const resp = await fetch(`http://api.openweathermap.org/data/2.5/weather?&id=3833578&appid=d69142f6fdc12970e9278747e7d64051&units=metric`);
+        console.log(resp, 'resp');
 
-        if (consulta1.status === 200) {
-            try {
-                const respuesta = await consulta1.json();
-                console.log(
-                    "🚀 ~ file: Weather.jsx ~ line 49 ~ consultaAPI ~ respuesta",
-                    respuesta
-                );
-            } catch (error) {
-                console.log(error);
-            }
+        try {
+            if(resp.status === 200){
+                const resultado = await resp.json();
+                setWeatherApi(resultado);
+            };
+        } catch (error) {
+          console.log(error);
         }
-    };
-    consultaAPI();
-   
+        };
+
+    
 
     return (
         <div className="city">
             <h2 className="city-name">
-                <span>{weather.name}</span>
-                <sup>{weather.sys.country}</sup>
+                <span>{weatherApi && weatherApi.name}</span>
+                <sup>{weatherApi.sys && weatherApi.sys.country}</sup>
             </h2>
             <div className="city-temp">
-                {Math.round(weather.main.temp)}
+                {Math.round(weatherApi.main && weatherApi.main.temp)}
                 <sup>&deg;C</sup>
             </div>
             <div className="info">
-                {/* <img className="city-icon" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description} />
-                        <p>{weather.weather[0].description}</p> */}
+                <img className="city-icon" src={`https://openweathermap.org/img/wn/${weatherApi.weather[0].icon}@2x.png`} alt={weatherApi.weather[0].description} />
+                <p>{weatherApi.weather[0].description}</p>
             </div>
         </div>
     );
