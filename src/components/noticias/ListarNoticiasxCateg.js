@@ -20,10 +20,12 @@ const ListarNoticiasxCateg = () => {
         // buscar las noticias que tengan las categoria pasada como parametro en la URL
         try{
             const respuesta = await fetch(URLnoticias);
-            if(respuesta.status===200){
+            if (respuesta.status === 200) {
                 const noticiasFiltradas = await respuesta.json();
                 setNoticias(noticiasFiltradas);
             }
+        
+
         }catch(error){
             console.log(error);
             Swal.fire(

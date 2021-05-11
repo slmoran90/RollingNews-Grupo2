@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useRef } from 'react';
 import { Form,Button, Container, Alert } from "react-bootstrap";
 import Swal from 'sweetalert2'
 // importo archivo de validaciones
@@ -17,13 +17,22 @@ const NuevaCategoria = (props) => {
     const[error,setError] = useState(false);
     const[mensajeError,setMensajeError] = useState('');
 
-    useEffect(() => {
-        setNombreCategoria('');
-        setDescripCategoria('');
+    //====== limpiar formulario =========
+    const [validated, setValidated] = useState(false);
+    const formRef = useRef(null);
+
+    const handleReset = () => {
+        formRef.current.reset();
+        setValidated(false);
         setError(false);
         setMensajeError('');
-    }, [nombreCategoria,descripCategoria,error]);
+    };
+    //======================================
 
+    useEffect(() => {
+        handleReset();
+    }, []);
+    
     // guardar nueva categoria
     const handleSubmit = async (e)=>{
         e.preventDefault();
@@ -63,10 +72,8 @@ const NuevaCategoria = (props) => {
                             'success'
                         )
                         //limpiar imputs
-                        setNombreCategoria('');
-                        setDescripCategoria('');
-                        setError(false);
-                        setMensajeError('');
+                        setValidated(true);
+                        handleReset();
 
                         //actualiza lista de categorias
                         props.consultarAPI();
@@ -94,10 +101,7 @@ const NuevaCategoria = (props) => {
             const URL = `${process.env.REACT_APP_API_URL}/?nombreCategoria=${nombreCategoria}`;
             const respuesta = await fetch(URL);
             const categoriaEncontrada = await respuesta.json();
-            // setCategoriaEncontrada(categoriaEncontrada);
             
-            console.log("array encontrado: "+categoriaEncontrada)
-            console.log("long array encontrado: "+categoriaEncontrada.length)
             //no uso status===200 xq aunque no exista me devuelve arreglo vacio
             if (categoriaEncontrada.length === 0) {
                 // categoria NO existe => puede dar alta
@@ -115,7 +119,7 @@ const NuevaCategoria = (props) => {
 
     return (
         <Container>
-        <Form className="mx-5" onSubmit={handleSubmit}>    
+        <Form ref={formRef} validated={validated} className="mx-5" onSubmit={handleSubmit}>    
             <h1 className="display-5 text-center py-3">Agregar Nueva Categoría</h1>
             <Form.Group className='py-2'>
                 <Form.Label>Nombre de la Categoría *</Form.Label>

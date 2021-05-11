@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 // hoook para usar parametros
 import { useParams } from "react-router-dom";
 
-const NoticiaCompleta = (props) => {
+const FormNoticia = (props) => {
     // obtener el parametro de la URL
     console.log(useParams().id);
     const parametroID = useParams().id;
@@ -36,7 +36,7 @@ const NoticiaCompleta = (props) => {
     return (
         <Container className="container my-3 py-3 shadow-lg">
             <h1 className="text-center my-3 py-3 bg-warning text-light">
-                TITULO NOTICIA COMPLETA
+                NOTICIA COMPLETA
             </h1>
 
             <Form className='mx-5'>
@@ -90,4 +90,4 @@ const NoticiaCompleta = (props) => {
     );
 };
 
-export default NoticiaCompleta;
+export default FormNoticia;

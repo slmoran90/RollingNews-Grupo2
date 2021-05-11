@@ -58,7 +58,8 @@ function App() {
                         consultarAPI={consultarAPI}
                     ></ListarNoticiasxCateg>
                 </Route>
-                <Route exact path="/noticias/noticiaCompleta">
+                {/* paso parametro id de la noticia que quiero mostrar completa */}
+                <Route exact path="/noticias/noticiaCompleta/:id">
                     <NoticiaCompleta></NoticiaCompleta>
                 </Route>
                 <Route path="*">
