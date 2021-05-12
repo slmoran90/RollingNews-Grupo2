@@ -1,5 +1,6 @@
 import React from 'react';
 import CoronaVirusInfo from './CoronaVirusInfo';
+import DolarAndWeather from './DolarAndWeather';
 import NoticiasDestacadas from './NoticiasDestacadas';
 
 const PaginaPrincipal = () => {
@@ -7,6 +8,7 @@ const PaginaPrincipal = () => {
         <section>
             <CoronaVirusInfo />
             <NoticiasDestacadas />
+            <DolarAndWeather />
         </section>
     );
 };
