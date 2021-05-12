@@ -4,16 +4,38 @@ import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import PaginaPrincipal from './components/paginaPrincipal/PaginaPrincipal';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 function App() {
+    //const URLjsonServerNoticias = process.env.NOTICIAS_URL;
+    const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
+
+    useEffect(() => {
+        cargarNoticias();
+    }, []);
+
+    const cargarNoticias = async () => {
+        try {
+            const respuesta = await fetch('http://localhost:3004/noticias');
+            
+            if(respuesta.status === 200) {
+                const noticias = await respuesta.json();
+                setNoticiasDestacadas(noticias);
+            }
+        } catch (error) {
+            console.log(error, 'este es un error');
+        }
+    }
+
     return (
         <Router>
             <Navegacion></Navegacion>
             {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}
             <Switch>
                 <Route exact path="/">
-                     <PaginaPrincipal />
+                     <PaginaPrincipal noticiasDestacadas={noticiasDestacadas}/>
                 </Route>
                 <Route>
                   {/* <Categorias /> */}

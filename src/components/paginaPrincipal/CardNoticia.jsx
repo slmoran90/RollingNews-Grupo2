@@ -4,14 +4,9 @@ import { Button, Card } from "react-bootstrap";
 const CardNoticia = (props) => {
     return (
         <Card className='my-3' style={{ width: `${props.width}`}}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Img variant="top" src={props.noticia && props.noticia.imagenPrincipal} />
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Card.Title>{props.noticia && props.noticia.tituloNoticia}</Card.Title>
             </Card.Body>
         </Card>
     );

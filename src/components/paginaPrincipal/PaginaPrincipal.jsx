@@ -3,11 +3,11 @@ import CoronaVirusInfo from './CoronaVirusInfo';
 import DolarAndWeather from './DolarAndWeather';
 import NoticiasDestacadas from './NoticiasDestacadas';
 
-const PaginaPrincipal = () => {
+const PaginaPrincipal = (props) => {
     return (
         <section>
             <CoronaVirusInfo />
-            <NoticiasDestacadas />
+            <NoticiasDestacadas noticias={props.noticiasDestacadas} />
             <DolarAndWeather />
         </section>
     );

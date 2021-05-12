@@ -17,7 +17,7 @@ const Weather = () => {
             return;
         });
     }, [])
-    console.log(posit && posit, 'posicion');
+    //console.log(posit && posit, 'posicion');
     
     
     const consultarApiClima = async () => {
@@ -35,7 +35,7 @@ const Weather = () => {
         */
         
         const resp = await fetch(`http://api.openweathermap.org/data/2.5/weather?&id=3833578&appid=d69142f6fdc12970e9278747e7d64051&units=metric&lang=es`);
-        console.log(resp, 'resp');
+        //console.log(resp, 'resp');
         
         try {
             if(resp.status === 200){
