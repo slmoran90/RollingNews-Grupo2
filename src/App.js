@@ -17,7 +17,9 @@ function App() {
         </Route>{" "}
         <Route> {/* <Categorias /> */} </Route>{" "}
         <Route> {/*  <AcercaDeNosotros /> */} </Route>{" "}
-        <Route exact path="/Contacto"><Contacto/></Route>{" "}
+        <Route exact path="/contacto">
+          <Contacto/>
+        </Route>{" "}
         <Route exact path="/categorias/nueva">
           {" "}
           {/*  <NuevaCategoria
