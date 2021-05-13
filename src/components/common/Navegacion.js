@@ -48,7 +48,7 @@ const Navegacion = () => {
             </NavDropdown.Item>
           </NavDropdown>
           <Nav.Link className='nav-link' exact={true}>Nosotros</Nav.Link>
-          <Nav.Link className='nav-link' exact={true}>Contacto</Nav.Link>
+          <Nav.Link className='nav-link' exact={true} to="/Contacto">Contacto</Nav.Link>
           <Button className="ml-5" variant="outline-success">Iniciar Sesión</Button>
           <Button className="ml-2" variant="outline-success">Registrarse</Button>
         </Nav>

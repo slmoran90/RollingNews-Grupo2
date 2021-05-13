@@ -3,6 +3,7 @@ import "./App.css";
 import Navegacion from "./components/common/Navegacion";
 //import Footer from "./components/common/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Contacto from "./components/Contacto";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         </Route>{" "}
         <Route> {/* <Categorias /> */} </Route>{" "}
         <Route> {/*  <AcercaDeNosotros /> */} </Route>{" "}
-        <Route> {/* <Contacto /> */} </Route>{" "}
+        <Route exact path="/Contacto"><Contacto/></Route>{" "}
         <Route exact path="/categorias/nueva">
           {" "}
           {/*  <NuevaCategoria
