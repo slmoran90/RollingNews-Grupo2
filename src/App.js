@@ -9,7 +9,8 @@ import { useEffect } from 'react';
 
 
 function App() {
-    //const URLjsonServerNoticias = process.env.NOTICIAS_URL;
+    const URLjsonServerNoticias = process.env.NOTICIAS_URL;
+    console.log("🚀 ~ file: App.js ~ line 13 ~ App ~ URLjsonServerNoticias", URLjsonServerNoticias)
     const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
 
     useEffect(() => {
@@ -21,8 +22,11 @@ function App() {
             const respuesta = await fetch('http://localhost:3004/noticias');
             
             if(respuesta.status === 200) {
-                const noticias = await respuesta.json();
-                setNoticiasDestacadas(noticias);
+                const noticias = (await respuesta.json());
+                console.log("🚀 ~ file: App.js ~ line 27 ~ cargarNoticias ~ noticias", noticias)
+                noticias.filter(noticia => noticia.destacada !== "true");
+                console.log(noticias);
+                //setNoticiasDestacadas(noticias);
             }
         } catch (error) {
             console.log(error, 'este es un error');

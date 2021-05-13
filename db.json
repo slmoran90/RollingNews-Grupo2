@@ -41,6 +41,7 @@
       "categoria": "Negocios",
       "autorNoticia": "infobae",
       "fechaNoticia": "29-04-2021",
+      "destacada": "true",
       "id": "1"
     },
     {
@@ -52,6 +53,7 @@
       "categoria": "Actualidad",
       "autorNoticia": "MinutoUno",
       "fechaNoticia": "30-04-2021",
+      "destacada": "true",
       "id": "2"
     },
     {
@@ -63,6 +65,7 @@
       "categoria": "",
       "autorNoticia": "",
       "fechaNoticia": "",
+      "destacada": "true",
       "id": "3"
     },
     {
@@ -74,6 +77,7 @@
       "categoria": "Deportes",
       "autorNoticia": "Infobae",
       "fechaNoticia": "30-04-2021",
+      "destacada": "false",
       "id": "4"
     },
     {
@@ -85,6 +89,7 @@
       "categoria": "Salud",
       "autorNoticia": "Fororecursoshumanos.com",
       "fechaNoticia": "06-05-2021",
+      "destacada": "true",
       "id": "5"
     },
     {
@@ -96,6 +101,7 @@
       "categoria": "Política",
       "autorNoticia": "La Nacion",
       "fechaNoticia": "",
+      "destacada": "true",
       "id": "6"
     },
     {
@@ -107,6 +113,7 @@
       "categoria": "Salud",
       "autorNoticia": "Fernando Martínez",
       "fechaNoticia": "06-05-2021",
+      "destacada": "true",
       "id": "7"
     },
     {
@@ -118,6 +125,7 @@
       "categoria": "Salud",
       "autorNoticia": "Teknlifenews.com",
       "fechaNoticia": "07-05-2021",
+      "destacada": "true",
       "id": "8"
     },
     {
@@ -129,6 +137,7 @@
       "categoria": "Salud",
       "autorNoticia": "infobae",
       "fechaNoticia": "07-05-2021",
+      "destacada": "true",
       "id": "9"
     },
     {
@@ -140,6 +149,7 @@
       "categoria": "Actualidad",
       "autorNoticia": "La Nacion",
       "fechaNoticia": "07-05-2021",
+      "destacada": "false",
       "id": "10"
     },
     {
@@ -151,6 +161,7 @@
       "categoria": "Actualidad",
       "autorNoticia": "La Nacion",
       "fechaNoticia": "06-05-21",
+      "destacada": "false",
       "id": "3"
     }
   ],
