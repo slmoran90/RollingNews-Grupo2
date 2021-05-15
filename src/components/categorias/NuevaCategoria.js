@@ -9,13 +9,11 @@ const NuevaCategoria = (props) => {
      // URL de categorias
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
 
+    // imputs del formulario
     const [nombreCategoria,setNombreCategoria] = useState('');
     const [descripCategoria,setDescripCategoria] = useState('');
 
-    //guarda la categoria si ya existe
-    const [categEncontrada, setCategEncontrada] = useState([]);
-
-    // state con variable booleana para mostrar u ocultar el alert. Para que react renderice
+    // state para indicar que hay un error en la carga de datos
     const[error,setError] = useState(false);
 
     // para mostrar por pantalla un mensaje de error durante la carga de datos
@@ -24,6 +22,7 @@ const NuevaCategoria = (props) => {
     useEffect(() => {
         handleReset();
         setError(false);
+        setMensajeError('');
     }, []);
     
     //====== limpiar formulario =========
@@ -48,14 +47,13 @@ const NuevaCategoria = (props) => {
         if (campoRequerido(nombreCategoria) &&
             campoRequerido(descripCategoria) && descripCategoria.length>=10) {
             // SIN errores en los datos cargados
-            
+
             //== verifica que NO exista el nombre de categoria ===
-            buscarCategoria();
-            console.log("length categoria encontrada:"+categEncontrada.length)
+            const encontrada = await buscarCategoria();
+            // console.log("encontrada antes de guardar:",encontrada);
             //====================================================
-            if (categEncontrada.length === 0){
-                console.log("en if NO EXISTE categoria")    
-                // === guarda en la API categorias ===
+            if (encontrada.length === 0){
+                // === NO EXISTE CATEGORIA => guarda en la API categorias ===
                 const categoria = {
                     nombreCategoria: nombreCategoria,
                     descripCategoria: descripCategoria
@@ -69,7 +67,7 @@ const NuevaCategoria = (props) => {
                 
                     // hace POST a la api
                     const respuesta = await fetch(URLcategorias,datosEnviar);
-                    // console.log(respuesta);
+                
                     if(respuesta.status===201){
                         Swal.fire(
                             'Categoría Agregada!',
@@ -91,6 +89,9 @@ const NuevaCategoria = (props) => {
                     'error'
                     )
                 }
+            } else{
+                setError(true);
+                setMensajeError("La Categoría ya existe. Verifique.");    
             }
         } else {
             setError(true);
@@ -104,21 +105,22 @@ const NuevaCategoria = (props) => {
     const buscarCategoria = async () =>{
         try {
             const URL = `${process.env.REACT_APP_API_URLcategorias}/?nombreCategoria=${nombreCategoria}`;
+            console.log(URL)
             const respuesta = await fetch(URL);
             
             if (respuesta.status === 200) {
-                const categoriaEncontrada = await respuesta.json();
-                setCategEncontrada(categoriaEncontrada);
+                const encontrada = await respuesta.json();
+                return encontrada;
             }
         } catch (error) {
-            console.log("error en catch buscar categoria")
             console.log(error);
         }
     }
 
     return (
         <Container className="shadow-lg my-4 w-75">
-        <Form ref={formRef} validated={validated} className="mx-5" onSubmit={handleSubmit}>    
+        <Form ref={formRef} className="mx-5" onSubmit={handleSubmit}>
+        {/* <Form ref={formRef} validated={validated} className="mx-5" onSubmit={handleSubmit}>      */}
             <h1 className="display-5 text-center py-3">Agregar Nueva Categoría</h1>
             <Form.Group className='py-2'>
                 <Form.Label>Nombre de la Categoría *</Form.Label>
@@ -136,7 +138,8 @@ const NuevaCategoria = (props) => {
                 </Button>
             </div>
         
-            {/* {(error===true)?(<Alert variant='warning'>{mensajeError}</Alert>):null}            */}
+            {/* muetra mensaje de errores durante la carga de datos */}
+            {(error===true)?(<Alert variant='warning'>{mensajeError}</Alert>):null}           
             
         </Form>
     </Container> 

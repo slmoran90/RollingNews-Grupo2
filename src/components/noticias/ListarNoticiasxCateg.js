@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import { Container } from 'react-bootstrap';
 // hoook para usar parametros
 import {useParams} from 'react-router-dom';
+
 import ItemNoticia from './ItemNoticia';
 import Swal from 'sweetalert2'
 
