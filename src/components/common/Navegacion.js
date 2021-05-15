@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
+
 const Navegacion = () => {
   return (
     <Navbar bg="light" expand="lg">
@@ -102,13 +103,6 @@ const Navegacion = () => {
                     </NavDropdown>
                   </Nav>
                 </Navbar.Collapse>
-
-                {/* <NavDropdown.Item href="#">Noticias</NavDropdown.Item>
-                  <NavDropdown.Item href="/categorias/listar">Categoria</NavDropdown.Item>
-                  <NavDropdown.Item href="#">Nueva noticia</NavDropdown.Item>
-                  <NavDropdown.Item href="/categorias/nuevo">Nueva categoría</NavDropdown.Item> */}
-
-                {/* =========================================== */}
 
                 <Nav.Link className="nav-link" exact={true}>
                   Nosotros
