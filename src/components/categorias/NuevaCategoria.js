@@ -7,16 +7,25 @@ import { campoRequerido } from "../common/helpers"
 const NuevaCategoria = (props) => {
 
      // URL de categorias
-    const URL = process.env.REACT_APP_API_URL;
+    const URLcategorias = process.env.REACT_APP_API_URLcategorias;
 
     const [nombreCategoria,setNombreCategoria] = useState('');
     const [descripCategoria,setDescripCategoria] = useState('');
-    // const [categoriaEncontrada,setCategoriaEncontrada] = useState([]);
+
+    //guarda la categoria si ya existe
+    const [categEncontrada, setCategEncontrada] = useState([]);
 
     // state con variable booleana para mostrar u ocultar el alert. Para que react renderice
     const[error,setError] = useState(false);
-    const[mensajeError,setMensajeError] = useState('');
 
+    // para mostrar por pantalla un mensaje de error durante la carga de datos
+    const[mensajeError,setMensajeError] = useState('');    
+    
+    useEffect(() => {
+        handleReset();
+        setError(false);
+    }, []);
+    
     //====== limpiar formulario =========
     const [validated, setValidated] = useState(false);
     const formRef = useRef(null);
@@ -28,27 +37,25 @@ const NuevaCategoria = (props) => {
         setMensajeError('');
     };
     //======================================
-
-    useEffect(() => {
-        handleReset();
-    }, []);
     
-    // guardar nueva categoria
+    // guardar NUEVA categoria
     const handleSubmit = async (e)=>{
         e.preventDefault();
         setError(false);
         setMensajeError('');
-
+    
         //== validacion de datos antes de guardar
         if (campoRequerido(nombreCategoria) &&
             campoRequerido(descripCategoria) && descripCategoria.length>=10) {
             // SIN errores en los datos cargados
-            setError(false);
+            
             //== verifica que NO exista el nombre de categoria ===
             buscarCategoria();
+            console.log("length categoria encontrada:"+categEncontrada.length)
             //====================================================
-            if (error === false){
-                // === guarda en la API ===
+            if (categEncontrada.length === 0){
+                console.log("en if NO EXISTE categoria")    
+                // === guarda en la API categorias ===
                 const categoria = {
                     nombreCategoria: nombreCategoria,
                     descripCategoria: descripCategoria
@@ -56,15 +63,13 @@ const NuevaCategoria = (props) => {
                 try{
                     const datosEnviar = {
                         method: "POST", 
-                        headers:{
-                            "Content-Type":"application/json"
-                        },
+                        headers:{"Content-Type":"application/json"},
                         body:JSON.stringify(categoria)
                     }
                 
                     // hace POST a la api
-                    const respuesta = await fetch(URL,datosEnviar);
-                    console.log(respuesta);
+                    const respuesta = await fetch(URLcategorias,datosEnviar);
+                    // console.log(respuesta);
                     if(respuesta.status===201){
                         Swal.fire(
                             'Categoría Agregada!',
@@ -76,7 +81,7 @@ const NuevaCategoria = (props) => {
                         handleReset();
 
                         //actualiza lista de categorias
-                        props.consultarAPI();
+                        props.consultarAPIcategorias();
                     }
                 }catch(error){
                     console.log(error);
@@ -98,27 +103,21 @@ const NuevaCategoria = (props) => {
     // la longitud del arreglo que devuelve
     const buscarCategoria = async () =>{
         try {
-            const URL = `${process.env.REACT_APP_API_URL}/?nombreCategoria=${nombreCategoria}`;
+            const URL = `${process.env.REACT_APP_API_URLcategorias}/?nombreCategoria=${nombreCategoria}`;
             const respuesta = await fetch(URL);
-            const categoriaEncontrada = await respuesta.json();
             
-            //no uso status===200 xq aunque no exista me devuelve arreglo vacio
-            if (categoriaEncontrada.length === 0) {
-                // categoria NO existe => puede dar alta
-                setError(false);
-                setMensajeError('');
-            } else {
-                // SI Existe categoria
-                setError(true);
-                setMensajeError("Ya existe la categoría.")
+            if (respuesta.status === 200) {
+                const categoriaEncontrada = await respuesta.json();
+                setCategEncontrada(categoriaEncontrada);
             }
         } catch (error) {
-            console.log("error en fetch buscarCategoria");
+            console.log("error en catch buscar categoria")
+            console.log(error);
         }
     }
 
     return (
-        <Container>
+        <Container className="shadow-lg my-4 w-75">
         <Form ref={formRef} validated={validated} className="mx-5" onSubmit={handleSubmit}>    
             <h1 className="display-5 text-center py-3">Agregar Nueva Categoría</h1>
             <Form.Group className='py-2'>
@@ -131,11 +130,14 @@ const NuevaCategoria = (props) => {
                 <Form.Control type="text" placeholder="Descripción" onChange={(e)=> {setDescripCategoria(e.target.value)}} required/>
             </Form.Group>
             
-            <Button variant="secondary" block className='mb-4' type='submit'>
-                Agregar Categoría
-            </Button>
+            <div className="d-flex justify-content-center">
+                <Button variant="warning"  className='text-light mb-3 px-5 py-2' type='submit'>
+                    Agregar Categoría
+                </Button>
+            </div>
         
-            {(error===true)?(<Alert variant='warning'>{mensajeError}</Alert>):null}           
+            {/* {(error===true)?(<Alert variant='warning'>{mensajeError}</Alert>):null}            */}
+            
         </Form>
     </Container> 
     );

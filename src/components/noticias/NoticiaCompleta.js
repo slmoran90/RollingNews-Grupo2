@@ -10,7 +10,8 @@ const NoticiaCompleta = (props) => {
     const parametroID = useParams().id;
 
     // state para almacenar resultados del fetch
-    const [noticiaCompleta, setNoticiaCompleta] = useState([]);
+    const [noticiaCompleta, setNoticiaCompleta] = useState({});
+    // const [noticiaFiltrada, setNoticiaFiltrada] = useState([]);
 
     // URL donde estan almacenadas las noticias
     const URLnoticias = process.env.REACT_APP_API_URLnoticias + "/?id=" + parametroID;
@@ -22,11 +23,13 @@ const NoticiaCompleta = (props) => {
             console.log(respuesta);
             if (respuesta.status === 200) {
                 const noticiaFiltrada = await respuesta.json();
-                setNoticiaCompleta(noticiaFiltrada);
-                console.log("const noticias filtradas:")
-                console.log(noticiaFiltrada)
-                console.log("state noticia completa:")
-                console.log(noticiaCompleta)
+
+                //!!!!!! visto con facu !!!!!!!!!!!!!!!!!!!!
+                const [noticia] = noticiaFiltrada;
+                console.log("valor NOTICIA=",noticia);
+                setNoticiaCompleta(noticia);
+                //===================
+
             }
         } catch (error) {
             console.log(error);
@@ -48,38 +51,38 @@ const NoticiaCompleta = (props) => {
 
                     <Form.Group as={Col}>
                         <Form.Label>Autor:</Form.Label>
-                        <Form.Control type="text" placeholder="Autor" />
+                        <Form.Control type="text" placeholder="Autor" defaultValue={noticiaCompleta.autorNoticia}/>
                     </Form.Group>
                 </Form.Row>
 
                 <Form.Group>
                     <Form.Label>Categoría:</Form.Label>
-                    <Form.Control type="text" placeholder="Titulo de la Noticia" defaultValue={noticiaCompleta.tituloNoticia} />
+                    <Form.Control type="text" placeholder="Categoría" />
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Titulo Noticia:</Form.Label>
-                    <Form.Control type="text" placeholder="Titulo de la Noticia" defaultValue={noticiaCompleta.tituloNoticia} />
+                    <Form.Control type="text" placeholder="Titulo de la Noticia"  />
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Descripción Breve:</Form.Label>
-                    <Form.Control type="text" placeholder="Titulo de la Noticia" defaultValue={noticiaCompleta.tituloNoticia} />
+                    <Form.Control type="text" placeholder="Descripción Breve" />
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Descripción Detallada:</Form.Label>
-                    <Form.Control type="text" placeholder="Titulo de la Noticia" defaultValue={noticiaCompleta.tituloNoticia} />
+                    <Form.Control type="text" placeholder="Descripción Detallada"  />
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Imagen Principal:</Form.Label>
-                    <Form.Control type="text" placeholder="Titulo de la Noticia" defaultValue={noticiaCompleta.tituloNoticia} />
+                    <Form.Control type="text" placeholder="Imagen Principal"  />
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
-                    <Form.Control type="text" placeholder="Titulo de la Noticia" defaultValue={noticiaCompleta.tituloNoticia} />
+                    <Form.Control type="text" placeholder="Imagen Secundaria" />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">

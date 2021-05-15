@@ -21,8 +21,8 @@ const ItemCategoria = (props) => {
         }).then(async(result) => {
             if (result.isConfirmed) {
                     try{
-                    const URL = `${process.env.REACT_APP_API_URL}/${idCategoria}`;
-                    console.log(URL);
+                    const URL = `${process.env.REACT_APP_API_URLcategorias}/${idCategoria}`;
+                    // console.log(URL);
                     const respuesta = await fetch(URL,{
                         method:"DELETE",
                         headers:{"Content-Type":"application/json"}
@@ -34,9 +34,10 @@ const ItemCategoria = (props) => {
                             'success'
                         )
                         //actualizar los datos de la api
-                        props.consultarAPI();
+                        props.consultarAPIcategorias();
                     }
                 }catch(error){
+                    console.log("error en catch item noticia")
                     console.log(error)
                     // agregar ventana de error
                     Swal.fire(

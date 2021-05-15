@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 
 const ListarNoticiasxCateg = () => {
     // obtener el parametro de la URL
-    console.log(useParams().nombreCategoria);
+    // console.log(useParams().nombreCategoria);
     const parametroCategoria = useParams().nombreCategoria;
     
     // state para almacenar resultados del fetch

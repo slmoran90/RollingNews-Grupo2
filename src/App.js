@@ -2,33 +2,31 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
-import Inicio from "./components/Inicio";
 import Navegacion from "./components/common/Navegacion";
 import NuevaCategoria from "./components/categorias/NuevaCategoria";
 import ListarCategoria from "./components/categorias/ListarCategoria";
 import ListarNoticiasxCateg from "./components/noticias/ListarNoticiasxCateg";
-import NoticiaCompleta from "./components/noticias/NoticiaCompleta";
+// import NoticiaCompleta from "./components/noticias/NoticiaCompleta";
 import Error404 from "./components/Error404";
 import Swal from 'sweetalert2'
 import Footer from "./components/common/Footer";
 
-
 function App() {
   // URL donde estan guardadas las categorias
-  const URL = process.env.REACT_APP_API_URL;
+  const URLcategorias = process.env.REACT_APP_API_URLcategorias;
   
   // state para get de categorias y ejecutar solo en montaje
   const [categorias, setCategorias] = useState([]);
+
   
 
   useEffect(() => {
-    consultarAPI();
+    consultarAPIcategorias();
   }, []);
 
-  const consultarAPI = async () => {
+  const consultarAPIcategorias = async () => {
     try {
-      const respuesta = await fetch(URL);
-      console.log(respuesta);
+      const respuesta = await fetch(URLcategorias);
       if (respuesta.status === 200) {
         const listaCategorias = await respuesta.json();
         setCategorias(listaCategorias);
@@ -49,6 +47,7 @@ function App() {
       {/* se invoca el navbar*/}
 
       <Navegacion></Navegacion>
+    
       <Switch>
         {/* Elegir entre las rutas. La barra / es la pagina principal del proyecto (idem index.hml) */}
         <Route exact path="/">
@@ -56,23 +55,21 @@ function App() {
           
         </Route>
         <Route exact path="/categorias/nueva">
-          <NuevaCategoria 
-            consultarAPI={consultarAPI}>
+          <NuevaCategoria consultarAPIcategorias={consultarAPIcategorias}>
           </NuevaCategoria>
         </Route>
         <Route exact path="/categorias/listar">
           <ListarCategoria
             categorias={categorias}
-            consultarAPI={consultarAPI}
+            consultarAPIcategorias={consultarAPIcategorias}
           ></ListarCategoria>
         </Route>
-        {/* paso como parametro la Categoria. Se pone ? al final si quiero que no sea olbigatorio */}
         <Route exact path="/noticias/listar/:nombreCategoria">  
           {/* muestra noticias por categoria */}
-          <ListarNoticiasxCateg consultarAPI={consultarAPI}></ListarNoticiasxCateg>
+          <ListarNoticiasxCateg consultarAPIcategorias={consultarAPIcategorias}></ListarNoticiasxCateg>
         </Route>
-        <Route exact path="/noticias/noticiaCompleta">
-          <NoticiaCompleta></NoticiaCompleta>
+        <Route exact path="/noticias/noticiaCompleta/:id">
+          {/* <NoticiaCompleta></NoticiaCompleta> */}
         </Route>
         <Route path='*'> 
           <Error404></Error404>

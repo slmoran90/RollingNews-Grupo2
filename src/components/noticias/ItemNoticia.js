@@ -6,6 +6,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 const ItemNoticia = (props) => {
+    // console.log(props.info)
     return (
     <Container>
             {/* continuacion sistema de grillas */}
@@ -17,7 +18,7 @@ const ItemNoticia = (props) => {
                         <Card.Text>{props.info.noticiaBreve}</Card.Text>
                         <div className="d-flex justify-content-center">
                             {/* <Button variant="primary" className='text-light mr-3'><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> Ver Noticia Completa</Button> */}
-                            <Link className='btn btn-primary text-light mr-3' to={'/noticias/noticiacompleta/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> Ver Noticia Completa</Link>
+                            <Link className='btn btn-primary text-light mr-3' to={'/noticias/noticiaCompleta/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> Ver Noticia Completa</Link>
                         </div>
                     </Card.Body>
                 </Card>
