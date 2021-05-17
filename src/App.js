@@ -3,12 +3,14 @@ import "./App.css";
 import Navegacion from "./components/common/Navegacion";
 //import Footer from "./components/common/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Suscripcion from "./components/Suscripcion";
 
 function App() {
   return (
     <Router>
       <Navegacion> </Navegacion> {/* Navegacion */}{" "}
       {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}{" "}
+      <Suscripcion></Suscripcion>
       <Switch>
         <Route exact path="/">
           {" "}

@@ -1,9 +1,9 @@
-import { React, Fragment } from "react";
-import { Form } from "react-bootstrap";
+import { React } from "react";
+import { Form, Col, Button, Container } from "react-bootstrap";
 
 const Suscripcion = () => {
   return (
-    <Fragment>
+    <Container>
       <Form>
         <Form.Group>
           <Form.Label>Nombre y Apellido</Form.Label>
@@ -13,24 +13,24 @@ const Suscripcion = () => {
           ></Form.Control>
         </Form.Group>
         <Form.Row>
-          <Form.Group as={col}>
+          <Form.Group as={Col}>
             <Form.Label>Dirección</Form.Label>
             <Form.Control placeholder="Escriba su domicilo"></Form.Control>
           </Form.Group>
-          <Form.Group as={col}>
+          <Form.Group as={Col}>
             <Form.Label>Localidad</Form.Label>
             <Form.Control placeholder="Localidad"></Form.Control>
           </Form.Group>
         </Form.Row>
         <Form.Row>
-          <Form.Group as={col}>
+          <Form.Group as={Col}>
             <Form.Label>Código Postal</Form.Label>
             <Form.Control
               type="number"
               placeholder="Ingrese su Código Postal"
             ></Form.Control>
           </Form.Group>
-          <Form.Group as={col}>
+          <Form.Group as={Col}>
             <Form.Label>Teléfono de Contacto</Form.Label>
             <Form.Control
               type="number"
@@ -52,7 +52,7 @@ const Suscripcion = () => {
           Suscribirme!
         </Button>
       </Form>
-    </Fragment>
+    </Container>
   );
 };
 
