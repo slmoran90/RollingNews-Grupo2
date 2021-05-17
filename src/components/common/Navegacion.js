@@ -8,6 +8,7 @@ import {
   Col,
   Container,
 } from "react-bootstrap";
+import {Link} from 'react-router-dom';
 
 const Navegacion = () => {
   return (
@@ -30,23 +31,23 @@ const Navegacion = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link className="nav-link" exact={true}>
+                <Nav.Link className="nav-link" exact="true">
                   {" "}
                   Inicio{" "}
                 </Nav.Link>
-                <Nav.Link className="nav-link" exact={true}>
+                <Nav.Link className="nav-link" exact="true">
                   {" "}
                   Actualidad{" "}
                 </Nav.Link>
-                <Nav.Link className="nav-link" exact={true}>
+                <Nav.Link className="nav-link" exact="true">
                   {" "}
                   Espectáculos{" "}
                 </Nav.Link>
-                <Nav.Link className="nav-link" exact={true}>
+                <Nav.Link className="nav-link" exact="true">
                   {" "}
                   Tecnología{" "}
                 </Nav.Link>
-                <Nav.Link className="nav-link" exact={true}>
+                <Nav.Link className="nav-link" exact="true">
                   {" "}
                   Deportes{" "}
                 </Nav.Link>
@@ -78,12 +79,12 @@ const Navegacion = () => {
                     Nueva categoría
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link className="nav-link" exact={true}>
+                <Nav.Link className="nav-link" exact="true">
                   Nosotros
                 </Nav.Link>
-                <Nav.Link className="nav-link" exact={true} href="/contacto">
+                <Link className="nav-link" exact="true" to="/contacto">
                   Contacto
-                </Nav.Link>
+                </Link>
                 <Button className="ml-5" variant="outline-success">
                   Iniciar Sesión
                 </Button>
