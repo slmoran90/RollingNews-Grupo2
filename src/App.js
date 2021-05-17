@@ -3,7 +3,7 @@ import "./App.css";
 import Navegacion from "./components/common/Navegacion";
 //import Footer from "./components/common/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Suscripcion from "./components/Suscripcion";
+import Suscripcion from "./components/Suscripcion/Suscripcion";
 
 function App() {
   return (

@@ -38,16 +38,14 @@ const Suscripcion = () => {
             ></Form.Control>
           </Form.Group>
         </Form.Row>
-        <Form.Row>
-          <Form.Group as={Col}>
+          <Form.Group>
             <Form.Label>Email</Form.Label>
             <Form.Control type="email" placeholder="Enter email" />
           </Form.Group>
-          <Form.Group as={Col}>
+          {/* <Form.Group as={Col}>
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
-        </Form.Row>
+          </Form.Group> */}
         <Button variant="primary" type="submit">
           Suscribirme!
         </Button>
