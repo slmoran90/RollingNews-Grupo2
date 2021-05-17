@@ -8,7 +8,7 @@ import {
   Col,
   Container,
 } from "react-bootstrap";
-import {Link} from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 const Navegacion = () => {
   return (
@@ -31,26 +31,21 @@ const Navegacion = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link className="nav-link" exact="true">
-                  {" "}
-                  Inicio{" "}
-                </Nav.Link>
-                <Nav.Link className="nav-link" exact="true">
-                  {" "}
-                  Actualidad{" "}
-                </Nav.Link>
-                <Nav.Link className="nav-link" exact="true">
-                  {" "}
-                  Espectáculos{" "}
-                </Nav.Link>
-                <Nav.Link className="nav-link" exact="true">
-                  {" "}
-                  Tecnología{" "}
-                </Nav.Link>
-                <Nav.Link className="nav-link" exact="true">
-                  {" "}
-                  Deportes{" "}
-                </Nav.Link>
+                <NavLink className="nav-link" exact={true}>
+                  Inicio
+                </NavLink>
+                <NavLink className="nav-link" exact={true}>
+                  Actualidad
+                </NavLink>
+                <NavLink className="nav-link" exact={true}>
+                  Espectáculos
+                </NavLink>
+                <NavLink className="nav-link" exact={true}>
+                  Tecnología
+                </NavLink>
+                <NavLink className="nav-link" exact={true}>
+                  Deportes
+                </NavLink>
                 <NavDropdown title="Más Categorías" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">
                     Política
@@ -79,12 +74,12 @@ const Navegacion = () => {
                     Nueva categoría
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link className="nav-link" exact="true">
+                <NavLink className="nav-link" exact={true}>
                   Nosotros
-                </Nav.Link>
-                <Link className="nav-link" exact="true" to="/contacto">
+                </NavLink>
+                <NavLink className="nav-link" exact={true} to="/contacto">
                   Contacto
-                </Link>
+                </NavLink>
                 <Button className="ml-5" variant="outline-success">
                   Iniciar Sesión
                 </Button>
