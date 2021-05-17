@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Navegacion> </Navegacion> {/* Navegacion */}{" "}
       {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}{" "}
-      <Suscripcion></Suscripcion>
+      {/* <Suscripcion></Suscripcion> */}
       <Switch>
         <Route exact path="/">
           {" "}
