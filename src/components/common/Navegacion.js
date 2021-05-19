@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navbar, Nav, NavDropdown, Button, Row,Col, Container } from 'react-bootstrap';
-
+import {Link} from 'react-router-dom';
 
 const Navegacion = () => {
   return (
@@ -20,7 +20,7 @@ const Navegacion = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link className='nav-link' exact={true}> Inicio </Nav.Link>
+          <Link className='nav-link' exact={true} to='/'> Inicio </Link>
           <Nav.Link className='nav-link' exact={true}> Actualidad </Nav.Link>
           <Nav.Link className='nav-link' exact={true}> Espectáculos </Nav.Link>
           <Nav.Link className='nav-link' exact={true}> Tecnología </Nav.Link>
@@ -47,7 +47,7 @@ const Navegacion = () => {
             Nueva categoría
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link className='nav-link' exact={true}>Nosotros</Nav.Link>
+          <Link className='nav-link' exact={true} to='/nosotros'>Nosotros</Link>
           <Nav.Link className='nav-link' exact={true}>Contacto</Nav.Link>
           <Button className="ml-5" variant="outline-success">Iniciar Sesión</Button>
           <Button className="ml-2" variant="outline-success">Registrarse</Button>

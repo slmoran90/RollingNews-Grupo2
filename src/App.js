@@ -2,7 +2,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import "./App.css";
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Inicioo from './components/Inicioo';
+import Nosotros from './components/Nosotros';
+
+
 
 
 function App() {
@@ -14,38 +18,12 @@ function App() {
             <Switch>
                 <Route exact path="/">
                     {/*  <PaginaPrincipal /> */}
+                    <Inicioo></Inicioo>
                 </Route>
-                <Route>
-                  {/* <Categorias /> */}
+                <Route exact path="/nosotros">
+                <Nosotros></Nosotros>
                 </Route>
-                <Route>
-                 {/*  <AcercaDeNosotros /> */}
-                </Route>
-                <Route>
-                  {/* <Contacto /> */}
-                </Route>
-                <Route exact path="/categorias/nueva">
-                    {/*  <NuevaCategoria
-                        consultarAPI={consultarAPI}
-                    ></NuevaCategoria> */}
-                </Route>
-                <Route exact path="/categorias/listar">
-                    {/* <ListarCategoria
-                        categorias={categorias}
-                        consultarAPI={consultarAPI}
-                    ></ListarCategoria> */}
-                </Route>
-                {/* paso como parametro la Categoria. Se pone ? al final si quiero que no sea olbigatorio */}
-                <Route exact path="/noticias/listar/:nombreCategoria">
-                    {/* muestra noticias por categoria */}
-                    {/* <ListarNoticiasxCateg
-                        consultarAPI={consultarAPI}
-                    ></ListarNoticiasxCateg> */}
-                </Route>
-                <Route exact path="/noticias/noticiaCompleta">
-                    {/* <NoticiaCompleta></NoticiaCompleta> */}
-                </Route>
-                <Route path="*">{/* <Error404></Error404> */}</Route>
+                
             </Switch>
             <Footer></Footer>
         </Router>

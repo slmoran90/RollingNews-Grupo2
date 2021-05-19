@@ -100,18 +100,18 @@ const Footer = () => {
           <p>&copy; 2021 Team G2. | Todos los derechos reservados.</p>
         </div>
         <div>
-          <FontAwesomeIcon icon={faInstagram} size="lg"></FontAwesomeIcon>
-          <FontAwesomeIcon
-            className="mx-4"
+          <Link><FontAwesomeIcon className="text-light" icon={faInstagram} size="lg"></FontAwesomeIcon></Link>
+          <Link><FontAwesomeIcon
+            className="text-light mx-4"
             icon={faFacebook}
             size="lg"
-          ></FontAwesomeIcon>
-          <FontAwesomeIcon icon={faTwitter} size="lg"></FontAwesomeIcon>
-          <FontAwesomeIcon
-            className="ml-4 mr-5"
+          ></FontAwesomeIcon></Link>
+          <Link><FontAwesomeIcon className="text-light" icon={faTwitter} size="lg"></FontAwesomeIcon></Link>
+          <Link><FontAwesomeIcon
+            className="text-light ml-4 mr-5"
             icon={faYoutube}
             size="lg"
-          ></FontAwesomeIcon>
+          ></FontAwesomeIcon></Link>
         </div>
       </article>
     </section>
