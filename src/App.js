@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Contacto from "./components/Contacto";
 import Prueba from "./components/Prueba";
 
+
 function App() {
   return (
     <Router>
@@ -13,8 +14,8 @@ function App() {
       {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}
       <Switch>
         <Route exact path="/">
-          <Prueba></Prueba>
           {/*  <PaginaPrincipal /> */}
+<Prueba></Prueba>
         </Route>
         <Route exact path="/contacto">
         <Contacto/>

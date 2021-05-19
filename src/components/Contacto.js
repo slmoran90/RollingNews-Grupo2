@@ -1,37 +1,25 @@
-/*import React, { Fragment } from "react";
-
-const Contacto = () => {
-  return (
-    <Fragment>
-      <h1 className="text-danger">Pagina de contacto</h1>
-    </Fragment>
-  );
-};
-
-export default Contacto;*/
-
 import React, { useState } from "react";
 import { Container, Form, Button, Col, Alert } from "react-bootstrap";
 
 const Contacto = () => {
   const [nombreCompleto, setNombreCompleto] = useState("");
+  const [email, setEmail] = useState("");
+  const [textArea, setTextArea] = useState("");
   const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //validar los datos
-    if (nombreCompleto.trim() === "") {
-      //si falla, mostrar el alert de error
+    if (nombreCompleto.trim() === "" && email.trim() ===  /\w+@\w+\.[a-z]{2,}$/ && textArea === "") {
       setError(true);
       return;
     } else {
-      //si funciona, envio los datos a la api
       setError(false);
     }
   };
-
   const formulario = {
     nombreCompleto,
+    email, 
+    textArea
   };
 
   console.log(formulario);
@@ -58,15 +46,16 @@ const Contacto = () => {
                 type="text"
                 placeholder="Juan Perez"
                 onChange={(e) => setNombreCompleto(e.target.value)}
+                required
               />
             </Form.Group>
             <Form.Group>
               <Form.Label> Email * </Form.Label>
-              <Form.Control type="email" placeholder="Juanperez@hotmail.com" />
+              <Form.Control type="email" placeholder="Juanperez@hotmail.com" onChange={(e) => setEmail(e.target.value)} required/>
             </Form.Group>
             <Form.Group>
               <Form.Label>Escriba su consulta *</Form.Label>
-              <Form.Control as="textarea" rows={4} />
+              <Form.Control as="textarea" rows={4} onChange={(e) => setTextArea(e.target.value)} required/>
             </Form.Group>
             <Button type="submit" variant="primary" className="w-50 my-4">
               Enviar

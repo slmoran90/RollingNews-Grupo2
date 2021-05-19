@@ -31,19 +31,19 @@ const Navegacion = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                <NavLink className="nav-link" exact={true}>
+                <NavLink className="nav-link" exact={true} to="/">
                   Inicio
                 </NavLink>
-                <NavLink className="nav-link" exact={true}>
+                <NavLink className="nav-link" exact={true} to="/">
                   Actualidad
                 </NavLink>
-                <NavLink className="nav-link" exact={true}>
+                <NavLink className="nav-link" exact={true} to="/">
                   Espectáculos
                 </NavLink>
-                <NavLink className="nav-link" exact={true}>
+                <NavLink className="nav-link" exact={true} to="/">
                   Tecnología
                 </NavLink>
-                <NavLink className="nav-link" exact={true}>
+                <NavLink className="nav-link" exact={true} to="/">
                   Deportes
                 </NavLink>
                 <NavDropdown title="Más Categorías" id="basic-nav-dropdown">
@@ -74,7 +74,7 @@ const Navegacion = () => {
                     Nueva categoría
                   </NavDropdown.Item>
                 </NavDropdown>
-                <NavLink className="nav-link" exact={true}>
+                <NavLink className="nav-link" exact={true} to="/">
                   Nosotros
                 </NavLink>
                 <NavLink className="nav-link" exact={true} to="/contacto">
