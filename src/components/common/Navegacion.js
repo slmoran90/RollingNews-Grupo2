@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 const Navegacion = () => {
   return (
     <Navbar bg="light" expand="lg">
-      <Container>
       <Row>
         <Col md={12}>
         <Navbar.Brand href="/"><img
@@ -49,13 +48,12 @@ const Navegacion = () => {
           </NavDropdown>
           <Link className='nav-link' exact={true} to='/nosotros'>Nosotros</Link>
           <Nav.Link className='nav-link' exact={true}>Contacto</Nav.Link>
-          <Button className="ml-5" variant="outline-success">Iniciar Sesión</Button>
+          <Button className="ml-2" variant="outline-success">Iniciar Sesión</Button>
           <Button className="ml-2" variant="outline-success">Registrarse</Button>
         </Nav>
       </Navbar.Collapse>
       </Col>
       </Row>
-      </Container>
     </Navbar>
     
   );

@@ -13,7 +13,7 @@ const Nosotros = () => {
                         <br></br>
                         <b className="ml-2 text-light text-center">
                             El diario que supo ganarse la confianza de sus lectores
-                            durante más de dos décadas por la <br></br>seriedad de sus investigaciones,
+                            durante más de tres décadas por la <br></br>seriedad de sus investigaciones,
                             su edición de vanguardia y el prestigio de sus columnistas.
                         </b>
                     </div>
@@ -26,9 +26,7 @@ const Nosotros = () => {
                             </h2>
                         </div>
                         <div className="col-sm-12 col-md-5 font-weight-bold text-light align-self-center ml-4">
-                            Set the direction of flex items in a flex container with direction
-                            utilities. In most cases you can omit the horizontal class here as
-                            the browser default is row. However, you may encounte
+                        Creemos que nuestro equipo,es una gran familia. Creemos que la confianza se construye a través de la excelencia. Contribuimos a construir un futuro en el que todos tengan la ayuda que necesitan para dedicar tiempo a las personas y las cosas que más importan.
                         </div>
                     </div>
                     <div >
@@ -101,7 +99,7 @@ const Nosotros = () => {
 
                 {/* linea de tiempo color */}
                 <div className="container mt-5">
-                    <h1 id="h2" className="text-light justify-content-center"><span>Nuestra historia</span></h1>
+                    <h1 id="h2" className="text-light justify-content-center my-5"><span>Nuestra historia</span></h1>
                     <div className="row" responsive="md">
                         <div className="col-md-12">
                             <div className="main-timeline4">
