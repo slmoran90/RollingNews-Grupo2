@@ -8,8 +8,7 @@ import {
   Col,
   Container,
 } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
-
+import { NavLink,Link} from "react-router-dom";
 
 const Navegacion = () => {
   return (
@@ -32,27 +31,25 @@ const Navegacion = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                
                 <Nav.Link className="nav-link" exact={true}>
-                  {" "}
-                  Inicio{" "}
-                </Nav.Link>
-
-                <Nav.Link className="nav-link" exact={true}>
-                  {" "}
-                  Actualidad{" "}
+                  
+                  Inicio
                 </Nav.Link>
                 <Nav.Link className="nav-link" exact={true}>
-                  {" "}
-                  Espectáculos{" "}
+                  
+                  Actualidad
                 </Nav.Link>
                 <Nav.Link className="nav-link" exact={true}>
-                  {" "}
-                  Tecnología{" "}
+                  
+                  Espectáculos
                 </Nav.Link>
                 <Nav.Link className="nav-link" exact={true}>
-                  {" "}
-                  Deportes{" "}
+                  
+                  Tecnología
+                </Nav.Link>
+                <Nav.Link className="nav-link" exact={true}>
+                  
+                  Deportes
                 </Nav.Link>
                 <NavDropdown title="Más Categorías" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">
@@ -104,10 +101,11 @@ const Navegacion = () => {
                   </Nav>
                 </Navbar.Collapse>
 
-                <Nav.Link className="nav-link" exact={true}>
+                <Link className="nav-link">
                   Nosotros
-                </Nav.Link>
-                <Nav.Link className="nav-link" exact={true}>
+                </Link>
+
+                <Nav.Link className="nav-link">
                   Contacto
                 </Nav.Link>
                 <Button className="ml-5" variant="outline-success">

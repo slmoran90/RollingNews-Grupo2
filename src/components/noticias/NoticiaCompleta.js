@@ -43,60 +43,64 @@ const NoticiaCompleta = () => {
             <Form className='mx-5'>
                 <Form.Row>
                     <Form.Group as={Col}>
+                        <Form.Label>Categoría:</Form.Label>
+                        <Form.Control type="text" size="sm" placeholder="Categoría" defaultValue={noticiaCompleta.categoria} disabled />
+                    </Form.Group>
+                    <Form.Group as={Col}>
                         <Form.Label>Fecha:</Form.Label>
-                        <Form.Control type="text" size="sm" placeholder="" defaultValue={noticiaCompleta.fechaNoticia}/>
+                        <Form.Control type="text" size="sm" placeholder="" defaultValue={noticiaCompleta.fechaNoticia} disabled/>
                     </Form.Group>
 
                     <Form.Group as={Col}>
                         <Form.Label>Autor:</Form.Label>
-                        <Form.Control type="text" size="sm" placeholder="Autor" defaultValue={noticiaCompleta.autorNoticia}/>
+                        <Form.Control type="text" size="sm" placeholder="Autor" defaultValue={noticiaCompleta.autorNoticia} disabled/>
                     </Form.Group>
                 </Form.Row>
 
-                <Form.Group>
-                    <Form.Label>Categoría:</Form.Label>
-                    <Form.Control type="text" size="sm" placeholder="Categoría" defaultValue={noticiaCompleta.categoria} />
-                </Form.Group>
-
+                
                 <Form.Group>
                     <Form.Label>Titulo Noticia:</Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Titulo de la Noticia" defaultValue={noticiaCompleta.tituloNoticia} />
+                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Titulo de la Noticia" defaultValue={noticiaCompleta.tituloNoticia} disabled />
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Descripción Breve:</Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Descripción Breve" defaultValue={noticiaCompleta.noticiaBreve}/>
+                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Descripción Breve" defaultValue={noticiaCompleta.noticiaBreve} disabled/>
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Descripción Detallada:</Form.Label>
-                    <Form.Control as="textarea" rows={10} size="sm" placeholder="Descripción Detallada" defaultValue={noticiaCompleta.noticiaDetallada} />
+                    <Form.Control as="textarea" rows={10} size="sm" placeholder="Descripción Detallada" defaultValue={noticiaCompleta.noticiaDetallada} disabled />
                 </Form.Group>
 
-                <Form.Row>
+                <Form.Row className='border mb-2'>
                     <Form.Group as={Col}>
                         <Form.Label>Imagen Principal:</Form.Label>
-                        <Form.Control as="textarea" rows={5} placeholder="Imagen Principal" defaultValue={noticiaCompleta.imagenPrincipal} />
+                        <Form.Control as="textarea" rows={5} placeholder="Imagen Principal" defaultValue={noticiaCompleta.imagenPrincipal} disabled/>
                     </Form.Group>
 
-                    <Form.Group as={Col} className='text-center'>
-                        <img width="300px" src={noticiaCompleta.imagenPrincipal}/>
+                    <Form.Group as={Col} className='text-center mt-3'>
+                        <img width="300px" src={noticiaCompleta.imagenPrincipal} disabled/>
                     </Form.Group>
                 </Form.Row>
 
-                <Form.Row>
+                <Form.Row className='border'>
                     <Form.Group as={Col}>
                         <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
-                        <Form.Control as="textarea" rows={5} placeholder="Imagen Secundaria" defaultValue={noticiaCompleta.imagenSecundaria} />
+                        <Form.Control as="textarea" rows={5} placeholder="Imagen Secundaria" defaultValue={noticiaCompleta.imagenSec} disabled />
                     </Form.Group>
 
-                    <Form.Group as={Col} className='text-center'>
-                        <img width="300px" src={noticiaCompleta.imagenSecundaria}/>
+                    <Form.Group as={Col} className='text-center mt-3'>
+                        <img width="300px" src={noticiaCompleta.imagenSec} disabled/>
                     </Form.Group>
                 </Form.Row>
+                <Form.Group>
+                    {/* <Form.Label>Noticia Destacada:</Form.Label> */}
+                    <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticiaCompleta.noticiaDestacada} disabled />
+                </Form.Group>
 
-                <Button variant="primary" type="submit">
-                    Submit
+                <Button variant="primary" type="submit" block>
+                    Cerrar
                 </Button>
             </Form>
         </Container>

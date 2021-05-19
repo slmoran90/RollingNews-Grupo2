@@ -8,17 +8,17 @@ import ListarCategoria from "./components/categorias/ListarCategoria";
 import ListarNoticiasxCateg from "./components/noticias/ListarNoticiasxCateg";
 import NoticiaCompleta from "./components/noticias/NoticiaCompleta";
 import Error404 from "./components/Error404";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 import Footer from "./components/common/Footer";
+import Nosotros from "./components/Nosotros";
+import NuevaNoticia from "./components/noticias/NuevaNoticia";
 
 function App() {
   // URL donde estan guardadas las categorias
   const URLcategorias = process.env.REACT_APP_API_URLcategorias;
-  
+
   // state para get de categorias y ejecutar solo en montaje
   const [categorias, setCategorias] = useState([]);
-
-  
 
   useEffect(() => {
     consultarAPIcategorias();
@@ -32,12 +32,8 @@ function App() {
         setCategorias(listaCategorias);
       }
     } catch (error) {
-        console.log(error);
-          Swal.fire(
-          'Ocurrió un Error!',
-          'Inténtelo en unos minutos.',
-          'error'
-          )
+      console.log(error);
+      Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
     }
   };
 
@@ -45,33 +41,39 @@ function App() {
     // Crear sistema de rutas usando SIEMPRE Router y switch
     <Router>
       {/* se invoca el navbar*/}
-
       <Navegacion></Navegacion>
-    
+
       <Switch>
-        {/* Elegir entre las rutas. La barra / es la pagina principal del proyecto (idem index.hml) */}
         <Route exact path="/">
           {/* llamar al componente inicio */}
-          
         </Route>
         <Route exact path="/categorias/nueva">
-          <NuevaCategoria consultarAPIcategorias={consultarAPIcategorias}>
-          </NuevaCategoria>
+          {/* permite el alta de una nueva categoria */}
+          <NuevaCategoria
+            consultarAPIcategorias={consultarAPIcategorias}
+          ></NuevaCategoria>
         </Route>
         <Route exact path="/categorias/listar">
+          {/* muestra lista de categorias existentes */}
           <ListarCategoria
             categorias={categorias}
             consultarAPIcategorias={consultarAPIcategorias}
           ></ListarCategoria>
         </Route>
-        <Route exact path="/noticias/listar/:nombreCategoria">  
-          {/* muestra noticias por categoria */}
-          <ListarNoticiasxCateg consultarAPIcategorias={consultarAPIcategorias}></ListarNoticiasxCateg>
+        <Route exact path="/noticias/listar/:nombreCategoria">
+          {/* muestra lista de noticias de una categoria */}
+          <ListarNoticiasxCateg
+            consultarAPIcategorias={consultarAPIcategorias}
+          ></ListarNoticiasxCateg>
         </Route>
         <Route exact path="/noticias/noticiaCompleta/:id">
+          {/* muestra la noticia completa, seleccionada en la lista de noticias */}
           <NoticiaCompleta></NoticiaCompleta>
         </Route>
-        <Route path='*'> 
+        <Route exact path="/noticias/nueva">
+          <NuevaNoticia></NuevaNoticia>
+        </Route>
+        <Route path="*">
           <Error404></Error404>
         </Route>
       </Switch>
