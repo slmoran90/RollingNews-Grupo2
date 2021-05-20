@@ -8,22 +8,13 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const ItemNoticia = (props) => {
     // console.log(props.info)
     return (
-    <Container>
-            {/* continuacion sistema de grillas */}
-            <div className="col my-3">
-                <Card className='shadow-lg'>
-                    <Card.Img variant="top" src={props.info.imagenPrincipal} alt={props.info.tituloNoticia} />
-                    <Card.Body>
-                        <Card.Title>{props.info.tituloNoticia}</Card.Title>
-                        <Card.Text>{props.info.noticiaBreve}</Card.Text>
-                        <div className="d-flex justify-content-center">
-                            {/* <Button variant="primary" className='text-light mr-3'><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> Ver Noticia Completa</Button> */}
-                            <Link className='btn btn-primary text-light mr-3' to={'/noticias/noticiaCompleta/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> Ver Noticia Completa</Link>
-                        </div>
-                    </Card.Body>
-                </Card>
-            </div>
-    </Container>
+        <tr className="textoNoticia">
+            <td>{props.info.fechaNoticia}</td>
+            <td>{props.info.autorNoticia}</td>
+            <td>{props.info.tituloNoticia}</td>
+            <td>{props.info.noticiaBreve}</td>
+            <td className='text-center'><Link className='btn btn-primary text-light mr-3' to={'/noticias/noticiaCompleta/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> </Link></td>
+        </tr>
     );
 };
 

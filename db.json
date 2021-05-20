@@ -1,38 +1,27 @@
 {
     "categorias": [{
             "nombreCategoria": "Actualidad",
-            "descripCategoria": "articulos acerca de noticias de los ultimos dias",
             "id": "1"
         },
         {
             "nombreCategoria": "Deportes",
-            "descripCategoria": "articulos acerca de deportes",
             "id": "2"
         },
         {
             "nombreCategoria": "Tecnología",
-            "descripCategoria": "informacion sobre tecnologia",
             "id": "vu67msC"
         },
         {
             "nombreCategoria": "Política",
-            "descripCategoria": "informacion sobre la actividad politica",
             "id": "01XZMun"
         },
         {
             "nombreCategoria": "Salud",
-            "descripCategoria": "Noticias asociadas a todas las areas de la salud",
             "id": "-HP-A5G"
         },
         {
             "nombreCategoria": "Espectáculos",
-            "descripCategoria": "Noticias relacionadas a las actividades artisticas",
             "id": "wiJF4NF"
-        },
-        {
-            "nombreCategoria": "aa",
-            "descripCategoria": "aaaaaaaaaaaaaaaaaaaaaaaaaa",
-            "id": "HHL2BmQ"
         }
     ],
     "noticias": [{
@@ -40,11 +29,11 @@
             "noticiaBreve": "La reapertura de empresas y el aumento del gasto también hicieron subir los precios, con un aumento de la inflación del 3,5 por ciento en el mismo periodo.  En otra señal positiva, el número de estadounidenses que solicitaron beneficios por desempleo se reduj…",
             "noticiaDetallada": "La economía de Estados Unidos creció un 6,4% en el primer trimestre de este año por una recuperación del consumo y un aumento del gasto público, que reflejan la recuperación en marcha que va dejando … [+3812 chars]",
             "imagenPrincipal": "https://www.infobae.com/new-resizer/IELAolN_kbQVYpFhCcCjcoQP9z0=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/IHVE4QRFX3BXSU56NL5IV7UKQE.jpg",
-            "imagenSec": "",
+            "imagenSec": "https://www.infobae.com/new-resizer/IELAolN_kbQVYpFhCcCjcoQP9z0=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/IHVE4QRFX3BXSU56NL5IV7UKQE.jpg",
             "categoria": "Negocios",
             "autorNoticia": "infobae",
             "fechaNoticia": "29-04-2021",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "1"
         },
         {
@@ -52,11 +41,11 @@
             "noticiaBreve": "Las clases seguirán exclusivamente a distancia en lugares de alarma epidemiológica\", informó el Presidente. Establecen cuatro zonas sanitarias para el país.",
             "noticiaDetallada": "Las próximas semanas pueden llegar a ser muy duras; debemos continuar con medidas\", afirmó el mandatario.\r\nAlberto Fernándezagregó que \"para el conjunto del país hasta el 21 de mayo continúan las mi… [+2803 chars]",
             "imagenPrincipal": "https://media.minutouno.com/p/bd540010430f1a0de88dfc0ee04dcad2/adjuntos/150/imagenes/038/803/0038803250/alberto-fernandezjpeg.jpeg",
-            "imagenSec": "",
+            "imagenSec": "https://media.minutouno.com/p/bd540010430f1a0de88dfc0ee04dcad2/adjuntos/150/imagenes/038/803/0038803250/alberto-fernandezjpeg.jpeg",
             "categoria": "Actualidad",
             "autorNoticia": "MinutoUno",
             "fechaNoticia": "30-04-2021",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "2"
         },
         {
@@ -68,7 +57,7 @@
             "categoria": "",
             "autorNoticia": "",
             "fechaNoticia": "",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "3"
         },
         {
@@ -76,11 +65,11 @@
             "noticiaBreve": "El santiagueño tuvo un auspicioso estreno con la camiseta de los Oklahoma City Thunder en la derrota ante los New Orleans Pelicans",
             "noticiaDetallada": "El pase de faja de Gabriel Deck se metió dentro del Top 10 de la NBA\r\nSin entrenamientos previos con sus compañeros, Gabriel Deck saltó al Chesapeake Energy Arena para hacer su debut oficial en la NB… [+2996 chars]",
             "imagenPrincipal": "https://www.infobae.com/new-resizer/qL07RNTVVZjTMbPEaV4p4NHFUuU=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/UYYLAIAZMJADRLJX5KCXLGB5HY.jpg",
-            "imagenSec": "",
+            "imagenSec": "https://www.infobae.com/new-resizer/qL07RNTVVZjTMbPEaV4p4NHFUuU=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/UYYLAIAZMJADRLJX5KCXLGB5HY.jpg",
             "categoria": "Deportes",
             "autorNoticia": "Infobae",
             "fechaNoticia": "30-04-2021",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "4"
         },
         {
@@ -92,7 +81,7 @@
             "categoria": "Salud",
             "autorNoticia": "Fororecursoshumanos.com",
             "fechaNoticia": "06-05-2021",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "5"
         },
         {
@@ -100,11 +89,11 @@
             "noticiaBreve": "Por la pandemia, no habrá acto ni festejos por el desembarco del líder de La Cámpora en el peronismo bonaerense; los jefes comunales prefieren tratar directamente con Frederic; y Solá no abandona su interés por la rosca en la Provincia",
             "noticiaDetallada": "Pese a que inicialmente generó mucho ruido interno en el Frente de Todos, la coalición de gobierno, la asunción de Máximo Kirchner al frente del PJ bonaerense tendrá lugar el domingo próximo en un ab… [+3996 chars]",
             "imagenPrincipal": "https://resizer.glanacion.com/resizer/oDTsN-dJy9AK8zlwlJONlPwpjLo=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/4UZFTFAN2BE3VE7CAEAPBVHAQY.jpg",
-            "imagenSec": "",
+            "imagenSec": "https://resizer.glanacion.com/resizer/oDTsN-dJy9AK8zlwlJONlPwpjLo=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/4UZFTFAN2BE3VE7CAEAPBVHAQY.jpg",
             "categoria": "Política",
             "autorNoticia": "La Nacion",
             "fechaNoticia": "06-05-2021",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "6"
         },
         {
@@ -112,11 +101,11 @@
             "noticiaBreve": "Enfermeras relatan cómo en momentos de emergencia de salud pública hablar la misma lengua de un paciente y sus familiares, puede ser un \"antídoto\" valioso que evita situaciones de pánico",
             "noticiaDetallada": "Cuando en la primavera pasada un nuevo virus empezó a castigar con fuerza a la ciudad de Nueva York, rápidamente las autoridades de Salud tuvieron claro que un grupo étnico estaba padeciendo la peor … [+5849 chars]",
             "imagenPrincipal": "https://eldiariony.com/wp-content/uploads/sites/2/2020/04/GettyImages-1210290967.jpg?quality=80&strip=all&w=1200",
-            "imagenSec": "",
+            "imagenSec": "https://eldiariony.com/wp-content/uploads/sites/2/2020/04/GettyImages-1210290967.jpg?quality=80&strip=all&w=1200",
             "categoria": "Salud",
             "autorNoticia": "Fernando Martínez",
             "fechaNoticia": "06-05-2021",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "7"
         },
         {
@@ -124,11 +113,11 @@
             "noticiaBreve": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general Nadie sabe cómo se desarrollarán las cosas en el mundo posterior",
             "noticiaDetallada": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general\r\nNadie sabe cómo se desarrollarán las cosas en el mundo posterior a la pandemia. De esa forma, todos somos igu… [+5978 chars]",
             "imagenPrincipal": "https://teknlifenews.com/wp-content/uploads/2021/05/Technology-image.jpeg",
-            "imagenSec": "",
+            "imagenSec": "https://teknlifenews.com/wp-content/uploads/2021/05/Technology-image.jpeg",
             "categoria": "Salud",
             "autorNoticia": "Teknlifenews.com",
             "fechaNoticia": "07-05-2021",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "8"
         },
         {
@@ -136,11 +125,11 @@
             "noticiaBreve": "Su consistencia es muy parecida. Se puede hacer de manera casera siguiendo una receta y el rol que puede cumplir es más preventivo que terapéutico",
             "noticiaDetallada": "El kéfir es una bebida fermentada muy antigua, de por lo menos 6.000 años de antigüedad y es muy diversa en su composición microbiológica, lo cual también tiene su atractivo para nuestra microbiota i… [+3035 chars]",
             "imagenPrincipal": "https://www.infobae.com/new-resizer/0IiNY23ydGQ3WKGYlR5ymKacXy4=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/453MX6BHARFKXBNH2FEBHJL4KI.jpg",
-            "imagenSec": "",
+            "imagenSec": "https://www.infobae.com/new-resizer/0IiNY23ydGQ3WKGYlR5ymKacXy4=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/453MX6BHARFKXBNH2FEBHJL4KI.jpg",
             "categoria": "Salud",
             "autorNoticia": "infobae",
             "fechaNoticia": "07-05-2021",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "9"
         },
         {
@@ -148,11 +137,11 @@
             "noticiaBreve": "Ambos gobiernos mandaron patrulleros para monitorear la situación; los dos países llevan semanas enfrentados por cambios de impuestos al sector",
             "noticiaDetallada": "7 de mayo de 202111:28BRUSELAS (AFP).- Las autoridades de Jersey, la isla más grande del Canal de la Mancha y una dependencia de la Corona británica cercana a la costa norte de Francia, están en aler… [+2839 chars]",
             "imagenPrincipal": "https://resizer.glanacion.com/resizer/c4DxULsQjTWjILgyjvR08xda0OM=/1920x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/NSIJ6J3RWBE6ZFGPZT6EHBYH6Q.JPG",
-            "imagenSec": "",
+            "imagenSec": "https://resizer.glanacion.com/resizer/c4DxULsQjTWjILgyjvR08xda0OM=/1920x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/NSIJ6J3RWBE6ZFGPZT6EHBYH6Q.JPG",
             "categoria": "Actualidad",
             "autorNoticia": "La Nacion",
             "fechaNoticia": "07-05-2021",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "10"
         },
         {
@@ -160,11 +149,11 @@
             "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
             "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
             "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-            "imagenSec": "",
+            "imagenSec": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
             "categoria": "Actualidad",
             "autorNoticia": "La Nacion",
             "fechaNoticia": "06-05-21",
-            "noticiaDestacada": false,
+            "destacada": false,
             "id": "3"
         }
     ],

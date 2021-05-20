@@ -3,11 +3,11 @@ import { Container, ListGroup, Table } from 'react-bootstrap';
 // hoook para usar parametros
 import { useParams } from 'react-router-dom';
 
-import ItemNoticia1 from './ItemNoticia1';
+import ItemNoticia from './ItemNoticia';
 import Swal from 'sweetalert2'
 
 const ListarNoticiasxCateg = () => {
-    // obtener el parametro de la URL
+    // obtener el parametro de la URL, NO de un props
     // console.log(useParams().nombreCategoria);
     const parametroCategoria = useParams().nombreCategoria;
 
@@ -39,15 +39,12 @@ const ListarNoticiasxCateg = () => {
 
     return (
         <Container className='container my-3 py-3 shadow-lg'>
-            <h1 className='text-center my-3 py-3 bg-warning text-light'>Categoria: {parametroCategoria}</h1>
-            {/* definicion de sistema de grillas para las cards de noticias */}
-            {/* <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'> */}
-
-            {/* definicion de tabla de noticias striped bordered hover*/}
+            <h3 className='text-center my-3 py-3 bg-warning text-light'>Categoria: {parametroCategoria}</h3>
             <Table>
                 <thead>
-                    <tr>
+                    <tr className="textoNoticia">
                         <th>Fecha</th>
+                        <th>Autor</th>
                         <th>Titulo</th>
                         <th>Descripción Breve</th>
                         <th>Ver Noticia</th>
@@ -55,7 +52,7 @@ const ListarNoticiasxCateg = () => {
                 </thead>
                 <tbody>
                     {
-                        noticias.map((valor, indice) => <ItemNoticia1 key={indice} info={valor}></ItemNoticia1>)
+                        noticias.map((valor, indice) => <ItemNoticia key={indice} info={valor}></ItemNoticia>)
                     }
                 </tbody>    
             </Table>    

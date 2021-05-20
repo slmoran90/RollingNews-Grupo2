@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Container, Form, Button, Col } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
 // hoook para usar parametros
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 
 const NoticiaCompleta = () => {
     // obtener el parametro de la URL
@@ -36,22 +36,21 @@ const NoticiaCompleta = () => {
     return (
         <Container className="container my-3 py-3 shadow-lg">
             <h3 className="text-center my-3 py-3 bg-warning text-light">
-            {/* {noticiaCompleta.tituloNoticia} */}
             Noticia Completa
             </h3>
 
             <Form className='mx-5'>
                 <Form.Row>
-                    <Form.Group as={Col}>
+                    <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Categoría:</Form.Label>
                         <Form.Control type="text" size="sm" placeholder="Categoría" defaultValue={noticiaCompleta.categoria} disabled />
                     </Form.Group>
-                    <Form.Group as={Col}>
+                    <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Fecha:</Form.Label>
                         <Form.Control type="text" size="sm" placeholder="" defaultValue={noticiaCompleta.fechaNoticia} disabled/>
                     </Form.Group>
 
-                    <Form.Group as={Col}>
+                    <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Autor:</Form.Label>
                         <Form.Control type="text" size="sm" placeholder="Autor" defaultValue={noticiaCompleta.autorNoticia} disabled/>
                     </Form.Group>
@@ -73,35 +72,32 @@ const NoticiaCompleta = () => {
                     <Form.Control as="textarea" rows={10} size="sm" placeholder="Descripción Detallada" defaultValue={noticiaCompleta.noticiaDetallada} disabled />
                 </Form.Group>
 
-                <Form.Row className='border mb-2'>
-                    <Form.Group as={Col}>
+                <Form.Row>
+                    <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Principal:</Form.Label>
                         <Form.Control as="textarea" rows={5} placeholder="Imagen Principal" defaultValue={noticiaCompleta.imagenPrincipal} disabled/>
                     </Form.Group>
 
-                    <Form.Group as={Col} className='text-center mt-3'>
-                        <img width="300px" src={noticiaCompleta.imagenPrincipal} disabled/>
+                    <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
+                        <img className='w-75' src={noticiaCompleta.imagenPrincipal} alt='Imagen Principal de la Noticia'/>
                     </Form.Group>
                 </Form.Row>
 
-                <Form.Row className='border'>
-                    <Form.Group as={Col}>
+                <Form.Row>
+                    <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
                         <Form.Control as="textarea" rows={5} placeholder="Imagen Secundaria" defaultValue={noticiaCompleta.imagenSec} disabled />
                     </Form.Group>
 
-                    <Form.Group as={Col} className='text-center mt-3'>
-                        <img width="300px" src={noticiaCompleta.imagenSec} disabled/>
+                    <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
+                        <img className='w-75' src={noticiaCompleta.imagenSec} alt='Imagen Principal de la Noticia'/>
                     </Form.Group>
                 </Form.Row>
-                <Form.Group>
-                    {/* <Form.Label>Noticia Destacada:</Form.Label> */}
-                    <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticiaCompleta.noticiaDestacada} disabled />
+                <Form.Group className='my-2 pb-2'>
+                    <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticiaCompleta.destacada} disabled />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" block>
-                    Cerrar
-                </Button>
+                <Link className='btn btn-primary text-light mr-3 d-block' to={'/noticias/listar/'+noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>                    
             </Form>
         </Container>
     );

@@ -13,7 +13,7 @@ import { NavLink,Link} from "react-router-dom";
 const Navegacion = () => {
   return (
     <Navbar bg="light" expand="lg">
-      <Container>
+      {/* <Container> */}
         <Row>
           <Col md={12}>
             <Navbar.Brand href="/">
@@ -69,34 +69,34 @@ const Navegacion = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="mr-auto">
                     <NavDropdown title="Admin" id="basic-nav-dropdown">
-                      <NavLink
+                      <Link
                         className="nav-link"
                         exact={true}
                         to="/noticias/listar"
                       >
-                        Listar Noticias
-                      </NavLink>
-                      <NavLink
+                        Noticias
+                      </Link>
+                      <Link
                         className="nav-link"
                         exact={true}
                         to="/categorias/listar"
                       >
-                        Listar Categorias
-                      </NavLink>
-                      <NavLink
+                        Categorias
+                      </Link>
+                      <Link
                         className="nav-link"
                         exact={true}
                         to="/noticias/nueva"
                       >
                         Nueva Noticia
-                      </NavLink>
-                      <NavLink
+                      </Link>
+                      <Link
                         className="nav-link"
                         exact={true}
                         to="/categorias/nueva"
                       >
                         Nueva Categoria
-                      </NavLink>
+                      </Link>
                     </NavDropdown>
                   </Nav>
                 </Navbar.Collapse>
@@ -118,7 +118,7 @@ const Navegacion = () => {
             </Navbar.Collapse>
           </Col>
         </Row>
-      </Container>
+      {/* </Container> */}
     </Navbar>
   );
 };
