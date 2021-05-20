@@ -3,7 +3,7 @@ import { Container, ListGroup, Table } from 'react-bootstrap';
 // hoook para usar parametros
 import { useParams } from 'react-router-dom';
 
-import ItemNoticia from './ItemNoticia';
+import ItemNoticiaxCateg from './ItemNoticiaxCateg';
 import Swal from 'sweetalert2'
 
 const ListarNoticiasxCateg = () => {
@@ -52,7 +52,7 @@ const ListarNoticiasxCateg = () => {
                 </thead>
                 <tbody>
                     {
-                        noticias.map((valor, indice) => <ItemNoticia key={indice} info={valor}></ItemNoticia>)
+                        noticias.map((valor, indice) => <ItemNoticiaxCateg key={indice} info={valor}></ItemNoticiaxCateg>)
                     }
                 </tbody>    
             </Table>    

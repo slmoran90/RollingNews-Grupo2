@@ -10,16 +10,22 @@ import NoticiaCompleta from "./components/noticias/NoticiaCompleta";
 import Error404 from "./components/Error404";
 import Swal from "sweetalert2";
 import Footer from "./components/common/Footer";
+import ListarNoticias from "./components/noticias/ListarNoticias";
 
 function App() {
   // URL donde estan guardadas las categorias
   const URLcategorias = process.env.REACT_APP_API_URLcategorias;
+  // URL donde estan guardadas las noticias
+  const URLnoticias = process.env.REACT_APP_API_URLnoticias;
 
   // state para get de categorias y ejecutar solo en montaje
   const [categorias, setCategorias] = useState([]);
+   // state para get de noticias y ejecutar solo en montaje
+  const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {
     consultarAPIcategorias();
+    consultarAPInoticias();
   }, []);
 
   const consultarAPIcategorias = async () => {
@@ -34,6 +40,25 @@ function App() {
       Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
     }
   };
+
+  // Consultar API noticias
+  const consultarAPInoticias = async () => {
+    try {
+      const respuesta = await fetch(URLnoticias);
+      if (respuesta.status === 200) {
+          const noticiasFiltradas = await respuesta.json();
+          setNoticias(noticiasFiltradas);
+      }
+    } catch (error) {
+      console.log(error);
+      Swal.fire(
+        'Ocurrió un Error!',
+        'Inténtelo en unos minutos.',
+        'error'
+      )
+    }
+  }  
+  //=========================
 
   return (
     // Crear sistema de rutas usando SIEMPRE Router y switch
@@ -69,6 +94,13 @@ function App() {
           <NoticiaCompleta></NoticiaCompleta>
         </Route>
         <Route exact path="/noticias/nueva">
+        </Route>
+        <Route exact path="/noticias/listar">
+          {/* muestra lista de TODAS las noticias */}
+          <ListarNoticias>
+            noticias={noticias}
+            consultarAPInoticias={consultarAPInoticias}
+          </ListarNoticias>
         </Route>
         <Route path="*">
           <Error404></Error404>

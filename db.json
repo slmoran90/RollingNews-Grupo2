@@ -49,18 +49,6 @@
             "id": "2"
         },
         {
-            "tituloNoticia": "",
-            "noticiaBreve": "",
-            "noticiaDetallada": "",
-            "imagenPrincipal": "",
-            "imagenSec": "",
-            "categoria": "",
-            "autorNoticia": "",
-            "fechaNoticia": "",
-            "destacada": false,
-            "id": "3"
-        },
-        {
             "tituloNoticia": "La fiebre por Gabriel Deck: el impactante elogio de su entrenador y su jugada que lo puso en el Top 10 de la NBA",
             "noticiaBreve": "El santiagueño tuvo un auspicioso estreno con la camiseta de los Oklahoma City Thunder en la derrota ante los New Orleans Pelicans",
             "noticiaDetallada": "El pase de faja de Gabriel Deck se metió dentro del Top 10 de la NBA\r\nSin entrenamientos previos con sus compañeros, Gabriel Deck saltó al Chesapeake Energy Arena para hacer su debut oficial en la NB… [+2996 chars]",
@@ -81,7 +69,7 @@
             "categoria": "Salud",
             "autorNoticia": "Fororecursoshumanos.com",
             "fechaNoticia": "06-05-2021",
-            "destacada": false,
+            "destacada": true,
             "id": "5"
         },
         {
