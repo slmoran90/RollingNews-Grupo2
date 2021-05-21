@@ -15,25 +15,24 @@ const Contacto = () => {
     } else {
       setError(false);
     }
+    e.target.reset();
   };
   const formulario = {
     nombreCompleto,
     email, 
     textArea
   };
-
   console.log(formulario);
-
   return (
     <Container>
-      <Form.Row onSubmit={handleSubmit}>
+      <Form.Row>
         <Col className="mx-3">
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <h2 className="text-center">¿En qué te podemos ayudar?</h2>
             <hr />
             <Form.Group>
               <Form.Label>¿que tipo de consulta es?</Form.Label>
-              <Form.Control as="select">
+              <Form.Control as="select" required>
                 <option>Problemas con la página</option>
                 <option>Mala redacción</option>
                 <option>Información equivocada</option>
