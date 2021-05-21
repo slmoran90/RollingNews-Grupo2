@@ -23,6 +23,7 @@ function App() {
 
             if (respuesta.status === 200) {
                 const noticias = await respuesta.json();
+                
                 const arrayDestacadas = noticias.filter(
                     (noticia) => noticia.destacada === "true"
                 );
