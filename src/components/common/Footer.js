@@ -81,13 +81,13 @@ const Footer = () => {
               src="/badge-apple-store.svg"
               alt="logo app store"
               className="mb-2"
-              href="#"
+              href="/error404"
             />
           </Link>
           <br></br>
           <Link>
             <img
-              href="#"
+              href="/error404"
               src="/google-play-badge-bb.svg"
               alt="logo play store"
             />

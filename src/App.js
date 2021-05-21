@@ -3,6 +3,10 @@ import "./App.css";
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Error from './components/Error';
+import Inicio from './components/Inicio';
+
+
 
 
 function App() {
@@ -12,40 +16,12 @@ function App() {
            {/* Navegacion */}
             {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}
             <Switch>
-                <Route exact path="/">
-                    {/*  <PaginaPrincipal /> */}
+                <Route path="/error404">
+                    <Error></Error>
                 </Route>
-                <Route>
-                  {/* <Categorias /> */}
+                <Route path="/">
+                    <Inicio></Inicio>
                 </Route>
-                <Route>
-                 {/*  <AcercaDeNosotros /> */}
-                </Route>
-                <Route>
-                  {/* <Contacto /> */}
-                </Route>
-                <Route exact path="/categorias/nueva">
-                    {/*  <NuevaCategoria
-                        consultarAPI={consultarAPI}
-                    ></NuevaCategoria> */}
-                </Route>
-                <Route exact path="/categorias/listar">
-                    {/* <ListarCategoria
-                        categorias={categorias}
-                        consultarAPI={consultarAPI}
-                    ></ListarCategoria> */}
-                </Route>
-                {/* paso como parametro la Categoria. Se pone ? al final si quiero que no sea olbigatorio */}
-                <Route exact path="/noticias/listar/:nombreCategoria">
-                    {/* muestra noticias por categoria */}
-                    {/* <ListarNoticiasxCateg
-                        consultarAPI={consultarAPI}
-                    ></ListarNoticiasxCateg> */}
-                </Route>
-                <Route exact path="/noticias/noticiaCompleta">
-                    {/* <NoticiaCompleta></NoticiaCompleta> */}
-                </Route>
-                <Route path="*">{/* <Error404></Error404> */}</Route>
             </Switch>
             <Footer></Footer>
         </Router>

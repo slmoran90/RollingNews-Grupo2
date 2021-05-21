@@ -1,5 +1,6 @@
 import React from 'react';
 import {Navbar, Nav, NavDropdown, Button, Row,Col, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const Navegacion = () => {
@@ -20,11 +21,11 @@ const Navegacion = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link className='nav-link' exact={true}> Inicio </Nav.Link>
-          <Nav.Link className='nav-link' exact={true}> Actualidad </Nav.Link>
-          <Nav.Link className='nav-link' exact={true}> Espectáculos </Nav.Link>
-          <Nav.Link className='nav-link' exact={true}> Tecnología </Nav.Link>
-          <Nav.Link className='nav-link' exact={true}> Deportes </Nav.Link>
+          <Link className='nav-link' exact={true}> Inicio </Link>
+          <Link className='nav-link' exact={true}> Actualidad </Link>
+          <Link className='nav-link' exact={true}> Espectáculos </Link>
+          <Link className='nav-link' exact={true}> Tecnología </Link>
+          <Link className='nav-link' exact={true}> Deportes </Link>
           <NavDropdown title="Más Categorías" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Política</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
@@ -47,8 +48,8 @@ const Navegacion = () => {
             Nueva categoría
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link className='nav-link' exact={true}>Nosotros</Nav.Link>
-          <Nav.Link className='nav-link' exact={true}>Contacto</Nav.Link>
+          <Link className='nav-link' exact={true}>Nosotros</Link>
+          <Link className='nav-link' exact={true}>Contacto</Link>
           <Button className="ml-5" variant="outline-success">Iniciar Sesión</Button>
           <Button className="ml-2" variant="outline-success">Registrarse</Button>
         </Nav>
