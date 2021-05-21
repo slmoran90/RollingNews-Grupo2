@@ -6,16 +6,16 @@ const Weather = () => {
     const [userIP, setUserIP] = useState("");
     const [mainTemp, setMainTemp] = useState({}); */
     const [weatherApi, setWeatherApi] = useState({});
-    const [posit, setPosit] = useState({});
+    //const [posit, setPosit] = useState({});
     useEffect(() => {
         consultarApiClima();
-        navigator.geolocation.getCurrentPosition(async position => {
+        /* navigator.geolocation.getCurrentPosition(async position => {
             setPosit({
                 lat: position.coords.latitude,
                 lon: position.coords.longitude
             });
             return;
-        });
+        }); */
     }, [])
     //console.log(posit && posit, 'posicion');
     
