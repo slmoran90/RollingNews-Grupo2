@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, ListGroup, Table } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 // hoook para usar parametros
 import { useParams } from 'react-router-dom';
 

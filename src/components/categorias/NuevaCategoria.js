@@ -21,17 +21,13 @@ const NuevaCategoria = (props) => {
     
     useEffect(() => {
         handleReset();
-        setError(false);
-        setMensajeError('');
     }, []);
     
-    //====== limpiar formulario =========
-    const [validated, setValidated] = useState(false);
+    //====== limpiar formulario ========
     const formRef = useRef(null);
 
     const handleReset = () => {
         formRef.current.reset();
-        setValidated(false);
         setError(false);
         setMensajeError('');
     };
@@ -51,7 +47,6 @@ const NuevaCategoria = (props) => {
 
             //== verifica que NO exista el nombre de categoria ===
             const encontrada = await buscarCategoria();
-            // console.log("encontrada antes de guardar:",encontrada);
             //====================================================
             if (encontrada.length === 0){
                 // === NO EXISTE CATEGORIA => guarda en la API categorias ===
@@ -76,7 +71,6 @@ const NuevaCategoria = (props) => {
                             'success'
                         )
                         //limpiar imputs
-                        setValidated(true);
                         handleReset();
 
                         //actualiza lista de categorias
@@ -121,7 +115,6 @@ const NuevaCategoria = (props) => {
     return (
         <Container className="shadow-lg my-4 py-3 w-75">
         <Form ref={formRef} className="mx-5" onSubmit={handleSubmit}>
-        {/* <Form ref={formRef} validated={validated} className="mx-5" onSubmit={handleSubmit}>      */}
             <h3 className="text-center my-3 py-3 bg-warning text-light">Agregar Nueva Categoría</h3>
             <Form.Group className='py-2'>
                 <Form.Label>Nombre de la Categoría *</Form.Label>

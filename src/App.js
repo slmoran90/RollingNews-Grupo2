@@ -15,13 +15,15 @@ import ListarNoticias from "./components/noticias/ListarNoticias";
 function App() {
   // URL donde estan guardadas las categorias
   const URLcategorias = process.env.REACT_APP_API_URLcategorias;
-  // URL donde estan guardadas las noticias
-  const URLnoticias = process.env.REACT_APP_API_URLnoticias;
 
-  // state para get de categorias y ejecutar solo en montaje
+  // URL donde estan almacenadas las noticias
+    const URLnoticias = process.env.REACT_APP_API_URLnoticias;
+  
+  // state para get de categorias 
   const [categorias, setCategorias] = useState([]);
-   // state para get de noticias y ejecutar solo en montaje
-  const [noticias, setNoticias] = useState([]);
+
+    // state para almacenar resultados del fetch
+    const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {
     consultarAPIcategorias();
@@ -41,29 +43,27 @@ function App() {
     }
   };
 
-  // Consultar API noticias
   const consultarAPInoticias = async () => {
-    try {
-      const respuesta = await fetch(URLnoticias);
-      if (respuesta.status === 200) {
-          const noticiasFiltradas = await respuesta.json();
-          setNoticias(noticiasFiltradas);
-      }
-    } catch (error) {
-      console.log(error);
-      Swal.fire(
-        'Ocurrió un Error!',
-        'Inténtelo en unos minutos.',
-        'error'
-      )
+    // buscar las noticias que tengan las categoria pasada como parametro en la URL
+        try {
+            const respuesta = await fetch(URLnoticias);
+            if (respuesta.status === 200) {
+                const noticiasFiltradas = await respuesta.json();
+                await setNoticias(noticiasFiltradas);
+                // console.log('noticias en app: ',noticiasFiltradas);
+            }
+        } catch (error) {
+            console.log(error);
+            Swal.fire(
+                'Ocurrió un Error!',
+                'Inténtelo en unos minutos.',
+                'error'
+            )
+        }
     }
-  }  
-  //=========================
 
   return (
-    // Crear sistema de rutas usando SIEMPRE Router y switch
     <Router>
-      {/* se invoca el navbar*/}
       <Navegacion></Navegacion>
 
       <Switch>
