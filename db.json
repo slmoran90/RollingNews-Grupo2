@@ -45,7 +45,7 @@
             "categoria": "Actualidad",
             "autorNoticia": "MinutoUno",
             "fechaNoticia": "30-04-2021",
-            "destacada": false,
+            "destacada": true,
             "id": "2"
         },
         {
