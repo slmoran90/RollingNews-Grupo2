@@ -5,7 +5,7 @@ import ItemNoticia from './ItemNoticia';
 import Swal from 'sweetalert2';
 
 const ListarNoticias = (props) => {
-    console.log('PROPS en listar noticias: ', props.children[1].sort())
+    console.log('PROPS en listar noticias: ', props)
     // URL donde estan almacenadas las noticias
     // const URLnoticias = process.env.REACT_APP_API_URLnoticias;
 
@@ -37,7 +37,7 @@ const ListarNoticias = (props) => {
     return (
         <Container className='container my-3 py-3 shadow-lg'>
             <h3 className='text-center my-3 py-3 bg-warning text-light'>Listado de Noticias</h3>
-            <Table>
+            <Table responsive>
                 <thead>
                     <tr className="textoNoticia">
                         <th>Fecha</th>
