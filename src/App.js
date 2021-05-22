@@ -49,7 +49,6 @@ function App() {
             if (respuesta.status === 200) {
                 const noticiasFiltradas = await respuesta.json();
                 setNoticias(noticiasFiltradas);
-                console.log('noticias en app: ',noticiasFiltradas);
             }
         } catch (error) {
             console.log(error);

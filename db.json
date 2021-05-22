@@ -159,18 +159,6 @@
       "id": "13"
     },
     {
-      "tituloNoticia": "PRUEBA DE BORRADO 1 Vacunación contra el coronavirus",
-      "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
-      "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
-      "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-      "imagenSec": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-      "categoria": "Actualidad",
-      "autorNoticia": "La Nacion",
-      "fechaNoticia": "06-05-21",
-      "destacada": true,
-      "id": "12"
-    },
-    {
       "tituloNoticia": "PRUEBA DE BORRADO 2 Vacunación contra el coronavirus",
       "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
       "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
@@ -205,6 +193,18 @@
       "fechaNoticia": "21-05-21",
       "destacada": true,
       "id": "16"
+    },
+    {
+      "tituloNoticia": "PRUEBA BORRADO 2: el turismo interno no estará habilitado y solo podrán viajar esenciales",
+      "noticiaBreve": "Dentro de las nuevas restricciones que regirán hasta el 30 de mayo, el Gobierno suspendió el turismo interno y solo podrán viajar los trabajadores esenciales.",
+      "noticiaDetallada": "Asimismo, ratificó que \"queda habilitado todo el transporte público para esenciales\".\r\n\"Se están revisando (los otros autorizados) en este momento aquellas actividades autorizadas para reducirla a la… [+51 chars]",
+      "imagenPrincipal": "https://media.ambito.com/p/ea98ae3c96d51e0171174d0c8a4c5e86/adjuntos/239/imagenes/038/734/0038734685/1200x675/smart/corte-empresas-colectivos-larga-distancia-turismo12-04-2021.jpg",
+      "imagenSec": "https://media.ambito.com/p/ea98ae3c96d51e0171174d0c8a4c5e86/adjuntos/239/imagenes/038/734/0038734685/1200x675/smart/corte-empresas-colectivos-larga-distancia-turismo12-04-2021.jpg",
+      "categoria": "Política",
+      "autorNoticia": "ámbito.com",
+      "fechaNoticia": "21-05-21",
+      "destacada": true,
+      "id": "18"
     }
   ],
   "posts": [

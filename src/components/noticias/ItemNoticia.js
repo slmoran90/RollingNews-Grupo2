@@ -6,7 +6,7 @@ import { faPencilAlt,faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2'
 
 const ItemNoticia = (props) => {
-    console.log('props en ItemNoticia: ',props)
+    // console.log('props en ItemNoticia: ',props)
 
  // borrar noticia segun el ID
     const eliminaNoticia = (idNoticia)=>{
@@ -35,7 +35,6 @@ const ItemNoticia = (props) => {
                         'La Noticia seleccionada fue correctamente eliminada.',
                         'success'
                     )
-                    //actualizar los datos de la api????????????????????
                     props.consultarAPInoticias();
                 }
             }catch(error){
