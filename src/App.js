@@ -11,6 +11,7 @@ import Error404 from "./components/Error404";
 import Swal from "sweetalert2";
 import Footer from "./components/common/Footer";
 import ListarNoticias from "./components/noticias/ListarNoticias";
+import NuevaNoticia from "./components/noticias/NuevaNoticia";
 
 function App() {
   // URL donde estan guardadas las categorias
@@ -94,6 +95,7 @@ function App() {
           <NoticiaCompleta></NoticiaCompleta>
         </Route>
         <Route exact path="/noticias/nueva">
+          <NuevaNoticia></NuevaNoticia>
         </Route>
         <Route exact path="/noticias/listar">
           {/* muestra lista de TODAS las noticias */}
