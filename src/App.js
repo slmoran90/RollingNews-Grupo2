@@ -30,6 +30,8 @@ function App() {
     consultarAPInoticias();
   }, []);
 
+
+  // funcion GET de categorias
   const consultarAPIcategorias = async () => {
     try {
       const respuesta = await fetch(URLcategorias);
@@ -43,6 +45,7 @@ function App() {
     }
   };
 
+  // funcion GET de noticias
   const consultarAPInoticias = async () => {
         try {
             const respuesta = await fetch(URLnoticias);
