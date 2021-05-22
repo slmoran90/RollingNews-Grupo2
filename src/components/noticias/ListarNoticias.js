@@ -5,13 +5,7 @@ import ItemNoticia from './ItemNoticia';
 import Swal from 'sweetalert2';
 
 const ListarNoticias = (props) => {
-    console.log('PROPS en ListarNoticias: ', props)
-    // console.log('PROPS children[1] array noticias: ', props.children[1])
-    // console.log('PROPS children[0]: ', props.children[0])
-    // console.log('PROPS children[1] array noticias: ', props.children[1])
-    // console.log('PROPS children[2] nombre funcion: ', props.children[2])
-    // console.log('PROPS children[3] consultarAPInoticias: ', props.children[3])
-
+    // console.log('PROPS en ListarNoticias: ', props)
     
     return (
         <Container className='container my-3 py-3 shadow-lg'>
@@ -28,10 +22,8 @@ const ListarNoticias = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                {/* props.children[1] contiene el array de noticias */}
-                {/* props.children[3] contiene la funcion consultarAPInoticias */}
                     {
-                        props.children[1].map((valor, indice) => <ItemNoticia key={indice} info={valor} consultarAPInoticias={props.children[3]}></ItemNoticia>)
+                        props.noticias.map((valor, indice) => <ItemNoticia key={indice} info={valor} consultarAPInoticias={props.consultarAPInoticias}></ItemNoticia>)
                     }
                 </tbody>
             </Table>

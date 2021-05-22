@@ -71,10 +71,10 @@ function App() {
         
         <Route exact path="/noticias/listar">
           {/* muestra lista de TODAS las noticias */}
-          <ListarNoticias>
+          <ListarNoticias
             noticias={noticias}
             consultarAPInoticias={consultarAPInoticias}
-          </ListarNoticias>
+          ></ListarNoticias>
         </Route>
 
         <Route exact path="/categorias/listar">
