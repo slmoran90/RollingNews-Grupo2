@@ -1,39 +1,13 @@
 
-import React, {useEffect,useState} from 'react';
+import React from 'react';
 import { Container, Table } from 'react-bootstrap';
 import ItemNoticia from './ItemNoticia';
 import Swal from 'sweetalert2';
 
 const ListarNoticias = (props) => {
-    console.log('PROPS en listar noticias: ', props.children[1].sort())
-    // URL donde estan almacenadas las noticias
-    // const URLnoticias = process.env.REACT_APP_API_URLnoticias;
-
-     // state para almacenar resultados del fetch
-    // const [noticias, setNoticias] = useState([]);
-
-    // useEffect(async () => {
-    //     consultarAPInoticias();
-    // }, [])
-
-    // const consultarAPInoticias = async () => {
-    // // buscar las noticias que tengan las categoria pasada como parametro en la URL
-    //     try {
-    //         const respuesta = await fetch(URLnoticias);
-    //         if (respuesta.status === 200) {
-    //             const noticiasFiltradas = await respuesta.json();
-    //             setNoticias(noticiasFiltradas);
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-    //         Swal.fire(
-    //             'Ocurrió un Error!',
-    //             'Inténtelo en unos minutos.',
-    //             'error'
-    //         )
-    //     }
-    // }
-
+    console.log('PROPS array de noticias: ', props.children[1])
+    console.log('PROPS consultarAPInoticias: ', props.children[3])
+    
     return (
         <Container className='container my-3 py-3 shadow-lg'>
             <h3 className='text-center my-3 py-3 bg-warning text-light'>Listado de Noticias</h3>
@@ -50,7 +24,7 @@ const ListarNoticias = (props) => {
                 </thead>
                 <tbody>
                     {
-                        props.children[1].map((valor, indice) => <ItemNoticia key={indice} info={valor}></ItemNoticia>)
+                        props.children[1].map((valor, indice) => <ItemNoticia key={indice} info={valor} consultarAPInoticias={props.consultarAPInoticias}></ItemNoticia>)
                     }
                 </tbody>
             </Table>

@@ -44,13 +44,12 @@ function App() {
   };
 
   const consultarAPInoticias = async () => {
-    // buscar las noticias que tengan las categoria pasada como parametro en la URL
         try {
             const respuesta = await fetch(URLnoticias);
             if (respuesta.status === 200) {
                 const noticiasFiltradas = await respuesta.json();
-                await setNoticias(noticiasFiltradas);
-                // console.log('noticias en app: ',noticiasFiltradas);
+                setNoticias(noticiasFiltradas);
+                console.log('noticias en app: ',noticiasFiltradas);
             }
         } catch (error) {
             console.log(error);
@@ -70,31 +69,7 @@ function App() {
         <Route exact path="/">
           {/* llamar al componente inicio */}
         </Route>
-        <Route exact path="/categorias/nueva">
-          {/* permite el alta de una nueva categoria */}
-          <NuevaCategoria
-            consultarAPIcategorias={consultarAPIcategorias}
-          ></NuevaCategoria>
-        </Route>
-        <Route exact path="/categorias/listar">
-          {/* muestra lista de categorias existentes */}
-          <ListarCategoria
-            categorias={categorias}
-            consultarAPIcategorias={consultarAPIcategorias}
-          ></ListarCategoria>
-        </Route>
-        <Route exact path="/noticias/listar/:nombreCategoria">
-          {/* muestra lista de noticias de una categoria */}
-          <ListarNoticiasxCateg
-            consultarAPIcategorias={consultarAPIcategorias}
-          ></ListarNoticiasxCateg>
-        </Route>
-        <Route exact path="/noticias/noticiaCompleta/:id">
-          {/* muestra la noticia completa, seleccionada en la lista de noticias */}
-          <NoticiaCompleta></NoticiaCompleta>
-        </Route>
-        <Route exact path="/noticias/nueva">
-        </Route>
+        
         <Route exact path="/noticias/listar">
           {/* muestra lista de TODAS las noticias */}
           <ListarNoticias>
@@ -102,6 +77,37 @@ function App() {
             consultarAPInoticias={consultarAPInoticias}
           </ListarNoticias>
         </Route>
+
+        <Route exact path="/categorias/listar">
+          {/* muestra lista de categorias existentes */}
+          <ListarCategoria
+            categorias={categorias}
+            consultarAPIcategorias={consultarAPIcategorias}
+          ></ListarCategoria>
+        </Route>
+        
+        <Route exact path="/noticias/listar/:nombreCategoria">
+          {/* muestra lista de noticias de una categoria */}
+          <ListarNoticiasxCateg
+            consultarAPIcategorias={consultarAPIcategorias}
+          ></ListarNoticiasxCateg>
+        </Route>
+        
+        <Route exact path="/noticias/noticiaCompleta/:id">
+          {/* muestra la noticia completa, seleccionada en la lista de noticia de una categoria */}
+          <NoticiaCompleta></NoticiaCompleta>
+        </Route>
+        
+        <Route exact path="/categorias/nueva">
+          {/* permite el alta de una nueva categoria */}
+          <NuevaCategoria
+            consultarAPIcategorias={consultarAPIcategorias}
+          ></NuevaCategoria>
+        </Route>
+        
+        <Route exact path="/noticias/nueva">
+        </Route>
+        
         <Route path="*">
           <Error404></Error404>
         </Route>

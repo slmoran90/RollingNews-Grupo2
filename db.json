@@ -1,161 +1,227 @@
 {
-    "categorias": [{
-            "nombreCategoria": "Actualidad",
-            "id": "1"
-        },
-        {
-            "nombreCategoria": "Deportes",
-            "id": "2"
-        },
-        {
-            "nombreCategoria": "Tecnología",
-            "id": "vu67msC"
-        },
-        {
-            "nombreCategoria": "Política",
-            "id": "01XZMun"
-        },
-        {
-            "nombreCategoria": "Salud",
-            "id": "-HP-A5G"
-        },
-        {
-            "nombreCategoria": "Espectáculos",
-            "id": "wiJF4NF"
-        }
-    ],
-    "noticias": [{
-            "tituloNoticia": "La economía de Estados Unidos se recupera: creció 6,4% en el primer trimestre de 2021",
-            "noticiaBreve": "La reapertura de empresas y el aumento del gasto también hicieron subir los precios, con un aumento de la inflación del 3,5 por ciento en el mismo periodo.  En otra señal positiva, el número de estadounidenses que solicitaron beneficios por desempleo se reduj…",
-            "noticiaDetallada": "La economía de Estados Unidos creció un 6,4% en el primer trimestre de este año por una recuperación del consumo y un aumento del gasto público, que reflejan la recuperación en marcha que va dejando … [+3812 chars]",
-            "imagenPrincipal": "https://www.infobae.com/new-resizer/IELAolN_kbQVYpFhCcCjcoQP9z0=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/IHVE4QRFX3BXSU56NL5IV7UKQE.jpg",
-            "imagenSec": "https://www.infobae.com/new-resizer/IELAolN_kbQVYpFhCcCjcoQP9z0=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/IHVE4QRFX3BXSU56NL5IV7UKQE.jpg",
-            "categoria": "Negocios",
-            "autorNoticia": "infobae",
-            "fechaNoticia": "29-04-2021",
-            "destacada": false,
-            "id": "1"
-        },
-        {
-            "tituloNoticia": "Coronavirus: Alberto Fernández anunció que siguen las mismas restricciones en el AMBA hasta el 21 de mayo",
-            "noticiaBreve": "Las clases seguirán exclusivamente a distancia en lugares de alarma epidemiológica\", informó el Presidente. Establecen cuatro zonas sanitarias para el país.",
-            "noticiaDetallada": "Las próximas semanas pueden llegar a ser muy duras; debemos continuar con medidas\", afirmó el mandatario.\r\nAlberto Fernándezagregó que \"para el conjunto del país hasta el 21 de mayo continúan las mi… [+2803 chars]",
-            "imagenPrincipal": "https://media.minutouno.com/p/bd540010430f1a0de88dfc0ee04dcad2/adjuntos/150/imagenes/038/803/0038803250/alberto-fernandezjpeg.jpeg",
-            "imagenSec": "https://media.minutouno.com/p/bd540010430f1a0de88dfc0ee04dcad2/adjuntos/150/imagenes/038/803/0038803250/alberto-fernandezjpeg.jpeg",
-            "categoria": "Actualidad",
-            "autorNoticia": "MinutoUno",
-            "fechaNoticia": "30-04-2021",
-            "destacada": false,
-            "id": "2"
-        },
-        {
-            "tituloNoticia": "La fiebre por Gabriel Deck: el impactante elogio de su entrenador y su jugada que lo puso en el Top 10 de la NBA",
-            "noticiaBreve": "El santiagueño tuvo un auspicioso estreno con la camiseta de los Oklahoma City Thunder en la derrota ante los New Orleans Pelicans",
-            "noticiaDetallada": "El pase de faja de Gabriel Deck se metió dentro del Top 10 de la NBA\r\nSin entrenamientos previos con sus compañeros, Gabriel Deck saltó al Chesapeake Energy Arena para hacer su debut oficial en la NB… [+2996 chars]",
-            "imagenPrincipal": "https://www.infobae.com/new-resizer/qL07RNTVVZjTMbPEaV4p4NHFUuU=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/UYYLAIAZMJADRLJX5KCXLGB5HY.jpg",
-            "imagenSec": "https://www.infobae.com/new-resizer/qL07RNTVVZjTMbPEaV4p4NHFUuU=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/UYYLAIAZMJADRLJX5KCXLGB5HY.jpg",
-            "categoria": "Deportes",
-            "autorNoticia": "Infobae",
-            "fechaNoticia": "30-04-2021",
-            "destacada": false,
-            "id": "4"
-        },
-        {
-            "tituloNoticia": "Una decena de profesionales forman el jurado de los VII Premios Medicina y Solidaridad de DKV, una edición especial COVID-19",
-            "noticiaBreve": "DKV ha confirmado el jurado de los VII Premios Medicina y Solidaridad de DKV, una edición especial COVID-19 y que contará con 3 categorías.",
-            "noticiaDetallada": "DKV ha confirmado el jurado de los VII premios medicina y solidaridad de DKV, una edición especial COVID-19 y que contará con 3 categorías. Premio Organización Solidaria, Premio al Profesional Sanita… [+5016 chars]",
-            "imagenPrincipal": "https://www.fororecursoshumanos.com/wp-content/uploads/2021/05/Premios-medicina.jpg",
-            "imagenSec": "https://www.fororecursoshumanos.com/wp-content/uploads/2021/05/Premios-medicina.jpg",
-            "categoria": "Salud",
-            "autorNoticia": "Fororecursoshumanos.com",
-            "fechaNoticia": "06-05-2021",
-            "destacada": true,
-            "id": "5"
-        },
-        {
-            "tituloNoticia": "La interna oficialista: Máximo Kirchner asume el PJ con perfil bajo y los intendentes puentean a Sergio Berni",
-            "noticiaBreve": "Por la pandemia, no habrá acto ni festejos por el desembarco del líder de La Cámpora en el peronismo bonaerense; los jefes comunales prefieren tratar directamente con Frederic; y Solá no abandona su interés por la rosca en la Provincia",
-            "noticiaDetallada": "Pese a que inicialmente generó mucho ruido interno en el Frente de Todos, la coalición de gobierno, la asunción de Máximo Kirchner al frente del PJ bonaerense tendrá lugar el domingo próximo en un ab… [+3996 chars]",
-            "imagenPrincipal": "https://resizer.glanacion.com/resizer/oDTsN-dJy9AK8zlwlJONlPwpjLo=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/4UZFTFAN2BE3VE7CAEAPBVHAQY.jpg",
-            "imagenSec": "https://resizer.glanacion.com/resizer/oDTsN-dJy9AK8zlwlJONlPwpjLo=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/4UZFTFAN2BE3VE7CAEAPBVHAQY.jpg",
-            "categoria": "Política",
-            "autorNoticia": "La Nacion",
-            "fechaNoticia": "06-05-2021",
-            "destacada": false,
-            "id": "6"
-        },
-        {
-            "tituloNoticia": "Semana de las Enfermeras: destacan que el español pasó a ser un “medicina vital”",
-            "noticiaBreve": "Enfermeras relatan cómo en momentos de emergencia de salud pública hablar la misma lengua de un paciente y sus familiares, puede ser un \"antídoto\" valioso que evita situaciones de pánico",
-            "noticiaDetallada": "Cuando en la primavera pasada un nuevo virus empezó a castigar con fuerza a la ciudad de Nueva York, rápidamente las autoridades de Salud tuvieron claro que un grupo étnico estaba padeciendo la peor … [+5849 chars]",
-            "imagenPrincipal": "https://eldiariony.com/wp-content/uploads/sites/2/2020/04/GettyImages-1210290967.jpg?quality=80&strip=all&w=1200",
-            "imagenSec": "https://eldiariony.com/wp-content/uploads/sites/2/2020/04/GettyImages-1210290967.jpg?quality=80&strip=all&w=1200",
-            "categoria": "Salud",
-            "autorNoticia": "Fernando Martínez",
-            "fechaNoticia": "06-05-2021",
-            "destacada": false,
-            "id": "7"
-        },
-        {
-            "tituloNoticia": "Las Megatendencias Del Futuro: El Mercado Editorial De Educación En Medicina General Presenta Oportunidades A Largo Plazo Para 2030",
-            "noticiaBreve": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general Nadie sabe cómo se desarrollarán las cosas en el mundo posterior",
-            "noticiaDetallada": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general\r\nNadie sabe cómo se desarrollarán las cosas en el mundo posterior a la pandemia. De esa forma, todos somos igu… [+5978 chars]",
-            "imagenPrincipal": "https://teknlifenews.com/wp-content/uploads/2021/05/Technology-image.jpeg",
-            "imagenSec": "https://teknlifenews.com/wp-content/uploads/2021/05/Technology-image.jpeg",
-            "categoria": "Salud",
-            "autorNoticia": "Teknlifenews.com",
-            "fechaNoticia": "07-05-2021",
-            "destacada": false,
-            "id": "8"
-        },
-        {
-            "tituloNoticia": "El kéfir, la bebida similar al yogur que tiene grandes beneficios para la salud",
-            "noticiaBreve": "Su consistencia es muy parecida. Se puede hacer de manera casera siguiendo una receta y el rol que puede cumplir es más preventivo que terapéutico",
-            "noticiaDetallada": "El kéfir es una bebida fermentada muy antigua, de por lo menos 6.000 años de antigüedad y es muy diversa en su composición microbiológica, lo cual también tiene su atractivo para nuestra microbiota i… [+3035 chars]",
-            "imagenPrincipal": "https://www.infobae.com/new-resizer/0IiNY23ydGQ3WKGYlR5ymKacXy4=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/453MX6BHARFKXBNH2FEBHJL4KI.jpg",
-            "imagenSec": "https://www.infobae.com/new-resizer/0IiNY23ydGQ3WKGYlR5ymKacXy4=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/453MX6BHARFKXBNH2FEBHJL4KI.jpg",
-            "categoria": "Salud",
-            "autorNoticia": "infobae",
-            "fechaNoticia": "07-05-2021",
-            "destacada": false,
-            "id": "9"
-        },
-        {
-            "tituloNoticia": "Tensión en el Canal de la Mancha: Gran Bretaña y Francia mandan buques militares a una isla por una protesta de pesqueros",
-            "noticiaBreve": "Ambos gobiernos mandaron patrulleros para monitorear la situación; los dos países llevan semanas enfrentados por cambios de impuestos al sector",
-            "noticiaDetallada": "7 de mayo de 202111:28BRUSELAS (AFP).- Las autoridades de Jersey, la isla más grande del Canal de la Mancha y una dependencia de la Corona británica cercana a la costa norte de Francia, están en aler… [+2839 chars]",
-            "imagenPrincipal": "https://resizer.glanacion.com/resizer/c4DxULsQjTWjILgyjvR08xda0OM=/1920x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/NSIJ6J3RWBE6ZFGPZT6EHBYH6Q.JPG",
-            "imagenSec": "https://resizer.glanacion.com/resizer/c4DxULsQjTWjILgyjvR08xda0OM=/1920x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/NSIJ6J3RWBE6ZFGPZT6EHBYH6Q.JPG",
-            "categoria": "Actualidad",
-            "autorNoticia": "La Nacion",
-            "fechaNoticia": "07-05-2021",
-            "destacada": false,
-            "id": "10"
-        },
-        {
-            "tituloNoticia": "Vacunación contra el coronavirus: la provincia sumó a embarazadas con patologías y personas con VIH a los grupos de riesgo",
-            "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
-            "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
-            "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-            "imagenSec": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-            "categoria": "Actualidad",
-            "autorNoticia": "La Nacion",
-            "fechaNoticia": "06-05-21",
-            "destacada": false,
-            "id": "3"
-        }
-    ],
-    "posts": [{
-        "id": 1,
-        "title": "json-server",
-        "author": "typicode"
-    }],
-    "comments": [{
-        "id": 1,
-        "body": "some comment",
-        "postId": 1
-    }],
-    "profile": {
-        "name": "typicode"
+  "categorias": [
+    {
+      "nombreCategoria": "Actualidad",
+      "id": "1"
+    },
+    {
+      "nombreCategoria": "Deportes",
+      "id": "2"
+    },
+    {
+      "nombreCategoria": "Política",
+      "id": "01XZMun"
+    },
+    {
+      "nombreCategoria": "Salud",
+      "id": "-HP-A5G"
+    },
+    {
+      "nombreCategoria": "Espectáculos",
+      "id": "wiJF4NF"
+    },
+    {
+      "nombreCategoria": "Negocios",
+      "id": "NtEKynm"
     }
+  ],
+  "noticias": [
+    {
+      "tituloNoticia": "La economía de Estados Unidos se recupera: creció 6,4% en el primer trimestre de 2021",
+      "noticiaBreve": "La reapertura de empresas y el aumento del gasto también hicieron subir los precios, con un aumento de la inflación del 3,5 por ciento en el mismo periodo.  En otra señal positiva, el número de estadounidenses que solicitaron beneficios por desempleo se reduj…",
+      "noticiaDetallada": "La economía de Estados Unidos creció un 6,4% en el primer trimestre de este año por una recuperación del consumo y un aumento del gasto público, que reflejan la recuperación en marcha que va dejando … [+3812 chars]",
+      "imagenPrincipal": "https://www.infobae.com/new-resizer/IELAolN_kbQVYpFhCcCjcoQP9z0=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/IHVE4QRFX3BXSU56NL5IV7UKQE.jpg",
+      "imagenSec": "https://www.infobae.com/new-resizer/IELAolN_kbQVYpFhCcCjcoQP9z0=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/IHVE4QRFX3BXSU56NL5IV7UKQE.jpg",
+      "categoria": "Negocios",
+      "autorNoticia": "infobae",
+      "fechaNoticia": "29-04-2021",
+      "destacada": false,
+      "id": "1"
+    },
+    {
+      "tituloNoticia": "Coronavirus: Alberto Fernández anunció que siguen las mismas restricciones en el AMBA hasta el 21 de mayo",
+      "noticiaBreve": "Las clases seguirán exclusivamente a distancia en lugares de alarma epidemiológica\", informó el Presidente. Establecen cuatro zonas sanitarias para el país.",
+      "noticiaDetallada": "Las próximas semanas pueden llegar a ser muy duras; debemos continuar con medidas\", afirmó el mandatario.\r\nAlberto Fernándezagregó que \"para el conjunto del país hasta el 21 de mayo continúan las mi… [+2803 chars]",
+      "imagenPrincipal": "https://media.minutouno.com/p/bd540010430f1a0de88dfc0ee04dcad2/adjuntos/150/imagenes/038/803/0038803250/alberto-fernandezjpeg.jpeg",
+      "imagenSec": "https://media.minutouno.com/p/bd540010430f1a0de88dfc0ee04dcad2/adjuntos/150/imagenes/038/803/0038803250/alberto-fernandezjpeg.jpeg",
+      "categoria": "Actualidad",
+      "autorNoticia": "MinutoUno",
+      "fechaNoticia": "30-04-2021",
+      "destacada": false,
+      "id": "2"
+    },
+    {
+      "tituloNoticia": "La fiebre por Gabriel Deck: el impactante elogio de su entrenador y su jugada que lo puso en el Top 10 de la NBA",
+      "noticiaBreve": "El santiagueño tuvo un auspicioso estreno con la camiseta de los Oklahoma City Thunder en la derrota ante los New Orleans Pelicans",
+      "noticiaDetallada": "El pase de faja de Gabriel Deck se metió dentro del Top 10 de la NBA\r\nSin entrenamientos previos con sus compañeros, Gabriel Deck saltó al Chesapeake Energy Arena para hacer su debut oficial en la NB… [+2996 chars]",
+      "imagenPrincipal": "https://www.infobae.com/new-resizer/qL07RNTVVZjTMbPEaV4p4NHFUuU=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/UYYLAIAZMJADRLJX5KCXLGB5HY.jpg",
+      "imagenSec": "https://www.infobae.com/new-resizer/qL07RNTVVZjTMbPEaV4p4NHFUuU=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/UYYLAIAZMJADRLJX5KCXLGB5HY.jpg",
+      "categoria": "Deportes",
+      "autorNoticia": "Infobae",
+      "fechaNoticia": "30-04-2021",
+      "destacada": false,
+      "id": "4"
+    },
+    {
+      "tituloNoticia": "Una decena de profesionales forman el jurado de los VII Premios Medicina y Solidaridad de DKV, una edición especial COVID-19",
+      "noticiaBreve": "DKV ha confirmado el jurado de los VII Premios Medicina y Solidaridad de DKV, una edición especial COVID-19 y que contará con 3 categorías.",
+      "noticiaDetallada": "DKV ha confirmado el jurado de los VII premios medicina y solidaridad de DKV, una edición especial COVID-19 y que contará con 3 categorías. Premio Organización Solidaria, Premio al Profesional Sanita… [+5016 chars]",
+      "imagenPrincipal": "https://www.fororecursoshumanos.com/wp-content/uploads/2021/05/Premios-medicina.jpg",
+      "imagenSec": "https://www.fororecursoshumanos.com/wp-content/uploads/2021/05/Premios-medicina.jpg",
+      "categoria": "Salud",
+      "autorNoticia": "Fororecursoshumanos.com",
+      "fechaNoticia": "06-05-2021",
+      "destacada": true,
+      "id": "5"
+    },
+    {
+      "tituloNoticia": "La interna oficialista: Máximo Kirchner asume el PJ con perfil bajo y los intendentes puentean a Sergio Berni",
+      "noticiaBreve": "Por la pandemia, no habrá acto ni festejos por el desembarco del líder de La Cámpora en el peronismo bonaerense; los jefes comunales prefieren tratar directamente con Frederic; y Solá no abandona su interés por la rosca en la Provincia",
+      "noticiaDetallada": "Pese a que inicialmente generó mucho ruido interno en el Frente de Todos, la coalición de gobierno, la asunción de Máximo Kirchner al frente del PJ bonaerense tendrá lugar el domingo próximo en un ab… [+3996 chars]",
+      "imagenPrincipal": "https://resizer.glanacion.com/resizer/oDTsN-dJy9AK8zlwlJONlPwpjLo=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/4UZFTFAN2BE3VE7CAEAPBVHAQY.jpg",
+      "imagenSec": "https://resizer.glanacion.com/resizer/oDTsN-dJy9AK8zlwlJONlPwpjLo=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/4UZFTFAN2BE3VE7CAEAPBVHAQY.jpg",
+      "categoria": "Política",
+      "autorNoticia": "La Nacion",
+      "fechaNoticia": "06-05-2021",
+      "destacada": false,
+      "id": "6"
+    },
+    {
+      "tituloNoticia": "Semana de las Enfermeras: destacan que el español pasó a ser un “medicina vital”",
+      "noticiaBreve": "Enfermeras relatan cómo en momentos de emergencia de salud pública hablar la misma lengua de un paciente y sus familiares, puede ser un \"antídoto\" valioso que evita situaciones de pánico",
+      "noticiaDetallada": "Cuando en la primavera pasada un nuevo virus empezó a castigar con fuerza a la ciudad de Nueva York, rápidamente las autoridades de Salud tuvieron claro que un grupo étnico estaba padeciendo la peor … [+5849 chars]",
+      "imagenPrincipal": "https://eldiariony.com/wp-content/uploads/sites/2/2020/04/GettyImages-1210290967.jpg?quality=80&strip=all&w=1200",
+      "imagenSec": "https://eldiariony.com/wp-content/uploads/sites/2/2020/04/GettyImages-1210290967.jpg?quality=80&strip=all&w=1200",
+      "categoria": "Salud",
+      "autorNoticia": "Fernando Martínez",
+      "fechaNoticia": "06-05-2021",
+      "destacada": false,
+      "id": "7"
+    },
+    {
+      "tituloNoticia": "Las Megatendencias Del Futuro: El Mercado Editorial De Educación En Medicina General Presenta Oportunidades A Largo Plazo Para 2030",
+      "noticiaBreve": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general Nadie sabe cómo se desarrollarán las cosas en el mundo posterior",
+      "noticiaDetallada": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general\r\nNadie sabe cómo se desarrollarán las cosas en el mundo posterior a la pandemia. De esa forma, todos somos igu… [+5978 chars]",
+      "imagenPrincipal": "https://teknlifenews.com/wp-content/uploads/2021/05/Technology-image.jpeg",
+      "imagenSec": "https://teknlifenews.com/wp-content/uploads/2021/05/Technology-image.jpeg",
+      "categoria": "Salud",
+      "autorNoticia": "Teknlifenews.com",
+      "fechaNoticia": "07-05-2021",
+      "destacada": false,
+      "id": "8"
+    },
+    {
+      "tituloNoticia": "El kéfir, la bebida similar al yogur que tiene grandes beneficios para la salud",
+      "noticiaBreve": "Su consistencia es muy parecida. Se puede hacer de manera casera siguiendo una receta y el rol que puede cumplir es más preventivo que terapéutico",
+      "noticiaDetallada": "El kéfir es una bebida fermentada muy antigua, de por lo menos 6.000 años de antigüedad y es muy diversa en su composición microbiológica, lo cual también tiene su atractivo para nuestra microbiota i… [+3035 chars]",
+      "imagenPrincipal": "https://www.infobae.com/new-resizer/0IiNY23ydGQ3WKGYlR5ymKacXy4=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/453MX6BHARFKXBNH2FEBHJL4KI.jpg",
+      "imagenSec": "https://www.infobae.com/new-resizer/0IiNY23ydGQ3WKGYlR5ymKacXy4=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/453MX6BHARFKXBNH2FEBHJL4KI.jpg",
+      "categoria": "Salud",
+      "autorNoticia": "infobae",
+      "fechaNoticia": "07-05-2021",
+      "destacada": false,
+      "id": "9"
+    },
+    {
+      "tituloNoticia": "Tensión en el Canal de la Mancha: Gran Bretaña y Francia mandan buques militares a una isla por una protesta de pesqueros",
+      "noticiaBreve": "Ambos gobiernos mandaron patrulleros para monitorear la situación; los dos países llevan semanas enfrentados por cambios de impuestos al sector",
+      "noticiaDetallada": "7 de mayo de 202111:28BRUSELAS (AFP).- Las autoridades de Jersey, la isla más grande del Canal de la Mancha y una dependencia de la Corona británica cercana a la costa norte de Francia, están en aler… [+2839 chars]",
+      "imagenPrincipal": "https://resizer.glanacion.com/resizer/c4DxULsQjTWjILgyjvR08xda0OM=/1920x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/NSIJ6J3RWBE6ZFGPZT6EHBYH6Q.JPG",
+      "imagenSec": "https://resizer.glanacion.com/resizer/c4DxULsQjTWjILgyjvR08xda0OM=/1920x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/NSIJ6J3RWBE6ZFGPZT6EHBYH6Q.JPG",
+      "categoria": "Actualidad",
+      "autorNoticia": "La Nacion",
+      "fechaNoticia": "07-05-2021",
+      "destacada": false,
+      "id": "10"
+    },
+    {
+      "tituloNoticia": "Vacunación contra el coronavirus: la provincia sumó a embarazadas con patologías y personas con VIH a los grupos de riesgo",
+      "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
+      "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
+      "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
+      "imagenSec": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
+      "categoria": "Actualidad",
+      "autorNoticia": "La Nacion",
+      "fechaNoticia": "06-05-21",
+      "destacada": false,
+      "id": "3"
+    },
+    {
+      "tituloNoticia": "Lufthansa: los Thiele venden 33 millones de acciones",
+      "noticiaBreve": "La familia que hasta ahora es la segunda mayor propietaria de Lufthansa (después del Gobierno federal alemán, que ha convertido sus ayudas en capital)",
+      "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
+      "imagenPrincipal": "https://www.preferente.com/wp-content/uploads/2021/05/Lufthansa.jpg",
+      "imagenSec": "https://www.preferente.com/wp-content/uploads/2021/05/Lufthansa.jpg",
+      "categoria": "Negocios",
+      "autorNoticia": "Revista de turismo Preferente.com",
+      "fechaNoticia": "21-05-21",
+      "destacada": true,
+      "id": "13"
+    },
+    {
+      "tituloNoticia": "PRUEBA DE BORRADO 1 Vacunación contra el coronavirus",
+      "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
+      "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
+      "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
+      "imagenSec": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
+      "categoria": "Actualidad",
+      "autorNoticia": "La Nacion",
+      "fechaNoticia": "06-05-21",
+      "destacada": true,
+      "id": "12"
+    },
+    {
+      "tituloNoticia": "PRUEBA DE BORRADO 2 Vacunación contra el coronavirus",
+      "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
+      "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
+      "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
+      "imagenSec": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
+      "categoria": "Actualidad",
+      "autorNoticia": "La Nacion",
+      "fechaNoticia": "06-05-21",
+      "destacada": true,
+      "id": "14"
+    },
+    {
+      "tituloNoticia": "Otros dos casos más de coronavirus en River tras la victoria ante Independiente Santa Fe",
+      "noticiaBreve": "Según informó el periodista Hernán Castillo para TNT Sports, el lateral izquierdo y el volante del conjunto dirigido por Marcelo Gallardo se suman a los contagiados de COVID-19",
+      "noticiaDetallada": "RiverPlate sufrió un brote de COVID-19 muy fuerte antes de enfrentar a Boca Juniors en el Superclásico por la Copa de la Liga. Quedó eliminado por penales y luego metió un triunfo épico ante Independ… [+529 chars]",
+      "imagenPrincipal": "https://tntsports.com.ar/__export/1621607486808/sites/tntsports/img/2021/01/06/00021345-08_1.jpg_718837075.jpg",
+      "imagenSec": "https://tntsports.com.ar/__export/1621607486808/sites/tntsports/img/2021/01/06/00021345-08_1.jpg_718837075.jpg",
+      "categoria": "Deportes",
+      "autorNoticia": "TNT Sports",
+      "fechaNoticia": "21-05-21",
+      "destacada": true,
+      "id": "15"
+    },
+    {
+      "tituloNoticia": "Nuevas restricciones: el turismo interno no estará habilitado y solo podrán viajar esenciales",
+      "noticiaBreve": "Dentro de las nuevas restricciones que regirán hasta el 30 de mayo, el Gobierno suspendió el turismo interno y solo podrán viajar los trabajadores esenciales.",
+      "noticiaDetallada": "Asimismo, ratificó que \"queda habilitado todo el transporte público para esenciales\".\r\n\"Se están revisando (los otros autorizados) en este momento aquellas actividades autorizadas para reducirla a la… [+51 chars]",
+      "imagenPrincipal": "https://media.ambito.com/p/ea98ae3c96d51e0171174d0c8a4c5e86/adjuntos/239/imagenes/038/734/0038734685/1200x675/smart/corte-empresas-colectivos-larga-distancia-turismo12-04-2021.jpg",
+      "imagenSec": "https://media.ambito.com/p/ea98ae3c96d51e0171174d0c8a4c5e86/adjuntos/239/imagenes/038/734/0038734685/1200x675/smart/corte-empresas-colectivos-larga-distancia-turismo12-04-2021.jpg",
+      "categoria": "Política",
+      "autorNoticia": "ámbito.com",
+      "fechaNoticia": "21-05-21",
+      "destacada": true,
+      "id": "16"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
