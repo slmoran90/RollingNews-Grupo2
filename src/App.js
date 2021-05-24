@@ -12,6 +12,7 @@ import Swal from "sweetalert2";
 import Footer from "./components/common/Footer";
 import ListarNoticias from "./components/noticias/ListarNoticias";
 import NuevaNoticia from "./components/noticias/NuevaNoticia";
+import EditarNoticia from "./components/noticias/EditarNoticia";
 
 
 function App() {
@@ -124,6 +125,9 @@ function App() {
             noticias={noticias}
             consultarAPInoticias={consultarAPInoticias}>
           </ListarNoticias>
+        </Route>
+        <Route exact path="/noticias/editar">
+          <EditarNoticia></EditarNoticia>
         </Route>
         <Route path="">
           <Error404></Error404>
