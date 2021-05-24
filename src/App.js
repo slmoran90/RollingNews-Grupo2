@@ -13,6 +13,7 @@ import Footer from "./components/common/Footer";
 import ListarNoticias from "./components/noticias/ListarNoticias";
 import NuevaNoticia from "./components/noticias/NuevaNoticia";
 
+
 function App() {
   // URL donde estan guardadas las categorias
   const URLcategorias = process.env.REACT_APP_API_URLcategorias;
@@ -63,6 +64,25 @@ function App() {
         }
     }
 
+  // const [noticia, setNoticia] = useState([]);
+  // useEffect(()=>{
+  //   consultarAPI();
+  // },[]);
+
+  // const consultarAPI = async()=>{
+  //   try{
+  //     const respuesta = await fetch('http://localhost:3004/nuevaNoticia');
+  //     console.log(respuesta);
+  //     if(respuesta.status === 200){
+  //       setNoticia(await respuesta.json());
+  //     }
+
+  //   }catch(error){
+  //     console.log(error);
+  //   }
+  // }
+
+
   return (
     <Router>
       <Navegacion></Navegacion>
@@ -95,16 +115,17 @@ function App() {
           <NoticiaCompleta></NoticiaCompleta>
         </Route>
         <Route exact path="/noticias/nueva">
-          <NuevaNoticia></NuevaNoticia>
+          <NuevaNoticia noticias={noticias}
+            consultarAPInoticias={consultarAPInoticias}></NuevaNoticia>
         </Route>
         <Route exact path="/noticias/listar">
           {/* muestra lista de TODAS las noticias */}
-          <ListarNoticias>
+          <ListarNoticias
             noticias={noticias}
-            consultarAPInoticias={consultarAPInoticias}
+            consultarAPInoticias={consultarAPInoticias}>
           </ListarNoticias>
         </Route>
-        <Route path="*">
+        <Route path="">
           <Error404></Error404>
         </Route>
       </Switch>
