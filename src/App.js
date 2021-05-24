@@ -6,9 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
 import { useState } from "react";
 import { useEffect } from "react";
+import ComponenteNoticia from "./components/ComponenteNoticia";
 
 function App() {
-    // const URLjsonServerNoticias = process.env.NOTICIAS_URL;
+    const URLjsonServerNoticias = process.env.REACT_APP_API_NOTICIAS_URL;
 
     const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
     const [noticiasEco, setNoticiasEco] = useState([]);
@@ -19,7 +20,7 @@ function App() {
 
     const cargarNoticias = async () => {
         try {
-            const respuesta = await fetch("http://localhost:3004/noticias");
+            const respuesta = await fetch(URLjsonServerNoticias);
 
             if (respuesta.status === 200) {
                 const noticias = await respuesta.json();
@@ -68,6 +69,9 @@ function App() {
                         economia={noticiasEco}
                         deportes={noticiasDeportes}
                     />
+                </Route>
+                <Route exact path="/noticia/:id">
+                  <ComponenteNoticia />
                 </Route>
                 <Route>{/* <Categorias /> */}</Route>
                 <Route>{/*  <AcercaDeNosotros /> */}</Route>
