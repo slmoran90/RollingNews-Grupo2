@@ -12,7 +12,7 @@ const ItemNoticiaxCateg = (props) => {
             <td>{props.info.autorNoticia}</td>
             <td>{props.info.tituloNoticia}</td>
             <td>{props.info.noticiaBreve}</td>
-            <td className='text-center'><Link className='btn btn-primary text-light mr-3' to={'/noticias/noticiaCompleta/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> </Link></td>
+            <td className='text-center'><Link className='btn btn-primary text-light mr-3' to={'/noticias/mostrarNoticia/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> </Link></td>
         </tr>
     );
 };

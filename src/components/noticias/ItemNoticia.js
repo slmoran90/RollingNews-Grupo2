@@ -58,8 +58,8 @@ const ItemNoticia = (props) => {
             <td>{props.info.tituloNoticia}</td>
             <td>{props.info.noticiaBreve}</td>
             
-            <td className='text-center'><Link className='btn btn-warning text-light' to={'/noticias/editar/'+props.info.id}><FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon> </Link></td>
-            <td className='text-right'><Button variant='danger' onClick={()=> eliminaNoticia(props.info.id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Button></td>
+            <td><Link className='btn btn-warning text-light' to={'/noticias/editar/'+props.info.id}><FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon></Link></td>
+            <td><Button variant='danger' onClick={()=> eliminaNoticia(props.info.id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Button></td>
         </tr>
     );
 };

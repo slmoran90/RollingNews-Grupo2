@@ -6,7 +6,7 @@ import Navegacion from "./components/common/Navegacion";
 import NuevaCategoria from "./components/categorias/NuevaCategoria";
 import ListarCategoria from "./components/categorias/ListarCategoria";
 import ListarNoticiasxCateg from "./components/noticias/ListarNoticiasxCateg";
-import NoticiaCompleta from "./components/noticias/NoticiaCompleta";
+import MostrarNoticia from "./components/noticias/MostrarNoticia";
 import Error404 from "./components/Error404";
 import Swal from "sweetalert2";
 import Footer from "./components/common/Footer";
@@ -95,9 +95,9 @@ function App() {
           ></ListarNoticiasxCateg>
         </Route>
         
-        <Route exact path="/noticias/noticiaCompleta/:id">
+        <Route exact path="/noticias/mostrarNoticia/:id">
           {/* muestra la noticia completa, seleccionada en la lista de noticia de una categoria */}
-          <NoticiaCompleta></NoticiaCompleta>
+          <MostrarNoticia></MostrarNoticia>
         </Route>
         
         <Route exact path="/categorias/nueva">
