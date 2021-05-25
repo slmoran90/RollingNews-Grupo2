@@ -55,6 +55,7 @@ const ItemNoticia = (props) => {
         <tr className="textoNoticia">
             <td>{props.info.fechaNoticia}</td>
             <td>{props.info.autorNoticia}</td>
+            <td>{props.info.categoria}</td>
             <td>{props.info.tituloNoticia}</td>
             <td>{props.info.noticiaBreve}</td>
             
