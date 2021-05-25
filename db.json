@@ -18,7 +18,7 @@
     },
     {
       "nombreCategoria": "Negocios",
-      "id": "NtEKynm"
+      "id": "JGFywh4"
     }
   ],
   "noticias": [
@@ -153,18 +153,6 @@
       "fechaNoticia": "21-05-21",
       "destacada": true,
       "id": "13"
-    },
-    {
-      "tituloNoticia": "PRUEBA DE BORRADO 2 Vacunación contra el coronavirus",
-      "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
-      "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
-      "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-      "imagenSec": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-      "categoria": "Actualidad",
-      "autorNoticia": "La Nacion",
-      "fechaNoticia": "06-05-21",
-      "destacada": true,
-      "id": "14"
     },
     {
       "tituloNoticia": "Otros dos casos más de coronavirus en River tras la victoria ante Independiente Santa Fe",

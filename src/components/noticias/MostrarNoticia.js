@@ -97,8 +97,12 @@ const MostrarNoticia = () => {
                     </Form.Group>
                 </Form.Row>
                 <Form.Group className='my-2 pb-2'>
-                    <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticiaCompleta.destacada} disabled />
+                    {
+                    (noticiaCompleta.destacada) ? <Form.Check type='checkbox' label='Noticia Destacada' checked disabled /> : <Form.Check type='checkbox' label='Noticia Destacada' disabled />
+                    }
                 </Form.Group>
+                    {/* <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticiaCompleta.destacada} disabled /> */}
+                
 
                 <Link className='btn btn-primary text-light mr-3 d-block' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
             </Form>
