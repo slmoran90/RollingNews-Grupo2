@@ -126,7 +126,7 @@ function App() {
             consultarAPInoticias={consultarAPInoticias}>
           </ListarNoticias>
         </Route>
-        <Route exact path="/noticias/editar">
+        <Route exact path="/noticias/editar/:id">
           <EditarNoticia></EditarNoticia>
         </Route>
         <Route path="">

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button } from "react-bootstrap";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt,faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+
 const ItemNoticia = (props) => {
     // console.log('props en ItemNoticia: ',props)
  // borrar noticia segun el ID

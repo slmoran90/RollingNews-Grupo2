@@ -3,6 +3,7 @@ import { Alert, Button, Container, Form } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 const NuevaNoticia = (props) => {
+    const URLnoticias = process.env.REACT_APP_API_URLnoticias;
     const [categoria, setCategoria] = useState('');
     const [fechaNoticia, setFechaNoticia] = useState('10/10/2021');
     const [autorNoticia, setAutorNoticia] = useState('');
@@ -61,7 +62,7 @@ const NuevaNoticia = (props) => {
                     },
                     body: JSON.stringify(noticia)
                 }
-                const respuesta = await fetch('http://localhost:3004/noticias',datosEnviar);
+                const respuesta = await fetch(URLnoticias,datosEnviar);
                 console.log(respuesta);
 
                 if(respuesta.status === 201){
