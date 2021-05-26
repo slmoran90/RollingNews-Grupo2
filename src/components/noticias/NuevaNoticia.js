@@ -1,8 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Alert, Button, Container, Form } from 'react-bootstrap';
 import Swal from 'sweetalert2';
+//import {campoRequerido, validarFormatoFecha} from '../common/validaciones'
+
 
 const NuevaNoticia = (props) => {
+    const URLcategorias = process.env.REACT_APP_API_URLcategorias;
     const URLnoticias = process.env.REACT_APP_API_URLnoticias;
     const [categoria, setCategoria] = useState('');
     const [fechaNoticia, setFechaNoticia] = useState('10/10/2021');
@@ -12,8 +15,12 @@ const NuevaNoticia = (props) => {
     const [noticiaDetallada, setNoticiaDetallada] = useState('');
     const [imagenPrincipal, setImagenPrincipal] = useState('');
     const [imagenSec, setImagenSec] = useState('');
-    const [destacada, setDestacada] = useState(false);
-    const [id, setId] = useState("1000");
+    const [destacada, setDestacada] = useState('off');
+    // const [id, setId] = useState("1000");
+
+    
+    const [arrayCategorias, setArrayCategorias] = useState([]);
+    //const [categoriaNoticia, setCategoriaNoticia] = useState('');
 
     const [errorValidacion, setErrorValidacion] = useState(false);
 
@@ -23,6 +30,23 @@ const NuevaNoticia = (props) => {
         formRef.current.reset();
     };
 
+    useEffect(() => {
+        consultarAPIcategorias();
+    }, []);
+
+     // === Para armar select categorias existentes
+     const consultarAPIcategorias = async () => {
+        try {
+            const respuesta = await fetch(URLcategorias);
+            if (respuesta.status === 200) {
+                const listaCategorias = await respuesta.json();
+                setArrayCategorias(listaCategorias);
+            }
+        } catch (error) {
+            console.log(error);
+            Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
+        }
+    };
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -34,6 +58,7 @@ const NuevaNoticia = (props) => {
         ) {
             //si falla la validacion mostrar alert de error
             setErrorValidacion(true);
+            
             return;
         } else {
             //si sta todo bien, envio los datos a la API
@@ -49,8 +74,7 @@ const NuevaNoticia = (props) => {
                 categoria,
                 autorNoticia,
                 fechaNoticia,
-                destacada,
-                id
+                destacada
             }
             console.log("objeto noticia",noticia);
 
@@ -99,18 +123,13 @@ const NuevaNoticia = (props) => {
 
             <Form ref={formRef} className='mx-5' onSubmit={handleSubmit}>
                 <Form.Row>
+                    {/* select armado desde APIcategorias */}
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
-                        <Form.Control as="select" size="sm" placeholder="Categoría" onChange={(e) => setCategoria(e.target.value)}>
-                            <option name="Categoria"></option>
-                            <option name="Categoria" value='actualidad'>Actualidad</option>
-                            <option name="Categoria" value='espectaculos'>Espectáculos</option>
-                            <option name="Categoria" value='tecnologia'>Tecnología</option>
-                            <option name="Categoria" value='deportes'>Deportes</option>
-                            <option name="Categoria" value='fotografia'>Política</option>
-                            <option name="Categoria" value='economia'>Economía</option>
-                            <option name="Categoria" value='salud'>Salud</option>
-                            <option name="Categoria" value='fotografia'>Fotografía</option>
+                        <Form.Control as="select" size="sm" placeholder="Categoría" custom onChange={(e) => setCategoria(e.target.value)}>
+                            {
+                            arrayCategorias.map((opcion, indice) => (<option value={opcion.value} key={indice}>{opcion.nombreCategoria}</option>))
+                            }
                         </Form.Control>
                     </Form.Group>
                     <Form.Group className='col-sm-6 col-md-4'>
@@ -154,7 +173,7 @@ const NuevaNoticia = (props) => {
 
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
-                        <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
+                        <Form.Label>Imagen Secundaria (Opcional)</Form.Label>
                         <Form.Control as="textarea" rows={1} placeholder="Imagen Secundaria" />
                     </Form.Group>
 
@@ -163,7 +182,7 @@ const NuevaNoticia = (props) => {
                     </Form.Group>
                 </Form.Row>
                 <Form.Group className='my-2 pb-2'>
-                    <Form.Check type='checkbox' label='Noticia Destacada' />
+                    <Form.Check type='checkbox' label='Noticia Destacada' onChange={(e) => setDestacada(e.target.value)}/>
                 </Form.Group>
 
                 <Button type='submit' className='w-100 text-light mt-3' variant="primary">Guardar</Button>

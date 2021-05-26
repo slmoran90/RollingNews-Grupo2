@@ -127,7 +127,7 @@ function App() {
           </ListarNoticias>
         </Route>
         <Route exact path="/noticias/editar/:id">
-          <EditarNoticia></EditarNoticia>
+          <EditarNoticia consultarAPInoticias={consultarAPInoticias}></EditarNoticia>
         </Route>
         <Route path="">
           <Error404></Error404>

@@ -12,6 +12,7 @@ const ListarNoticias = (props) => {
                     <tr className="textoNoticia">
                         <th>Fecha</th>
                         <th>Autor</th>
+                        <th>Categoría</th>
                         <th>Titulo</th>
                         <th>Descripción Breve</th>
                         <th>Acciones</th>
