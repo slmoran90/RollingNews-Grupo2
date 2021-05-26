@@ -1,28 +1,62 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Col, Alert } from "react-bootstrap";
+import { emailjs } from "emailjs-com";
 
 const Contacto = () => {
   const [nombreCompleto, setNombreCompleto] = useState("");
   const [email, setEmail] = useState("");
   const [textArea, setTextArea] = useState("");
   const [error, setError] = useState(false);
+  const [tipoConsulta, setTipoConsulta] = useState("");
+
+   // const enviarMail = (e) => {
+     
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (nombreCompleto.trim() === "" && email.trim() ===  /\w+@\w+\.[a-z]{2,}$/ && textArea === "") {
-      setError(true);
-      return;
-    } else {
-      setError(false);
-    }
-    e.target.reset();
-  };
+    if (
+      nombreCompleto.trim() === "" &&
+      email.trim() === /\w+@\w+\.[a-z]{2,}$/ &&
+      textArea === "" &&
+      tipoConsulta.trim() === ""
+    ) {
+      const enviarMail = (e) => {
+      //e.preventDefault();
+      emailjs
+        .sendForm(
+          "gmail",
+          "template_p8vmf2q",
+          e.target,
+          "user_sKLjQ13C83jmRiaPuDwAn"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+          );
+        };
+        enviarMail()
+        setError(true);
+        return;
+      } else {
+        setError(false);
+      }
+      e.target.reset();
+    };
+    
+  
+
   const formulario = {
     nombreCompleto,
-    email, 
-    textArea
+    email,
+    textArea,
   };
+
   console.log(formulario);
+
   return (
     <Container>
       <Form.Row>
@@ -31,8 +65,12 @@ const Contacto = () => {
             <h2 className="text-center">¿En qué te podemos ayudar?</h2>
             <hr />
             <Form.Group>
-              <Form.Label>¿que tipo de consulta es?</Form.Label>
-              <Form.Control as="select" required>
+              <Form.Label>¿que tipo de consulta es? *</Form.Label>
+              <Form.Control
+                as="select"
+                onChange={(e) => setTipoConsulta(e.target.value)}
+                required
+              >
                 <option>Problemas con la página</option>
                 <option>Mala redacción</option>
                 <option>Información equivocada</option>
@@ -50,11 +88,21 @@ const Contacto = () => {
             </Form.Group>
             <Form.Group>
               <Form.Label> Email * </Form.Label>
-              <Form.Control type="email" placeholder="Juanperez@hotmail.com" onChange={(e) => setEmail(e.target.value)} required/>
+              <Form.Control
+                type="email"
+                placeholder="Juanperez@hotmail.com"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </Form.Group>
             <Form.Group>
               <Form.Label>Escriba su consulta *</Form.Label>
-              <Form.Control as="textarea" rows={4} onChange={(e) => setTextArea(e.target.value)} required/>
+              <Form.Control
+                as="textarea"
+                rows={4}
+                onChange={(e) => setTextArea(e.target.value)}
+                required
+              />
             </Form.Group>
             <Button type="submit" variant="primary" className="w-50 my-4">
               Enviar
