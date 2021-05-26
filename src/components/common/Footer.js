@@ -31,6 +31,7 @@ const Footer = () => {
               <b>Email:</b> rollingnews@gmail.com
             </Link>
           </div>
+
         </div>
         <div>
           <h6>
