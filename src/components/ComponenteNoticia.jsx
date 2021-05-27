@@ -28,7 +28,6 @@ const ComponenteNoticia = () => {
         }
         try {
             const resp = await fetch(UrlListaNoticias);
-            console.log("🚀 ~ file: ComponenteNoticia.jsx ~ line 31 ~ traerNoticiaVisible ~ resp", resp)
             if (resp.status === 200) {
                 const lista = await resp.json();
                 setListaNoticiasCat(lista);

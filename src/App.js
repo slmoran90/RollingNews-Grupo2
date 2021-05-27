@@ -7,6 +7,7 @@ import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
 import { useState } from "react";
 import { useEffect } from "react";
 import ComponenteNoticia from "./components/ComponenteNoticia";
+import ListaPorCategoriaUser from "./components/ListaPorCategoriaUser";
 
 function App() {
     const URLjsonServerNoticias = process.env.REACT_APP_API_NOTICIAS_URL;
@@ -72,6 +73,9 @@ function App() {
                 </Route>
                 <Route exact path="/noticia/:categoria/:id">
                   <ComponenteNoticia />
+                </Route>
+                <Route exact path="/noticia/:categoria">
+                  <ListaPorCategoriaUser />
                 </Route>
                 <Route>{/* <Categorias /> */}</Route>
                 <Route>{/*  <AcercaDeNosotros /> */}</Route>
