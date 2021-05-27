@@ -132,8 +132,19 @@ const EditarNoticia = (props) => {
                     {/* select armado desde APIcategorias */}
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
-                        <Form.Control as="select" size="sm" placeholder="Categoría" custom onChange={(e) => setCategoria(e.target.value)} 
-                        defaultValue = {noticia.categoria}
+                        <Form.Control as="select" size="sm" placeholder="Categoría" onChange={(e) => setCategoria(e.target.value)} 
+                        defaultValue = {()=>{
+                            const index = arrayCategorias.indexOf(noticia.categoria)
+                            if(index===-1){
+                                console.log('dale salameee');
+                            }else{
+                                console.log('todo ok');
+                            }
+                            // console.log(arrayCategorias[index])
+                            return arrayCategorias[index]
+                
+                        }}
+                        ref={categoriaRef}
                         >
                             {
                             arrayCategorias.map((opcion, indice) => (<option value={opcion.value} key={indice}>{opcion.nombreCategoria}</option>))
