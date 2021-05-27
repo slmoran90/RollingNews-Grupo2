@@ -70,7 +70,7 @@ function App() {
                         deportes={noticiasDeportes}
                     />
                 </Route>
-                <Route exact path="/noticia/:id">
+                <Route exact path="/noticia/:categoria/:id">
                   <ComponenteNoticia />
                 </Route>
                 <Route>{/* <Categorias /> */}</Route>

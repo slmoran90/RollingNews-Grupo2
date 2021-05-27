@@ -7,7 +7,7 @@ const CardNoticia = (props) => {
     
 
     return (
-        <Link to={'/noticia/'+props.noticia.id}>
+        <Link to={'/noticia/'+props.noticia.categoria+'/'+props.noticia.id}>
         <Card className='my-3' style={{ width: `${props.width}`}}>
             <Card.Img variant="top" src={props.noticia && props.noticia.imagenPrincipal} />
             <Card.Body>
