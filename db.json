@@ -143,6 +143,16 @@
       "fechaNoticia": "06-05-21",
       "destacada": false,
       "id": "3"
+    },
+    {
+      "tituloNoticia": "fff",
+      "noticiaBreve": "fff",
+      "noticiaDetallada": "fffff",
+      "imagenPrincipal": "dddd",
+      "categoria": "Política",
+      "autorNoticia": "22222fff",
+      "fechaNoticia": "2021-05-18",
+      "id": "kAN7EG9"
     }
   ],
   "posts": [

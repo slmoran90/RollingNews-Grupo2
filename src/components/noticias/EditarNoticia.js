@@ -14,7 +14,6 @@ const EditarNoticia = (props) => {
     const [categoria, setCategoria] = useState('');
     const [errorValidacion, setErrorValidacion] = useState(false);
     const [noticia, setNoticia] = useState({});
-    //const URLnoticias = process.env.REACT_APP_API_URLnoticias + "/?id=" + codigoNoticia;
     const URLnoticias = process.env.REACT_APP_API_URLnoticias+'/'+codigoNoticia;
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
 
@@ -118,6 +117,7 @@ const EditarNoticia = (props) => {
         }else{
             //si no muestro cartel de error
             setErrorValidacion(true);
+            Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
         }
 
     }
