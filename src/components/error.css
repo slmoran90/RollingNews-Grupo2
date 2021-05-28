@@ -1,6 +1,14 @@
 .botonvolver{
-    background: #081c2b;
-    border-color: #040815;
+    background: #ff6f00;
+    border-color: #ffffff;
+    
+}
+
+.botonvolver:hover{
+    color: #ff6f00;
+    background-color: white;
+    border-color:#ff6f00;
+    
 }
 
 .cartel{

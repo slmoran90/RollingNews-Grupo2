@@ -25,7 +25,7 @@ const EditarNoticia = (props) => {
     const imagenSecRef = useRef('');
     const categoriaRef = useRef('');
     const autorNoticiaRef = useRef('');
-    const fechaNoticiaRef = useRef('10/10/2021');
+    const fechaNoticiaRef = useRef('');
     const destacadaRef = useRef(false);
 
     const [arrayCategorias, setArrayCategorias] = useState([]);
@@ -132,43 +132,20 @@ const EditarNoticia = (props) => {
                     {/* select armado desde APIcategorias */}
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
-                        <Form.Control as="select" size="sm" placeholder="Categoría" onChange={(e) => setCategoria(e.target.value)} 
-                        defaultValue = {()=>{
-                            const index = arrayCategorias.indexOf(noticia.categoria)
-                            if(index===-1){
-                                console.log('dale salameee');
-                            }else{
-                                console.log('todo ok');
-                            }
-                            // console.log(arrayCategorias[index])
-                            return arrayCategorias[index]
-                
-                        }}
+                        <Form.Control as="select" size="sm" placeholder="Categoría"
+                        defaultValue = {noticia.categoria}
                         ref={categoriaRef}
+                        value= {noticia.categoria}
                         >
                             {
-                            arrayCategorias.map((opcion, indice) => (<option value={opcion.value} key={indice}>{opcion.nombreCategoria}</option>))
+                            arrayCategorias.map((opcion, indice) => (<option value={opcion.value} selected key={indice}>{opcion.nombreCategoria}</option>))
                             }
                         </Form.Control>
                     </Form.Group>
-                    {/* <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Seleccione Categoría<span class="text-danger">*</span></Form.Label> 
-                        <Form.Control as="select" size="sm" placeholder="Categoría"  onChange={(e) => setCategoria(e.target.value)}>
-                            <option name="Categoria"></option>
-                            <option name="Categoria" value='actualidad'>Actualidad</option>
-                            <option name="Categoria" value='espectaculos'>Espectáculos</option>
-                            <option name="Categoria" value='tecnologia'>Tecnología</option>
-                            <option name="Categoria" value='deportes'>Deportes</option>
-                            <option name="Categoria" value='fotografia'>Política</option>
-                            <option name="Categoria" value='economia'>Economía</option>
-                            <option name="Categoria" value='salud'>Salud</option>
-                            <option name="Categoria" value='fotografia'>Fotografía</option>
-                        </Form.Control>
-                    </Form.Group> */}
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
                         <Form.Control type="date" size="sm" placeholder="dd/mm/aa" 
-                        //onChange={(e) => setFechaNoticia(e.target.value)}
+                        // onChange={(e) => setFechaNoticia(e.target.value)}
                         defaultValue = {noticia.fechaNoticia}
                         ref={fechaNoticiaRef}
                         />
