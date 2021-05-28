@@ -40,7 +40,7 @@ const ListarNoticiasxCateg = () => {
     return (
         <Container className='container my-3 py-3 shadow-lg'>
             <h3 className='text-center my-3 py-3 bg-warning text-light'>Categoria: {parametroCategoria}</h3>
-            <Table>
+            <Table responsive>
                 <thead>
                     <tr className="textoNoticia">
                         <th>Fecha</th>

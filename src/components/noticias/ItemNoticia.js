@@ -4,10 +4,8 @@ import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt,faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2'
-
 const ItemNoticia = (props) => {
-    // console.log('props en ItemNoticia: ',props)
-
+    console.log('props en ItemNoticia: ',props)
  // borrar noticia segun el ID
     const eliminaNoticia = (idNoticia)=>{
     Swal.fire({
@@ -49,8 +47,6 @@ const ItemNoticia = (props) => {
         }
     })
 }   
-
-
     return (
         <tr className="textoNoticia">
             <td>{props.info.fechaNoticia}</td>
@@ -64,5 +60,4 @@ const ItemNoticia = (props) => {
         </tr>
     );
 };
-
 export default ItemNoticia;

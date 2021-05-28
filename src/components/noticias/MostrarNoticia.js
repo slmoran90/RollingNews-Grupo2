@@ -24,7 +24,6 @@ const MostrarNoticia = () => {
         // buscar la noticia que tenga el ID pasado como parametro en la URL
         try {
             const respuesta = await fetch(URLnoticias);
-            console.log(respuesta);
             if (respuesta.status === 200) {
                 const noticiaFiltrada = await respuesta.json();
                 setNoticiaCompleta(noticiaFiltrada[0]);
