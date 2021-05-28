@@ -9,8 +9,6 @@ const Contacto = () => {
   const [error, setError] = useState(false);
   const [tipoConsulta, setTipoConsulta] = useState("");
 
-  
-
   const enviarMail = () => {
     emailjs
       .sendForm(
