@@ -4,7 +4,6 @@ import Navegacion from "./components/common/Navegacion";
 //import Footer from "./components/common/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contacto from "./components/Contacto";
-import Prueba from "./components/Prueba";
 
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           {/*  <PaginaPrincipal /> */}
-<Prueba></Prueba>
         </Route>
         <Route exact path="/contacto">
         <Contacto/>

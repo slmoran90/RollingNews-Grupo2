@@ -9,54 +9,58 @@ const Contacto = () => {
   const [error, setError] = useState(false);
   const [tipoConsulta, setTipoConsulta] = useState("");
 
-   // const enviarMail = (e) => {
-     
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (
-      nombreCompleto.trim() === "" &&
-      email.trim() === /\w+@\w+\.[a-z]{2,}$/ &&
-      textArea === "" &&
-      tipoConsulta.trim() === ""
-    ) {
-      const enviarMail = (e) => {
-      //e.preventDefault();
-      emailjs
-        .sendForm(
-          "gmail",
-          "template_p8vmf2q",
-          e.target,
-          "user_sKLjQ13C83jmRiaPuDwAn"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-          );
-        };
-        enviarMail()
-        setError(true);
-        return;
-      } else {
-        setError(false);
-      }
-      e.target.reset();
-    };
-    
   
+
+  const enviarMail = () => {
+    emailjs
+      .sendForm(
+        "gmail",
+        "template_p8vmf2q",
+        {
+          nombreCompleto,
+          email,
+          textArea,
+          tipoConsulta,
+        },
+        "user_sKLjQ13C83jmRiaPuDwAn"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+        );
+      };
+      
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        if (
+          nombreCompleto.trim() === "" &&
+          email.trim() === /\w+@\w+\.[a-z]{2,}$/ &&
+          textArea === "" 
+          // && tipoConsulta.trim() === ""
+          ) {
+      console.log("estoy dentro de enviarmail")
+      enviarMail();
+      setError(true);
+      return;
+    } else {
+      setError(false);
+    }
+    e.target.reset();
+  };
 
   const formulario = {
     nombreCompleto,
     email,
     textArea,
+    tipoConsulta,
   };
 
   console.log(formulario);
-
   return (
     <Container>
       <Form.Row>
