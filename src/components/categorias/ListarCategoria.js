@@ -9,7 +9,6 @@ const ListarCategoria = (props) => {
             <h3 className="text-center my-3 py-3 bg-warning text-light">
                 Lista de Categorías
             </h3>
-            {/* <h1 className='text-center my-3 py-5'> Lista de Categorías</h1> */}
             <ListGroup className='my-3'>
                 {
                     props.categorias.map ((categoria)=><ItemCategoria categoria={categoria} key={categoria.id} consultarAPIcategorias={props.consultarAPIcategorias}></ItemCategoria>)
