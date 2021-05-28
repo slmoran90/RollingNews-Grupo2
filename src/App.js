@@ -15,7 +15,9 @@ import ListarNoticiasxCateg from "./components/noticias/ListarNoticiasxCateg";
 import MostrarNoticia from "./components/noticias/MostrarNoticia";
 import Error404 from "./components/Error404";
 import Swal from "sweetalert2";
-
+import ListarNoticias from "./components/noticias/ListarNoticias";
+import NuevaNoticia from "./components/noticias/NuevaNoticia";
+import EditarNoticia from "./components/noticias/EditarNoticia";
 
 function App() {
     const URLjsonServerNoticias = process.env.REACT_APP_API_NOTICIAS_URL;
@@ -93,7 +95,7 @@ function App() {
       }
     } catch (error) {
       console.log(error);
-      Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
+      Swal.fire("Ocurrió un Error vale!", "Inténtelo en unos minutos.", "error");
     }
   };
 
@@ -108,7 +110,7 @@ function App() {
         } catch (error) {
             console.log(error);
             Swal.fire(
-                'Ocurrió un Error!',
+                'Ocurrió un Error gonzalo!',
                 'Inténtelo en unos minutos.',
                 'error'
             )
@@ -128,41 +130,51 @@ function App() {
                         deportes={noticiasDeportes}
                     />
                 </Route>
-                <Route exact path="/noticia/:categoria/:id">
-                  <ComponenteNoticia />
-                </Route>
-                <Route exact path="/noticia/:categoria">
-                  <ListaPorCategoriaUser />
-                </Route>
-                <Route>{/* <Categorias /> */}</Route>
-                <Route>{/*  <AcercaDeNosotros /> */}</Route>
-                <Route>{/* <Contacto /> */}</Route>
-                <Route exact path="/categorias/nueva">
-                    {/*  <NuevaCategoria
-                        consultarAPI={consultarAPI}
-                    ></NuevaCategoria> */}
-                </Route>
-                <Route exact path="/categorias/listar">
-                    {/* <ListarCategoria
-                        categorias={categorias}
-                        consultarAPI={consultarAPI}
-                    ></ListarCategoria> */}
-                </Route>
-                {/* paso como parametro la Categoria. Se pone ? al final si quiero que no sea olbigatorio */}
-                <Route exact path="/noticias/listar/:nombreCategoria">
-                    {/* muestra noticias por categoria */}
-                    {/* <ListarNoticiasxCateg
-                        consultarAPI={consultarAPI}
-                    ></ListarNoticiasxCateg> */}
-                </Route>
-                <Route exact path="/noticias/noticiaCompleta">
-                    {/* <NoticiaCompleta></NoticiaCompleta> */}
-                </Route>
-                <Route path="*">{/* <Error404></Error404> */}</Route>
-            </Switch>
-            <Footer></Footer>
-        </Router>
-    );
+        <Route exact path="/categorias/nueva">
+          {/* permite el alta de una nueva categoria */}
+          <NuevaCategoria
+            consultarAPIcategorias={consultarAPIcategorias}
+          ></NuevaCategoria>
+        </Route>
+        <Route exact path="/categorias/listar">
+          {/* muestra lista de categorias existentes */}
+          <ListarCategoria
+            categorias={categorias}
+            consultarAPIcategorias={consultarAPIcategorias}
+          ></ListarCategoria>
+        </Route>
+        <Route exact path="/noticias/listar/:nombreCategoria">
+          {/* muestra lista de noticias de una categoria */}
+          <ListarNoticiasxCateg
+            consultarAPIcategorias={consultarAPIcategorias}
+          ></ListarNoticiasxCateg>
+        </Route>
+        <Route exact path="/noticias/mostrarNoticia/:id">
+          {/* muestra la noticia completa, seleccionada en la lista de noticias */}
+          <MostrarNoticia></MostrarNoticia>
+        </Route> 
+        <Route exact path="/noticias/nueva">
+          <NuevaNoticia noticias={noticias}
+            consultarAPInoticias={consultarAPInoticias}></NuevaNoticia>
+        </Route>
+        <Route exact path="/noticias/listar">
+          {/* muestra lista de TODAS las noticias */}
+          <ListarNoticias
+            noticias={noticias}
+            consultarAPInoticias={consultarAPInoticias}>
+          </ListarNoticias>
+        </Route>
+        <Route exact path="/noticias/editar/:id">
+          <EditarNoticia consultarAPInoticias={consultarAPInoticias}></EditarNoticia>
+        </Route>
+        <Route path="">
+          <Error404></Error404>
+        </Route>
+      </Switch>
+      {/* se invoca el footer */}
+      <Footer></Footer>
+    </Router>
+  );
 }
 
 export default App;

@@ -105,24 +105,41 @@ const Navegacion = () => {
                                         </Link>
                                     </NavDropdown.Item>
                                 </NavDropdown>
-                                <NavDropdown
-                                    title="Admin"
-                                    id="basic-nav-dropdown"
-                                >
-                                    <NavDropdown.Item href="#action/3.1">
-                                        Noticias
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">
-                                        Categorías
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">
-                                        Nueva noticia
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4">
-                                        Nueva categoría
-                                    </NavDropdown.Item>
-                                </NavDropdown>
+                                {/* Menu habilitado sólo al admnistrador */}
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="mr-auto">
+                    <NavDropdown title="Admin" id="basic-nav-dropdown">
+                      <Link
+                        className="nav-link"
+                        exact={true}
+                        to="/noticias/listar"
+                      >
+                        Noticias
+                      </Link>
+                      <Link
+                        className="nav-link"
+                        exact={true}
+                        to="/categorias/listar"
+                      >
+                        Categorias
+                      </Link>
+                      <Link
+                        className="nav-link"
+                        exact={true}
+                        to="/noticias/nueva"
+                      >
+                        Nueva Noticia
+                      </Link>
+                      <Link
+                        className="nav-link"
+                        exact={true}
+                        to="/categorias/nueva"
+                      >
+                        Nueva Categoria
+                      </Link>
+                    </NavDropdown>
+                  </Nav>
+                </Navbar.Collapse>
                                 <Nav.Link className="nav-link" exact={true}>
                                     Nosotros
                                 </Nav.Link>
