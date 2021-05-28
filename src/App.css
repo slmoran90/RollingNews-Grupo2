@@ -1,0 +1,13 @@
+.lista {
+    list-style: none;
+    padding: 0;
+}
+
+.textLink {
+    text-decoration: none;
+    color: #8f98a0;
+}
+
+.textoNoticia {
+    font-size: 0.75em;
+}
