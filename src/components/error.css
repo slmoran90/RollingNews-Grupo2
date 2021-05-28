@@ -4,6 +4,10 @@
     
 }
 
+.margenFondo{
+    margin-top: 10vh;
+}
+
 .botonvolver:hover{
     color: #ff6f00;
     background-color: white;

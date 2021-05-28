@@ -18,6 +18,7 @@ import ListarNoticias from "./components/noticias/ListarNoticias";
 import NuevaNoticia from "./components/noticias/NuevaNoticia";
 import EditarNoticia from "./components/noticias/EditarNoticia";
 import Error from "./components/Error";
+import Nosotros from './components/Nosotros';
 function App() {
     const URLjsonServerNoticias = process.env.REACT_APP_API_NOTICIAS_URL;
 
@@ -122,13 +123,13 @@ function App() {
             <Navegacion></Navegacion>
             {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}
             <Switch>
-                <Route exact path="/">
-                    <PaginaPrincipal
-                        noticiasDestacadas={noticiasDestacadas}
-                        economia={noticiasEco}
-                        deportes={noticiasDeportes}
-                    />
-                </Route>
+        <Route exact path="/">
+          <PaginaPrincipal
+            noticiasDestacadas={noticiasDestacadas}
+              economia={noticiasEco}
+              deportes={noticiasDeportes}
+          />
+        </Route>
         <Route exact path="/categorias/nueva">
           {/* permite el alta de una nueva categoria */}
           <NuevaCategoria
@@ -166,6 +167,9 @@ function App() {
         <Route exact path="/noticias/editar/:id">
           <EditarNoticia consultarAPInoticias={consultarAPInoticias}></EditarNoticia>
         </Route>
+        <Route exact path="/nosotros">
+            <Nosotros></Nosotros> 
+         </Route>
         <Route path="*">
         <Error></Error>
         </Route>
@@ -174,6 +178,7 @@ function App() {
       <Footer></Footer>
     </Router>
   );
+ 
 }
 
 export default App;

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Navegacion = () => {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" className="fixed-top">
             <Container>
                 <Row>
                     <Col md={12}>
@@ -140,12 +140,12 @@ const Navegacion = () => {
                     </NavDropdown>
                   </Nav>
                 </Navbar.Collapse>
-                                <Nav.Link className="nav-link" exact={true}>
+                                <Link className="nav-link" exact={true} to="/nosotros">
                                     Nosotros
-                                </Nav.Link>
-                                <Nav.Link className="nav-link" exact={true}>
+                                </Link>
+                                <Link className="nav-link" exact={true}>
                                     Contacto
-                                </Nav.Link>
+                                </Link>
                                 <Button
                                     className="ml-5"
                                     variant="outline-success"

@@ -78,7 +78,7 @@ const Footer = () => {
             <span className="font-weight-bold">Instala nuestra app</span>
           </h6>
           <Link>
-            <img className="w-100 mb-2"
+            <img className="w-50 mb-2"
               src="/badge-apple-store.svg"
               alt="logo app store"
               href="#"
@@ -86,7 +86,7 @@ const Footer = () => {
           </Link>
           <br></br>
           <Link>
-            <img className="w-100"
+            <img className="w-50"
               href="#"
               src="/google-play-badge-bb.svg"
               alt="logo play store"

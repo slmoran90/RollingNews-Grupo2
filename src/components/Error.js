@@ -4,7 +4,7 @@ import "./error.css"
 
 const Error = () => {
     return (
-        <div className="d-flex text-light position-relative">
+        <div className="d-flex text-light position-relative margenFondo">
             <img className="position-relative w-100" src="/error-404.jpg" alt="background"></img>
             <div className="position-absolute cartel m-5">
                 <h1 className="display-3 p-2">ERROR</h1>
