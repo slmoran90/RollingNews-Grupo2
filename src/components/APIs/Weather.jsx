@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Axios from 'axios';
 
 import "./weather.css";
 const Weather = () => {
@@ -7,18 +6,18 @@ const Weather = () => {
     const [userIP, setUserIP] = useState("");
     const [mainTemp, setMainTemp] = useState({}); */
     const [weatherApi, setWeatherApi] = useState({});
-    const [posit, setPosit] = useState({});
+    //const [posit, setPosit] = useState({});
     useEffect(() => {
         consultarApiClima();
-        navigator.geolocation.getCurrentPosition(async position => {
+        /* navigator.geolocation.getCurrentPosition(async position => {
             setPosit({
                 lat: position.coords.latitude,
                 lon: position.coords.longitude
             });
             return;
-        });
+        }); */
     }, [])
-    console.log(posit && posit, 'posicion');
+    //console.log(posit && posit, 'posicion');
     
     
     const consultarApiClima = async () => {
@@ -36,7 +35,7 @@ const Weather = () => {
         */
         
         const resp = await fetch(`http://api.openweathermap.org/data/2.5/weather?&id=3833578&appid=d69142f6fdc12970e9278747e7d64051&units=metric&lang=es`);
-        console.log(resp, 'resp');
+        //console.log(resp, 'resp');
         
         try {
             if(resp.status === 200){
