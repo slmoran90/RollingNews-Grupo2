@@ -3,7 +3,7 @@ import {ListGroup,Button} from 'react-bootstrap'
 import Swal from 'sweetalert2'
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTrashAlt, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 const ItemCategoria = (props) => {
@@ -51,14 +51,16 @@ const ItemCategoria = (props) => {
     }   
 
     return (
-        <ListGroup.Item className='d-flex justify-content-between'>
-        <p className='font-weight-bold'>{props.categoria.nombreCategoria}</p>
-        <div>
-            <Button variant='danger' className='mr-3' onClick={()=> eliminarCategoria(props.categoria.id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Button>
-            
-            <Link className='btn btn-primary text-light mr-3' to={'/noticias/listar/'+props.categoria.nombreCategoria}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> Ver Noticias</Link>
-        </div>
-    </ListGroup.Item>
+        <ListGroup.Item className='row d-flex justify-content-center'>
+            <div className='col-sm-12 col-md-6'>
+                <p className='font-weight-bold'>{props.categoria.nombreCategoria}</p>
+            </div>
+            <div className='col-sm-12 col-md-6 d-flex justify-content-end'>
+                <Button variant='danger' className='mr-2' onClick={()=> eliminarCategoria(props.categoria.id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Button>
+                <Button variant='warning text-light' className='mr-2'><FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon></Button>
+                <Link className='btn btn-primary text-light' to={'/noticias/listar/'+props.categoria.nombreCategoria}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></Link>
+            </div>
+        </ListGroup.Item>
     );
 };
 
