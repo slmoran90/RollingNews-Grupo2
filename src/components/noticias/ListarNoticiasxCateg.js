@@ -38,16 +38,18 @@ const ListarNoticiasxCateg = () => {
     }, [])
 
     return (
-        <Container className='container my-3 py-3 shadow-lg'>
+        <Container className='margenListaNoticias'> 
+        {/* <Container className='container my-3 py-3 shadow-lg'> */}
             <h3 className='text-center my-3 py-3 bg-warning text-light'>Categoria: {parametroCategoria}</h3>
             <Table responsive>
                 <thead>
                     <tr className="textoNoticia">
+                        <th>Destacada</th>
                         <th>Fecha</th>
-                        <th>Autor</th>
                         <th>Titulo</th>
                         <th>Descripción Breve</th>
-                        <th>Ver Noticia</th>
+                        <th>Autor</th>
+                        <th>Ver</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,6 +59,7 @@ const ListarNoticiasxCateg = () => {
                 </tbody>    
             </Table>    
         </Container>
+        
     );
 };
 

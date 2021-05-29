@@ -83,7 +83,7 @@ function App() {
       }
     } catch (error) {
       console.log(error);
-      Swal.fire("Ocurrió un Error vale!", "Inténtelo en unos minutos.", "error");
+      Swal.fire("Ocurrió un Error en Catgorias", "Inténtelo en unos minutos.", "error");
     }
   };
   // funcion GET de noticias
@@ -97,7 +97,7 @@ function App() {
     } catch (error) {
       console.log(error);
       Swal.fire(
-        'Ocurrió un Error gonzalo!',
+        'Ocurrió un Error en Noticias!',
         'Inténtelo en unos minutos.',
         'error'
       )

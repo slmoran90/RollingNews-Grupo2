@@ -109,34 +109,34 @@ const Navegacion = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="mr-auto">
                     <NavDropdown title="Admin" id="basic-nav-dropdown">
-                      <Link
+                    <NavDropdown.Item><Link
                         className="nav-link"
                         exact={true}
                         to="/noticias/listar"
                       >
                         Noticias
-                      </Link>
-                      <Link
+                      </Link></NavDropdown.Item>
+                      <NavDropdown.Item><Link
                         className="nav-link"
                         exact={true}
                         to="/categorias/listar"
                       >
                         Categorias
-                      </Link>
-                      <Link
+                      </Link></NavDropdown.Item>
+                      <NavDropdown.Item><Link
                         className="nav-link"
                         exact={true}
                         to="/noticias/nueva"
                       >
                         Nueva Noticia
-                      </Link>
-                      <Link
+                      </Link></NavDropdown.Item>
+                      <NavDropdown.Item><Link
                         className="nav-link"
                         exact={true}
                         to="/categorias/nueva"
                       >
                         Nueva Categoria
-                      </Link>
+                      </Link></NavDropdown.Item>
                     </NavDropdown>
                   </Nav>
                 </Navbar.Collapse>

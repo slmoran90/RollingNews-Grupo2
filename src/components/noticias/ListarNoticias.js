@@ -1,22 +1,21 @@
 import React from 'react';
 import { Container, Table } from 'react-bootstrap';
 import ItemNoticia from './ItemNoticia';
-import Swal from 'sweetalert2';
+
 const ListarNoticias = (props) => {
-    // console.log('PROPS en ListarNoticias: ', props)
     return (
-        <Container className='container my-3 py-3 shadow-lg'>
+        <Container className='margenListaNoticias'>
             <h3 className='text-center my-3 py-3 bg-warning text-light'>Listado de Noticias</h3>
-            <Table responsive>
+            <Table responsive hover>
                 <thead>
                     <tr className="textoNoticia">
+                        <th>Destacada</th>
                         <th>Fecha</th>
-                        <th>Autor</th>
                         <th>Categoría</th>
                         <th>Titulo</th>
                         <th>Descripción Breve</th>
+                        <th>Autor</th>
                         <th>Acciones</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,6 +24,7 @@ const ListarNoticias = (props) => {
                     }
                 </tbody>
             </Table>
+
         </Container>
     );
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useState,useRef } from 'react';
 import { Form,Button, Container, Alert } from "react-bootstrap";
 import Swal from 'sweetalert2'
 // importo archivo de validaciones
-import { campoRequerido } from "../common/helpers"
+import { campoRequerido } from "../common/validaciones"
 
 const NuevaCategoria = (props) => {
 
@@ -11,7 +11,6 @@ const NuevaCategoria = (props) => {
 
     // imputs del formulario
     const [nombreCategoria,setNombreCategoria] = useState('');
-    // const [descripCategoria,setDescripCategoria] = useState('');
 
     // state para indicar que hay un error en la carga de datos
     const[error,setError] = useState(false);
@@ -39,9 +38,6 @@ const NuevaCategoria = (props) => {
         setError(false);
         setMensajeError('');
     
-        //== validacion de datos antes de guardar
-        // if (campoRequerido(nombreCategoria) &&
-        //     campoRequerido(descripCategoria) && descripCategoria.length>=10) {
         if (campoRequerido(nombreCategoria)) {
             // SIN errores en los datos cargados
 
@@ -100,7 +96,6 @@ const NuevaCategoria = (props) => {
     const buscarCategoria = async () =>{
         try {
             const URL = `${process.env.REACT_APP_API_URLcategorias}/?nombreCategoria=${nombreCategoria}`;
-            console.log(URL)
             const respuesta = await fetch(URL);
             
             if (respuesta.status === 200) {
@@ -113,6 +108,7 @@ const NuevaCategoria = (props) => {
     }
 
     return (
+        <Container className='margenListaNoticias'> 
         <Container className="shadow-lg my-4 py-3 w-75">
         <Form ref={formRef} className="mx-5" onSubmit={handleSubmit}>
             <h3 className="text-center my-3 py-3 bg-warning text-light">Agregar Nueva Categoría</h3>
@@ -136,6 +132,7 @@ const NuevaCategoria = (props) => {
             {(error===true)?(<Alert variant='warning'>{mensajeError}</Alert>):null}           
             
         </Form>
+        </Container> 
     </Container> 
     );
 };

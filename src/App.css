@@ -8,6 +8,16 @@
     color: #8f98a0;
 }
 
+
+/* para achicar letra enla lista de noticias */
+
 .textoNoticia {
     font-size: 0.75em;
-} 
+}
+
+
+/* Para mejorar margenes en ListarNoticias.js */
+
+.margenListaNoticias {
+    margin-top: 20vh;
+}
