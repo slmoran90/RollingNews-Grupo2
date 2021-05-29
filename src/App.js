@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
 import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -142,11 +142,11 @@ function App() {
           ></ListarNoticiasxCateg>
         </Route>
         
-        {/* <Route exact path="/noticias/mostrarNoticia/:id"> */}
+        <Route exact path="/noticias/mostrarNoticia/:id">
           {/* muestra la noticia completa, seleccionada en la lista de noticias */}
-          {/* <MostrarNoticia></MostrarNoticia> */}
-        {/* </Route> */}
-        
+          <MostrarNoticia></MostrarNoticia>
+        </Route>
+
         <Route exact path="/noticias/nueva">
           <NuevaNoticia noticias={noticias}
             consultarAPInoticias={consultarAPInoticias}></NuevaNoticia>
@@ -161,12 +161,15 @@ function App() {
         <Route exact path="/noticias/editar/:id">
           <EditarNoticia consultarAPInoticias={consultarAPInoticias}></EditarNoticia>
         </Route>
+        
         <Route exact path="/nosotros">
           <Nosotros></Nosotros>
         </Route>
+        
         <Route path="*">
           <Error></Error>
         </Route>
+        
       </Switch>
       {/* se invoca el footer */}
       <Footer></Footer>

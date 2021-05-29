@@ -30,9 +30,6 @@ const EditarNoticia = (props) => {
 
     const [arrayCategorias, setArrayCategorias] = useState([]);
 
-
-
-
     useEffect(async()=>{
         consultarAPIcategorias();
         try{
@@ -40,7 +37,7 @@ const EditarNoticia = (props) => {
             if(respuesta.status === 200){
                 const noticiaSolicitada = await respuesta.json();
                 setNoticia(noticiaSolicitada);
-                console.log('noticia solicitada', noticiaSolicitada);
+                // console.log('noticia solicitada', noticiaSolicitada);
             }
 
         }catch(errorValidacion){
@@ -185,7 +182,7 @@ const EditarNoticia = (props) => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
-                        <Form.Control as="textarea" rows={1} placeholder="Imagen Principal"
+                        <Form.Control as="textarea" rows={3} placeholder="Imagen Principal"
                         defaultValue ={noticia.imagenPrincipal}
                         ref={imagenPrincipalRef}/>
                     </Form.Group>
@@ -199,7 +196,7 @@ const EditarNoticia = (props) => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
-                        <Form.Control as="textarea" rows={1} placeholder="Imagen Secundaria" 
+                        <Form.Control as="textarea" rows={3} placeholder="Imagen Secundaria" 
                         defaultValue ={noticia.imagenSec}
                         ref={imagenSecRef}
                         />
@@ -210,11 +207,16 @@ const EditarNoticia = (props) => {
                         />
                     </Form.Group>
                 </Form.Row>
-                <Form.Group className='my-2 pb-2'>
+                {/* <Form.Group className='my-2 pb-2'>
                     <Form.Check type='checkbox' label='Noticia Destacada' 
-                    defaultChecked ={noticia.destacada}
+                    defaultChecked ={noticia.destacada}/>
+                </Form.Group> */}
+
+                <Form.Group className='my-2 pb-2'>
+                    {
+                    (noticia.destacada === 'on') ? <Form.Check type='checkbox' label='Noticia Destacada' checked /> : <Form.Check type='checkbox' label='Noticia Destacada'  />
+                    }
                     
-                    />
                 </Form.Group>
 
                 <Button type='submit' className='w-100 text-light mt-3' variant="primary">Guardar</Button>

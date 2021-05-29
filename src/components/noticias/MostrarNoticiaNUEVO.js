@@ -10,7 +10,7 @@ const MostrarNoticia = () => {
     const parametroID = useParams().id;
     // URL donde estan almacenadas las noticias
     const URLnoticias = process.env.REACT_APP_API_URLnoticias + "/?id=" + parametroID;
-    
+
 
     //=== state para almacenar resultados del fetch
     const [noticiaCompleta, setNoticiaCompleta] = useState({});
@@ -36,6 +36,22 @@ const MostrarNoticia = () => {
 
     return (
         <Container className='margenListaNoticias'>
+            <Card>
+                <Card.Img variant="top" src={noticiaCompleta.imagenPrincipal} />
+                <Card.Body>
+                    <Card.Title>{noticiaCompleta.tituloNoticia}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{noticiaCompleta.noticiaBreve}</Card.Subtitle>
+                    <Card.Text>
+                        {noticiaCompleta.noticiaDetallada}
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+            </Card>
+        </Container>
+
+
+
+
         <Container className="container my-3 py-3 shadow-lg">
             <h3 className="text-center my-3 py-3 bg-warning text-light">
                 Mostrar Noticia Completa
@@ -61,12 +77,12 @@ const MostrarNoticia = () => {
 
                 <Form.Group>
                     <Form.Label>Titulo Noticia:</Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Titulo de la Noticia" defaultValue={noticiaCompleta.tituloNoticia} disabled />
+                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Titulo de la Noticia" defaultValue= disabled />
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Descripción Breve:</Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Descripción Breve" defaultValue={noticiaCompleta.noticiaBreve} disabled />
+                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Descripción Breve" defaultValue= disabled />
                 </Form.Group>
 
                 <Form.Group>
@@ -107,7 +123,7 @@ const MostrarNoticia = () => {
                 <Link className='btn btn-primary text-light mr-3 d-block' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
             </Form>
         </Container>
-        </Container>
+        </Container >
     );
 };
 

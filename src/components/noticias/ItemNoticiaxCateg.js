@@ -15,8 +15,10 @@ const ItemNoticiaxCateg = (props) => {
             <td>{props.info.noticiaBreve}</td>
             <td>{props.info.autorNoticia}</td>
             
-            <td><Link className='btn btn-primary text-light' to={'/noticia/'+props.info.categoria+'/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></Link></td>
-            {/* <td className='text-center'><Link className='btn btn-primary text-light mr-3' to={'/noticias/mostrarNoticia/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> </Link></td> */}
+            {/* enlace a ComponenteNoticia.js de GS */}
+            {/* <td><Link className='btn btn-primary text-light' to={'/noticia/'+props.info.categoria+'/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></Link></td> */}
+            
+            <td className='text-center'><Link className='btn btn-primary text-light mr-3' to={'/noticias/mostrarNoticia/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> </Link></td>
         </tr>
     );
 };

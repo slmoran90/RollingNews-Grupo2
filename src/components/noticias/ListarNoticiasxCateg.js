@@ -37,6 +37,7 @@ const ListarNoticiasxCateg = () => {
         }
     }, [])
 
+
     return (
         <Container className='margenListaNoticias'> 
         {/* <Container className='container my-3 py-3 shadow-lg'> */}

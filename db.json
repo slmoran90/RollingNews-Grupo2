@@ -47,20 +47,18 @@
       "imagensec": "",
       "categoria": "Negocios",
       "autorNoticia": "infobae",
-      "fechaNoticia": "29-04-2021",
-      "destacada": "true",
+      "fechaNoticia": "2021-04-29",
+      "destacada": "on",
       "id": "1"
     },
     {
-      "tituloNoticia": "Coronavirus: Alberto Fernández anunció que siguen las mismas restricciones en el AMBA hasta el 21 de mayo - Minutouno.com",
+      "tituloNoticia": "MinutoUno",
       "noticiaBreve": "Las clases seguirán exclusivamente a distancia en lugares de alarma epidemiológica\", informó el Presidente. Establecen cuatro zonas sanitarias para el país.",
-      "noticiaDetallada": "Las próximas semanas pueden llegar a ser muy duras; debemos continuar con medidas\", afirmó el mandatario.\r\nAlberto Fernándezagregó que \"para el conjunto del país hasta el 21 de mayo continúan las mi… [+2803 chars]",
+      "noticiaDetallada": "Las próximas semanas pueden llegar a ser muy duras; debemos continuar con medidas\", afirmó el mandatario.\nAlberto Fernándezagregó que \"para el conjunto del país hasta el 21 de mayo continúan las mi… [+2803 chars]",
       "imagenPrincipal": "https://media.minutouno.com/p/bd540010430f1a0de88dfc0ee04dcad2/adjuntos/150/imagenes/038/803/0038803250/alberto-fernandezjpeg.jpeg",
-      "imagensec": "",
       "categoria": "Actualidad",
-      "autorNoticia": "MinutoUno",
-      "fechaNoticia": "30-04-2021",
-      "destacada": "true",
+      "autorNoticia": "Coronavirus: Alberto Fernández anunció que siguen las mismas restricciones en el AMBA hasta el 21 de mayo - Minutouno.com",
+      "fechaNoticia": "2021-04-28",
       "id": "2"
     },
     {
@@ -71,8 +69,8 @@
       "imagensec": "",
       "categoria": "Deportes",
       "autorNoticia": "Infobae",
-      "fechaNoticia": "30-04-2021",
-      "destacada": "false",
+      "fechaNoticia": "2021-04-30",
+      "destacada": "off",
       "id": "4"
     },
     {
@@ -83,8 +81,8 @@
       "imagensec": "",
       "categoria": "Salud",
       "autorNoticia": "Fororecursoshumanos.com",
-      "fechaNoticia": "06-05-2021",
-      "destacada": "true",
+      "fechaNoticia": "2021-05-06",
+      "destacada": "on",
       "id": "5"
     },
     {
@@ -95,8 +93,8 @@
       "imagensec": "",
       "categoria": "Economia",
       "autorNoticia": "La Nacion",
-      "fechaNoticia": "",
-      "destacada": "false",
+      "fechaNoticia": "2021-05-01",
+      "destacada": "off",
       "id": "6"
     },
     {
@@ -107,8 +105,8 @@
       "imagensec": "",
       "categoria": "Salud",
       "autorNoticia": "Fernando Martínez",
-      "fechaNoticia": "06-05-2021",
-      "destacada": "false",
+      "fechaNoticia": "2021-05-06",
+      "destacada": "off",
       "id": "7"
     },
     {
@@ -119,8 +117,8 @@
       "imagensec": "",
       "categoria": "Salud",
       "autorNoticia": "Teknlifenews.com",
-      "fechaNoticia": "07-05-2021",
-      "destacada": "false",
+      "fechaNoticia": "2021-05-07",
+      "destacada": "off",
       "id": "8"
     },
     {
@@ -131,8 +129,8 @@
       "imagensec": "",
       "categoria": "Economia",
       "autorNoticia": "infobae",
-      "fechaNoticia": "07-05-2021",
-      "destacada": "false",
+      "fechaNoticia": "2021-04-30",
+      "destacada": "off",
       "id": "9"
     },
     {
@@ -143,20 +141,18 @@
       "imagensec": "",
       "categoria": "Actualidad",
       "autorNoticia": "La Nacion",
-      "fechaNoticia": "07-05-2021",
-      "destacada": "true",
+      "fechaNoticia": "2021-05-07",
+      "destacada": "on",
       "id": "10"
     },
     {
-      "tituloNoticia": "Vacunación contra el coronavirus: la provincia sumó a embarazadas con patologías y personas con VIH a los grupos de riesgo - LA NACION",
+      "tituloNoticia": "La Nacion",
       "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
       "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
       "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-      "imagensec": "",
       "categoria": "Economia",
-      "autorNoticia": "La Nacion",
-      "fechaNoticia": "06-05-21",
-      "destacada": "false",
+      "autorNoticia": "Vacunación",
+      "fechaNoticia": "2021-04-10",
       "id": "3"
     },
     {
@@ -167,8 +163,8 @@
       "imagensec": "",
       "categoria": "Deportes",
       "autorNoticia": "La Nacion",
-      "fechaNoticia": "06-05-21",
-      "destacada": "false",
+      "fechaNoticia": "2021-06-05",
+      "destacada": "on",
       "id": "11"
     },
     {
@@ -179,9 +175,57 @@
       "imagensec": "",
       "categoria": "Deportes",
       "autorNoticia": "La Nacion",
-      "fechaNoticia": "06-05-21",
-      "destacada": "false",
+      "fechaNoticia": "2021-06-05",
+      "destacada": "off",
       "id": "12"
+    },
+    {
+      "tituloNoticia": "Final de Champions | Manchester City - Chelsea",
+      "noticiaBreve": "El City, equipo que más jugadores aporta a la Roja, se la juega contra un Chelsea capitaneado por Azpilicueta",
+      "noticiaDetallada": "Chelsea y Manchester City protagonizan este sábado una nueva final de Champions cien por cien inglesa... al menos en la nacionalidad de los clubes que la disputan, ya que el fútbol moderno nos dibujará una vez más un choque multinacional con destacados 'brochazos' de fútbol español.\n\nEste sábado, al césped del estadio Do Dragao de Oporto saltarán de inicio solo cuatro ingleses, pero también cuatro españoles. En principio, Laporte y Rodrigo apuntan al once del City, Azpilicueta al del Chelsea y Mateu Lahoz hará lo propio al frente del equipo arbitral de la final. En la banda, otro español, Pep Guardiola, y un alemán, Thomas Tuchel.\n\nPero no serán los únicos españoles presentes en una final inglesa en la que la 'marca España' puede ser determinante y en la que juega el equipo que más jugadores aportará a la selección española en la Eurocopa, el City, con cuatro. Analizamos el papel que tendrán los españoles en la final.\n\nPep Guardiola, a refrendar su éxito en el City\nSin duda, uno de los entrenadores más importantes de los últimos años, Pep Guardiola buscará en Oporto su tercer título de Champions, con lo que igualaría a Carlo Ancelotti y Zinedine Zidane. Sería el primero con el Manchester City y el primero fuera de España, ya que los dos previos los logró con el Barcelona. Guardiola, que lleva diez años sin levantar la 'Orejona', tiene ante sí el reto definitivo de un club que quiere refrendar con el máximo título posible estos años de inversión y trabajo para convertirse en un grande del fútbol mundial, cerrando una temporada de ensueño en la que ya ha conquistado Premier League y Carabao Cup, y fue subcampeón de la FA Cup.\n\nCésar Azpilicueta, capitán 'blue'\nEl único español que apunta al once del Chelsea es el capitán 'blue', César Azpilicueta. El polivalente defensa navarro ha sido un fijo para Tuchel en la recta final de temporada y su fantástico rendimiento ha sido premiado por Luis Enrique con un puesto en la selección para la próxima Eurocopa. Si el Chelsea gana la Champions, Azpilicueta se convertiría, además, en el primer español que levanta literalmente la 'Orejona' con un equipo extranjero. Capitán 'blue' desde 2018, ya izó la Europa League. Este sábado, el máximo distintivo continental le espera.",
+      "imagenPrincipal": "",
+      "imagenSec": "",
+      "categoria": "Deportes",
+      "autorNoticia": "valentina iramain",
+      "fechaNoticia": "2021-05-30",
+      "destacada": "off",
+      "id": "5V5B4J_"
+    },
+    {
+      "tituloNoticia": "En la vuelta del humor a ShowMatch, Marcelo Tinelli reeditó clásicos y estrenó Politichef: “Estamos muy felices de hacer reír a los argentinos en medio de esta pandemia”",
+      "noticiaBreve": "El conductor de ElTrece inauguró sus viernes de risas rodeado de los cómicos que lo acompañaron siempre, apostó a sketchs inolvidables –como las cámaras ocultas– y lanzó un desopilante concurso gastronómico",
+      "noticiaDetallada": "“Estamos muy felices por sacarles una sonrisa. Nos hace bien hacer este programa. Y hacer reír a los argentinos en medio de esta pandemia”, aseguró Marcelo Tinelli para cerrar su primer viernes dedicado al humor en ShowMatch. Fue rodeado de sus laderos históricos como José María Listorti, Pachu Peña, Larry de Clay, Diego Pérez, Carna y Fredy Villarreal, entre otros. Lo hizo con su histórico escritorio que marcó una época a fines del siglo pasado. Unos minutos más tarde de las nueve de la noche, Marcelo lanzó la primera gala de humor, que tendrá lugar cada viernes por la pantalla de ElTrece. Su clásico “Buenas noches, América” no lo encontró parado en la pista vacía o entre bailarinas, sino con un atuendo más descontracturado, desde el escritorio, con papel picado volando por el aire, y con la compañía de Lolo Tinelli, su hijo mejor. En el arranque se reeditaron sketches clásicos con invitados especiales: Adrián Suar cayó en “El Insoportable” de Diego Pérez y José María Listorti. El botox, sus éxitos y las mujeres de su vida estuvieron entre las temáticas que tuvo que soportar el director de programación de ElTrece. En tanto, las panelistas de Ángel de Brito –Yanina Latorre, Andrea Taboada, Pía Shaw, Cinthia Fernández y Maite Peñoñori– se lookearon super sexies para cantar con “Los Tack See Boys” que integran Pichu Straneo, Rodrigo Vagoneta, Pachu Peña y Carna.",
+      "imagenPrincipal": "https://www.infobae.com/new-resizer/i2HZJEFVEMlAACJUTKJ8B0GgAbQ=/992x558/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/7WHVIRAT35GPLIR7LPSY5KXL4Q.jpg\n",
+      "imagenSec": "https://www.infobae.com/new-resizer/NVexvsqJwZXIxBU5fFBACEnZ5nw=/992x558/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/ISOEF257IRB6PDAEHWNTY5RCVI.jpg",
+      "categoria": "Espectáculos",
+      "autorNoticia": "valentina iramain",
+      "fechaNoticia": "2021-05-29",
+      "destacada": "on",
+      "id": "Hu1wFce"
+    },
+    {
+      "tituloNoticia": "Ganancias: cuánto dinero extra recibirán los empleados tras los cambios al impuesto y cómo serán los reintegros",
+      "noticiaBreve": "Tras la sanción de la ley 27.617 que exime del Impuesto a las Ganancias a los trabajadores que cobren hasta $150.000 y su consecuente reglamentación durante la semana pasada, los beneficiarios comenzarán a cobrar el reintegro en cuotas a partir de julio",
+      "noticiaDetallada": "Durante la primera semana de abril el Senado de la Nación convirtió en ley (27.617) el proyecto que exime del Impuesto a las Ganancias a los trabajadores que cobren hasta $150.000. Tras su reglamentación esta semana y en base a detalles dados a conocer por el Gobierno, ya se puede conocer cómo serán las devoluciones de las retenciones cobradas en los primeros cinco meses del año y cuál va a ser el efecto en el bolsillo de cada trabajador.\n\nLay establece que los trabajadores que cobren entre $150.000 y $173.000 pagarán el gravamen, pero la AFIP establecerá las deducciones para evitar grandes diferencias entre los que deben tributar y los que están exentos.\n\nAsimismo, la actualización del piso para estar exento de Ganancias se ajustará por el Ripte (promedio de variación salarial que elabora la de Secretaria de Seguridad Social).Uno de los cambios introducidos establece que la ley tendrá vigencia al 1 de enero de este año, por lo que el Gobierno devolverá los descuentos ya realizados a quienes les corresponda.\n\nEl aguinaldo de los sueldos hasta 150 mil pesos brutos pagará impuesto a las Ganancias, mientras que el personal de salud seguirá eximido hasta septiembre por las guardias u horas extras, en virtud de la pandemia de coronavirus.\n\nEn tanto, los gastos de guardería sobre niños de hasta tres años no pagarán Ganancias hasta un tope anual de 67 mil pesos. Asimismo, se duplica la exención por hija o hijo discapacitado que en la actualidad es de $78.833, y se elimina el tope de edad.\nTambién quedan eximidos del impuesto los bonos productivos hasta un tope del 40% de la ganancia, y las horas extras de los recolectores de residuos.\n\nOtro de los beneficios incluidos en el proyecto es que se podrá deducir de Ganancias herramientas educativas de los trabajadores asalariados.\n\nEsta semana el Gobierno nacional reglamentó parte de los cambios a la Ley de Impuesto a las Ganancias para los trabajadores de la cuarta categoría, con lo cual cerca de 1.270.000 trabajadores que ganen hasta $124.500 netos -una vez descontados aportes a la seguridad social- dejarán de pagar este impuesto con retroactividad a enero, monto a partir del cual se conformará una nueva escala de deducciones.\n\nLa devolución de impuestos equivale a un esfuerzo fiscal de más de $40.000 millones y forma parte del paquete de medidas para morigerar el impacto de la segunda ola de coronavirus, que supone una inversión superior a la establecida en el Presupuesto 2021, de más de $480.000 millones o el equivalente de 1,3% del PBI.\n\nActualmente, previo a la aplicación de esta ley, pagan Ganancias los empleados con salarios netos desde los $ 74.810 sin deducciones por familia y de $ 98.963 en el caso de ser casados con dos hijos.\n\nUno de los aspectos que queda por reglamentar son las deducciones que aplicarán a quienes cobren salarios mensuales mayores a $150.000 ya que la Ley establece que los que perciban entre esa cifra y $173.000 ($149.590 netos) tendrán una reducción de la carga, para evitar que se produzcan saltos que hagan que personas con remuneraciones superiores terminen recibiendo menos dinero en sus bolsillos que quienes tengan sueldos brutos menores.\n",
+      "imagenPrincipal": "https://www.infobae.com/new-resizer/_L3WVKMAkXCwdFedzIgz4cI4lA4=/992x558/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/MKUPRJVH5RGNRDI5ZTFWYG4JLA.jpg",
+      "imagenSec": "",
+      "categoria": "Economia",
+      "autorNoticia": "valentina iramain",
+      "fechaNoticia": "2021-05-29",
+      "destacada": "on",
+      "id": "esrXrKt"
+    },
+    {
+      "tituloNoticia": "Coronavirus en Argentina: confirmaron 416 muertes y 29.841 contagios en las últimas 24 horas",
+      "noticiaBreve": "Fueron realizados 105.569 testeos, con una positividad del 28,26%. Con estos datos, el total de casos desde el inicio de la pandemia asciende a 3.732.263 y las víctimas fatales son 77.108",
+      "noticiaDetallada": "El Ministerio de Salud de la Nación informó este sábado que, en las últimas 24 horas, se registraron 416 muertes y 29.841 contagios de coronavirus. Con estos datos, el total de infectados desde el inicio de la pandemia asciende a 3.732.263 y las víctimas fatales son 77.108.\n\nPor otra parte, en las últimas 24 horas fueron realizados 105.569 testeos, con una positividad del 28,26%. Desde el inicio del brote, se llevaron a cabo 13.788.201 pruebas diagnósticas para esta enfermedad. A la fecha, se registran 366.688 casos positivos activos en todo el país y 3.288.467 recuperados.\n\nDel total de muertes, 234 son hombres (129 de la provincia de Buenos Aires, 16 de la ciudad de Buenos Aires, dos de Chaco, seis de Córdoba, dos de Entre Ríos, ocho de Formosa, 21 de Mendoza, cuatro de Misiones, uno de Neuquén, tres de Río Negro, uno de Salta, cinco de San Juan, uno de Santa Cruz, 33 de Santa Fe y dos de Santiago del Estero) y 179 son mujeres (94 de la provincia de Buenos Aires, 25 de la ciudad de Buenos Aires, una de Chaco, seis de Córdoba, una de Entre Ríos, cuatro de Formosa, una de Jujuy, una de La Pampa, 13 de Mendoza, dos de Misiones, tres de Río Negro, una de Salta, dos de San Juan, una de Santa Cruz, 22 de Santa Fe y dos de Santiago del Estero).",
+      "imagenPrincipal": "https://www.infobae.com/new-resizer/kQ7K4FAnXtYrSboT28ujcV9PyFA=/992x661/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/XTRSFRRTQVHYPGVWPI2T5HKIGU.jpg",
+      "imagenSec": "",
+      "categoria": "Salud",
+      "autorNoticia": "Valentina Iramain 29-05",
+      "fechaNoticia": "2021-05-29",
+      "destacada": "on",
+      "id": "9j0F_Ej"
     }
   ],
   "posts": [

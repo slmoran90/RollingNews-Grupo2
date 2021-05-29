@@ -49,13 +49,13 @@ const ItemNoticia = (props) => {
     return (
         <tr className="textoNoticia">
             {
-            (props.info.destacada==="true") ? <td className='text-center'><FontAwesomeIcon icon={faClipboardCheck} size="2x" color="orange"></FontAwesomeIcon></td> : <td></td>
+            (props.info.destacada==="on") ? <td className='text-center'><FontAwesomeIcon icon={faClipboardCheck} size="2x" color="orange"></FontAwesomeIcon></td> : <td></td>
             }
             <td>{props.info.fechaNoticia}</td>
-            <td>{props.info.categoria}</td>
+            <td className = "d-none d-md-block">{props.info.categoria}</td>
             <td>{props.info.tituloNoticia}</td>
             <td>{props.info.noticiaBreve}</td>
-            <td>{props.info.autorNoticia}</td>
+            <td className = "d-none d-md-block">{props.info.autorNoticia}</td>
         
             <td className='in-line'>
                 <Link className='btn btn-warning text-light mb-2' to={'/noticias/editar/'+props.info.id}><FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon></Link>
