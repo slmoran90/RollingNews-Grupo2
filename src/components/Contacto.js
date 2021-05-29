@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Col, Alert } from "react-bootstrap";
-import { emailjs } from "emailjs-com";
+import  emailjs  from "emailjs-com";
+import {
+  campoRequerido,
+  validarEmail,
+  validarTextArea,
+  validarConsulta
+} from "../components/common/Validaciones";
+import { withRouter } from "react-router-dom";
 
 const Contacto = () => {
   const [nombreCompleto, setNombreCompleto] = useState("");
@@ -9,17 +16,12 @@ const Contacto = () => {
   const [error, setError] = useState(false);
   const [tipoConsulta, setTipoConsulta] = useState("");
 
-  const enviarMail = () => {
-    emailjs
-      .sendForm(
-        "gmail",
+  const enviarMail = (e) => {
+    console.log("dentro de enviarmail");
+    emailjs.sendForm(
+        "service_9vethkv",
         "template_p8vmf2q",
-        {
-          nombreCompleto,
-          email,
-          textArea,
-          tipoConsulta,
-        },
+        e.target,
         "user_sKLjQ13C83jmRiaPuDwAn"
       )
       .then(
@@ -29,36 +31,26 @@ const Contacto = () => {
         (error) => {
           console.log(error.text);
         }
-        );
-      };
-      
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        if (
-          nombreCompleto.trim() === "" &&
-          email.trim() === /\w+@\w+\.[a-z]{2,}$/ &&
-          textArea === "" 
-          // && tipoConsulta.trim() === ""
-          ) {
-      console.log("estoy dentro de enviarmail")
-      enviarMail();
-      setError(true);
-      return;
-    } else {
+      );
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      campoRequerido(nombreCompleto.trim()) &&
+      validarEmail(email) &&
+      validarTextArea(textArea) &&
+      validarConsulta(tipoConsulta)
+    ) {
+      console.log("funca todo");
+      enviarMail(e);
       setError(false);
+    } else {
+      setError(true);
     }
     e.target.reset();
   };
 
-  const formulario = {
-    nombreCompleto,
-    email,
-    textArea,
-    tipoConsulta,
-  };
-
-  console.log(formulario);
   return (
     <Container>
       <Form.Row>
@@ -72,6 +64,7 @@ const Contacto = () => {
                 as="select"
                 onChange={(e) => setTipoConsulta(e.target.value)}
                 required
+                name="tipoConsulta"
               >
                 <option>Problemas con la página</option>
                 <option>Mala redacción</option>
@@ -86,6 +79,8 @@ const Contacto = () => {
                 placeholder="Juan Perez"
                 onChange={(e) => setNombreCompleto(e.target.value)}
                 required
+                minLength={6}
+                name="nombreCompleto"
               />
             </Form.Group>
             <Form.Group>
@@ -95,6 +90,7 @@ const Contacto = () => {
                 placeholder="Juanperez@hotmail.com"
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                name="email"
               />
             </Form.Group>
             <Form.Group>
@@ -104,12 +100,18 @@ const Contacto = () => {
                 rows={4}
                 onChange={(e) => setTextArea(e.target.value)}
                 required
+                minLength={10}
+                maxLength={250}
+                name="textArea"
               />
             </Form.Group>
             <Button type="submit" variant="primary" className="w-50 my-4">
               Enviar
             </Button>
           </Form>
+          {error === true ? (
+            <Alert variant="warning"> Todos los campos son Obligatorios </Alert>
+          ) : null}
         </Col>
         <Col className="mx-5 px-5">
           <article>
@@ -141,12 +143,12 @@ const Contacto = () => {
             </div>
           </article>
         </Col>
-        {error === true ? (
+        {/* {error === true ? (
           <Alert variant="warning"> Todos los campos son Obligatorios </Alert>
-        ) : null}
+        ) : null} */}
       </Form.Row>
     </Container>
   );
 };
 
-export default Contacto;
+export default withRouter(Contacto);
