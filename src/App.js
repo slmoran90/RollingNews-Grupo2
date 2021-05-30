@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+//== Para que vea app.css tiene que ir 1- BOOTSTRAP 2-APP.JS
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navegacion from "./components/common/Navegacion";
@@ -17,6 +18,7 @@ import NuevaNoticia from "./components/noticias/NuevaNoticia";
 import EditarNoticia from "./components/noticias/EditarNoticia";
 import Error from "./components/Error";
 import Nosotros from './components/Nosotros';
+// import NuevaCategoriaModal from "./components/categorias/NuevaCategoriaModal";
 
 
 function App() {
@@ -124,11 +126,11 @@ function App() {
         </Route>
 
         <Route exact path="/categorias/nueva">
-          {/* permite el alta de una nueva categoria */}
           <NuevaCategoria
             consultarAPIcategorias={consultarAPIcategorias}
           ></NuevaCategoria>
         </Route>
+  
         <Route exact path="/categorias/listar">
           {/* muestra lista de categorias existentes */}
           <ListarCategoria

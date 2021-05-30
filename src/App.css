@@ -47,6 +47,14 @@
     color: white;
 }
 
+.main-modal {
+    /* margin-top: 100px; */
+    background-color: #f18219;
+    background-image: linear-gradient(62deg, #f18219 0%, #fe9d3e 100%);
+    font-family: 'Helvetica Neue', sans-serif;
+    color: white;
+}
+
 
 /* Css Error */
 
