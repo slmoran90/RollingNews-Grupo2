@@ -98,7 +98,7 @@ const EditarNoticia = (props) => {
                         'Noticia Modificada',
                         'Se actualizaron los datos de la noticia',
                         'success'
-                      )
+                    )
                     //consultar API
                     props.consultarAPInoticias();
                     //redireccionar

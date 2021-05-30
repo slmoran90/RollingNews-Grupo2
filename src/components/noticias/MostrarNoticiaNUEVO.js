@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Container, Form } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import Swal from "sweetalert2";
 // hoook para usar parametros
 import { useParams, Link } from "react-router-dom";
 
-const MostrarNoticia = () => {
+const MostrarNoticiaNUEVO = () => {
     // obtener el parametro de la URL
     // console.log(useParams().id);
     const parametroID = useParams().id;
@@ -34,97 +34,31 @@ const MostrarNoticia = () => {
         }
     }
 
+    // const fechaLocal = noticiaCompleta.fechaNoticia.toLocalString()
+    
     return (
         <Container className='margenListaNoticias'>
-            <Card>
-                <Card.Img variant="top" src={noticiaCompleta.imagenPrincipal} />
-                <Card.Body>
-                    <Card.Title>{noticiaCompleta.tituloNoticia}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{noticiaCompleta.noticiaBreve}</Card.Subtitle>
-                    <Card.Text>
-                        {noticiaCompleta.noticiaDetallada}
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
-        </Container>
-
-
-
-
-        <Container className="container my-3 py-3 shadow-lg">
             <h3 className="text-center my-3 py-3 bg-warning text-light">
                 Mostrar Noticia Completa
             </h3>
-
-            <Form className='mx-5'>
-                <Form.Row>
-                    <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Categoría:</Form.Label>
-                        <Form.Control type="text" size="sm" placeholder="Categoría" defaultValue={noticiaCompleta.categoria} disabled />
-                    </Form.Group>
-
-                    <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Fecha:</Form.Label>
-                        <Form.Control type="text" size="sm" placeholder="" defaultValue={noticiaCompleta.fechaNoticia} disabled />
-                    </Form.Group>
-
-                    <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Autor:</Form.Label>
-                        <Form.Control type="text" size="sm" placeholder="Autor" defaultValue={noticiaCompleta.autorNoticia} disabled />
-                    </Form.Group>
-                </Form.Row>
-
-                <Form.Group>
-                    <Form.Label>Titulo Noticia:</Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Titulo de la Noticia" defaultValue= disabled />
-                </Form.Group>
-
-                <Form.Group>
-                    <Form.Label>Descripción Breve:</Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Descripción Breve" defaultValue= disabled />
-                </Form.Group>
-
-                <Form.Group>
-                    <Form.Label>Descripción Detallada:</Form.Label>
-                    <Form.Control as="textarea" rows={10} size="sm" placeholder="Descripción Detallada" defaultValue={noticiaCompleta.noticiaDetallada} disabled />
-                </Form.Group>
-
-                <Form.Row>
-                    <Form.Group className='col-sm-12 col-md-8'>
-                        <Form.Label>Imagen Principal:</Form.Label>
-                        <Form.Control as="textarea" rows={5} placeholder="Imagen Principal" defaultValue={noticiaCompleta.imagenPrincipal} disabled />
-                    </Form.Group>
-
-                    <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                        <img className='w-75' src={noticiaCompleta.imagenPrincipal} alt='Imagen Principal de la Noticia' />
-                    </Form.Group>
-                </Form.Row>
-
-                <Form.Row>
-                    <Form.Group className='col-sm-12 col-md-8'>
-                        <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
-                        <Form.Control as="textarea" rows={5} placeholder="Imagen Secundaria" defaultValue={noticiaCompleta.imagenSec} disabled />
-                    </Form.Group>
-
-                    <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                        <img className='w-75' src={noticiaCompleta.imagenSec} alt='Imagen Principal de la Noticia' />
-                    </Form.Group>
-                </Form.Row>
-                <Form.Group className='my-2 pb-2'>
-                    {
-                    (noticiaCompleta.destacada ==='on') ? <Form.Check type='checkbox' label='Noticia Destacada' checked disabled /> : <Form.Check type='checkbox' label='Noticia Destacada' disabled />
-                    }
-                    
-                </Form.Group>
-                    {/* <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticiaCompleta.destacada} disabled /> */}
-                
-
-                <Link className='btn btn-primary text-light mr-3 d-block' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
-            </Form>
+            <Card>
+                {/* <p>{noticiaCompleta.autorNoticia}</p> */}
+                <p>{noticiaCompleta.categoria}</p>
+                {/* <p>(noticiaCompleta.destacada ==='on') ? "Noticia Destacada" : null</p> */}
+                <Card.Title>{noticiaCompleta.tituloNoticia}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{noticiaCompleta.noticiaBreve}</Card.Subtitle>
+                <p>{noticiaCompleta.fechaNoticia}</p>
+                <Card.Img className='w-50 text-center' variant="top" src={noticiaCompleta.imagenPrincipal} />
+                <Card.Body>    
+                    <Card.Text>
+                        {noticiaCompleta.noticiaDetallada}
+                    </Card.Text>
+                    {/* <Button variant="primary">Volver</Button> */}
+                    <Link className='btn btn-primary text-light mr-3 d-block' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
+                </Card.Body>
+            </Card>
         </Container>
-        </Container >
     );
 };
 
-export default MostrarNoticia;
+export default MostrarNoticiaNUEVO;

@@ -11,16 +11,23 @@ const ListarNoticias = (props) => {
     return (
         <Container className='margenListaNoticias'>
             <h3 className='text-center my-3 py-3 bg-warning text-light'>Listado de Noticias</h3>
-            <Table responsive hover >
+            <Table responsive hover>
                 <thead>
                     <tr className="textoNoticia">
                         <th>Destacada</th>
                         <th>Fecha</th>
-                        <th className = "d-none d-md-block">Categoría</th>
+                        <th>Categoría</th>
                         <th>Titulo</th>
-                        <th>Descripción Breve</th>
-                        <th className = "d-none d-md-block">Autor</th>
+                        <th className='d-none d-md-table-cell'>Descripción Breve</th>
+                        <th>Autor</th>
                         <th>Acciones</th>
+                        {/* <th>Destacada</th>
+                        <th>Fecha</th>
+                        <th className='d-none d-md-block'>Categoría</th>
+                        <th>Titulo</th>
+                        <th className='d-none d-md-block'>Descripción Breve</th>
+                        <th className='d-none d-md-block'>Autor</th>
+                        <th>Acciones</th> */}
                     </tr>
                 </thead>
                 <tbody>

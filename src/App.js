@@ -1,17 +1,16 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
 import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
-import { useState } from "react";
-import { useEffect } from "react";
 import ComponenteNoticia from "./components/ComponenteNoticia";
 import ListaPorCategoriaUser from "./components/ListaPorCategoriaUser";
 import NuevaCategoria from "./components/categorias/NuevaCategoria";
 import ListarCategoria from "./components/categorias/ListarCategoria";
 import ListarNoticiasxCateg from "./components/noticias/ListarNoticiasxCateg";
-import MostrarNoticia from "./components/noticias/MostrarNoticia";
+import MostrarNoticiaNUEVO from "./components/noticias/MostrarNoticiaNUEVO";
 import Swal from "sweetalert2";
 import ListarNoticias from "./components/noticias/ListarNoticias";
 import NuevaNoticia from "./components/noticias/NuevaNoticia";
@@ -144,7 +143,7 @@ function App() {
         
         <Route exact path="/noticias/mostrarNoticia/:id">
           {/* muestra la noticia completa, seleccionada en la lista de noticias */}
-          <MostrarNoticia></MostrarNoticia>
+          <MostrarNoticiaNUEVO></MostrarNoticiaNUEVO>
         </Route>
 
         <Route exact path="/noticias/nueva">
