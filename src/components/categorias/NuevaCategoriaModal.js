@@ -108,26 +108,30 @@ const NuevaCategoria = (props) => {
     }
 
     return (
-        <Container className="py-3 w-50 margenListaNoticias shadow-lg">
-            <h3 className="text-center my-3 py-3 fondoTitulo text-light">Nueva Categoria</h3>
+        <Modal.Dialog className="main-form">
+            <Modal.Header closeButton>
+                <Modal.Title className='text-dark'>Nueva Categoría</Modal.Title>
+            </Modal.Header>
 
-            <Form ref={formRef} className="mx-5 " onSubmit={handleSubmit}>
-                <Form.Group className='py-2'>
-                    <Form.Label>Nombre de la Categoría *</Form.Label>
-                    <Form.Control type="text" placeholder="Nombre de la Categoria" onChange={(e) => { setNombreCategoria(e.target.value) }} required />
-                </Form.Group>
+            <Modal.Body className='main-modal'>
+                <Form ref={formRef} className="mx-5" onSubmit={handleSubmit}>
+                    <Form.Group className='py-2'>
+                        <Form.Label>Nombre de la Categoría *</Form.Label>
+                        <Form.Control type="text" placeholder="Nombre de la Categoria" onChange={(e) => { setNombreCategoria(e.target.value) }} required />
+                    </Form.Group>
 
-                <div className="d-flex justify-content-center">
-                    <Button className='botones mb-3 px-5 py-2' type='submit'>
-                        Guardar
+                    <div className="d-flex justify-content-center">
+                        <Button className='botones mb-3 px-5 py-2' type='submit'>
+                            Guardar
                         </Button>
-                </div>
+                    </div>
 
-                {/* muetra mensaje de errores durante la carga de datos */}
-                {(error === true) ? (<Alert variant='warning'>{mensajeError}</Alert>) : null}
+                    {/* muetra mensaje de errores durante la carga de datos */}
+                    {(error === true) ? (<Alert variant='warning'>{mensajeError}</Alert>) : null}
 
-            </Form>
-        </Container>
+                </Form>
+            </Modal.Body>
+        </Modal.Dialog>
     );
 };
 

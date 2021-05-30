@@ -5,7 +5,7 @@ import ItemCategoria from './ItemCategoria';
 const ListarCategoria = (props) => {
     // console.log('props en listar categoria: ',props)
     return (
-            <Container className="py-3 w-50 margenListaNoticias">
+            <Container className="py-3 w-50 margenListaNoticias shadow-lg">
                 <h3 className="text-center my-3 py-3 fondoTitulo text-light">Categorías</h3>
                 <ListGroup>
                     {
