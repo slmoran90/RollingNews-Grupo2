@@ -40,16 +40,15 @@ const ListarNoticiasxCateg = () => {
 
     return (
         <Container className='margenListaNoticias'> 
-        {/* <Container className='container my-3 py-3 shadow-lg'> */}
-            <h3 className='text-center my-3 py-3 bg-warning text-light'>Categoria: {parametroCategoria}</h3>
-            <Table responsive>
+            <h3 className='text-center my-3 py-3 fondoTitulo text-light'>Categoria: {parametroCategoria}</h3>
+            <Table responsive hover>
                 <thead>
                     <tr className="textoNoticia">
                         <th>Destacada</th>
                         <th>Fecha</th>
                         <th>Titulo</th>
-                        <th>Descripción Breve</th>
-                        <th>Autor</th>
+                        <th className='d-none d-md-table-cell'>Descripción Breve</th>
+                        <th className='d-none d-md-table-cell'>Autor</th>
                         <th>Ver</th>
                     </tr>
                 </thead>

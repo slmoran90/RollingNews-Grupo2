@@ -11,15 +11,16 @@ import ListaPorCategoriaUser from "./components/ListaPorCategoriaUser";
 import NuevaCategoria from "./components/categorias/NuevaCategoria";
 import ListarCategoria from "./components/categorias/ListarCategoria";
 import ListarNoticiasxCateg from "./components/noticias/ListarNoticiasxCateg";
-import MostrarNoticiaNUEVO from "./components/noticias/MostrarNoticiaNUEVO";
 import Swal from "sweetalert2";
 import ListarNoticias from "./components/noticias/ListarNoticias";
 import NuevaNoticia from "./components/noticias/NuevaNoticia";
 import EditarNoticia from "./components/noticias/EditarNoticia";
 import Error from "./components/Error";
 import Nosotros from './components/Nosotros';
+import MostrarNoticia from "./components/noticias/MostrarNoticia";
+import Fotografia from "./components/fotografia/Fotografia";
 // import NuevaCategoriaModal from "./components/categorias/NuevaCategoriaModal";
-
+// import ListarCategoriaModal from "./components/categorias/ListarCategoriaModal";
 
 function App() {
 
@@ -108,6 +109,9 @@ function App() {
   }
   return (
     <Router>
+{/*       
+          <Fotografia></Fotografia>
+       */}
       <Navegacion></Navegacion>
       {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}
       <Switch>
@@ -124,14 +128,17 @@ function App() {
         <Route exact path="/noticia/:categoria">
           <ListaPorCategoriaUser />
         </Route>
+        <Route exact path="/categorias/fotografias">
+          <Fotografia></Fotografia>
+        </Route>
 
+        {/* -- Menu Administrador -- */}
         <Route exact path="/categorias/nueva">
           <NuevaCategoria
             consultarAPIcategorias={consultarAPIcategorias}
           ></NuevaCategoria>
         </Route>
-  
-        <Route exact path="/categorias/listar">
+        <Route exact path="/categorias/listar"> 
           {/* muestra lista de categorias existentes */}
           <ListarCategoria
             categorias={categorias}
@@ -143,13 +150,11 @@ function App() {
           <ListarNoticiasxCateg
             consultarAPIcategorias={consultarAPIcategorias}
           ></ListarNoticiasxCateg>
-        </Route>
-        
+        </Route> 
         <Route exact path="/noticias/mostrarNoticia/:id">
           {/* muestra la noticia completa, seleccionada en la lista de noticias */}
-          <MostrarNoticiaNUEVO></MostrarNoticiaNUEVO>
+          <MostrarNoticia></MostrarNoticia>
         </Route>
-
         <Route exact path="/noticias/nueva">
           <NuevaNoticia noticias={noticias}
             consultarAPInoticias={consultarAPInoticias}></NuevaNoticia>
@@ -164,6 +169,7 @@ function App() {
         <Route exact path="/noticias/editar/:id">
           <EditarNoticia consultarAPInoticias={consultarAPInoticias}></EditarNoticia>
         </Route>
+        {/* -- Fin menu Administrador --*/}
         
         <Route exact path="/nosotros">
           <Nosotros></Nosotros>

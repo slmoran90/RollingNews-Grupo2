@@ -9,8 +9,11 @@ const ListarNoticias = (props) => {
     const noticiasOrdenadas = props.noticias.sort((a, b) => new Date(a.fechaNoticia).getTime() - new Date(b.fechaNoticia).getTime());
     
     return (
+        // <div className="main-form">
+        // <Container className="py-3">
+        //     <h2 className="text-center my-3 py-3">Listado de Noticias</h2>
         <Container className='margenListaNoticias'>
-            <h3 className='text-center my-3 py-3 bg-warning text-light'>Listado de Noticias</h3>
+            <h3 className='text-center my-3 py-3 fondoTitulo text-light'>Listado de Noticias</h3> 
             <Table responsive hover>
                 <thead>
                     <tr className="textoNoticia">
@@ -21,13 +24,6 @@ const ListarNoticias = (props) => {
                         <th className='d-none d-md-table-cell'>Descripción Breve</th>
                         <th>Autor</th>
                         <th>Acciones</th>
-                        {/* <th>Destacada</th>
-                        <th>Fecha</th>
-                        <th className='d-none d-md-block'>Categoría</th>
-                        <th>Titulo</th>
-                        <th className='d-none d-md-block'>Descripción Breve</th>
-                        <th className='d-none d-md-block'>Autor</th>
-                        <th>Acciones</th> */}
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +34,7 @@ const ListarNoticias = (props) => {
             </Table>
 
         </Container>
+        // </div>
     );
 };
 export default ListarNoticias;

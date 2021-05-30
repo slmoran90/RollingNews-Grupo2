@@ -8,11 +8,12 @@ import {
     Col,
     Container,
 } from "react-bootstrap";
+
 import { Link } from "react-router-dom";
+// import ListarCategoriaModal from "./components/categorias/ListarCategoriaModal";
 
 const Navegacion = () => {
     const [expanded,setExpanded] = useState(false);
-
     return (
         <Navbar bg="light" expand="lg" className="fixed-top" expanded={expanded}>
             <Container>
@@ -103,7 +104,8 @@ const Navegacion = () => {
                                     <NavDropdown.Item>
                                         <Link
                                             className="nav-link"
-                                            to="/noticia/Fotografia"
+                                            exact={true}
+                                            to="/categorias/fotografias"
                                             onClick={()=> setExpanded(!expanded)}
                                         >
                                             Fotografía
@@ -125,6 +127,7 @@ const Navegacion = () => {
                                                 exact={true}
                                                 to="/categorias/listar"
                                                 onClick={()=> setExpanded(!expanded)}
+                                                // onClick={handleShow}
                                             >
                                                 Categorias
                                             </Link></NavDropdown.Item>

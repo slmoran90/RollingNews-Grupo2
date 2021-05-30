@@ -29,6 +29,7 @@ const Nosotros = () => {
                         Creemos que nuestro equipo,es una gran familia. Creemos que la confianza se construye a través de la excelencia. Contribuimos a construir un futuro en el que todos tengan la ayuda que necesitan para dedicar tiempo a las personas y las cosas que más importan.
                         </div>
                     </div>
+                    
                     <div >
                         <div className="row my-4">
                             <div className="row col-sm-12 col-md-4">

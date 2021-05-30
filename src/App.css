@@ -37,6 +37,14 @@
 }
 
 
+/* fondo titulo en pantalla administrador */
+
+.fondoTitulo {
+    background-color: #f18219;
+    background-image: linear-gradient(62deg, #f18219 0%, #fe9d3e 100%);
+}
+
+
 /*Fondo Formulario*/
 
 .main-form {
@@ -46,6 +54,9 @@
     font-family: 'Helvetica Neue', sans-serif;
     color: white;
 }
+
+
+/* para ventanas modales */
 
 .main-modal {
     /* margin-top: 100px; */
@@ -66,3 +77,25 @@
     height: 50%;
     width: 50%;
 }
+
+
+/* Para galeria de fotos */
+
+.imagen {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 
+@media (min-width:992px) {
+    .colum-fotos {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+    .contenedor-fotos {
+        column-count: 4;
+        column-width: 200px;
+    }
+} */

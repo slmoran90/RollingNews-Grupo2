@@ -11,7 +11,6 @@ const MostrarNoticia = () => {
     // URL donde estan almacenadas las noticias
     const URLnoticias = process.env.REACT_APP_API_URLnoticias + "/?id=" + parametroID;
     
-
     //=== state para almacenar resultados del fetch
     const [noticiaCompleta, setNoticiaCompleta] = useState({});
 
@@ -35,12 +34,11 @@ const MostrarNoticia = () => {
     }
 
     return (
-        <Container className='margenListaNoticias'>
-        <Container className="container my-3 py-3 shadow-lg">
-            <h3 className="text-center my-3 py-3 bg-warning text-light">
-                Mostrar Noticia Completa
-            </h3>
+        <div className="main-form">
+        <Container className="py-3">
+            <h2 className="text-center my-3 py-3">Mostrar Noticia Completa</h2>
 
+        {/* <Container className='margenListaNoticias'> */}
             <Form className='mx-5'>
                 <Form.Row>
                     <Form.Group className='col-sm-6 col-md-4'>
@@ -65,13 +63,13 @@ const MostrarNoticia = () => {
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Descripción Breve:</Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Descripción Breve" defaultValue={noticiaCompleta.noticiaBreve} disabled />
+                    <Form.Label>Noticia Breve:</Form.Label>
+                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Noticia Breve" defaultValue={noticiaCompleta.noticiaBreve} disabled />
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Descripción Detallada:</Form.Label>
-                    <Form.Control as="textarea" rows={10} size="sm" placeholder="Descripción Detallada" defaultValue={noticiaCompleta.noticiaDetallada} disabled />
+                    <Form.Label>Noticia Detallada:</Form.Label>
+                    <Form.Control as="textarea" rows={10} size="sm" placeholder="Noticia Detallada" defaultValue={noticiaCompleta.noticiaDetallada} disabled />
                 </Form.Group>
 
                 <Form.Row>
@@ -98,16 +96,13 @@ const MostrarNoticia = () => {
                 <Form.Group className='my-2 pb-2'>
                     {
                     (noticiaCompleta.destacada ==='on') ? <Form.Check type='checkbox' label='Noticia Destacada' checked disabled /> : <Form.Check type='checkbox' label='Noticia Destacada' disabled />
-                    }
-                    
+                    }     
                 </Form.Group>
-                    {/* <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticiaCompleta.destacada} disabled /> */}
                 
-
-                <Link className='btn btn-primary text-light mr-3 d-block' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
+                <Link className='btn botones w-100 mt-3' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
             </Form>
         </Container>
-        </Container>
+        </div>
     );
 };
 
