@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Navbar,
     Nav,
@@ -11,8 +11,10 @@ import {
 import { Link } from "react-router-dom";
 
 const Navegacion = () => {
+    const [expanded,setExpanded] = useState(false);
+
     return (
-        <Navbar bg="light" expand="lg" className="fixed-top">
+        <Navbar bg="light" expand="lg" className="fixed-top" expanded={expanded}>
             <Container>
                 <Row>
                     <Col md={12}>
@@ -28,84 +30,88 @@ const Navegacion = () => {
                         </Navbar.Brand>
                     </Col>
                     <Col>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="mr-auto">
-                                <Link className="nav-link" to="/" exact>
-                                    {" "}
-                                    Inicio{" "}
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={()=> setExpanded(!expanded)} />
+                        <Navbar.Collapse id="basic-navbar-nav" >
+                            <Nav className="mr-auto" collapseOnSelect>
+                                <Link className="nav-link" to="/" exact onClick={()=> setExpanded(!expanded)}>
+                                    Inicio
                                 </Link>
                                 <Link
                                     className="nav-link"
                                     to="/noticia/Actualidad"
                                     exact
+                                    onClick={()=> setExpanded(!expanded)}
                                 >
-                                    {" "}
-                                    Actualidad{" "}
+                                    Actualidad
                                 </Link>
                                 <Link
                                     className="nav-link"
                                     to="/noticia/Espectaculos"
                                     exact
+                                    onClick={()=> setExpanded(!expanded)}
                                 >
-                                    {" "}
-                                    Espectáculos{" "}
+                                    Espectáculos
                                 </Link>
                                 <Link
                                     className="nav-link"
                                     to="/noticia/Tecnologia"
                                     exact
+                                    onClick={()=> setExpanded(!expanded)}
                                 >
-                                    {" "}
-                                    Tecnología{" "}
+                                    Tecnología
                                 </Link>
-                                <Link
+                                <Link 
                                     className="nav-link"
                                     to="/noticia/Deportes"
                                     exact
+                                    onClick={()=> setExpanded(!expanded)}
                                 >
-                                    {" "}
-                                    Deportes{" "}
+                                    Deportes
                                 </Link>
                                 <NavDropdown
                                     title="Más Categorías"
                                     id="basic-nav-dropdown"
                                 >
-                                    <NavDropdown.Item href="">
+                                    <NavDropdown.Item>
                                         <Link
                                             className="nav-link"
                                             to="/noticia/Politica"
+                                            onClick={()=> setExpanded(!expanded)}
                                         >
                                             Política
                                         </Link>
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item href="">
+                                    <NavDropdown.Item>
                                         <Link
                                             className="nav-link"
                                             to="/noticia/Economia"
+                                            onClick={()=> setExpanded(!expanded)}
                                         >
                                             Economía
                                         </Link>
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item href="">
+                                    <NavDropdown.Item>
                                         <Link
                                             className="nav-link"
                                             to="/noticia/Salud"
+                                            onClick={()=> setExpanded(!expanded)}
                                         >
                                             Salud
                                         </Link>
                                     </NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item href="">
+                                    <NavDropdown.Item>
                                         <Link
                                             className="nav-link"
                                             to="/noticia/Fotografia"
+                                            onClick={()=> setExpanded(!expanded)}
                                         >
                                             Fotografía
                                         </Link>
                                     </NavDropdown.Item>
                                 </NavDropdown>
                                 {/* Menu habilitado sólo al admnistrador */}
+<<<<<<< HEAD
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="mr-auto">
                     <NavDropdown title="Admin" id="basic-nav-dropdown">
@@ -141,20 +147,60 @@ const Navegacion = () => {
                   </Nav>
                 </Navbar.Collapse>
                                 <Link className="nav-link" exact={true} to="/nosotros">
+=======
+                                        <NavDropdown title="Admin" id="basic-nav-dropdown">
+                                            <NavDropdown.Item><Link
+                                                className="nav-link"
+                                                exact={true}
+                                                to="/noticias/listar"
+                                                onClick={()=> setExpanded(!expanded)}
+                                            >
+                                                Noticias
+                                            </Link></NavDropdown.Item>
+                                            <NavDropdown.Item><Link
+                                                className="nav-link"
+                                                exact={true}
+                                                to="/categorias/listar"
+                                                onClick={()=> setExpanded(!expanded)}
+                                            >
+                                                Categorias
+                                            </Link></NavDropdown.Item>
+                                            <NavDropdown.Divider />
+                                            <NavDropdown.Item><Link
+                                                className="nav-link"
+                                                exact={true}
+                                                to="/noticias/nueva"
+                                                onClick={()=> setExpanded(!expanded)}
+                                            >
+                                                Nueva Noticia
+                                            </Link></NavDropdown.Item>
+                                            <NavDropdown.Item><Link
+                                                className="nav-link"
+                                                exact={true}
+                                                to="/categorias/nueva"
+                                                onClick={()=> setExpanded(!expanded)}
+                                            >
+                                                Nueva Categoria
+                                            </Link></NavDropdown.Item>
+                                        </NavDropdown>
+                                <Link className="nav-link" exact={true} to="/nosotros" onClick={()=> setExpanded(!expanded)}>
+>>>>>>> develop
                                     Nosotros
                                 </Link>
-                                <Link className="nav-link" exact={true}>
+                                <Link className="nav-link" exact={true}  onClick={()=> setExpanded(!expanded)}>
                                     Contacto
                                 </Link>
                                 <Button
-                                    className="ml-5"
-                                    variant="outline-success"
+                                    className="ml-md-5 mt-1"
+                                    variant="outline-warning"
+                                    onClick={()=> setExpanded(!expanded)}
                                 >
                                     Iniciar Sesión
                                 </Button>
                                 <Button
-                                    className="ml-2"
-                                    variant="outline-success"
+                                    className="ml-md-2 mt-1"
+                                    variant="outline-warning"
+                                    onClick={()=> setExpanded(!expanded)}
                                 >
                                     Registrarse
                                 </Button>
@@ -162,7 +208,7 @@ const Navegacion = () => {
                         </Navbar.Collapse>
                     </Col>
                 </Row>
-            </Container>
+            </Container>    
         </Navbar>
     );
 };

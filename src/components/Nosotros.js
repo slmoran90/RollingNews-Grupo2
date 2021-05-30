@@ -89,7 +89,7 @@ const Nosotros = () => {
                                 </div>
                                 <div className="col-md-5 text-light">
                                     <h6>Slaya Ostapzuk</h6>
-                                <div className="linea"></div>                                    
+                                <div className="linea"></div>                                     
                                     <p className="mt-2">Dirección de programación</p>
                                 </div>
                             </div>

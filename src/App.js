@@ -17,6 +17,8 @@ import NuevaNoticia from "./components/noticias/NuevaNoticia";
 import EditarNoticia from "./components/noticias/EditarNoticia";
 import Error from "./components/Error";
 import Nosotros from './components/Nosotros';
+
+
 function App() {
 
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
@@ -164,8 +166,7 @@ function App() {
         <Route exact path="/nosotros">
           <Nosotros></Nosotros>
         </Route>
-        
-        <Route path="*">
+        <Route path="/">
           <Error></Error>
         </Route>
         

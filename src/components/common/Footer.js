@@ -10,24 +10,24 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <section className="bg-secondary text-light text-center p-3">
+    <section className="bg-secondary text-light text-center pt-3">
       <article className="row d-flex justify-content-around align-items-center">
         <div className="col-sm-6 col-md-3">
           <h6>
             <span className="font-weight-bold">Rolling News</span>
           </h6>
           <div>
-            <Link className="text-light" href="#">
+            <Link className="text-light">
               <b>Dirección:</b> Calle 123 -<br></br> S.M. de Tucumán - Tucumán
             </Link>
           </div>
           <div>
-            <Link className="text-light" href="#">
+            <Link className="text-light">
               <b>Teléfono:</b> (381)0303456
             </Link>
           </div>
           <div>
-            <Link className="text-light" href="#">
+            <Link className="text-light">
               <b>Email:</b> rollingnews@gmail.com
             </Link>
           </div>
@@ -38,17 +38,17 @@ const Footer = () => {
             <span className="font-weight-bold">Soporte</span>
           </h6>
           <div>
-            <Link className="text-light" href="#">
+            <Link className="text-light">
               Centro de Ayuda
             </Link>
           </div>
           <div>
-            <Link className="text-light" href="#">
+            <Link className="text-light">
               Contacto
             </Link>
           </div>
           <div>
-            <Link className="text-light" href="#">
+            <Link className="text-light">
               Redacción
             </Link>
           </div>
@@ -58,17 +58,17 @@ const Footer = () => {
             <span className="font-weight-bold">Legales</span>
           </h6>
           <div>
-            <Link className="text-light" href="#">
+            <Link className="text-light">
               Política de Cookies
             </Link>
           </div>
           <div>
-            <Link className="text-light" href="#">
+            <Link className="text-light">
               Política de Privacidad
             </Link>
           </div>
           <div>
-            <Link className="text-light" href="#">
+            <Link className="text-light">
               Términos y Condiciones
             </Link>
           </div>

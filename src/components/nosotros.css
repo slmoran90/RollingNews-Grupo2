@@ -51,7 +51,7 @@
 .main-timeline4:before {
   content: "";
   width: 5px;
-  height: 70%;
+  height: 100%;
   background: #333;
   position: absolute;
   top: 70px;
@@ -205,7 +205,7 @@
   color: #f8e21f;
 }
 .main-timeline4 .timeline:nth-child(5) .year:before {
-  border-right-color: #f8e21f;
+  border-left-color: #f8e21f;
 }
 .main-timeline4 .timeline:nth-child(5n) .title {
   color: #f8e21f;
@@ -225,7 +225,7 @@
   color: #f81fc9;
 }
 .main-timeline4 .timeline:nth-child(7) .year:before {
-  border-right-color: #f81fc9;
+  border-left-color: #f81fc9;
 }
 .main-timeline4 .timeline:nth-child(7n) .title {
   color: #f81fc9;
@@ -240,8 +240,18 @@
 .main-timeline4 .timeline:nth-child(8n) .title {
   color: #f8781f;
 }
+.main-timeline4 .timeline:nth-child(9n) .year {
+  border-color: #1fbbf8;
+  color: #1fbbf8;
+}
+.main-timeline4 .timeline:nth-child(9) .year:before {
+  border-left-color: #1fbbf8;
+}
+.main-timeline4 .timeline:nth-child(9n) .title {
+  color: #1fbbf8;
+}
 
-/* @media only screen and (max-width:1200px){.main-timeline4 .year{top:50%;transform:translateY(-50%)}
+ @media only screen and (max-width:1200px){.main-timeline4 .year{top:50%;transform:translateY(-50%)}
 }
 @media only screen and (max-width:990px){.main-timeline4 .timeline{padding-left:75px}
 .main-timeline4 .timeline:nth-child(2n){padding:0 75px 0 0}
@@ -261,4 +271,10 @@
 .main-timeline4 .timeline:nth-child(2n) .year:before{border-right-color:#1ebad0}
 .main-timeline4 .timeline:nth-child(3n) .year:before{border-right-color:#7cba01}
 .main-timeline4 .timeline:nth-child(4n) .year:before{border-right-color:#f8781f}
-.main-timeline4 .inner-content{padding:10px} */
+.main-timeline4 .timeline:nth-child(5n) .year:before{border-right-color:#f8e21f}
+.main-timeline4 .timeline:nth-child(6n) .year:before{border-right-color:#4e1ff8}
+.main-timeline4 .timeline:nth-child(7n) .year:before{border-right-color:#f81fc9}
+.main-timeline4 .timeline:nth-child(8n) .year:before{border-right-color:#f8781f}
+.main-timeline4 .timeline:nth-child(9n) .year:before{border-right-color:#1fbbf8}
+.main-timeline4 .inner-content{padding:10px}
+}
