@@ -208,22 +208,10 @@ const EditarNoticia = (props) => {
                         />
                     </Form.Group>
                 </Form.Row>
-<<<<<<< HEAD
-                {/* <Form.Group className='my-2 pb-2'>
-                    <Form.Check type='checkbox' label='Noticia Destacada' 
-                    defaultChecked ={noticia.destacada}/>
-                </Form.Group> */}
-
-=======
->>>>>>> develop
                 <Form.Group className='my-2 pb-2'>
                     {
                     (noticia.destacada === 'on') ? <Form.Check type='checkbox' label='Noticia Destacada' checked /> : <Form.Check type='checkbox' label='Noticia Destacada'  />
                     }
-<<<<<<< HEAD
-                    
-=======
->>>>>>> develop
                 </Form.Group>
                 
                 <Button type='submit' className="botones w-100 mt-3">Guardar</Button>

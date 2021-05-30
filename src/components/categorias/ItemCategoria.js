@@ -53,10 +53,12 @@ const ItemCategoria = (props) => {
     return (
         <ListGroup.Item className='row d-flex justify-content-center'>
             <div className='col-sm-12 col-md-6'>
-                <p className='font-weight-bold'>{props.categoria.nombreCategoria}</p>
+                <p className='font-weight-bold text-dark'>{props.categoria.nombreCategoria}</p>
             </div>
             <div className='col-sm-12 col-md-6 d-flex justify-content-end'>
-                <Button variant='danger' className='mr-2' onClick={()=> eliminarCategoria(props.categoria.id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Button>
+            
+            <Button variant='danger' className='mr-2' onClick={()=> eliminarCategoria(props.categoria.id)}><FontAwesomeIcon className="text-light" icon={faTrashAlt} size="lg"></FontAwesomeIcon></Button>
+                {/* <Button variant='danger' className='mr-2' onClick={()=> eliminarCategoria(props.categoria.id)}><FontAwesomeIcon icon={faTrashAlt} size='1x'></FontAwesomeIcon></Button> */}
                 <Button variant='warning text-light' className='mr-2'><FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon></Button>
                 <Link className='btn btn-primary text-light' to={'/noticias/listar/'+props.categoria.nombreCategoria}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></Link>
             </div>

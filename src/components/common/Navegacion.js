@@ -111,43 +111,6 @@ const Navegacion = () => {
                                     </NavDropdown.Item>
                                 </NavDropdown>
                                 {/* Menu habilitado sólo al admnistrador */}
-<<<<<<< HEAD
-                <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="mr-auto">
-                    <NavDropdown title="Admin" id="basic-nav-dropdown">
-                    <NavDropdown.Item><Link
-                        className="nav-link"
-                        exact={true}
-                        to="/noticias/listar"
-                      >
-                        Noticias
-                      </Link></NavDropdown.Item>
-                      <NavDropdown.Item><Link
-                        className="nav-link"
-                        exact={true}
-                        to="/categorias/listar"
-                      >
-                        Categorias
-                      </Link></NavDropdown.Item>
-                      <NavDropdown.Item><Link
-                        className="nav-link"
-                        exact={true}
-                        to="/noticias/nueva"
-                      >
-                        Nueva Noticia
-                      </Link></NavDropdown.Item>
-                      <NavDropdown.Item><Link
-                        className="nav-link"
-                        exact={true}
-                        to="/categorias/nueva"
-                      >
-                        Nueva Categoria
-                      </Link></NavDropdown.Item>
-                    </NavDropdown>
-                  </Nav>
-                </Navbar.Collapse>
-                                <Link className="nav-link" exact={true} to="/nosotros">
-=======
                                         <NavDropdown title="Admin" id="basic-nav-dropdown">
                                             <NavDropdown.Item><Link
                                                 className="nav-link"
@@ -184,7 +147,6 @@ const Navegacion = () => {
                                             </Link></NavDropdown.Item>
                                         </NavDropdown>
                                 <Link className="nav-link" exact={true} to="/nosotros" onClick={()=> setExpanded(!expanded)}>
->>>>>>> develop
                                     Nosotros
                                 </Link>
                                 <Link className="nav-link" exact={true}  onClick={()=> setExpanded(!expanded)}>

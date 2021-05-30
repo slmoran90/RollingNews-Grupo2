@@ -24,21 +24,10 @@
       "nombreCategoria": "Salud",
       "descripCategoria": "Noticias asociadas a todas las areas de la salud",
       "id": "-HP-A5G"
-<<<<<<< HEAD
     },
     {
-      "nombreCategoria": "Economia",
-      "id": "4W0QGch"
-    },
-    {
-      "nombreCategoria": "Fotografía",
-      "id": "W4baJ-Z"
-    },
-    {
-      "nombreCategoria": "Espectáculos",
-      "id": "4kNP1_W"
-=======
->>>>>>> develop
+      "nombreCategoria": "Cines",
+      "id": "k9N7VmH"
     }
   ],
   "noticias": [
@@ -47,7 +36,6 @@
       "noticiaBreve": "La reapertura de empresas y el aumento del gasto también hicieron subir los precios, con un aumento de la inflación del 3,5 por ciento en el mismo periodo.  En otra señal positiva, el número de estadounidenses que solicitaron beneficios por desempleo se reduj…",
       "noticiaDetallada": "La Economia de Estados Unidos creció un 6,4% en el primer trimestre de este año por una recuperación del consumo y un aumento del gasto público, que reflejan la recuperación en marcha que va dejando … [+3812 chars]",
       "imagenPrincipal": "https://www.infobae.com/new-resizer/IELAolN_kbQVYpFhCcCjcoQP9z0=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/IHVE4QRFX3BXSU56NL5IV7UKQE.jpg",
-<<<<<<< HEAD
       "imagensec": "",
       "categoria": "Negocios",
       "autorNoticia": "infobae",
@@ -89,51 +77,6 @@
       "autorNoticia": "La Nacion",
       "fechaNoticia": "2021-05-01",
       "destacada": "off",
-=======
-      "categoria": "Negocios",
-      "autorNoticia": "infobae",
-      "fechaNoticia": "2021-05-27",
-      "id": "1"
-    },
-    {
-      "tituloNoticia": "minutoUno",
-      "noticiaBreve": "Las clases seguirán exclusivamente a distancia en lugares de alarma epidemiológica\", informó el Presidente. Establecen cuatro zonas sanitarias para el país.",
-      "noticiaDetallada": "Las próximas semanas pueden llegar a ser muy duras; debemos continuar con medidas\", afirmó el mandatario.\nAlberto Fernándezagregó que \"para el conjunto del país hasta el 21 de mayo continúan las mi… [+2803 chars]",
-      "imagenPrincipal": "https://media.minutouno.com/p/bd540010430f1a0de88dfc0ee04dcad2/adjuntos/150/imagenes/038/803/0038803250/alberto-fernandezjpeg.jpeg",
-      "categoria": "Actualidad",
-      "autorNoticia": "Coronavirus: Alberto Fernández anunció que siguen las mismas restricciones en el AMBA hasta el 21 de mayo - Minutouno.com",
-      "fechaNoticia": "2021-05-25",
-      "id": "2"
-    },
-    {
-      "tituloNoticia": "Infobae",
-      "noticiaBreve": "El santiagueño tuvo un auspicioso estreno con la camiseta de los Oklahoma City Thunder en la derrota ante los New Orleans Pelicans",
-      "noticiaDetallada": "El pase de faja de Gabriel Deck se metió dentro del Top 10 de la NBA\nSin entrenamientos previos con sus compañeros, Gabriel Deck saltó al Chesapeake Energy Arena para hacer su debut oficial en la NB… [+2996 chars]",
-      "imagenPrincipal": "https://www.infobae.com/new-resizer/qL07RNTVVZjTMbPEaV4p4NHFUuU=/1200x628/filters:format(jpg):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/UYYLAIAZMJADRLJX5KCXLGB5HY.jpg",
-      "categoria": "Deportes",
-      "autorNoticia": "La fiebre por Gabriel Deck: el impactante elogio de su entrenador y su jugada que lo puso en el Top 10 de la NBA - infobae",
-      "fechaNoticia": "",
-      "id": "4"
-    },
-    {
-      "tituloNoticia": "Fororecursoshumanos.com",
-      "noticiaBreve": "DKV ha confirmado el jurado de los VII Premios Medicina y Solidaridad de DKV, una edición especial COVID-19 y que contará con 3 categorías.",
-      "noticiaDetallada": "DKV ha confirmado el jurado de los VII premios medicina y solidaridad de DKV, una edición especial COVID-19 y que contará con 3 categorías. Premio Organización Solidaria, Premio al Profesional Sanita… [+5016 chars]",
-      "imagenPrincipal": "https://www.fororecursoshumanos.com/wp-content/uploads/2021/05/Premios-medicina.jpg",
-      "categoria": "Salud",
-      "autorNoticia": "Una decena de profesionales forman el jurado de los VII Premios Medicina y Solidaridad de DKV, una edición especial COVID-19 - Foro Recursos Humanos",
-      "fechaNoticia": "2021-05-30",
-      "id": "5"
-    },
-    {
-      "tituloNoticia": "La Nacion",
-      "noticiaBreve": "Por la pandemia, no habrá acto ni festejos por el desembarco del líder de La Cámpora en el peronismo bonaerense; los jefes comunales prefieren tratar directamente con Frederic; y Solá no abandona su interés por la rosca en la Provincia",
-      "noticiaDetallada": "Pese a que inicialmente generó mucho ruido interno en el Frente de Todos, la coalición de gobierno, la asunción de Máximo Kirchner al frente del PJ bonaerense tendrá lugar el domingo próximo en un ab… [+3996 chars]",
-      "imagenPrincipal": "https://resizer.glanacion.com/resizer/oDTsN-dJy9AK8zlwlJONlPwpjLo=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/4UZFTFAN2BE3VE7CAEAPBVHAQY.jpg",
-      "categoria": "Economia",
-      "autorNoticia": "La interna oficialista: Máximo Kirchner asume el PJ con perfil bajo y los intendentes puentean a Sergio Berni - LA NACION",
-      "fechaNoticia": "2021-05-31",
->>>>>>> develop
       "id": "6"
     },
     {
@@ -144,24 +87,11 @@
       "imagensec": "",
       "categoria": "Salud",
       "autorNoticia": "Fernando Martínez",
-<<<<<<< HEAD
       "fechaNoticia": "2021-05-06",
-=======
-      "fechaNoticia": "06-05-2021",
->>>>>>> develop
       "destacada": "off",
       "id": "7"
     },
     {
-<<<<<<< HEAD
-      "tituloNoticia": "Teknlifenews.com",
-      "noticiaBreve": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general Nadie sabe cómo se desarrollarán las cosas en el mundo posterior",
-      "noticiaDetallada": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general\nNadie sabe cómo se desarrollarán las cosas en el mundo posterior a la pandemia. De esa forma, todos somos igu… [+5978 chars]",
-      "imagenPrincipal": "https://teknlifenews.com/wp-content/uploads/2021/05/Technology-image.jpeg",
-      "categoria": "Salud",
-      "autorNoticia": "Las Megatendencias Del Futuro: El Mercado Editorial De Educación En Medicina General ",
-      "fechaNoticia": "2021-05-07",
-=======
       "tituloNoticia": "Las Megatendencias Del Futuro: El Mercado Editorial De Educación En Medicina General Presenta Oportunidades A Largo Plazo Para 2030 - teknlifenews - Tek'n'Life",
       "noticiaBreve": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general Nadie sabe cómo se desarrollarán las cosas en el mundo posterior",
       "noticiaDetallada": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general\r\nNadie sabe cómo se desarrollarán las cosas en el mundo posterior a la pandemia. De esa forma, todos somos igu… [+5978 chars]",
@@ -171,7 +101,6 @@
       "autorNoticia": "Teknlifenews.com",
       "fechaNoticia": "07-05-2021",
       "destacada": "off",
->>>>>>> develop
       "id": "8"
     },
     {
@@ -182,11 +111,7 @@
       "imagensec": "",
       "categoria": "Economia",
       "autorNoticia": "infobae",
-<<<<<<< HEAD
       "fechaNoticia": "2021-04-30",
-=======
-      "fechaNoticia": "07-05-2021",
->>>>>>> develop
       "destacada": "off",
       "id": "9"
     },
@@ -198,30 +123,11 @@
       "imagensec": "",
       "categoria": "Actualidad",
       "autorNoticia": "La Nacion",
-<<<<<<< HEAD
       "fechaNoticia": "2021-05-07",
-=======
-      "fechaNoticia": "07-05-2021",
->>>>>>> develop
       "destacada": "on",
       "id": "10"
     },
     {
-<<<<<<< HEAD
-=======
-      "tituloNoticia": "Vacunación contra el coronavirus: la provincia sumó a embarazadas con patologías y personas con VIH a los grupos de riesgo - LA NACION",
-      "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
-      "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
-      "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-      "imagensec": "",
-      "categoria": "Economia",
-      "autorNoticia": "La Nacion",
-      "fechaNoticia": "06-05-21",
-      "destacada": "off",
-      "id": "3"
-    },
-    {
->>>>>>> develop
       "tituloNoticia": "DEPORTES I: Vacunación contra el coronavirus: la provincia sumó a embarazadas con patologías y personas con VIH a los grupos de riesgo - LA NACION",
       "noticiaBreve": "Las personas afectadas por las nuevas prioridades deberán reinscribirse y agregar su condición",
       "noticiaDetallada": "La provincia de Buenos Aires convocó a embarazadas o a mujeres en período de lactancia con enfermedades de riesgo, personas con cirrosis, VIH y trasplantados a inscribirse como grupo de riesgo en el … [+2628 chars]",
@@ -229,13 +135,8 @@
       "imagensec": "",
       "categoria": "Deportes",
       "autorNoticia": "La Nacion",
-<<<<<<< HEAD
       "fechaNoticia": "2021-06-05",
       "destacada": "on",
-=======
-      "fechaNoticia": "06-05-21",
-      "destacada": "off",
->>>>>>> develop
       "id": "11"
     },
     {
@@ -246,16 +147,11 @@
       "imagensec": "",
       "categoria": "Deportes",
       "autorNoticia": "La Nacion",
-<<<<<<< HEAD
       "fechaNoticia": "2021-06-05",
-=======
-      "fechaNoticia": "06-05-21",
->>>>>>> develop
       "destacada": "off",
       "id": "12"
     },
     {
-<<<<<<< HEAD
       "tituloNoticia": "Final de Champions | Manchester City - Chelsea",
       "noticiaBreve": "El City, equipo que más jugadores aporta a la Roja, se la juega contra un Chelsea capitaneado por Azpilicueta",
       "noticiaDetallada": "Chelsea y Manchester City protagonizan este sábado una nueva final de Champions cien por cien inglesa... al menos en la nacionalidad de los clubes que la disputan, ya que el fútbol moderno nos dibujará una vez más un choque multinacional con destacados 'brochazos' de fútbol español.\n\nEste sábado, al césped del estadio Do Dragao de Oporto saltarán de inicio solo cuatro ingleses, pero también cuatro españoles. En principio, Laporte y Rodrigo apuntan al once del City, Azpilicueta al del Chelsea y Mateu Lahoz hará lo propio al frente del equipo arbitral de la final. En la banda, otro español, Pep Guardiola, y un alemán, Thomas Tuchel.\n\nPero no serán los únicos españoles presentes en una final inglesa en la que la 'marca España' puede ser determinante y en la que juega el equipo que más jugadores aportará a la selección española en la Eurocopa, el City, con cuatro. Analizamos el papel que tendrán los españoles en la final.\n\nPep Guardiola, a refrendar su éxito en el City\nSin duda, uno de los entrenadores más importantes de los últimos años, Pep Guardiola buscará en Oporto su tercer título de Champions, con lo que igualaría a Carlo Ancelotti y Zinedine Zidane. Sería el primero con el Manchester City y el primero fuera de España, ya que los dos previos los logró con el Barcelona. Guardiola, que lleva diez años sin levantar la 'Orejona', tiene ante sí el reto definitivo de un club que quiere refrendar con el máximo título posible estos años de inversión y trabajo para convertirse en un grande del fútbol mundial, cerrando una temporada de ensueño en la que ya ha conquistado Premier League y Carabao Cup, y fue subcampeón de la FA Cup.\n\nCésar Azpilicueta, capitán 'blue'\nEl único español que apunta al once del Chelsea es el capitán 'blue', César Azpilicueta. El polivalente defensa navarro ha sido un fijo para Tuchel en la recta final de temporada y su fantástico rendimiento ha sido premiado por Luis Enrique con un puesto en la selección para la próxima Eurocopa. Si el Chelsea gana la Champions, Azpilicueta se convertiría, además, en el primer español que levanta literalmente la 'Orejona' con un equipo extranjero. Capitán 'blue' desde 2018, ya izó la Europa League. Este sábado, el máximo distintivo continental le espera.",
@@ -314,76 +210,6 @@
       "fechaNoticia": "2021-05-29",
       "destacada": "on",
       "id": "BbTEoUn"
-=======
-      "tituloNoticia": "aguante valen",
-      "noticiaBreve": "locuraaaa",
-      "noticiaDetallada": "hasta las manos",
-      "imagenPrincipal": "https://www.fororecursoshumanos.com/wp-content/uploads/2021/05/Premios-medicina.jpg",
-      "imagenSec": "https://www.fororecursoshumanos.com/wp-content/uploads/2021/05/Premios-medicina.jpg",
-      "categoria": "Política",
-      "autorNoticia": "clau",
-      "fechaNoticia": "10/10/2021",
-      "destacada": "on",
-      "id": "xqWIsbI"
-    },
-    {
-      "tituloNoticia": "ffffffffff",
-      "noticiaBreve": "ffffffffffffff",
-      "noticiaDetallada": "ffffffffffffffffffff",
-      "imagenPrincipal": "https://images.clarin.com/2021/05/28/el-jefe-de-gobierno-porteno___6nHFGzrBc_1256x620__1.jpg",
-      "imagenSec": "https://images.clarin.com/2021/05/28/el-jefe-de-gobierno-porteno___LkMoqzIp4_720x0__1.jpg",
-      "categoria": "Política",
-      "autorNoticia": "clauclau",
-      "fechaNoticia": "2021-05-29",
-      "destacada": "off",
-      "id": "u2_d3Vh"
-    },
-    {
-      "tituloNoticia": "fffffffffffffffffff",
-      "noticiaBreve": "ffffffffffffffffff",
-      "noticiaDetallada": "fffffffffffffff",
-      "imagenPrincipal": "https://images.clarin.com/2021/05/28/el-jefe-de-gobierno-porteno___LkMoqzIp4_720x0__1.jpg",
-      "imagenSec": "https://images.clarin.com/2021/05/28/el-jefe-de-gobierno-porteno___LkMoqzIp4_720x0__1.jpg",
-      "categoria": "Política",
-      "autorNoticia": "aaaaaaaaaaaaaaaa",
-      "fechaNoticia": "2021-05-29",
-      "destacada": "off",
-      "id": "WUA7gJH"
-    },
-    {
-      "tituloNoticia": "vvvvvvvvv",
-      "noticiaBreve": "vvvvvvvvvv",
-      "noticiaDetallada": "vvvvvvvvvvvv",
-      "imagenPrincipal": "vvvvvvvvvvvv",
-      "imagenSec": "",
-      "categoria": "Tecnología",
-      "autorNoticia": "vvvv",
-      "fechaNoticia": "2021-05-26",
-      "destacada": "off",
-      "id": "ytXACum"
-    },
-    {
-      "tituloNoticia": "ddddddd",
-      "noticiaBreve": "ddddddd",
-      "noticiaDetallada": "ddddddddddddddddd",
-      "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-      "categoria": "Tecnología",
-      "autorNoticia": "dddddddd",
-      "fechaNoticia": "2021-05-30",
-      "id": "JMdiyd2"
-    },
-    {
-      "tituloNoticia": "dddddddddd",
-      "noticiaBreve": "dddddddddddddd",
-      "noticiaDetallada": "ddddddddddddd",
-      "imagenPrincipal": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-      "imagenSec": "https://resizer.glanacion.com/resizer/ixsYYY1IYOzo9dMUGKplZA4qg_4=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/SQDGLMPBTNDP7LYXESMPSK2KIE.jpg",
-      "categoria": "Política",
-      "autorNoticia": "ddddddddddd",
-      "fechaNoticia": "2021-05-30",
-      "destacada": "off",
-      "id": "JNvdeVZ"
->>>>>>> develop
     }
   ],
   "posts": [
