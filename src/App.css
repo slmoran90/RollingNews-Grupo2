@@ -1,3 +1,19 @@
+
+.botones{
+    background: #ff6f00;
+    border-color: #ffffff;
+}
+.botones:hover{
+    color: #ff6f00;
+    background-color: white;
+    border-color:#ff6f00;
+    
+} 
+
+.textoNoticia {
+    font-size: 0.75em;
+} 
+/*Footer*/
 .lista {
     list-style: none;
     padding: 0;
@@ -8,6 +24,23 @@
     color: #8f98a0;
 }
 
-.textoNoticia {
-    font-size: 0.75em;
-} 
+/*Fondo Formulario*/
+.main-form{
+    margin-top: 100px;
+    background-color: #f18219;
+    background-image: linear-gradient(62deg, #f18219 0%, #fe9d3e 100%);
+    font-family: 'Helvetica Neue', sans-serif;
+    color: white;
+}
+
+
+
+/* Css Error */
+.margenFondo{
+    margin-top: 100px;
+}
+
+.cartel{
+    height: 50%;
+    width: 50%;
+}

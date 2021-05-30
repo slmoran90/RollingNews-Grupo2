@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
 import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -18,6 +18,8 @@ import NuevaNoticia from "./components/noticias/NuevaNoticia";
 import EditarNoticia from "./components/noticias/EditarNoticia";
 import Error from "./components/Error";
 import Nosotros from './components/Nosotros';
+
+
 function App() {
 
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
@@ -164,7 +166,7 @@ function App() {
         <Route exact path="/nosotros">
           <Nosotros></Nosotros>
         </Route>
-        <Route path="*">
+        <Route path="/">
           <Error></Error>
         </Route>
       </Switch>

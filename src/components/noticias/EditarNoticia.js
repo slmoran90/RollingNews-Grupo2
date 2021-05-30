@@ -3,6 +3,7 @@ import { Alert, Button, Container, Form } from 'react-bootstrap';
 import {useParams, withRouter } from "react-router-dom";
 import Swal from 'sweetalert2';
 import {campoRequerido} from '../common/validaciones';
+import Particles from 'react-particles-js';
 
 
 const EditarNoticia = (props) => {
@@ -26,7 +27,7 @@ const EditarNoticia = (props) => {
     const categoriaRef = useRef('');
     const autorNoticiaRef = useRef('');
     const fechaNoticiaRef = useRef('');
-    const destacadaRef = useRef(false);
+    const destacadaRef = useRef('off');
 
     const [arrayCategorias, setArrayCategorias] = useState([]);
 
@@ -124,15 +125,16 @@ const EditarNoticia = (props) => {
 
 
     return (
-<Container className="container my-3 py-3 shadow-lg">
-            <h2 className="text-center my-3 py-3 text-dark">Editar Producto</h2>
+        <div className="main-form py-3">
+        <Container className="my-3 ">
+            <h2 className="text-center my-3 py-3">Editar Producto</h2>
 
             <Form className='mx-5' onSubmit={handleSubmit}>
                 <Form.Row>
                     {/* select armado desde APIcategorias */}
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
-                        <Form.Control as="select" size="sm" placeholder="Categoría"
+                        <Form.Control className="sombra" as="select" size="sm" placeholder="Categoría"
                         defaultValue = {noticia.categoria}
                         ref={categoriaRef}
                         value= {noticia.categoria}
@@ -145,7 +147,6 @@ const EditarNoticia = (props) => {
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
                         <Form.Control type="date" size="sm" placeholder="dd/mm/aa" 
-                        // onChange={(e) => setFechaNoticia(e.target.value)}
                         defaultValue = {noticia.fechaNoticia}
                         ref={fechaNoticiaRef}
                         />
@@ -155,7 +156,7 @@ const EditarNoticia = (props) => {
                         <Form.Label>Autor<span class="text-danger">*</span></Form.Label>
                         <Form.Control type="text" size="sm" placeholder="Autor" 
                         defaultValue ={noticia.autorNoticia}
-                        ref={tituloNoticiaRef} 
+                        ref={autorNoticiaRef} 
                         />
                     </Form.Group>
                 </Form.Row>
@@ -164,7 +165,7 @@ const EditarNoticia = (props) => {
                     <Form.Label>Titulo Noticia<span class="text-danger">*</span></Form.Label>
                     <Form.Control type="text" size="sm" placeholder="Titulo de la Noticia"  
                     defaultValue ={noticia.tituloNoticia}
-                    ref={autorNoticiaRef} />
+                    ref={tituloNoticiaRef} />
                 </Form.Group>
 
                 <Form.Group>
@@ -185,7 +186,7 @@ const EditarNoticia = (props) => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
-                        <Form.Control as="textarea" rows={1} placeholder="Imagen Principal"
+                        <Form.Control as="textarea" rows={3} placeholder="Imagen Principal"
                         defaultValue ={noticia.imagenPrincipal}
                         ref={imagenPrincipalRef}/>
                     </Form.Group>
@@ -199,7 +200,7 @@ const EditarNoticia = (props) => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
-                        <Form.Control as="textarea" rows={1} placeholder="Imagen Secundaria" 
+                        <Form.Control as="textarea" rows={3} placeholder="Imagen Secundaria" 
                         defaultValue ={noticia.imagenSec}
                         ref={imagenSecRef}
                         />
@@ -211,19 +212,19 @@ const EditarNoticia = (props) => {
                     </Form.Group>
                 </Form.Row>
                 <Form.Group className='my-2 pb-2'>
-                    <Form.Check type='checkbox' label='Noticia Destacada' 
-                    defaultChecked ={noticia.destacada}
-                    
-                    />
+                    {
+                    (noticia.destacada === 'on') ? <Form.Check type='checkbox' label='Noticia Destacada' checked /> : <Form.Check type='checkbox' label='Noticia Destacada'  />
+                    }
                 </Form.Group>
-
-                <Button type='submit' className='w-100 text-light mt-3' variant="primary">Guardar</Button>
+                
+                <Button type='submit' className="botones w-100 mt-3">Guardar</Button>
                 {
-                    errorValidacion === true ? (<Alert className='my-3' variant='warning'>Todos los campos son obligatorios</Alert>) : (null)
+                    errorValidacion === true ? (<Alert className='text-danger my-3' variant='secondary'><b>* Todos los campos son obligatorios</b></Alert>) : (null)
                 }
 
             </Form>
         </Container>
+        </div>
     );
 };
 
