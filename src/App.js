@@ -11,7 +11,6 @@ import ListaPorCategoriaUser from "./components/ListaPorCategoriaUser";
 import NuevaCategoria from "./components/categorias/NuevaCategoria";
 import ListarCategoria from "./components/categorias/ListarCategoria";
 import ListarNoticiasxCateg from "./components/noticias/ListarNoticiasxCateg";
-import MostrarNoticia from "./components/noticias/MostrarNoticia";
 import Swal from "sweetalert2";
 import ListarNoticias from "./components/noticias/ListarNoticias";
 import NuevaNoticia from "./components/noticias/NuevaNoticia";
@@ -23,6 +22,7 @@ function App() {
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
   const [noticiasEco, setNoticiasEco] = useState([]);
   const [noticiasDeportes, setNoticiasDeportes] = useState([]);
+  const [noticiasActualidad, setNoticiasActualidad] = useState([]);
   // URL donde estan guardadas las categorias
   const URLcategorias = process.env.REACT_APP_API_URLcategorias;
   // URL donde estan almacenadas las noticias
@@ -36,6 +36,8 @@ function App() {
     consultarAPInoticias();
     cargarNoticias();
   }, []);
+
+  //Función para filtrar y traer noticias en la página principal
   const cargarNoticias = async () => {
     try {
       const respuesta = await fetch(URLnoticias);
@@ -67,6 +69,15 @@ function App() {
           setNoticiasDeportes(arrayDepSplice);
         } else {
           setNoticiasDeportes(arrayDeportes);
+        }
+        const arrayActualidad = noticias.filter(
+          (noticia) => noticia.categoria === "Actualidad"
+        );
+        if (arrayActualidad.length > 6) {
+          const arrayActualidadSplice = arrayActualidad.splice(arrayActualidad.length - 6);
+          setNoticiasActualidad(arrayActualidadSplice);
+        } else {
+          setNoticiasActualidad(arrayActualidad);
         }
       }
     } catch (error) {
@@ -114,6 +125,7 @@ function App() {
             noticiasDestacadas={noticiasDestacadas}
             economia={noticiasEco}
             deportes={noticiasDeportes}
+            actualidad={noticiasActualidad}
           />
         </Route>
         <Route exact path="/noticia/:categoria/:id">

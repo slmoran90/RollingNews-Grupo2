@@ -15,3 +15,13 @@
 .margenSup {
     margin-top: 100px;
 }
+
+.imgCovid {
+    height: 200px;
+    background-image: url('https://cdn.discordapp.com/attachments/836409575833337888/848919730441420821/coronavirus-banner.jpg');
+}
+
+.bannerCovid {
+    height: 270px;
+    background-image: url('https://cdn.discordapp.com/attachments/836409575833337888/848928884170686494/COVID-19-BANNER-WEB.png');
+}

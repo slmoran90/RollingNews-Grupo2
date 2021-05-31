@@ -8,11 +8,12 @@ const PaginaPrincipal = (props) => {
     
     return (
         <section className='margenSup'>
-            <CoronaVirusInfo />
             <NoticiasDestacadas noticias={props.noticiasDestacadas} />
+            <CoronaVirusInfo />
             <DolarAndWeather />
             {props.economia && <SeccionCatPrincipal titulo={'Titulo'} categoria={props.economia}/>}
             {props.deportes && <SeccionCatPrincipal categoria={props.deportes} />}
+            {props.actualidad && <SeccionCatPrincipal categoria={props.actualidad} />}
         </section>
     );
 };
