@@ -19,8 +19,6 @@ import Error from "./components/Error";
 import Nosotros from './components/Nosotros';
 import MostrarNoticia from "./components/noticias/MostrarNoticia";
 import Fotografia from "./components/fotografia/Fotografia";
-// import NuevaCategoriaModal from "./components/categorias/NuevaCategoriaModal";
-// import ListarCategoriaModal from "./components/categorias/ListarCategoriaModal";
 
 function App() {
 
@@ -109,9 +107,6 @@ function App() {
   }
   return (
     <Router>
-{/*       
-          <Fotografia></Fotografia>
-       */}
       <Navegacion></Navegacion>
       {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}
       <Switch>

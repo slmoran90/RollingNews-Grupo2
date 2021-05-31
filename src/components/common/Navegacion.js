@@ -10,7 +10,6 @@ import {
 } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
-// import ListarCategoriaModal from "./components/categorias/ListarCategoriaModal";
 
 const Navegacion = () => {
     const [expanded,setExpanded] = useState(false);
@@ -127,7 +126,6 @@ const Navegacion = () => {
                                                 exact={true}
                                                 to="/categorias/listar"
                                                 onClick={()=> setExpanded(!expanded)}
-                                                // onClick={handleShow}
                                             >
                                                 Categorias
                                             </Link></NavDropdown.Item>
@@ -144,8 +142,7 @@ const Navegacion = () => {
                                                 className="nav-link"
                                                 exact={true}
                                                 to="/categorias/nueva"
-                                                onClick={()=> setExpanded(!expanded)}
-                                            >
+                                                onClick={()=> setExpanded(!expanded)}>
                                                 Nueva Categoria
                                             </Link></NavDropdown.Item>
                                         </NavDropdown>

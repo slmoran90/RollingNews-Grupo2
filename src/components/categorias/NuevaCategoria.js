@@ -1,8 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Form, Button, Container, Alert, Modal } from "react-bootstrap";
+import { Form, Button, Container, Alert, CloseButton } from "react-bootstrap";
 import Swal from 'sweetalert2'
 // importo archivo de validaciones
 import { campoRequerido } from "../common/validaciones"
+// para usar fontAwesome
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+// <FontAwesomeIcon icon={faWindowClose} size='md' className='mr-2'></FontAwesomeIcon>
+
 
 const NuevaCategoria = (props) => {
 
@@ -18,9 +23,9 @@ const NuevaCategoria = (props) => {
     // para mostrar por pantalla un mensaje de error durante la carga de datos
     const [mensajeError, setMensajeError] = useState('');
 
-    // useEffect(() => {
-    //     handleReset();
-    // }, []);
+    useEffect(() => {
+        handleReset();
+    }, []);
 
     //====== limpiar formulario ========
     const formRef = useRef(null);
@@ -120,7 +125,7 @@ const NuevaCategoria = (props) => {
                 <div className="d-flex justify-content-center">
                     <Button className='botones mb-3 px-5 py-2' type='submit'>
                         Guardar
-                        </Button>
+                    </Button>
                 </div>
 
                 {/* muetra mensaje de errores durante la carga de datos */}

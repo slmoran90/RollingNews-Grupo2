@@ -23,14 +23,14 @@
 }
 
 
-/* para achicar letra enla lista de noticias */
+/* para achicar letra enla lista de noticias (valentina iramain) */
 
 .textoNoticia {
     font-size: 0.75em;
 }
 
 
-/* Para mejorar margenes en ListarNoticias.js */
+/* Para mejorar margenes en los titulos tapados por el navbar (valentina iramain) */
 
 .margenListaNoticias {
     margin-top: 100px;
