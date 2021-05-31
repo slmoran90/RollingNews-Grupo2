@@ -17,9 +17,7 @@ const NuevaNoticia = (props) => {
     const [imagenSec, setImagenSec] = useState('');
     const [destacada, setDestacada] = useState('off');
     const [arrayCategorias, setArrayCategorias] = useState([]);
-
     const [errorValidacion, setErrorValidacion] = useState(false);
-
     const formRef = useRef(null);
 
     const handleReset = () => {
@@ -56,8 +54,7 @@ const NuevaNoticia = (props) => {
             categoria === '' || imagenPrincipal === ''
             ) {
             //si falla la validacion mostrar alert de error
-            setErrorValidacion(true);
-            
+            setErrorValidacion(true);            
             return;
         } else {
             //si sta todo bien, envio los datos a la API
@@ -94,7 +91,6 @@ const NuevaNoticia = (props) => {
                       )
                     //otras tareas
                     props.consultarAPInoticias();
-
                     //limpiar imputs
                     handleReset();
                 }
@@ -106,23 +102,20 @@ const NuevaNoticia = (props) => {
                     'error'
                   )
             }
-
         }
-
-
     };
 
     return (
         <div className="main-form">
         <Container className="py-3">
-            <h2 className="text-center my-3 py-3">Nueva Noticia</h2>
+            <h2 className="text-center my-3 py-3 formTitulos">Nueva Noticia</h2>
 
             <Form ref={formRef} className='mx-5' onSubmit={handleSubmit}>
                 <Form.Row>
                     {/* select armado desde APIcategorias */}
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
-                        <Form.Control as="select" size="sm" placeholder="Categoría" custom onChange={(e) => setCategoria(e.target.value)} required>
+                        <Form.Control className="outlineColor" as="select" size="sm" placeholder="Categoría" custom onChange={(e) => setCategoria(e.target.value)} required>
                             {
                             arrayCategorias.map((opcion, indice) => (<option value={opcion.value} key={indice}>{opcion.nombreCategoria}</option>))
                             }
@@ -130,36 +123,36 @@ const NuevaNoticia = (props) => {
                     </Form.Group>
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
-                        <Form.Control type="date" size="sm" placeholder="dd/mm/aaaa" 
+                        <Form.Control className="outlineColor" type="date" size="sm" placeholder="dd/mm/aaaa" 
                         onChange={(e) => setFechaNoticia(e.target.value)}
                         required/>
                     </Form.Group>
 
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Autor<span class="text-danger">*</span></Form.Label>
-                        <Form.Control type="text" size="sm" placeholder="Autor" onChange={(e) => setAutorNoticia(e.target.value)} required/>
+                        <Form.Control className="outlineColor" type="text" size="sm" placeholder="Autor" onChange={(e) => setAutorNoticia(e.target.value)} required/>
                     </Form.Group>
                 </Form.Row>
 
                 <Form.Group>
                     <Form.Label>Titulo Noticia<span class="text-danger">*</span></Form.Label>
-                    <Form.Control className="border border-white" type="text" size="sm" placeholder="Titulo de la Noticia" onChange={(e) => setTituloNoticia(e.target.value)} required/>
+                    <Form.Control className="outlineColor" type="text" size="sm" placeholder="Titulo de la Noticia" onChange={(e) => setTituloNoticia(e.target.value)} required/>
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Descripción Breve<span class="text-danger">*</span></Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Descripción Breve" onChange={(e) => setNoticiaBreve(e.target.value)} required/>
+                    <Form.Control className="outlineColor" as="textarea" rows={3} size="sm" placeholder="Descripción Breve" onChange={(e) => setNoticiaBreve(e.target.value)} required/>
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Descripción Detallada<span class="text-danger">*</span></Form.Label>
-                    <Form.Control as="textarea" rows={5} size="sm" placeholder="Descripción Detallada" onChange={(e) => setNoticiaDetallada(e.target.value)} required/>
+                    <Form.Control className="outlineColor" as="textarea" rows={5} size="sm" placeholder="Descripción Detallada" onChange={(e) => setNoticiaDetallada(e.target.value)} required/>
                 </Form.Group>
 
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
-                        <Form.Control as="textarea" rows={3} placeholder="Imagen Principal" onChange={(e) => setImagenPrincipal(e.target.value)} required/>
+                        <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Principal" onChange={(e) => setImagenPrincipal(e.target.value)} required/>
                     </Form.Group>
 
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
@@ -170,7 +163,7 @@ const NuevaNoticia = (props) => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Secundaria (Opcional)</Form.Label>
-                        <Form.Control as="textarea" rows={3} placeholder="Imagen Secundaria" onChange={(e) => setImagenSec(e.target.value)}/>
+                        <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Secundaria" onChange={(e) => setImagenSec(e.target.value)} />
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                         <Image className='w-75' src={imagenSec}  alt='Imagen Secundaria de la Noticia' />
@@ -179,12 +172,12 @@ const NuevaNoticia = (props) => {
                 <Form.Group className='my-2 pb-2'>
                     <Form.Check type='checkbox' label='Noticia Destacada' onChange={(e) => setDestacada(e.target.value)}/>
                 </Form.Group>
-
-                <Button type='submit' className='botones w-100 mt-3'>Guardar</Button>
+                 <div className='d-flex justify-content-center'>          
+                <Button type='submit' className='botones w-50 mt-3' size='lg'>Guardar</Button>
                 {
                     errorValidacion === true ? (<Alert className='text-danger my-3' variant='secondary'><b>* Todos los campos son obligatorios</b></Alert>) : (null)
                 }
-
+                </div> 
             </Form>
         </Container>
         </div>

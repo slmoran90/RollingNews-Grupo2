@@ -4,15 +4,40 @@
     border-color: #ffffff;
 }
 .botones:hover{
-    color: #ff6f00;
+    color: #f18219;
     background-color: white;
-    border-color:#ff6f00;
-    
+    border-color:#f18219;
 } 
 
 .textoNoticia {
     font-size: 0.75em;
 } 
+
+/* Al pasar el mouse encima, lo ponemos gris */
+.container:hover .form-control .checkmark {
+    background-color: #ccc;
+  }
+
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 2px solid #f18219;
+  }
+
+/*Navegacion*/  
+.botonNav{
+    background: #ffffff;
+    border-color: #f18219;
+    color:#f18219;
+}
+.botonNav:hover{
+    color: #ffffff;
+    background-color: #f18219;
+    border-color:#ffffff;
+} 
+
 /*Footer*/
 .lista {
     list-style: none;
@@ -23,14 +48,21 @@
     text-decoration: none;
     color: #8f98a0;
 }
+.outlineColor{
+    border: none;
+    border-bottom: 2px solid  #ff6f00;
+    outline-style: none;
+}
 
 /*Fondo Formulario*/
 .main-form{
     margin-top: 100px;
-    background-color: #f18219;
-    background-image: linear-gradient(62deg, #f18219 0%, #fe9d3e 100%);
+    /* background-color: #ff6f00;
+    background-image: linear-gradient(62deg, #ff6f00 0%, #fe9d3e 100%); */
     font-family: 'Helvetica Neue', sans-serif;
-    color: white;
+}
+.formTitulos{
+    color: #f18219;
 }
 
 
@@ -44,3 +76,4 @@
     height: 50%;
     width: 50%;
 }
+

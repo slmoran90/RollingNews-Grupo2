@@ -17,7 +17,7 @@ import ListarNoticias from "./components/noticias/ListarNoticias";
 import NuevaNoticia from "./components/noticias/NuevaNoticia";
 import EditarNoticia from "./components/noticias/EditarNoticia";
 import Error from "./components/Error";
-import Nosotros from './components/Nosotros';
+import Nosotros from './components/Nosotros/Nosotros';
 
 
 function App() {

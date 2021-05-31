@@ -1,31 +1,43 @@
 import React from 'react';
 import { Container, Table } from 'react-bootstrap';
 import ItemNoticia from './ItemNoticia';
-import Swal from 'sweetalert2';
 const ListarNoticias = (props) => {
-    // console.log('PROPS en ListarNoticias: ', props)
+    // ordenar por fecha DESCENDENTE antes de mostrarlas
+    // const noticiasOrdenadas = props.noticias.sort((a, b) => new Date(a.fechaNoticia).getTime() - new Date(b.fechaNoticia).getTime());
+    const noticiasOrdenadas = props.noticias.sort((a, b) => new Date(b.fechaNoticia).getTime() - new Date(a.fechaNoticia).getTime());
     return (
-        <Container className='container my-3 py-3 shadow-lg'>
-            <h3 className='text-center my-3 py-3 bg-warning text-light'>Listado de Noticias</h3>
-            <Table responsive>
+        <Container className='margenListaNoticias'>
+            <h3 className='text-center my-3 py-3 fondoTitulo text-light'>Listado de Noticias</h3> 
+            <Table responsive hover>
                 <thead>
                     <tr className="textoNoticia">
+                        <th>Destacada</th>
                         <th>Fecha</th>
-                        <th>Autor</th>
                         <th>Categoría</th>
                         <th>Titulo</th>
-                        <th>Descripción Breve</th>
+                        <th className='d-none d-md-table-cell'>Descripción Breve</th>
+                        <th>Autor</th>
                         <th>Acciones</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        props.noticias.map((valor, indice) => <ItemNoticia key={indice} info={valor} consultarAPInoticias={props.consultarAPInoticias}></ItemNoticia>)
+                        noticiasOrdenadas.map((valor, indice) => <ItemNoticia key={indice} info={valor} consultarAPInoticias={props.consultarAPInoticias}></ItemNoticia>)
                     }
                 </tbody>
             </Table>
         </Container>
+        // </div>
     );
 };
 export default ListarNoticias;
+
+
+
+
+
+
+
+
+
+

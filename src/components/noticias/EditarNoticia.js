@@ -3,12 +3,9 @@ import { Alert, Button, Container, Form } from 'react-bootstrap';
 import {useParams, withRouter } from "react-router-dom";
 import Swal from 'sweetalert2';
 import {campoRequerido} from '../common/validaciones';
-import Particles from 'react-particles-js';
-
 
 const EditarNoticia = (props) => {
     //obtener parametro
-    //console.log(useParams().id);
     const codigoNoticia = useParams().id;
 
     //creo los state
@@ -45,8 +42,7 @@ const EditarNoticia = (props) => {
             }
 
         }catch(errorValidacion){
-            console.log(errorValidacion);
-            //mostrar msj de error
+            Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
         }
     },[])
 
@@ -59,7 +55,6 @@ const EditarNoticia = (props) => {
                 setArrayCategorias(listaCategorias);
             }
         } catch (errorValidacion) {
-            console.log(errorValidacion);
             Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
         }
     };
@@ -71,8 +66,7 @@ const EditarNoticia = (props) => {
         //console.log(tituloNoticiaRef.current.value);
         //validar los datos
         if(campoRequerido(autorNoticiaRef.current.value) 
-        //&& validarFormatoFecha(parseFloat(fechaNoticiaRef.current.value))
-        && campoRequerido(autorNoticiaRef.current.value) && campoRequerido(tituloNoticiaRef.current.value)
+        && campoRequerido(fechaNoticiaRef.current.value) && campoRequerido(tituloNoticiaRef.current.value)
         && campoRequerido(noticiaBreveRef.current.value) && campoRequerido(noticiaDetalladaRef.current.value)
         && campoRequerido(imagenPrincipalRef.current.value)
         && campoRequerido(categoriaModificada)
@@ -110,7 +104,6 @@ const EditarNoticia = (props) => {
                 }
 
             }catch(errorValidacion){
-                console.log(errorValidacion);
                 //mostrar cartel al usuario
                 Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
             }
@@ -120,14 +113,13 @@ const EditarNoticia = (props) => {
             setErrorValidacion(true);
             Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
         }
-
     }
 
 
     return (
         <div className="main-form py-3">
         <Container className="my-3 ">
-            <h2 className="text-center my-3 py-3">Editar Producto</h2>
+            <h2 className="text-center my-3 py-3 formTitulos">Editar Noticia</h2>
 
             <Form className='mx-5' onSubmit={handleSubmit}>
                 <Form.Row>
@@ -182,7 +174,6 @@ const EditarNoticia = (props) => {
                     ref={noticiaDetalladaRef}
                     />
                 </Form.Group>
-
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
@@ -190,13 +181,11 @@ const EditarNoticia = (props) => {
                         defaultValue ={noticia.imagenPrincipal}
                         ref={imagenPrincipalRef}/>
                     </Form.Group>
-
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                         <img className='w-75' src={noticia.imagenPrincipal} alt='Imagen Principal de la Noticia' 
                         />
                     </Form.Group>
                 </Form.Row>
-
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
@@ -205,7 +194,6 @@ const EditarNoticia = (props) => {
                         ref={imagenSecRef}
                         />
                     </Form.Group>
-
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                         <img className='w-75' src={noticia.imagenSec} alt='Imagen Secundaria de la Noticia' 
                         />
@@ -221,7 +209,6 @@ const EditarNoticia = (props) => {
                 {
                     errorValidacion === true ? (<Alert className='text-danger my-3' variant='secondary'><b>* Todos los campos son obligatorios</b></Alert>) : (null)
                 }
-
             </Form>
         </Container>
         </div>

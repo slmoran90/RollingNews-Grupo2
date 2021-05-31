@@ -26,6 +26,38 @@
       "id": "-HP-A5G"
     }
   ],
+  "equipo": [
+    {
+      "avatar": "https://www.6tematik.fr/application/files/1515/3596/5756/caricature-caro.svg",
+      "nombreApellido": "Valentina Iramain",
+      "puesto": "Socio Fundador"
+    },
+    {
+      "avatar": "https://www.6tematik.fr/application/files/5315/3596/5784/caricature-sam.svg",
+      "nombreApellido": "Gonzalo Scarlata",
+      "puesto": "Socio Fundador"
+    },
+    {
+      "avatar": "https://www.6tematik.fr/application/files/6715/9903/6787/caricature-quentin_g.svg",
+      "nombreApellido": "Sergio Morán",
+      "puesto": "Socio Fundador"
+    },
+    {
+      "avatar": "https://www.6tematik.fr/application/files/2616/1011/8089/caricature-gaspard.svg",
+      "nombreApellido": "Sebastián Mosquera",
+      "puesto": "CEO"
+    },
+    {
+      "avatar": "https://www.6tematik.fr/application/files/3715/6803/7224/caricature-mathilde.svg",
+      "nombreApellido": "Claudia Damichici",
+      "puesto": "Dirección de Proyecto"
+    },
+    {
+      "avatar": "https://www.6tematik.fr/application/files/1115/9558/2089/caricature-florent.svg",
+      "nombreApellido": "Slaya Ostapzuk",
+      "puesto": "Dirección de Programación"
+    }
+  ],
   "noticias": [
     {
       "tituloNoticia": "La Economia de Estados Unidos se recupera: creció 6,4% en el primer trimestre de 2021 - infobae",
@@ -92,13 +124,11 @@
     {
       "tituloNoticia": "Las Megatendencias Del Futuro: El Mercado Editorial De Educación En Medicina General Presenta Oportunidades A Largo Plazo Para 2030 - teknlifenews - Tek'n'Life",
       "noticiaBreve": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general Nadie sabe cómo se desarrollarán las cosas en el mundo posterior",
-      "noticiaDetallada": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general\r\nNadie sabe cómo se desarrollarán las cosas en el mundo posterior a la pandemia. De esa forma, todos somos igu… [+5978 chars]",
+      "noticiaDetallada": "Megatendencias Y El Futuro Del Mercado De Publicaciones de educación en medicina general\nNadie sabe cómo se desarrollarán las cosas en el mundo posterior a la pandemia. De esa forma, todos somos igu… [+5978 chars]",
       "imagenPrincipal": "https://teknlifenews.com/wp-content/uploads/2021/05/Technology-image.jpeg",
-      "imagensec": "",
       "categoria": "Salud",
       "autorNoticia": "Teknlifenews.com",
-      "fechaNoticia": "07-05-2021",
-      "destacada": "off",
+      "fechaNoticia": "2021-05-28",
       "id": "8"
     },
     {
@@ -230,6 +260,18 @@
       "fechaNoticia": "2021-05-30",
       "destacada": "off",
       "id": "JNvdeVZ"
+    },
+    {
+      "tituloNoticia": "bbbbbbbbbb",
+      "noticiaBreve": "bbbbbbbbbbbbb",
+      "noticiaDetallada": "bbbbbbbbbbb",
+      "imagenPrincipal": "ss",
+      "imagenSec": "",
+      "categoria": "Política",
+      "autorNoticia": "bbbbbbbbb",
+      "fechaNoticia": "2021-05-27",
+      "destacada": "off",
+      "id": "lEQpoGZ"
     }
   ],
   "posts": [

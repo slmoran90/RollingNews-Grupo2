@@ -1,8 +1,33 @@
-import React from "react";
-import { Row, Container } from "react-bootstrap";
+import React, {useState, useEffect} from "react";
+import { Row, Container, Col } from "react-bootstrap";
+import ItemNosotros from "../Nosotros/ItemNosotros";
 import "./nosotros.css";
+import Swal from 'sweetalert2';
 
 const Nosotros = () => {
+    // state para almacenar resultados del fetch
+    const [equipo, setEquipo] = useState([]);
+    // URL donde estan almacenadas las fotografias
+    const URLequipo = process.env.REACT_APP_API_URLequipo;
+    useEffect(async () => {
+        // buscar las noticias que tengan las categoria pasada como parametro en la URL
+        try {
+            const respuesta = await fetch(URLequipo);
+            if (respuesta.status === 200) {
+                const listaEquipo = await respuesta.json();
+                setEquipo(listaEquipo);
+            }
+        } catch (error) {
+            console.log(error);
+            Swal.fire(
+                'Ocurrió un Error!',
+                'Inténtelo en unos minutos.',
+                'error'
+            )
+        }
+    }, [])
+
+
     return (
         <div id="main-div">
             <Container>
@@ -26,75 +51,17 @@ const Nosotros = () => {
                             </h2>
                         </div>
                         <div className="col-sm-12 col-md-5 font-weight-bold text-light align-self-center ml-4">
-                        Creemos que nuestro equipo,es una gran familia. Creemos que la confianza se construye a través de la excelencia. Contribuimos a construir un futuro en el que todos tengan la ayuda que necesitan para dedicar tiempo a las personas y las cosas que más importan.
+                            Creemos que nuestro equipo,es una gran familia. Creemos que la confianza se construye a través de la excelencia. Contribuimos a construir un futuro en el que todos tengan la ayuda que necesitan para dedicar tiempo a las personas y las cosas que más importan.
                         </div>
                     </div>
-                    <div >
-                        <div className="row my-4">
-                            <div className="row col-sm-12 col-md-4">
-                                <div className="col-md-5 mr-4">
-                                    <img src="/sergio.svg" className="w-100" alt="Sergio"></img>
-                                </div>
-                                <div className="col-md-5 text-light">
-                                    <h6>Sergio Moran</h6>
-                                    <div className="linea"></div>
-                                    <p className="mt-2">Socio Fundador</p>
-                                </div>                                
-                            </div>
-                            <div className="row col-sm-12 col-md-4">
-                                <div className="col-md-5 mr-4"> 
-                                    <img src="/valen.svg" className="w-100" alt="Valentina"></img>
-                                </div>
-                                <div className="col-md-5 text-light">
-                                    <h6>Valentina Iramain</h6>
-                                    <div className="linea"></div>
-                                    <p className="mt-2">Socio Fundador</p>
-                                </div>
-                            </div>
-                            <div className="row col-sm-12 col-md-4">
-                                <div className="col-md-5 mr-4">
-                                    <img src="/gonza.svg" className="w-100" alt="Gonzalo"></img>
-                                </div>
-                                <div className="col-md-5 text-light">
-                                    <h6>Gonzalo Scarlata</h6>
-                                    <div className="linea"></div>
-                                    <p className="mt-2">Socio Fundador</p>
-                                </div>
-                            </div>
+ 
+                        <div className='mt-5'>
+                            <Row xs={1} md={3}>
+                                {
+                                    equipo.map((valor, indice) => <ItemNosotros key={indice} info={valor}></ItemNosotros>)
+                                }
+                            </Row>
                         </div>
-                        <div className="row">
-                            <div className="row col-sm-12 col-md-4">
-                                <div className="col-md-5 mr-4">
-                                    <img src="/sebas.svg" className="w-100" alt="Sebastian"></img>
-                                </div>
-                                <div className="col-md-5 text-light">
-                                    <h6>Sebastian Mosquera</h6>
-                                    <div className="linea"></div>
-                                    <p className="mt-2">CEO</p>
-                                </div>
-                            </div>
-                            <div className="row col-sm-12 col-md-4">
-                                <div className="col-md-5 mr-4">
-                                    <img src="/clau.svg" className="w-100" alt="Claudia"></img>
-                                </div>
-                                <div className="col-md-5 text-light">
-                                    <h6>Claudia D'Amichici</h6>
-                                    <div className="linea"></div>
-                                    <p className="mt-2">Dirección de proyectos</p>
-                                </div>
-                            </div>
-                            <div className="row col-sm-12 col-md-4">
-                                <div className="col-md-5 mr-4">
-                                    <img src="/slaya.svg" className="w-100" alt="Slaya"></img>
-                                </div>
-                                <div className="col-md-5 text-light">
-                                    <h6>Slaya Ostapzuk</h6>
-                                <div className="linea"></div>                                     
-                                    <p className="mt-2">Dirección de programación</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </Row>
 
                 {/* linea de tiempo color */}
@@ -162,14 +129,14 @@ const Nosotros = () => {
                                         <span className="year">2010</span>
                                         <div className="inner-content">
                                             <h3 className="title">web de Rolling
-                News México</h3>
+                                                            News México</h3>
                                             <p className="description">
                                                 En 2010, Rolling News en Español lanzó la página web de Rolling
                                                 News México en conjunto con el Grupo Expansión de México.El 22
                                                 de noviembre de 2010, el canal «evolucionó» con un nuevo logo en
                                                 la pantalla y su lema «Vive la noticia», además incorporó ocho
                                                 presentadores e inició diez nuevos programas, como así también
-                nuevos estudios en Miami y nuevos reporteros en Estados Unidos.</p>
+                                                nuevos estudios en Miami y nuevos reporteros en Estados Unidos.</p>
                                         </div>
                                     </a>
                                 </div>
@@ -186,7 +153,7 @@ const Nosotros = () => {
                                                 el canal había cubierto en la década. A esto se le sumó la
                                                 creación de un sitio web (Rolling Newse10.com, actualmente no
                                                 disponible) para la conmemoración de este evento y el
-                lanzamiento de un libro recopilatorio.</p>
+                                                lanzamiento de un libro recopilatorio.</p>
                                         </div>
                                     </a>
                                 </div>
@@ -199,7 +166,7 @@ const Nosotros = () => {
                                                 En 2003, Rolling News en Español recibe el premio INTE por ser
                                                 el «mejor canal de noticias de televisión paga del año».En 2003,
                                                 Rolling News en Español recibe el premio INTE por ser el «mejor
-                canal de noticias de televisión paga del año».</p>
+                                                canal de noticias de televisión paga del año».</p>
                                         </div>
                                     </a>
                                 </div>
@@ -215,7 +182,7 @@ const Nosotros = () => {
                                                 México, todos ellos presentados por la colombiana Patricia
                                                 Janiot y el uruguayo Jorge Gestoso, y con la dirección de
                                                 Rolando Santos.7​6​ Al año siguiente se lanza Rolling News Radio
-                en Español.</p>
+                                                en Español.</p>
                                         </div>
                                     </a>
                                 </div>
@@ -227,7 +194,7 @@ const Nosotros = () => {
                                             <p className="description">
                                                 En 1988, Rolling News empieza a producir noticias en español con
                                                 el Noticiero Rolling News, destinado al público de habla hispana
-                de los Estados Unidos y América Latina.</p>
+                                                de los Estados Unidos y América Latina.</p>
                                         </div>
                                     </a>
                                 </div>
