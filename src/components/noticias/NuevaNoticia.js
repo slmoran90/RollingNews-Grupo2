@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Alert, Button, Container, Form, Image } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 //import {campoRequerido, validarFormatoFecha} from '../common/validaciones'
-
-
 const NuevaNoticia = (props) => {
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
     const URLnoticias = process.env.REACT_APP_API_URLnoticias;
@@ -19,17 +17,14 @@ const NuevaNoticia = (props) => {
     const [arrayCategorias, setArrayCategorias] = useState([]);
     const [errorValidacion, setErrorValidacion] = useState(false);
     const formRef = useRef(null);
-
     const handleReset = () => {
         formRef.current.reset();
         setImagenPrincipal('');
         setImagenSec('');
     };
-
     useEffect(() => {
         consultarAPIcategorias();
     }, []);
-
      // === Para armar select categorias existentes
      const consultarAPIcategorias = async () => {
         try {
@@ -42,12 +37,9 @@ const NuevaNoticia = (props) => {
             Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
         }
     };
-
-
     const handleSubmit = async(e) => {
         e.preventDefault();
         //validar los datos
-
         if (autorNoticia.trim() === '' 
         || fechaNoticia.trim() === ''
         || tituloNoticia.trim() === '' || noticiaBreve.trim() === '' || noticiaDetallada.trim() === '' ||
@@ -59,7 +51,6 @@ const NuevaNoticia = (props) => {
         } else {
             //si sta todo bien, envio los datos a la API
             setErrorValidacion(false);
-
             //crear objeto
             const noticia = {
                 tituloNoticia,
@@ -81,7 +72,6 @@ const NuevaNoticia = (props) => {
                     body: JSON.stringify(noticia)
                 }
                 const respuesta = await fetch(URLnoticias,datosEnviar);
-
                 if(respuesta.status === 201){
                     //mostrar cartel al usuario
                     Swal.fire(
@@ -94,7 +84,6 @@ const NuevaNoticia = (props) => {
                     //limpiar imputs
                     handleReset();
                 }
-
             }catch(error){
                 Swal.fire(
                     'Ocurrio un error',
@@ -104,12 +93,10 @@ const NuevaNoticia = (props) => {
             }
         }
     };
-
     return (
         <div className="main-form">
         <Container className="py-3">
             <h2 className="text-center my-3 py-3 formTitulos">Nueva Noticia</h2>
-
             <Form ref={formRef} className='mx-5' onSubmit={handleSubmit}>
                 <Form.Row>
                     {/* select armado desde APIcategorias */}
@@ -127,39 +114,32 @@ const NuevaNoticia = (props) => {
                         onChange={(e) => setFechaNoticia(e.target.value)}
                         required/>
                     </Form.Group>
-
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Autor<span class="text-danger">*</span></Form.Label>
                         <Form.Control className="outlineColor" type="text" size="sm" placeholder="Autor" onChange={(e) => setAutorNoticia(e.target.value)} required/>
                     </Form.Group>
                 </Form.Row>
-
                 <Form.Group>
                     <Form.Label>Titulo Noticia<span class="text-danger">*</span></Form.Label>
                     <Form.Control className="outlineColor" type="text" size="sm" placeholder="Titulo de la Noticia" onChange={(e) => setTituloNoticia(e.target.value)} required/>
                 </Form.Group>
-
                 <Form.Group>
                     <Form.Label>Descripción Breve<span class="text-danger">*</span></Form.Label>
                     <Form.Control className="outlineColor" as="textarea" rows={3} size="sm" placeholder="Descripción Breve" onChange={(e) => setNoticiaBreve(e.target.value)} required/>
                 </Form.Group>
-
                 <Form.Group>
                     <Form.Label>Descripción Detallada<span class="text-danger">*</span></Form.Label>
                     <Form.Control className="outlineColor" as="textarea" rows={5} size="sm" placeholder="Descripción Detallada" onChange={(e) => setNoticiaDetallada(e.target.value)} required/>
                 </Form.Group>
-
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
                         <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Principal" onChange={(e) => setImagenPrincipal(e.target.value)} required/>
                     </Form.Group>
-
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                         <Image className='w-75' src={imagenPrincipal} alt='Imagen Principal de la Noticia' />
                     </Form.Group>
                 </Form.Row>
-
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Secundaria (Opcional)</Form.Label>
@@ -183,5 +163,4 @@ const NuevaNoticia = (props) => {
         </div>
     );
 };
-
 export default NuevaNoticia;

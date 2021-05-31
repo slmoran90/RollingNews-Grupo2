@@ -1,27 +1,26 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+//== Para que vea app.css tiene que ir 1- BOOTSTRAP 2-APP.JS
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
 import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
-import { useState } from "react";
-import { useEffect } from "react";
 import ComponenteNoticia from "./components/ComponenteNoticia";
 import ListaPorCategoriaUser from "./components/ListaPorCategoriaUser";
 import NuevaCategoria from "./components/categorias/NuevaCategoria";
 import ListarCategoria from "./components/categorias/ListarCategoria";
 import ListarNoticiasxCateg from "./components/noticias/ListarNoticiasxCateg";
-import MostrarNoticia from "./components/noticias/MostrarNoticia";
 import Swal from "sweetalert2";
 import ListarNoticias from "./components/noticias/ListarNoticias";
 import NuevaNoticia from "./components/noticias/NuevaNoticia";
 import EditarNoticia from "./components/noticias/EditarNoticia";
 import Error from "./components/Error";
-import Nosotros from './components/Nosotros/Nosotros';
-
+import Nosotros from './components/Nosotros';
+import MostrarNoticia from "./components/noticias/MostrarNoticia";
+import Fotografia from "./components/fotografia/Fotografia";
 
 function App() {
-
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
   const [noticiasEco, setNoticiasEco] = useState([]);
   const [noticiasDeportes, setNoticiasDeportes] = useState([]);
@@ -85,7 +84,7 @@ function App() {
       }
     } catch (error) {
       console.log(error);
-      Swal.fire("Ocurrió un Error vale!", "Inténtelo en unos minutos.", "error");
+      Swal.fire("Ocurrió un Error en Catgorias", "Inténtelo en unos minutos.", "error");
     }
   };
   // funcion GET de noticias
@@ -99,7 +98,7 @@ function App() {
     } catch (error) {
       console.log(error);
       Swal.fire(
-        'Ocurrió un Error gonzalo!',
+        'Ocurrió un Error en Noticias!',
         'Inténtelo en unos minutos.',
         'error'
       )
@@ -123,14 +122,17 @@ function App() {
         <Route exact path="/noticia/:categoria">
           <ListaPorCategoriaUser />
         </Route>
+        <Route exact path="/categorias/fotografias">
+          <Fotografia></Fotografia>
+        </Route>
 
+        {/* -- Menu Administrador -- */}
         <Route exact path="/categorias/nueva">
-          {/* permite el alta de una nueva categoria */}
           <NuevaCategoria
             consultarAPIcategorias={consultarAPIcategorias}
           ></NuevaCategoria>
         </Route>
-        <Route exact path="/categorias/listar">
+        <Route exact path="/categorias/listar"> 
           {/* muestra lista de categorias existentes */}
           <ListarCategoria
             categorias={categorias}
@@ -142,13 +144,14 @@ function App() {
           <ListarNoticiasxCateg
             consultarAPIcategorias={consultarAPIcategorias}
           ></ListarNoticiasxCateg>
-        </Route>
+        </Route> 
         
-        {/* <Route exact path="/noticias/mostrarNoticia/:id"> */}
+        <Route exact path="/noticias/mostrarNoticia/:id">
           {/* muestra la noticia completa, seleccionada en la lista de noticias */}
-          {/* <MostrarNoticia></MostrarNoticia> */}
-        {/* </Route> */}
-        
+          <MostrarNoticia></MostrarNoticia>
+        </Route>
+
+
         <Route exact path="/noticias/nueva">
           <NuevaNoticia noticias={noticias}
             consultarAPInoticias={consultarAPInoticias}></NuevaNoticia>
@@ -163,12 +166,15 @@ function App() {
         <Route exact path="/noticias/editar/:id">
           <EditarNoticia consultarAPInoticias={consultarAPInoticias}></EditarNoticia>
         </Route>
+        {/* -- Fin menu Administrador --*/}
+        
         <Route exact path="/nosotros">
           <Nosotros></Nosotros>
         </Route>
         <Route path="/">
           <Error></Error>
         </Route>
+        
       </Switch>
       {/* se invoca el footer */}
       <Footer></Footer>

@@ -25,8 +25,6 @@ const ListarNoticiasxCateg = () => {
                 const noticiasFiltradas = await respuesta.json();
                 setNoticias(noticiasFiltradas);
             }
-
-
         } catch (error) {
             console.log(error);
             Swal.fire(
@@ -38,16 +36,17 @@ const ListarNoticiasxCateg = () => {
     }, [])
 
     return (
-        <Container className='container my-3 py-3 shadow-lg'>
-            <h3 className='text-center my-3 py-3 bg-warning text-light'>Categoria: {parametroCategoria}</h3>
-            <Table responsive>
+        <Container className='margenListaNoticias'> 
+            <h3 className='text-center my-3 py-3 fondoTitulo text-light'>Categoria: {parametroCategoria}</h3>
+            <Table responsive hover>
                 <thead>
                     <tr className="textoNoticia">
+                        <th>Destacada</th>
                         <th>Fecha</th>
-                        <th>Autor</th>
                         <th>Titulo</th>
-                        <th>Descripción Breve</th>
-                        <th>Ver Noticia</th>
+                        <th className='d-none d-md-table-cell'>Noticia Breve</th>
+                        <th className='d-none d-md-table-cell'>Autor</th>
+                        <th>Ver</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,6 +56,7 @@ const ListarNoticiasxCateg = () => {
                 </tbody>    
             </Table>    
         </Container>
+        
     );
 };
 

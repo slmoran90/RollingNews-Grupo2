@@ -15,7 +15,7 @@ const ListarNoticias = (props) => {
                         <th>Fecha</th>
                         <th>Categoría</th>
                         <th>Titulo</th>
-                        <th className='d-none d-md-table-cell'>Descripción Breve</th>
+                        <th className='d-none d-md-table-cell'>Noticia Breve</th>
                         <th>Autor</th>
                         <th>Acciones</th>
                     </tr>
@@ -31,13 +31,3 @@ const ListarNoticias = (props) => {
     );
 };
 export default ListarNoticias;
-
-
-
-
-
-
-
-
-
-

@@ -1,22 +1,13 @@
-
-.botones{
+.botones {
     background: #ff6f00;
     border-color: #ffffff;
 }
-.botones:hover{
+
+.botones:hover {
     color: #f18219;
     background-color: white;
-    border-color:#f18219;
-} 
-
-.textoNoticia {
-    font-size: 0.75em;
-} 
-
-/* Al pasar el mouse encima, lo ponemos gris */
-.container:hover .form-control .checkmark {
-    background-color: #ccc;
-  }
+    border-color: #f18219;
+}
 
 
 .form-control:focus {
@@ -24,21 +15,25 @@
     -webkit-box-shadow: none;
     box-shadow: none;
     border: 2px solid #f18219;
-  }
+}
 
-/*Navegacion*/  
-.botonNav{
+
+/*Navegacion*/
+
+.botonNav {
     background: #ffffff;
     border-color: #f18219;
-    color:#f18219;
 }
-.botonNav:hover{
-    color: #ffffff;
-    background-color: #f18219;
-    border-color:#ffffff;
-} 
+
+.botones:hover {
+    color: #f18219;
+    background-color: white;
+    border-color: #f18219;
+}
+
 
 /*Footer*/
+
 .lista {
     list-style: none;
     padding: 0;
@@ -54,8 +49,10 @@
     outline-style: none;
 }
 
+
 /*Fondo Formulario*/
-.main-form{
+
+.main-form {
     margin-top: 100px;
     /* background-color: #ff6f00;
     background-image: linear-gradient(62deg, #ff6f00 0%, #fe9d3e 100%); */
@@ -65,15 +62,52 @@
     color: #f18219;
 }
 
+.formTitulos {
+    color: #f18219;
+}
 
 
 /* Css Error */
-.margenFondo{
+
+.margenFondo {
     margin-top: 100px;
 }
 
-.cartel{
+.cartel {
     height: 50%;
     width: 50%;
 }
 
+/*Navegacion*/
+.botonNav {
+    background: #ffffff;
+    border-color: #f18219;
+    color: #f18219;
+}
+
+.botonNav:hover {
+    color: #ffffff;
+    background-color: #f18219;
+    border-color: #ffffff;
+}
+
+
+/* ===== */
+
+
+/* para achicar letra enla lista de noticias (valentina iramain) */
+
+.textoNoticia {
+    font-size: 0.75em;
+}
+
+
+/* Para mejorar margenes en los titulos tapados por el navbar (valentina iramain) */
+
+.margenListaNoticias {
+    margin-top: 100px;
+}
+
+.fondoTitulo {
+    background-color: #f18219
+}

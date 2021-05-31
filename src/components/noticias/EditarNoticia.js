@@ -28,9 +28,6 @@ const EditarNoticia = (props) => {
 
     const [arrayCategorias, setArrayCategorias] = useState([]);
 
-
-
-
     useEffect(async()=>{
         consultarAPIcategorias();
         try{
@@ -38,7 +35,7 @@ const EditarNoticia = (props) => {
             if(respuesta.status === 200){
                 const noticiaSolicitada = await respuesta.json();
                 setNoticia(noticiaSolicitada);
-                console.log('noticia solicitada', noticiaSolicitada);
+                // console.log('noticia solicitada', noticiaSolicitada);
             }
 
         }catch(errorValidacion){
@@ -96,7 +93,7 @@ const EditarNoticia = (props) => {
                         'Noticia Modificada',
                         'Se actualizaron los datos de la noticia',
                         'success'
-                      )
+                    )
                     //consultar API
                     props.consultarAPInoticias();
                     //redireccionar
