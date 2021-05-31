@@ -44,7 +44,7 @@ const ListarNoticiasxCateg = () => {
                         <th>Destacada</th>
                         <th>Fecha</th>
                         <th>Titulo</th>
-                        <th className='d-none d-md-table-cell'>Descripción Breve</th>
+                        <th className='d-none d-md-table-cell'>Noticia Breve</th>
                         <th className='d-none d-md-table-cell'>Autor</th>
                         <th>Ver</th>
                     </tr>

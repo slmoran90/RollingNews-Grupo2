@@ -10,7 +10,7 @@ const ItemNoticiaxCateg = (props) => {
             {
             (props.info.destacada==="on") ? <td className='text-center'><FontAwesomeIcon icon={faClipboardCheck} size="2x" color="orange"></FontAwesomeIcon></td> : <td></td>
             }
-            <td>{props.info.fechaNoticia}</td>
+            <td className='text-center'>{props.info.fechaNoticia.substring(8,10)+'-'+props.info.fechaNoticia.substring(5,7)+'-'+props.info.fechaNoticia.substring(0,4)}</td>
             <td>{props.info.tituloNoticia}</td>
             <td className='d-none d-md-table-cell'>{props.info.noticiaBreve}</td>
             <td className='d-none d-md-table-cell'>{props.info.autorNoticia}</td>

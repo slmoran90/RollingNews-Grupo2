@@ -48,19 +48,17 @@ const ItemNoticia = (props) => {
     })
     }   
 
-    // const mostrarFecha = () =>{
-    //     let date = new Date()
-    //     let day = date.getDate()
-    //     let month = date.getMonth() + 1
-    //     let year = date.getFullYear()
-
-    //     if (month < 10) {
-    //         console.log(`${day}-0${month}-${year}`)
-    //         setFechaLocal(`${day}-0${month}-${year}`)
-    //     } else {
-    //         console.log(`${day}-${month}-${year}`)
-    //         setFechaLocal(`${day}-0${month}-${year}`)
-    //     }
+    // const fechaLocal = (fecha) =>{
+    //     // let date = new Date()
+    //     console.log('parametro fecha:',fecha.toString())
+    //     let fechaS=fecha.toString();
+    //     let anio=fechaS.substring(0,4);
+    //     let mes=fechaS.substring(5,7);
+    //     let dia=fechaS.substring(8,10);
+    //     console.log(props.info.fechaNoticia.substring(8,10)+'-'+props.info.fechaNoticia.substring(5,7)+'-'+props.info.fechaNoticia.substring(0,4))
+    //     // fechaS.substring(8,10)+'-'+fechaS.substring(5,7)+'-'+fechaS.substring(0,4))
+        
+    //     return fechaModificada
     // }
 
     return (
@@ -68,7 +66,7 @@ const ItemNoticia = (props) => {
             {
             (props.info.destacada==="on") ? <td className='text-center'><FontAwesomeIcon icon={faClipboardCheck} size="2x" color="orange"></FontAwesomeIcon></td> : <td></td>
             }
-            <td>{props.info.fechaNoticia}</td>
+            <td className='text-center'>{props.info.fechaNoticia.substring(8,10)+'-'+props.info.fechaNoticia.substring(5,7)+'-'+props.info.fechaNoticia.substring(0,4)}</td>
             <td>{props.info.categoria}</td>
             <td>{props.info.tituloNoticia}</td>
             <td className='d-none d-md-table-cell'>{props.info.noticiaBreve}</td>
