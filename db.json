@@ -110,6 +110,10 @@
             "nombreCategoria": "Salud",
             "descripCategoria": "Noticias asociadas a todas las areas de la salud",
             "id": "-HP-A5G"
+        },
+        {
+            "nombreCategoria": "Espectaculos",
+            "id": "f6g-xdW"
         }
     ],
     "noticias": [{
@@ -226,7 +230,7 @@
             "noticiaDetallada": "“Estamos muy felices por sacarles una sonrisa. Nos hace bien hacer este programa. Y hacer reír a los argentinos en medio de esta pandemia”, aseguró Marcelo Tinelli para cerrar su primer viernes dedicado al humor en ShowMatch. Fue rodeado de sus laderos históricos como José María Listorti, Pachu Peña, Larry de Clay, Diego Pérez, Carna y Fredy Villarreal, entre otros. Lo hizo con su histórico escritorio que marcó una época a fines del siglo pasado. Unos minutos más tarde de las nueve de la noche, Marcelo lanzó la primera gala de humor, que tendrá lugar cada viernes por la pantalla de ElTrece. Su clásico “Buenas noches, América” no lo encontró parado en la pista vacía o entre bailarinas, sino con un atuendo más descontracturado, desde el escritorio, con papel picado volando por el aire, y con la compañía de Lolo Tinelli, su hijo mejor. En el arranque se reeditaron sketches clásicos con invitados especiales: Adrián Suar cayó en “El Insoportable” de Diego Pérez y José María Listorti. El botox, sus éxitos y las mujeres de su vida estuvieron entre las temáticas que tuvo que soportar el director de programación de ElTrece. En tanto, las panelistas de Ángel de Brito –Yanina Latorre, Andrea Taboada, Pía Shaw, Cinthia Fernández y Maite Peñoñori– se lookearon super sexies para cantar con “Los Tack See Boys” que integran Pichu Straneo, Rodrigo Vagoneta, Pachu Peña y Carna.",
             "imagenPrincipal": "https://www.infobae.com/new-resizer/i2HZJEFVEMlAACJUTKJ8B0GgAbQ=/992x558/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/7WHVIRAT35GPLIR7LPSY5KXL4Q.jpg\n",
             "imagenSec": "https://www.infobae.com/new-resizer/NVexvsqJwZXIxBU5fFBACEnZ5nw=/992x558/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/ISOEF257IRB6PDAEHWNTY5RCVI.jpg",
-            "categoria": "Espectáculos",
+            "categoria": "Espectaculos",
             "autorNoticia": "valentina iramain",
             "fechaNoticia": "2021-05-29",
             "destacada": "on",

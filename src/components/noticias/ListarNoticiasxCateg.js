@@ -25,8 +25,6 @@ const ListarNoticiasxCateg = () => {
                 const noticiasFiltradas = await respuesta.json();
                 setNoticias(noticiasFiltradas);
             }
-
-
         } catch (error) {
             console.log(error);
             Swal.fire(
@@ -36,7 +34,6 @@ const ListarNoticiasxCateg = () => {
             )
         }
     }, [])
-
 
     return (
         <Container className='margenListaNoticias'> 

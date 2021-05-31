@@ -1,13 +1,10 @@
 import React from 'react';
 import { Container, Table } from 'react-bootstrap';
 import ItemNoticia from './ItemNoticia';
-
 const ListarNoticias = (props) => {
-
     // ordenar por fecha DESCENDENTE antes de mostrarlas
     // const noticiasOrdenadas = props.noticias.sort((a, b) => new Date(a.fechaNoticia).getTime() - new Date(b.fechaNoticia).getTime());
     const noticiasOrdenadas = props.noticias.sort((a, b) => new Date(b.fechaNoticia).getTime() - new Date(a.fechaNoticia).getTime());
-    
     return (
         <Container className='margenListaNoticias'>
             <h3 className='text-center my-3 py-3 fondoTitulo text-light'>Listado de Noticias</h3> 
@@ -29,7 +26,6 @@ const ListarNoticias = (props) => {
                     }
                 </tbody>
             </Table>
-
         </Container>
         // </div>
     );

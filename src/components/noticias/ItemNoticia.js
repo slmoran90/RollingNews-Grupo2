@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Button } from "react-bootstrap";
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +7,7 @@ import { faPencilAlt,faTrashAlt,faClipboardCheck } from '@fortawesome/free-solid
 import Swal from 'sweetalert2'
 
 const ItemNoticia = (props) => {
+    
     // borrar noticia segun el ID
     const eliminaNoticia = (idNoticia)=>{
     Swal.fire({
@@ -45,7 +46,23 @@ const ItemNoticia = (props) => {
             }
         }
     })
-}   
+    }   
+
+    // const mostrarFecha = () =>{
+    //     let date = new Date()
+    //     let day = date.getDate()
+    //     let month = date.getMonth() + 1
+    //     let year = date.getFullYear()
+
+    //     if (month < 10) {
+    //         console.log(`${day}-0${month}-${year}`)
+    //         setFechaLocal(`${day}-0${month}-${year}`)
+    //     } else {
+    //         console.log(`${day}-${month}-${year}`)
+    //         setFechaLocal(`${day}-0${month}-${year}`)
+    //     }
+    // }
+
     return (
         <tr className="textoNoticia">
             {

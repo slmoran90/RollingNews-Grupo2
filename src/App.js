@@ -21,7 +21,6 @@ import MostrarNoticia from "./components/noticias/MostrarNoticia";
 import Fotografia from "./components/fotografia/Fotografia";
 
 function App() {
-
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
   const [noticiasEco, setNoticiasEco] = useState([]);
   const [noticiasDeportes, setNoticiasDeportes] = useState([]);
@@ -146,10 +145,13 @@ function App() {
             consultarAPIcategorias={consultarAPIcategorias}
           ></ListarNoticiasxCateg>
         </Route> 
+        
         <Route exact path="/noticias/mostrarNoticia/:id">
           {/* muestra la noticia completa, seleccionada en la lista de noticias */}
           <MostrarNoticia></MostrarNoticia>
         </Route>
+
+
         <Route exact path="/noticias/nueva">
           <NuevaNoticia noticias={noticias}
             consultarAPInoticias={consultarAPInoticias}></NuevaNoticia>

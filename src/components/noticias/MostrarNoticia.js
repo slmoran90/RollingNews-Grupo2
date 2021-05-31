@@ -18,7 +18,7 @@ const MostrarNoticia = () => {
         consultarAPInoticias();
     }, [])
 
-    // toma los datos de la api
+    // repite el codigo de consultarAPInoticias, no lo recibe por props porque la URL cambia
     const consultarAPInoticias = async () => {
         // buscar la noticia que tenga el ID pasado como parametro en la URL
         try {
@@ -36,46 +36,45 @@ const MostrarNoticia = () => {
     return (
         <div className="main-form">
         <Container className="py-3">
-            <h2 className="text-center my-3 py-3">Mostrar Noticia Completa</h2>
+            <h2 className="text-center my-3 py-3 formTitulos">Mostrar Noticia Completa</h2>
 
-        {/* <Container className='margenListaNoticias'> */}
             <Form className='mx-5'>
                 <Form.Row>
                     <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Categoría:</Form.Label>
-                        <Form.Control type="text" size="sm" placeholder="Categoría" defaultValue={noticiaCompleta.categoria} disabled />
+                        <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
+                        <Form.Control type="text" size="sm" placeholder="Categoría" className="outlineColor"  defaultValue={noticiaCompleta.categoria} disabled />
                     </Form.Group>
 
                     <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Fecha:</Form.Label>
-                        <Form.Control type="text" size="sm" placeholder="" defaultValue={noticiaCompleta.fechaNoticia} disabled />
+                        <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
+                        <Form.Control type="date" size="sm" placeholder="" className="outlineColor" defaultValue={noticiaCompleta.fechaNoticia} disabled />
                     </Form.Group>
 
                     <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Autor:</Form.Label>
-                        <Form.Control type="text" size="sm" placeholder="Autor" defaultValue={noticiaCompleta.autorNoticia} disabled />
+                        <Form.Label>Autor<span class="text-danger">*</span></Form.Label>
+                        <Form.Control type="text" size="sm" placeholder="Autor" className="outlineColor" defaultValue={noticiaCompleta.autorNoticia} disabled />
                     </Form.Group>
                 </Form.Row>
 
                 <Form.Group>
-                    <Form.Label>Titulo Noticia:</Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Titulo de la Noticia" defaultValue={noticiaCompleta.tituloNoticia} disabled />
+                    <Form.Label>Titulo Noticia<span class="text-danger">*</span></Form.Label>
+                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Titulo de la Noticia" className="outlineColor"  defaultValue={noticiaCompleta.tituloNoticia} disabled />
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Noticia Breve:</Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Noticia Breve" defaultValue={noticiaCompleta.noticiaBreve} disabled />
+                    <Form.Label>Noticia Breve<span class="text-danger">*</span></Form.Label>
+                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Noticia Breve" className="outlineColor"  defaultValue={noticiaCompleta.noticiaBreve} disabled />
                 </Form.Group>
 
                 <Form.Group>
-                    <Form.Label>Noticia Detallada:</Form.Label>
-                    <Form.Control as="textarea" rows={10} size="sm" placeholder="Noticia Detallada" defaultValue={noticiaCompleta.noticiaDetallada} disabled />
+                    <Form.Label>Noticia Detallada<span class="text-danger">*</span></Form.Label>
+                    <Form.Control as="textarea" rows={10} size="sm" placeholder="Noticia Detallada" className="outlineColor"  defaultValue={noticiaCompleta.noticiaDetallada} disabled />
                 </Form.Group>
 
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
-                        <Form.Label>Imagen Principal:</Form.Label>
-                        <Form.Control as="textarea" rows={5} placeholder="Imagen Principal" defaultValue={noticiaCompleta.imagenPrincipal} disabled />
+                        <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
+                        <Form.Control as="textarea" rows={3} placeholder="Imagen Principal" className="outlineColor"  defaultValue={noticiaCompleta.imagenPrincipal} disabled />
                     </Form.Group>
 
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
@@ -86,7 +85,7 @@ const MostrarNoticia = () => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
-                        <Form.Control as="textarea" rows={5} placeholder="Imagen Secundaria" defaultValue={noticiaCompleta.imagenSec} disabled />
+                        <Form.Control as="textarea" rows={3} placeholder="Imagen Secundaria" className="outlineColor"  defaultValue={noticiaCompleta.imagenSec} disabled />
                     </Form.Group>
 
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
@@ -98,8 +97,9 @@ const MostrarNoticia = () => {
                     (noticiaCompleta.destacada ==='on') ? <Form.Check type='checkbox' label='Noticia Destacada' checked disabled /> : <Form.Check type='checkbox' label='Noticia Destacada' disabled />
                     }     
                 </Form.Group>
-                
-                <Link className='btn botones w-100 mt-3' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
+                <div className='d-flex justify-content-center'> 
+                    <Link className='btn botones w-50 mt-3' size='lg' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
+                </div> 
             </Form>
         </Container>
         </div>

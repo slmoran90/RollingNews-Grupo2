@@ -4,9 +4,37 @@
 }
 
 .botones:hover {
-    color: #ff6f00;
+    color: #f18219;
     background-color: white;
-    border-color: #ff6f00;
+    border-color: #f18219;
+}
+
+
+/* Al pasar el mouse encima, lo ponemos gris */
+
+.container:hover .form-control .checkmark {
+    background-color: #ccc;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 2px solid #f18219;
+}
+
+
+/*Navegacion*/
+
+.botonNav {
+    background: #ffffff;
+    border-color: #f18219;
+}
+
+.botones:hover {
+    color: #f18219;
+    background-color: white;
+    border-color: #f18219;
 }
 
 
@@ -23,47 +51,17 @@
 }
 
 
-/* para achicar letra enla lista de noticias (valentina iramain) */
-
-.textoNoticia {
-    font-size: 0.75em;
-}
-
-
-/* Para mejorar margenes en los titulos tapados por el navbar (valentina iramain) */
-
-.margenListaNoticias {
-    margin-top: 100px;
-}
-
-
-/* fondo titulo en pantalla administrador */
-
-.fondoTitulo {
-    background-color: #f18219;
-    background-image: linear-gradient(62deg, #f18219 0%, #fe9d3e 100%);
-}
-
-
 /*Fondo Formulario*/
 
 .main-form {
     margin-top: 100px;
-    background-color: #f18219;
-    background-image: linear-gradient(62deg, #f18219 0%, #fe9d3e 100%);
+    /* background-color: #ff6f00;
+    background-image: linear-gradient(62deg, #ff6f00 0%, #fe9d3e 100%); */
     font-family: 'Helvetica Neue', sans-serif;
-    color: white;
 }
 
-
-/* para ventanas modales */
-
-.main-modal {
-    /* margin-top: 100px; */
-    background-color: #f18219;
-    background-image: linear-gradient(62deg, #f18219 0%, #fe9d3e 100%);
-    font-family: 'Helvetica Neue', sans-serif;
-    color: white;
+.formTitulos {
+    color: #f18219;
 }
 
 
@@ -78,24 +76,44 @@
     width: 50%;
 }
 
-
-/* Para galeria de fotos */
-
-.imagen {
-    width: 100%;
-    height: 100%;
+.outlineColor {
+    border: none;
+    border-bottom: 2px solid #ff6f00;
+    outline-style: none;
 }
 
 
-/* 
-@media (min-width:992px) {
-    .colum-fotos {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 12px;
-    }
-    .contenedor-fotos {
-        column-count: 4;
-        column-width: 200px;
-    }
-} */
+/*Navegacion*/
+
+.botonNav {
+    background: #ffffff;
+    border-color: #f18219;
+    color: #f18219;
+}
+
+.botonNav:hover {
+    color: #ffffff;
+    background-color: #f18219;
+    border-color: #ffffff;
+}
+
+
+/* ========================u================================================= */
+
+
+/* para achicar letra enla lista de noticias (valentina iramain) */
+
+.textoNoticia {
+    font-size: 0.75em;
+}
+
+
+/* Para mejorar margenes en los titulos tapados por el navbar (valentina iramain) */
+
+.margenListaNoticias {
+    margin-top: 100px;
+}
+
+.fondoTitulo {
+    background-color: #f18219
+}

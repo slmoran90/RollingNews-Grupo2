@@ -154,14 +154,14 @@ const Navegacion = () => {
                                 </Link>
                                 <Button
                                     className="ml-md-5 mt-1"
-                                    variant="outline-warning"
+                                    // variant="outline-warning"
                                     onClick={()=> setExpanded(!expanded)}
                                 >
                                     Iniciar Sesión
                                 </Button>
                                 <Button
                                     className="ml-md-2 mt-1"
-                                    variant="outline-warning"
+                                    // variant="outline-warning"
                                     onClick={()=> setExpanded(!expanded)}
                                 >
                                     Registrarse
