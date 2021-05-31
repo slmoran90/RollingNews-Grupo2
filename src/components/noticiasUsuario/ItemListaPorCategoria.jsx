@@ -9,7 +9,10 @@ const ItemListaPorCategoria = (props) => {
     const [modalShow, setModalShow] = useState(false);
     return (
         <Card className="my-3 p-2">
+            <div className='d-flex justify-content-between m-3 '>
+            <h3 className='my-auto'>{props.indice + 1} </h3>
             <Card.Title className='m-3'>{props.noticia.tituloNoticia}</Card.Title>
+            </div>
             <MyVerticallyCenteredModal
             
             noticia={props.noticia} 

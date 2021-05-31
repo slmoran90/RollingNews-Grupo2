@@ -41,8 +41,8 @@ const ListaPorCategoriaUser = () => {
                 <Col className='' xs={12} md={8}>
                     <ul>
                         {listaDeNoticias &&
-                            listaDeNoticias.map((noticia) => (
-                                <ItemListaPorCategoria noticia={noticia} />
+                            listaDeNoticias.map((noticia, indice) => (
+                                <ItemListaPorCategoria noticia={noticia} indice={indice} key={noticia.id} />
                             ))}
                     </ul>
                 </Col>
