@@ -9,7 +9,7 @@ const CardNoticia = (props) => {
     return (
         
         <Card className='my-3' style={{ width: `${props.width}`}}>
-            <div className='wrapper example-1' style={{ background: `url(${props.noticia.imagenPrincipal}) 20% 1% / cover no-repeat`}}>
+            <div className='wrapper example-1' style={{ background: `url(${props.noticia && props.noticia.imagenPrincipal}) 20% 1% / cover no-repeat`}}>
                 <div className='date'>
                     <span className='day'>12</span>
                     <span className='month'>Aug</span>

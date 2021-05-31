@@ -7,7 +7,7 @@ import SeccionCatPrincipal from './SeccionCatPrincipal';
 const PaginaPrincipal = (props) => {
     
     return (
-        <section>
+        <section className='margenSup'>
             <CoronaVirusInfo />
             <NoticiasDestacadas noticias={props.noticiasDestacadas} />
             <DolarAndWeather />

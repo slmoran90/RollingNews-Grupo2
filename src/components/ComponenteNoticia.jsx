@@ -45,7 +45,7 @@ const ComponenteNoticia = () => {
         <div>
             { listaNoticiasCat &&
         <Fragment>
-            <div className="container w-75 d-flex nowrap">
+            <div className="container w-75 d-flex nowrap margenSup">
                 <div className="w-75 mr-5">
                     <div>
                         <h2 className="text-center">
