@@ -180,18 +180,19 @@ function App() {
         
         <Route exact path="/noticias/nueva">
           <NuevaNoticia noticias={noticias}
-            consultarAPInoticias={consultarAPInoticias}>
-               adminUser={adminUser}
-          
+            consultarAPInoticias={consultarAPInoticias}
+            adminUser={adminUser}>
+            
             </NuevaNoticia>
         </Route>
         <Route exact path="/noticias/listar">
           {/* muestra lista de TODAS las noticias */}
           <ListarNoticias
             noticias={noticias}
-            consultarAPInoticias={consultarAPInoticias}>
-             adminUser={adminUser}
-          </ListarNoticias>
+            consultarAPInoticias={consultarAPInoticias}
+             adminUser={adminUser}>
+
+             </ListarNoticias>
         </Route>
         <Route exact path="/noticias/editar/:id">
           <EditarNoticia consultarAPInoticias={consultarAPInoticias}

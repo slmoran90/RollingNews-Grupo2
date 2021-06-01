@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Container, Table } from 'react-bootstrap';
 import ItemNoticia from './ItemNoticia';
 import Swal from 'sweetalert2';
+import { withRouter, useHistory} from "react-router-dom";
 const ListarNoticias = (props) => {
+    let history = useHistory();
+    useEffect(() => {
+        if(props.adminUser !== true){
+          history.push("/");
+        }
+      });
     // console.log('PROPS en ListarNoticias: ', props)
     return (
         <Container className='container my-3 py-3 shadow-lg'>
