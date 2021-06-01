@@ -90,7 +90,7 @@ const Footer = () => {
               href="#"
               src="/google-play-badge-bb.svg"
               alt="logo play store"
-            />
+            /> 
           </Link>
         </div>
       </article>

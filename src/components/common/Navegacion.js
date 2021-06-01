@@ -1,4 +1,4 @@
-import React,{Fragment, useState} from "react";
+import React,{Fragment} from "react";
 import {
     Navbar,
     Nav,
@@ -20,7 +20,7 @@ const Navegacion = (props) => {
     return (
         <Fragment>
         <Navbar bg="light" expand="lg" className="fixed-top">
-            <Container>
+            <Container> 
                 <Row>
                     <Col md={12}>
                         <Navbar.Brand href="/">
@@ -155,7 +155,7 @@ const Navegacion = (props) => {
                       <Link className="nav-link text-danger" 
                       onClick={cerrarSesion}
                       >
-                        <FontAwesomeIcon icon={faTimesCircle}></FontAwesomeIcon> Cerrar Sesión
+                        <FontAwesomeIcon icon={faTimesCircle}></FontAwesomeIcon> Salir
                       </Link>
                     </NavDropdown>
                     
