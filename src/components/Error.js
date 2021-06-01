@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-
+import { Link } from "react-router-dom";
 
 const Error = () => {
     return (
@@ -12,7 +12,8 @@ const Error = () => {
                 <h2 className="mt-3">No se encontro la <br />página</h2>
                 </div> 
                 <div className="justify-content-start">   
-                <Button type="button" className="botones m-4 w-25" to="/">Volver</Button>
+                <Link className="nav-link" to="/" exact>
+                <Button className="botones m-4 w-25">Volver</Button></Link>
                 </div> 
             </div>
         </div>

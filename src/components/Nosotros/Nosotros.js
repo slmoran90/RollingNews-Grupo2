@@ -31,30 +31,29 @@ const Nosotros = () => {
     return (
         <div id="main-div">
             <Container>
-                <Row className="justify-content-md-center mb-5">
+                <Row className="mb-5">
                     <div className="row justify-content-center my-5">
                         <h1 className="col-sm-12 col-md-6 text-light display-4" id="h2">
                             Hacemos Periodismo</h1>
                         <br></br>
-                        <b className="ml-2 text-light text-center">
+                        <b className="col-sm-12 col-md-7 ml-2 text-light text-center">
                             El diario que supo ganarse la confianza de sus lectores
                             durante más de tres décadas por la <br></br>seriedad de sus investigaciones,
                             su edición de vanguardia y el prestigio de sus columnistas.
                         </b>
                     </div>
                     <div className="row justify-content-center my-4">
-                        <div className="col-sm-12 col-md-5 d-flex justify-content-end">
+                        <div className="col-sm-12 col-md-4 d-flex justify-content-end">
                             <h2 id="caja" className="d-flex align-items-end">
                                 <p className="ml-2 text-light">
                                     El<br></br> <b>Equipo</b>
                                 </p>
                             </h2>
                         </div>
-                        <div className="col-sm-12 col-md-5 font-weight-bold text-light align-self-center ml-4">
+                        <div className="d-none d-md-block col-md-5 font-weight-bold text-light align-self-center ml-4">
                             Creemos que nuestro equipo,es una gran familia. Creemos que la confianza se construye a través de la excelencia. Contribuimos a construir un futuro en el que todos tengan la ayuda que necesitan para dedicar tiempo a las personas y las cosas que más importan.
                         </div>
                     </div>
-<<<<<<< HEAD:src/components/Nosotros/Nosotros.js
  
                         <div className='mt-5'>
                             <Row xs={1} md={3}>
@@ -62,41 +61,6 @@ const Nosotros = () => {
                                     equipo.map((valor, indice) => <ItemNosotros key={indice} info={valor}></ItemNosotros>)
                                 }
                             </Row>
-=======
-                    
-                    <div >
-                        <div className="row my-4">
-                            <div className="row col-sm-12 col-md-4">
-                                <div className="col-md-5 mr-4">
-                                    <img src="/sergio.svg" className="w-100" alt="Sergio"></img>
-                                </div>
-                                <div className="col-md-5 text-light">
-                                    <h6>Sergio Moran</h6>
-                                    <div className="linea"></div>
-                                    <p className="mt-2">Socio Fundador</p>
-                                </div>                                
-                            </div>
-                            <div className="row col-sm-12 col-md-4">
-                                <div className="col-md-5 mr-4"> 
-                                    <img src="/valen.svg" className="w-100" alt="Valentina"></img>
-                                </div>
-                                <div className="col-md-5 text-light">
-                                    <h6>Valentina Iramain</h6>
-                                    <div className="linea"></div>
-                                    <p className="mt-2">Socio Fundador</p>
-                                </div>
-                            </div>
-                            <div className="row col-sm-12 col-md-4">
-                                <div className="col-md-5 mr-4">
-                                    <img src="/gonza.svg" className="w-100" alt="Gonzalo"></img>
-                                </div>
-                                <div className="col-md-5 text-light">
-                                    <h6>Gonzalo Scarlata</h6>
-                                    <div className="linea"></div>
-                                    <p className="mt-2">Socio Fundador</p>
-                                </div>
-                            </div>
->>>>>>> e4f0e2bd94a5a63ee752dce7700a7df8510c7ef5:src/components/Nosotros.js
                         </div>
                 </Row>
 

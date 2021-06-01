@@ -7,7 +7,7 @@ import { campoRequerido } from "../common/validaciones"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 // <FontAwesomeIcon icon={faWindowClose} size='md' className='mr-2'></FontAwesomeIcon>
-
+import Particles from 'react-particles-js';
 
 const NuevaCategoria = (props) => {
 
@@ -113,9 +113,23 @@ const NuevaCategoria = (props) => {
     }
 
     return (
-        <Container className="py-3 w-50 margenListaNoticias shadow-lg">
-            <h3 className="text-center my-3 py-3 fondoTitulo text-light">Nueva Categoria</h3>
-
+       <div className="main-form">
+            <Particles params={{
+          particles: {
+            number: {
+              value: 200,
+              density: {
+                enable: true,
+                value_area: 1000,
+              }
+            },
+          },
+        }}
+      />
+        <Container className="nuevo">
+            {/* //margenListaNoticias shadow-lg  */} 
+            <div className="col-sm-12">
+            <h3 className="text-center text-light">Nueva Categoria</h3>           
             <Form ref={formRef} className="mx-5 " onSubmit={handleSubmit}>
                 <Form.Group className='py-2'>
                     <Form.Label>Nombre de la Categoría *</Form.Label>
@@ -132,7 +146,9 @@ const NuevaCategoria = (props) => {
                 {(error === true) ? (<Alert variant='warning'>{mensajeError}</Alert>) : null}
 
             </Form>
+        </div>            
         </Container>
+        </div>
     );
 };
 

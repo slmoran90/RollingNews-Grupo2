@@ -95,11 +95,11 @@ const Footer = () => {
         </div>
       </article>
       <hr></hr>
-      <article className="row d-flex justify-content-between">
-        <div>
+      <article className="row">
+        <div className="col-sm-12 col-md-6">
           <p>&copy; 2021 Team G2. | Todos los derechos reservados.</p>
         </div>
-        <div>
+        <div className="col-sm-12 col-md-6">
           <Link><FontAwesomeIcon className="text-light" icon={faInstagram} size="lg"></FontAwesomeIcon></Link>
           <Link><FontAwesomeIcon
             className="text-light mx-4"

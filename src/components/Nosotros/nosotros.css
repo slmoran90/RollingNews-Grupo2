@@ -279,3 +279,7 @@
 .main-timeline4 .timeline:nth-child(9n) .year:before{border-right-color:#1fbbf8}
 .main-timeline4 .inner-content{padding:10px}
 }
+
+@media only screen and (max-width:767px){
+  #h2:after, #h2:before{display:none}
+}

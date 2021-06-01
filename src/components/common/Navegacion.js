@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import {
     Navbar,
     Nav,
@@ -14,7 +14,8 @@ import { Link } from "react-router-dom";
 const Navegacion = () => {
     const [expanded,setExpanded] = useState(false);
     return (
-        <Navbar bg="light" expand="lg" className="fixed-top" expanded={expanded}>
+        <Fragment>
+        <Navbar bg="light" className="fixed-top" expanded={expanded}>
             <Container>
                 <Row>
                     <Col md={12}>
@@ -29,7 +30,7 @@ const Navegacion = () => {
                             Rolling News
                         </Navbar.Brand>
                     </Col>
-                    <Col>
+                    <Col className="container">
                         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={()=> setExpanded(!expanded)} />
                         <Navbar.Collapse id="basic-navbar-nav" >
                             <Nav className="mr-auto" collapseOnSelect>
@@ -172,6 +173,7 @@ const Navegacion = () => {
                 </Row>
             </Container>    
         </Navbar>
+        </Fragment>
     );
 };
 

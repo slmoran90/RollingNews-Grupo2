@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Alert, Button, Container, Form, Image } from 'react-bootstrap';
+import { Alert, Container, Form, Image } from 'react-bootstrap';
 import Swal from 'sweetalert2';
+import Particles from 'react-particles-js';
+
+
 //import {campoRequerido, validarFormatoFecha} from '../common/validaciones'
 const NuevaNoticia = (props) => {
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
@@ -94,8 +97,22 @@ const NuevaNoticia = (props) => {
         }
     };
     return (
-        <div className="main-form">
-        <Container className="py-3">
+        <div>
+        {/* 
+        className="main-form position-relative"
+        <Particles params={{
+          particles: {
+            number: {
+              value: 200,
+              density: {
+                enable: true,
+                value_area: 1000,
+              }
+            },
+          },
+        }}
+      /> */}
+        <Container className="margenFondo py-3">
             <h2 className="text-center my-3 py-3 formTitulos">Nueva Noticia</h2>
             <Form ref={formRef} className='mx-5' onSubmit={handleSubmit}>
                 <Form.Row>
@@ -153,7 +170,7 @@ const NuevaNoticia = (props) => {
                     <Form.Check type='checkbox' label='Noticia Destacada' onChange={(e) => setDestacada(e.target.value)}/>
                 </Form.Group>
                  <div className='d-flex justify-content-center'>          
-                <Button type='submit' className='botones w-50 mt-3' size='lg'>Guardar</Button>
+                <button type='submit' className='botonGuardar'>Guardar</button>
                 {
                     errorValidacion === true ? (<Alert className='text-danger my-3' variant='secondary'><b>* Todos los campos son obligatorios</b></Alert>) : (null)
                 }
