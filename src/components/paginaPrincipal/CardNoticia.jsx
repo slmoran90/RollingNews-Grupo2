@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './cardsNoticias.css';
 
 const CardNoticia = (props) => {
+    const [fechaCard, setfechaCard] = useState(props.noticia.fechaNoticia);
+    const fechaDate = fechaCard.split('-');
+    const fecha = new Date(fechaDate[2],fechaDate[1],fechaDate[0]);
+    console.log(fecha)
     
+    const fechaSplit = fecha.toString().split(' ');   
+    console.log("🚀 ~ file: CardNoticia.jsx ~ line 13 ~ CardNoticia ~ fechaSplit", fechaSplit)
+    
+    useEffect(() => {
+            
+        }, [])
 
     return (
         
         <Card className='my-3' style={{ width: `${props.width}`}}>
             <div className='wrapper example-1' style={{ background: `url(${props.noticia && props.noticia.imagenPrincipal}) 20% 1% / cover no-repeat`}}>
                 <div className='date'>
-                    <span className='day'>12</span>
-                    <span className='month'>Aug</span>
-                    <span className="year">2016</span>
+                    <span className='day'>{fechaSplit[2]}</span>
+                    <span className='month'>{fechaSplit[1]}</span>
+                    <span className="year">{fechaSplit[3]}</span>
                 </div>
                 <div className="data">
                     <div className="content">

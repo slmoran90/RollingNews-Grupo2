@@ -74,18 +74,6 @@
             "id": "5"
         },
         {
-            "tituloNoticia": "La interna oficialista: Máximo Kirchner asume el PJ con perfil bajo y los intendentes puentean a Sergio Berni - LA NACION",
-            "noticiaBreve": "Por la pandemia, no habrá acto ni festejos por el desembarco del líder de La Cámpora en el peronismo bonaerense; los jefes comunales prefieren tratar directamente con Frederic; y Solá no abandona su interés por la rosca en la Provincia",
-            "noticiaDetallada": "Pese a que inicialmente generó mucho ruido interno en el Frente de Todos, la coalición de gobierno, la asunción de Máximo Kirchner al frente del PJ bonaerense tendrá lugar el domingo próximo en un ab… [+3996 chars]",
-            "imagenPrincipal": "https://resizer.glanacion.com/resizer/oDTsN-dJy9AK8zlwlJONlPwpjLo=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/4UZFTFAN2BE3VE7CAEAPBVHAQY.jpg",
-            "imagensec": "",
-            "categoria": "Economia",
-            "autorNoticia": "La Nacion",
-            "fechaNoticia": "",
-            "destacada": "false",
-            "id": "6"
-        },
-        {
             "tituloNoticia": "Semana de las Enfermeras: destacan que el español pasó a ser un “medicina vital” en los - El Diario NY",
             "noticiaBreve": "Enfermeras relatan cómo en momentos de emergencia de salud pública hablar la misma lengua de un paciente y sus familiares, puede ser un \"antídoto\" valioso que evita situaciones de pánico",
             "noticiaDetallada": "Cuando en la primavera pasada un nuevo virus empezó a castigar con fuerza a la ciudad de Nueva York, rápidamente las autoridades de Salud tuvieron claro que un grupo étnico estaba padeciendo la peor … [+5849 chars]",
@@ -141,7 +129,7 @@
             "imagensec": "",
             "categoria": "Economia",
             "autorNoticia": "La Nacion",
-            "fechaNoticia": "06-05-21",
+            "fechaNoticia": "06-05-2021",
             "destacada": "false",
             "id": "3"
         },
@@ -153,7 +141,7 @@
             "imagensec": "",
             "categoria": "Deportes",
             "autorNoticia": "La Nacion",
-            "fechaNoticia": "06-05-21",
+            "fechaNoticia": "06-05-2021",
             "destacada": "false",
             "id": "11"
         },
@@ -165,7 +153,7 @@
             "imagensec": "",
             "categoria": "Deportes",
             "autorNoticia": "La Nacion",
-            "fechaNoticia": "06-05-21",
+            "fechaNoticia": "06-05-2021",
             "destacada": "false",
             "id": "12"
         }
