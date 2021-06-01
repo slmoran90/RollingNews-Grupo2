@@ -39,7 +39,7 @@ const Login = (props) => {
 
     return (
         <Fragment>
-            <form className="container d-flex margenFondo mb-4 shadow-lg" onSubmit={handleSubmit}>
+            <form className="container d-flex margenFondo row mb-4 shadow-lg" onSubmit={handleSubmit}>
                 <div className="col-md-6  col-sm-12 my-5">
                     <h1 className="text-center">¡Bienvenido!</h1>
                     <h2 className="text-lead text-center ">Sumate a la comunidad de Rolling News <br /><img src="logo_news.png" className="foto my-2 mb-2" /></h2>
