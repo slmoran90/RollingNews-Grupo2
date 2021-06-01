@@ -3,9 +3,9 @@ import { Form,Button, Container, Alert } from "react-bootstrap";
 import Swal from 'sweetalert2'
 // importo archivo de validaciones
 import { campoRequerido } from "../common/helpers"
-
+import { withRouter, useHistory} from "react-router-dom";
 const NuevaCategoria = (props) => {
-
+    let history = useHistory();
      // URL de categorias
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
 
@@ -21,6 +21,9 @@ const NuevaCategoria = (props) => {
     
     useEffect(() => {
         handleReset();
+        if(props.adminUser !== true){
+            history.push("/");
+          }
     }, []);
     
     //====== limpiar formulario ========
@@ -140,4 +143,4 @@ const NuevaCategoria = (props) => {
     );
 };
 
-export default NuevaCategoria;
+export default withRouter(NuevaCategoria);

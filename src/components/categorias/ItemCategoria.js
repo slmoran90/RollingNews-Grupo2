@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ListGroup,Button} from 'react-bootstrap'
 import Swal from 'sweetalert2'
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTrashAlt, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-
+import { withRouter} from "react-router-dom";
 
 const ItemCategoria = (props) => {
+
     // borrar categoria
     const eliminarCategoria = (idCategoria)=>{
         Swal.fire({
@@ -64,4 +65,4 @@ const ItemCategoria = (props) => {
     );
 };
 
-export default ItemCategoria;
+export default withRouter(ItemCategoria);

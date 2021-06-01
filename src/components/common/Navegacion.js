@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Fragment, useState} from "react";
 import {
     Navbar,
     Nav,
@@ -9,9 +9,16 @@ import {
     Container,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { faDoorOpen, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+const Navegacion = (props) => {
 
-const Navegacion = () => {
+    const cerrarSesion = () => {
+        props.setAdminUser(false);
+      };
+
     return (
+        <Fragment>
         <Navbar bg="light" expand="lg" className="fixed-top">
             <Container>
                 <Row>
@@ -106,9 +113,17 @@ const Navegacion = () => {
                                     </NavDropdown.Item>
                                 </NavDropdown>
                                 {/* Menu habilitado sólo al admnistrador */}
+            {props.adminUser ? (                 
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="mr-auto">
                     <NavDropdown title="Admin" id="basic-nav-dropdown">
+                    <Link
+                        className="nav-link"
+                        exact={true}
+                        to="/admin"
+                      >
+                        Panel
+                      </Link>
                       <Link
                         className="nav-link"
                         exact={true}
@@ -136,34 +151,47 @@ const Navegacion = () => {
                         to="/categorias/nueva"
                       >
                         Nueva Categoria
+                      </Link>   
+                      <Link className="nav-link text-danger" 
+                      onClick={cerrarSesion}
+                      >
+                        <FontAwesomeIcon icon={faTimesCircle}></FontAwesomeIcon> Cerrar Sesión
                       </Link>
                     </NavDropdown>
+                    
                   </Nav>
-                </Navbar.Collapse>
+                </Navbar.Collapse>    
+                                    ) : null}
                                 <Link className="nav-link" exact={true} to="/nosotros">
                                     Nosotros
                                 </Link>
                                 <Link className="nav-link" exact={true}>
                                     Contacto
                                 </Link>
+                                <Link exact={true} to="/login">
                                 <Button
                                     className="ml-5"
                                     variant="outline-success"
+                                   
                                 >
                                     Iniciar Sesión
                                 </Button>
+                                </Link>
+                                <Link exact={true} to="/registro">
                                 <Button
                                     className="ml-2"
                                     variant="outline-success"
                                 >
                                     Registrarse
                                 </Button>
+                                </Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Col>
                 </Row>
             </Container>
         </Navbar>
+</Fragment>
     );
 };
 
