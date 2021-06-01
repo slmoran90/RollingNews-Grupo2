@@ -61,18 +61,18 @@ const ItemCategoria = (props) => {
             </div>
             <div className="col-sm-12 col-md-6 d-flex justify-content-end">
                 <Button
-                    variant="danger"
-                    className="mr-2"
+                    variant=""
+                    className="btn btn-outline-danger mr-2"
                     onClick={() => eliminarCategoria(props.categoria.id)} size="auto"
                 >
                     <FontAwesomeIcon icon={faTrashAlt} size="xs"></FontAwesomeIcon>
                 </Button>
 
-                <Button variant="warning text-light" className="mr-2" size="auto">
+                <Button variant="" className="btn btn-outline-warning mr-2" size="auto">
                     <FontAwesomeIcon icon={faPencilAlt} size="xs"></FontAwesomeIcon>
                 </Button>
 
-                <Link className='btn btn-primary text-light' size="auto" to={'/noticias/listar/' + props.categoria.nombreCategoria}><FontAwesomeIcon icon={faSearch} size="xs"></FontAwesomeIcon></Link>
+                <Link className='btn btn-outline-primary' size="auto" to={'/noticias/listar/' + props.categoria.nombreCategoria}><FontAwesomeIcon className="" icon={faSearch} size="xs"></FontAwesomeIcon></Link>
             </div>
         </ListGroup.Item>
     );

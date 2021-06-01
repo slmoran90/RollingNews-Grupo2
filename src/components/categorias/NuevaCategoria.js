@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Form, Button, Container, Alert, CloseButton } from "react-bootstrap";
+import { Form, Button, Container, Alert, CloseButton, Col, Row } from "react-bootstrap";
 import Swal from 'sweetalert2'
 // importo archivo de validaciones
 import { campoRequerido } from "../common/validaciones"
@@ -114,7 +114,7 @@ const NuevaCategoria = (props) => {
 
     return (
        <div className="main-form">
-            <Particles params={{
+            <Particles className="particles-js" params={{
           particles: {
             number: {
               value: 200,
@@ -126,9 +126,9 @@ const NuevaCategoria = (props) => {
           },
         }}
       />
-        <Container className="nuevo">
-            {/* //margenListaNoticias shadow-lg  */} 
-            <div className="col-sm-12">
+        <Container className="">
+            <Row className="justify-content-center">
+                <Col xs={12} md={6}>
             <h3 className="text-center text-light">Nueva Categoria</h3>           
             <Form ref={formRef} className="mx-5 " onSubmit={handleSubmit}>
                 <Form.Group className='py-2'>
@@ -146,7 +146,8 @@ const NuevaCategoria = (props) => {
                 {(error === true) ? (<Alert variant='warning'>{mensajeError}</Alert>) : null}
 
             </Form>
-        </div>            
+            </Col>
+        </Row>            
         </Container>
         </div>
     );
