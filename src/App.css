@@ -22,18 +22,29 @@
 }
 
 .bannerCovid {
-    width: 1047px;
+    width: 100%;
     left: 0;
     right: auto;
     object-fit: contain;
     
+    
 }
+@media all and (min-width: 576px) and (max-width: 768px) {
+    
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .bannerCovid {
+        width: 100%;
+    }
+}
+@media all and (min-width: 991px) and (max-width: 1200px) {}
+
+
 
 .publicidad {
     height: 469px !important;
-    right: 0;
-    position: sticky;
-    bottom: 100px;
+    
 }
 
 .covidContainer {

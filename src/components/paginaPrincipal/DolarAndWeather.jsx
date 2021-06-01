@@ -3,11 +3,11 @@ import Dolar from '../APIs/Dolar';
 import Weather from '../APIs/Weather';
 import './dolarAndWeather.css';
 const DolarAndWeather = () => {
+    {/* <Weather /> */}
     return (
-        <div id={'dywdiv'} className='d-flex justify-content-around mx-3 mb-3'>
+        
             <Dolar />
-            {/* <Weather /> */}
-        </div>
+        
     );
 };
 

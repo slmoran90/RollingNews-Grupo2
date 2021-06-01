@@ -29,15 +29,15 @@ const ListaPorCategoriaUser = () => {
     };
     return (
         <div className="container margenSup">
-            <h1>{listaDeNoticias[0] && listaDeNoticias[0].categoria}</h1>
-            <Row>
+            <h1 className='text-center pt-3'>{listaDeNoticias[0] && listaDeNoticias[0].categoria}</h1>
+            <Row className='justify-content-center'>
                 <Col className='' xs={12} md={8}>
-                    <ul>
+                    <ol id='lista3'>
                         {listaDeNoticias &&
                             listaDeNoticias.map((noticia, indice) => (
                                 <ItemListaPorCategoria noticia={noticia} indice={indice} key={noticia.id} />
                             ))}
-                    </ul>
+                    </ol>
                 </Col>
                 <Col md='auto'>
 

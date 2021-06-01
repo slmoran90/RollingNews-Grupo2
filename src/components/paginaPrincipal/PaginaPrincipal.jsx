@@ -15,9 +15,9 @@ const PaginaPrincipal = (props) => {
                 <Col xs={9}>
                     <NoticiasDestacadas noticias={props.noticiasDestacadas} />
                 </Col>
-                <Col xs={2}>
+                {/* <Col xs={2}>
                     <PublicidadLeon />
-                </Col>
+                </Col> */}
             </Row>
             
                 <CoronaVirusInfo />

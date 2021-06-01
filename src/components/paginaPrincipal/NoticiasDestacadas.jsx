@@ -4,7 +4,7 @@ import CardNoticiaPrincipal from "./CardNoticiaPrincipal";
 
 const NoticiasDestacadas = (props) => {
     return (
-        <div className="container-fluid d-flex p-3 justify-content-around">
+        <div className="container-fluid d-flex p-3 justify-content-around flex-wrap">
             <div>
                 <h2 className="mb-5 text-center border-bottom">
                     Noticias destacadas

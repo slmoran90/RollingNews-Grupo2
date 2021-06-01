@@ -6,7 +6,7 @@ const MyVerticallyCenteredModal = (props) => {
     return (
         <Modal
             {...props}
-            size="lg"
+            size="md"
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
@@ -27,7 +27,7 @@ const MyVerticallyCenteredModal = (props) => {
             </Modal.Body>
             <Modal.Footer>
                 <Link className='btn btn-primary' to={'/noticia/'+props.noticia.categoria+'/'+props.noticia.id}>Ir a la noticia</Link>
-                <Button onClick={props.onHide}>Close</Button>
+                <Button className='btn btn-secondary'onClick={props.onHide}>Close</Button>
             </Modal.Footer>
         </Modal>
     );
