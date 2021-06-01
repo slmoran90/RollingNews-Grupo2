@@ -13,7 +13,7 @@
 } 
 
 .margenSup {
-    margin-top: 100px;
+    margin-top: 95px;
 }
 
 .imgCovid {
@@ -22,6 +22,21 @@
 }
 
 .bannerCovid {
-    height: 270px;
-    background-image: url('https://cdn.discordapp.com/attachments/836409575833337888/848928884170686494/COVID-19-BANNER-WEB.png');
+    width: 1047px;
+    left: 0;
+    right: auto;
+    object-fit: contain;
+    
 }
+
+.publicidad {
+    height: 469px !important;
+    right: 0;
+    position: sticky;
+    bottom: 100px;
+}
+
+.covidContainer {
+    background-color: #f18219;
+}
+

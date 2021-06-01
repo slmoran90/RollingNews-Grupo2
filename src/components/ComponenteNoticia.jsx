@@ -15,7 +15,7 @@ const ComponenteNoticia = () => {
     
     useEffect(() => {
         traerNoticiaVisible();
-    }, []);
+    }, [id, categoria]);
     
     const traerNoticiaVisible = async () => {
         try {

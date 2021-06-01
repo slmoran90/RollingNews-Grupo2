@@ -6,7 +6,7 @@ const DolarAndWeather = () => {
     return (
         <div id={'dywdiv'} className='d-flex justify-content-around mx-3 mb-3'>
             <Dolar />
-            <Weather />
+            {/* <Weather /> */}
         </div>
     );
 };
