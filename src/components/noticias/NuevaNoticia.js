@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Alert, Button, Container, Form, Image } from 'react-bootstrap';
 import Swal from 'sweetalert2';
+import { withRouter, useHistory} from "react-router-dom";
 //import {campoRequerido, validarFormatoFecha} from '../common/validaciones'
 const NuevaNoticia = (props) => {
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
@@ -14,6 +15,8 @@ const NuevaNoticia = (props) => {
     const [imagenPrincipal, setImagenPrincipal] = useState('');
     const [imagenSec, setImagenSec] = useState('');
     const [destacada, setDestacada] = useState('off');
+    let history = useHistory();
+    // const [id, setId] = useState("1000");
     const [arrayCategorias, setArrayCategorias] = useState([]);
     const [errorValidacion, setErrorValidacion] = useState(false);
     const formRef = useRef(null);
@@ -24,6 +27,9 @@ const NuevaNoticia = (props) => {
     };
     useEffect(() => {
         consultarAPIcategorias();
+        if(props.adminUser !== true){
+            history.push("/");
+          }
     }, []);
      // === Para armar select categorias existentes
      const consultarAPIcategorias = async () => {
@@ -166,4 +172,5 @@ const NuevaNoticia = (props) => {
         </div>
     );
 };
-export default NuevaNoticia;
+
+export default withRouter(NuevaNoticia);

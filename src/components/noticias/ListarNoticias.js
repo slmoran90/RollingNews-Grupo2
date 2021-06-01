@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Container, Table } from 'react-bootstrap';
 import ItemNoticia from './ItemNoticia';
+import Swal from 'sweetalert2';
+import { withRouter, useHistory} from "react-router-dom";
 
 const ListarNoticias = (props) => {
-
     // ordenar por fecha DESCENDENTE antes de mostrarlas    
     const noticiasOrdenadas = props.noticias.sort((a, b) => new Date(b.fechaNoticia).getTime() - new Date(a.fechaNoticia).getTime());
 
+    let history = useHistory();
+    useEffect(() => {
+        if(props.adminUser !== true){
+          history.push("/");
+        }
+      });
+    // console.log('PROPS en ListarNoticias: ', props)
     return (
         <Container className="py-2 main-form">
             <h2 className="text-center my-3 py-3 formTitulos">Listado de Noticias</h2>

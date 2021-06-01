@@ -2,15 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Form, Button, Container, Alert, Row, Col } from "react-bootstrap";
 import Swal from 'sweetalert2'
 // importo archivo de validaciones
-import { campoRequerido } from "../common/validaciones"
-// para usar fontAwesome
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-// <FontAwesomeIcon icon={faWindowClose} size='md' className='mr-2'></FontAwesomeIcon>
+import { campoRequerido } from "../common/validaciones";
+import { withRouter, useHistory} from "react-router-dom";
 
 
 const NuevaCategoria = (props) => {
-
+    let history = useHistory();
     // URL de categorias
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
 
@@ -25,6 +22,9 @@ const NuevaCategoria = (props) => {
 
     useEffect(() => {
         handleReset();
+        if(props.adminUser !== true){
+            history.push("/");
+          }
     }, []);
 
     //====== limpiar formulario ========
@@ -138,4 +138,4 @@ const NuevaCategoria = (props) => {
     );
 };
 
-export default NuevaCategoria;
+export default withRouter(NuevaCategoria);

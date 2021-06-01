@@ -1,8 +1,16 @@
-import React from 'react';
-import {Container,Table,Row,Col } from 'react-bootstrap'
-import ItemCategoria from './ItemCategoria';
 
+import {Container,Table,Row,Col } from 'react-bootstrap'
+import React, {useEffect} from 'react'; 
+import ItemCategoria from './ItemCategoria';
+import { withRouter, useHistory} from "react-router-dom";
 const ListarCategoria = (props) => {
+    // console.log('props en listar categoria: ',props)+
+    let history = useHistory();
+    useEffect(() => {
+        if(props.adminUser !== true){
+          history.push("/");
+        }
+      });
     return (
         <Container className="py-2 main-form">
             <h2 className="text-center my-3 py-3 formTitulos">Categorías</h2>
@@ -29,4 +37,4 @@ const ListarCategoria = (props) => {
     );
 };
 
-export default ListarCategoria;
+export default withRouter(ListarCategoria);

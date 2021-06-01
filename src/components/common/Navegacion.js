@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React,{Fragment, useState} from "react";
 import {
     Navbar,
     Nav,
@@ -10,8 +10,14 @@ import {
 } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
+import { faDoorOpen, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+const Navegacion = (props) => {
 
-const Navegacion = () => {
+    const cerrarSesion = () => {
+        props.setAdminUser(false);
+      };
+
     const [expanded, setExpanded] = useState(false);
     return (
         <Navbar bg="light" expand="lg" className="fixed-top" expanded={expanded}>
@@ -112,7 +118,14 @@ const Navegacion = () => {
                                     </NavDropdown.Item>
                                 </NavDropdown>
                                 {/* Menu habilitado sólo al admnistrador */}
+                                    {props.adminUser ? (        
                                 <NavDropdown title="Admin" id="basic-nav-dropdown">
+                                    <NavDropdown.Item><Link
+                                        className="nav-link"
+                                        exact={true}
+                                        to="/admin">
+                                        Panel
+                                     </Link></NavDropdown.Item>
                                     <NavDropdown.Item><Link
                                         className="nav-link"
                                         exact={true}
@@ -145,7 +158,14 @@ const Navegacion = () => {
                                         onClick={() => setExpanded(!expanded)}>
                                         Nueva Categoria
                                             </Link></NavDropdown.Item>
+                                            <NavDropdown.Item>
+                                            <Link 
+                                            className="nav-link text-danger" 
+                                            onClick={cerrarSesion}>
+                                             <FontAwesomeIcon icon={faTimesCircle}></FontAwesomeIcon> Salir
+                                            </Link></NavDropdown.Item>
                                 </NavDropdown>
+                                                ) : null} 
                                 <Link className="nav-link" exact={true} to="/nosotros" onClick={() => setExpanded(!expanded)}>
                                     Nosotros
                                 </Link>
@@ -157,6 +177,7 @@ const Navegacion = () => {
                                 >
                                     Contacto
                                 </Link>
+                                <Link exact={true} to="/login">
                                 <Button
                                     className="ml-md-5 mt-1"
                                     // variant="outline-warning"
@@ -164,34 +185,17 @@ const Navegacion = () => {
                                 >
                                     Iniciar Sesión
                                 </Button>
+                                </Link>
                                 <Link type="button" exact={true} to="/promoSus">
-                                    <Button className="ml-md-2 mt-1">Registrarse</Button>
+                                    <Button className="ml-md-2 mt-1">Suscribirse</Button>
                                 </Link>
-
-                                {/* /======
-                                <Link className="nav-link" exact={true} onClick={() => setExpanded(!expanded)}>
-                                    Contacto
-                                </Link>
-                                <Button
-                                    className="ml-md-5 mt-1"
-                                    // variant="outline-warning"
-                                    onClick={() => setExpanded(!expanded)}
-                                >
-                                    Iniciar Sesión
-                                </Button>
-                                <Button
-                                    className="ml-md-2 mt-1"
-                                    // variant="outline-warning"
-                                    onClick={() => setExpanded(!expanded)}
-                                >
-                                    Registrarse
-                                </Button> */}
                             </Nav>
                         </Navbar.Collapse>
                     </Col>
                 </Row>
             </Container>
         </Navbar>
+
     );
 };
 

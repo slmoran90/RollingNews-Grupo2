@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const ItemCategoria = (props) => {
+
     // borrar categoria
     const eliminarCategoria = (idCategoria) => {
         Swal.fire({
@@ -72,4 +73,4 @@ const ItemCategoria = (props) => {
     );
 };
 
-export default ItemCategoria;
+export default ItemCategoria; 
