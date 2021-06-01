@@ -11,7 +11,7 @@ import SeccionCatPrincipal from "./SeccionCatPrincipal";
 const PaginaPrincipal = (props) => {
     return (
         <section className="margenSup">
-            <Row>
+            <Row className='justify-content-around'>
                 <Col xs={9}>
                     <NoticiasDestacadas noticias={props.noticiasDestacadas} />
                 </Col>
