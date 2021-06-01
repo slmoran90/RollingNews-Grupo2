@@ -19,6 +19,9 @@ import Error from "./components/Error";
 import Nosotros from './components/Nosotros';
 import MostrarNoticia from "./components/noticias/MostrarNoticia";
 import Fotografia from "./components/fotografia/Fotografia";
+import Contacto from "./components/Contacto";
+import PromoSus from "./components/suscripcion/PromoSus";
+import Suscripcion from "./components/suscripcion/Suscripcion";
 
 function App() {
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
@@ -132,7 +135,7 @@ function App() {
             consultarAPIcategorias={consultarAPIcategorias}
           ></NuevaCategoria>
         </Route>
-        <Route exact path="/categorias/listar"> 
+        <Route exact path="/categorias/listar">
           {/* muestra lista de categorias existentes */}
           <ListarCategoria
             categorias={categorias}
@@ -144,8 +147,8 @@ function App() {
           <ListarNoticiasxCateg
             consultarAPIcategorias={consultarAPIcategorias}
           ></ListarNoticiasxCateg>
-        </Route> 
-        
+        </Route>
+
         <Route exact path="/noticias/mostrarNoticia/:id">
           {/* muestra la noticia completa, seleccionada en la lista de noticias */}
           <MostrarNoticia></MostrarNoticia>
@@ -167,14 +170,27 @@ function App() {
           <EditarNoticia consultarAPInoticias={consultarAPInoticias}></EditarNoticia>
         </Route>
         {/* -- Fin menu Administrador --*/}
-        
+
         <Route exact path="/nosotros">
           <Nosotros></Nosotros>
+        </Route>
+
+        <Route exact path="/contacto">
+          <Contacto></Contacto>
+          {/* <Contacto /> */}
+        </Route>
+        <Route exact path="/promoSus">
+          <PromoSus></PromoSus>
+          {/* <PromoSus /> */}
+        </Route>
+        <Route exact path="/suscripcion">
+          <Suscripcion></Suscripcion>
+          {/* <Suscripcion /> */}
         </Route>
         <Route path="/">
           <Error></Error>
         </Route>
-        
+
       </Switch>
       {/* se invoca el footer */}
       <Footer></Footer>

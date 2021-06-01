@@ -138,6 +138,9 @@ const NuevaNoticia = (props) => {
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                         <Image className='w-75' src={imagenPrincipal} alt='Imagen Principal de la Noticia' />
+                        {/* <div className='w-75 bg-danger py-5' style={{ 'background': `url(${imagenPrincipal}) 20% 1% / cover no-repeat`}}>
+                        </div> */}
+                        {/* sistema Gonza */}
                     </Form.Group>
                 </Form.Row>
                 <Form.Row>

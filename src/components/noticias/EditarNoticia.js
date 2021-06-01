@@ -210,7 +210,9 @@ const EditarNoticia = (props) => {
                 </Form.Row>
                 <Form.Group className='my-2 pb-2'>
                     {
-                    (noticia.destacada === 'on') ? <Form.Check type='checkbox' label='Noticia Destacada' checked /> : <Form.Check type='checkbox' label='Noticia Destacada'  />
+                    (noticia.destacada === 'on') ? <Form.Check type='checkbox' label='Noticia Destacada' defaultValue ={noticia.destacada}
+                    ref={destacadaRef} checked /> : <Form.Check type='checkbox' label='Noticia Destacada' defaultValue ={noticia.destacada}
+                    ref={destacadaRef}  />
                     }
                 </Form.Group>
                 

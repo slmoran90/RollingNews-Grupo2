@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Form, Button, Container, Alert, CloseButton } from "react-bootstrap";
+import { Form, Button, Container, Alert, Row, Col } from "react-bootstrap";
 import Swal from 'sweetalert2'
 // importo archivo de validaciones
 import { campoRequerido } from "../common/validaciones"
@@ -113,25 +113,27 @@ const NuevaCategoria = (props) => {
     }
 
     return (
-        <Container className="py-3 w-50 margenListaNoticias shadow-lg">
-            <h3 className="text-center my-3 py-3 fondoTitulo text-light">Nueva Categoria</h3>
+        <Container className="py-2 main-form">
+            <Row className='justify-content-center'>
+                <Col xs={12} md={6} className='border'>
+                    <h2 className="text-center my-3 py-3 formTitulos">Nueva Categoría</h2>
+                    <Form ref={formRef} className="mx-5 " onSubmit={handleSubmit}>
+                        <Form.Group className='py-2'>
+                            <Form.Label>Nombre de la Categoría<span class="text-danger">*</span></Form.Label>
+                            <Form.Control type="text" placeholder="Nombre de la Categoria" onChange={(e) => { setNombreCategoria(e.target.value) }} required />
+                        </Form.Group>
 
-            <Form ref={formRef} className="mx-5 " onSubmit={handleSubmit}>
-                <Form.Group className='py-2'>
-                    <Form.Label>Nombre de la Categoría *</Form.Label>
-                    <Form.Control type="text" placeholder="Nombre de la Categoria" onChange={(e) => { setNombreCategoria(e.target.value) }} required />
-                </Form.Group>
+                        <div className="d-flex justify-content-center">
+                            <Button className='botones mb-3 px-5 py-2' type='submit'>
+                                Guardar
+                            </Button>
+                        </div>
 
-                <div className="d-flex justify-content-center">
-                    <Button className='botones mb-3 px-5 py-2' type='submit'>
-                        Guardar
-                    </Button>
-                </div>
-
-                {/* muetra mensaje de errores durante la carga de datos */}
-                {(error === true) ? (<Alert variant='warning'>{mensajeError}</Alert>) : null}
-
-            </Form>
+                        {/* muetra mensaje de errores durante la carga de datos */}
+                        {(error === true) ? (<Alert variant='warning'>{mensajeError}</Alert>) : null}
+                    </Form>
+                </Col>
+            </Row>
         </Container>
     );
 };

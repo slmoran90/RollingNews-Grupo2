@@ -35,9 +35,13 @@ const ListarNoticiasxCateg = () => {
         }
     }, [])
 
+     // ordenar por fecha DESCENDENTE antes de mostrarlas    
+    const noticiasOrdenadas = noticias.sort((a, b) => new Date(b.fechaNoticia).getTime() - new Date(a.fechaNoticia).getTime());
+
+
     return (
-        <Container className='margenListaNoticias'> 
-            <h3 className='text-center my-3 py-3 fondoTitulo text-light'>Categoria: {parametroCategoria}</h3>
+        <Container className="py-2 main-form">
+            <h2 className="text-center my-3 py-3 formTitulos">Noticias por Categoría: {parametroCategoria}</h2>
             <Table responsive hover>
                 <thead>
                     <tr className="textoNoticia">
@@ -51,7 +55,7 @@ const ListarNoticiasxCateg = () => {
                 </thead>
                 <tbody>
                     {
-                        noticias.map((valor, indice) => <ItemNoticiaxCateg key={indice} info={valor}></ItemNoticiaxCateg>)
+                        noticiasOrdenadas.map((valor, indice) => <ItemNoticiaxCateg key={indice} info={valor}></ItemNoticiaxCateg>)
                     }
                 </tbody>    
             </Table>    

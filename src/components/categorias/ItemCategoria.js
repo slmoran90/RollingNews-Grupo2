@@ -1,5 +1,5 @@
 import React from "react";
-import { ListGroup, Button } from "react-bootstrap";
+import {Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -53,28 +53,22 @@ const ItemCategoria = (props) => {
         });
     };
     return (
-        <ListGroup.Item className="row d-flex justify-content-center">
-            <div className="col-sm-12 col-md-6">
-                <p className="font-weight-bold text-dark">
-                    {props.categoria.nombreCategoria}
-                </p>
-            </div>
-            <div className="col-sm-12 col-md-6 d-flex justify-content-end">
-                <Button
-                    variant="danger"
-                    className="mr-2"
-                    onClick={() => eliminarCategoria(props.categoria.id)} size="auto"
-                >
-                    <FontAwesomeIcon icon={faTrashAlt} size="xs"></FontAwesomeIcon>
+        <tr>
+            <td className='font-weight-bold text-dark pl-3'> {props.categoria.nombreCategoria}</td>
+            <td className='text-center'>
+                <Button variant="danger" className="mr-2" onClick={() => eliminarCategoria(props.categoria.id)}>
+                    <FontAwesomeIcon icon={faTrashAlt} size="auto"></FontAwesomeIcon>
                 </Button>
 
                 <Button variant="warning text-light" className="mr-2" size="auto">
-                    <FontAwesomeIcon icon={faPencilAlt} size="xs"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faPencilAlt} size="auto"></FontAwesomeIcon>
                 </Button>
 
-                <Link className='btn btn-primary text-light' size="auto" to={'/noticias/listar/' + props.categoria.nombreCategoria}><FontAwesomeIcon icon={faSearch} size="xs"></FontAwesomeIcon></Link>
-            </div>
-        </ListGroup.Item>
+                <Link className='btn btn-primary text-light' to={'/noticias/listar/' + props.categoria.nombreCategoria}>
+                    <FontAwesomeIcon icon={faSearch} size="auto"></FontAwesomeIcon>
+                </Link>
+            </td>
+        </tr>        
     );
 };
 
