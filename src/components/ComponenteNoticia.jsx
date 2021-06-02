@@ -78,9 +78,10 @@ const ComponenteNoticia = () => {
                     <PublicidadLeon />
                 </Col>
                 </Row>
+                <hr></hr>
                 <Row className='justify-content-around noticiasRelacionadas'>
                     <Col xs={12} md={6} lg={9}>
-                        <h5 className='ml-5'>Noticias similares</h5>
+                        <h5 className='ml-5 mt-5 noticiasSimilares '>Noticias similares</h5>
                         <div className="">
                             <ListaNoticiasRelacionadas
                                 listaNoticias={listaNoticiasCat}
