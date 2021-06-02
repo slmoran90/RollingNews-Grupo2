@@ -29,16 +29,34 @@
     
     
 }
-@media all and (min-width: 576px) and (max-width: 768px) {
-    
+@media all and (min-width: 200px) and (max-width: 768px) {
+    .amazon {
+        margin-right: auto;
+        margin-left: auto;
+        
+
+    }
+    .amazonLarga {
+        width: 100%;
+    }
+    .noticiaPpal {
+        width: 100% !important;
+    }
 }
 
 @media all and (min-width: 768px) and (max-width: 991px) {
     .bannerCovid {
         width: 100%;
     }
+    .amazon {
+        margin-right: auto;
+        margin-left: auto;
+
+    }
 }
-@media all and (min-width: 991px) and (max-width: 1200px) {}
+@media all and (min-width: 991px) and (max-width: 1200px) {
+    
+}
 
 
 

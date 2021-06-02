@@ -1,4 +1,5 @@
 import React from "react";
+import Weather from "../APIs/Weather";
 import CardNoticia from "./CardNoticia";
 import CardNoticiaPrincipal from "./CardNoticiaPrincipal";
 
@@ -9,12 +10,15 @@ const NoticiasDestacadas = (props) => {
                 <h2 className="mb-5 text-center border-bottom">
                     Noticias destacadas
                 </h2>
-                {props.noticias[0] && (
-                    <CardNoticiaPrincipal
-                        noticia={props.noticias[0]}
-                        width={"30rem"}
-                    />
-                )}
+                <div className='d-flex flex-column'>
+                    {props.noticias[0] && (
+                        <CardNoticia
+                            noticia={props.noticias[0]}
+                            width={"30rem"}
+                        />
+                    )}
+                    <Weather className='mt-5'/>
+                </div>
             </div>
             <div className="d-flex flex-column justify-content-between">
                 {props.noticias[1] && (

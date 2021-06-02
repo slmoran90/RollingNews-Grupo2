@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Navegacion = () => {
     return (
-        <Navbar bg="light"  className="fixed-top">
+        <Navbar bg="light" expand='lg' className="fixed-top">
             <Container>
                 <Row>
                     <Col md={12}>
