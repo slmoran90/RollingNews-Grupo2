@@ -193,6 +193,9 @@ h1, h2, h3, h4, h5, h6, p {
 .cuerpoNoticia{
     margin: 3rem;
 }
+.tituloNoticia {
+    color: #f18219;
+}
 @media all and (min-width: 200px) and (max-width: 768px) {
  .amazon {
      margin-right: auto;
@@ -204,7 +207,7 @@ h1, h2, h3, h4, h5, h6, p {
      width: 100%;
  }
  .noticiaPpal {
-     width: 100% !important;
+     width: 80% !important;
  }
  .tituloNoticia {
      font-size: 1.5rem;
@@ -217,7 +220,7 @@ h1, h2, h3, h4, h5, h6, p {
  min-width: 14rem;
 }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
+@media all and (min-width: 787px) and (max-width: 991px) {
  .bannerCovid {
      width: 100%;
  }
