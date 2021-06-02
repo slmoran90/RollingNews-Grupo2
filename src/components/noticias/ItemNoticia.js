@@ -47,19 +47,6 @@ const ItemNoticia = (props) => {
     })
     }   
 
-    // const fechaLocal = (fecha) =>{
-    //     // let date = new Date()
-    //     console.log('parametro fecha:',fecha.toString())
-    //     let fechaS=fecha.toString();
-    //     let anio=fechaS.substring(0,4);
-    //     let mes=fechaS.substring(5,7);
-    //     let dia=fechaS.substring(8,10);
-    //     console.log(props.info.fechaNoticia.substring(8,10)+'-'+props.info.fechaNoticia.substring(5,7)+'-'+props.info.fechaNoticia.substring(0,4))
-    //     // fechaS.substring(8,10)+'-'+fechaS.substring(5,7)+'-'+fechaS.substring(0,4))
-        
-    //     return fechaModificada
-    // }
-
     return (
         <tr className="textoNoticia">
             {
@@ -72,11 +59,9 @@ const ItemNoticia = (props) => {
             <td>{props.info.autorNoticia}</td>
         
             <td className='in-line'>
-                <Link className='btn btn-warning text-light mb-2' to={'/noticias/editar/'+props.info.id}><FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon></Link>
-                <Button variant='danger' onClick={()=> eliminaNoticia(props.info.id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Button>
+                <Link className='btn btn-outline-warning mb-2' to={'/noticias/editar/'+props.info.id}><FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon></Link>
+                <Button variant='' className='btn btn-outline-danger' onClick={()=> eliminaNoticia(props.info.id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Button>
             </td>
-            {/* <td><Link className='btn btn-warning text-light' to={'/noticias/editar/'+props.info.id}><FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon></Link></td> */}
-            {/* <td><Button variant='danger' onClick={()=> eliminaNoticia(props.info.id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Button></td> */}
         </tr>
     );
 };

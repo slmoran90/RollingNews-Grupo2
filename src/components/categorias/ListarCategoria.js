@@ -1,41 +1,39 @@
-import React from "react";
-import { ListGroup, Container } from "react-bootstrap";
-import Particles from "react-particles-js";
-import ItemCategoria from "./ItemCategoria";
-
+import {Container,Table,Row,Col } from 'react-bootstrap'
+import React, {useEffect} from 'react'; 
+import ItemCategoria from './ItemCategoria';
+import { withRouter, useHistory} from "react-router-dom";
 const ListarCategoria = (props) => {
-  // console.log('props en listar categoria: ',props)
-  return (
-    <div className="main-form">
-      <Particles
-        params={{
-          particles: {
-            number: {
-              value: 200,
-              density: {
-                enable: true,
-                value_area: 1000,
-              },
-            },
-          },
-        }}
-      />
-      <Container className="py-3 listaCat">
-        <h3 className="text-center my-3 py-3 text-light">
-          Categorías
-        </h3>
-        <ListGroup>
-          {props.categorias.map((categoria) => (
-            <ItemCategoria
-              categoria={categoria}
-              key={categoria.id}
-              consultarAPIcategorias={props.consultarAPIcategorias}
-            ></ItemCategoria>
-          ))}
-        </ListGroup>
-      </Container>
-    </div>
-  );
+    // console.log('props en listar categoria: ',props)+
+    let history = useHistory();
+    useEffect(() => {
+        if(props.adminUser !== true){
+          history.push("/");
+        }
+      });
+    return (
+        <Container className="py-2 margenFondo">
+            <h2 className="text-center my-3 py-3 formTitulos">Categorías</h2>
+            <Row>
+                <Col></Col>
+                <Col xs={12} md={6}>
+                    <Table responsive striped hover size='sm' >
+                    <thead>
+                        <tr className='text-center'>
+                            <th>Categorías</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                        props.categorias.map((categoria) => <ItemCategoria categoria={categoria} key={categoria.id} consultarAPIcategorias={props.consultarAPIcategorias}></ItemCategoria>)
+                        }
+                    </tbody>
+                    </Table>
+                </Col>
+                <Col></Col>
+            </Row>
+        </Container>
+    );
 };
 
-export default ListarCategoria;
+export default withRouter(ListarCategoria);

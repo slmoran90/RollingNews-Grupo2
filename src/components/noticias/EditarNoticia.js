@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Alert, Button, Container, Form } from 'react-bootstrap';
+import { Alert, Container, Form } from 'react-bootstrap';
 import {useParams, withRouter } from "react-router-dom";
 import Swal from 'sweetalert2';
 import {campoRequerido} from '../common/validaciones';
@@ -24,7 +24,7 @@ const EditarNoticia = (props) => {
     const categoriaRef = useRef('');
     const autorNoticiaRef = useRef('');
     const fechaNoticiaRef = useRef('');
-    const destacadaRef = useRef('off');
+    const destacadaRef = useRef('');
 
     const [arrayCategorias, setArrayCategorias] = useState([]);
 
@@ -114,7 +114,7 @@ const EditarNoticia = (props) => {
 
 
     return (
-        <div className="main-form py-3">
+        <div className="margenFondo py-3">
         <Container className="my-3 ">
             <h2 className="text-center my-3 py-3 formTitulos">Editar Noticia</h2>
 
@@ -123,7 +123,7 @@ const EditarNoticia = (props) => {
                     {/* select armado desde APIcategorias */}
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="sombra" as="select" size="sm" placeholder="Categoría"
+                        <Form.Control className="outlineColor" as="select" size="sm" placeholder="Categoría"
                         defaultValue = {noticia.categoria}
                         ref={categoriaRef}
                         value= {noticia.categoria}
@@ -135,7 +135,7 @@ const EditarNoticia = (props) => {
                     </Form.Group>
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
-                        <Form.Control type="date" size="sm" placeholder="dd/mm/aa" 
+                        <Form.Control className="outlineColor" type="date" size="sm" placeholder="dd/mm/aa" 
                         defaultValue = {noticia.fechaNoticia}
                         ref={fechaNoticiaRef}
                         />
@@ -143,7 +143,7 @@ const EditarNoticia = (props) => {
 
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Autor<span class="text-danger">*</span></Form.Label>
-                        <Form.Control type="text" size="sm" placeholder="Autor" 
+                        <Form.Control className="outlineColor" type="text" size="sm" placeholder="Autor" 
                         defaultValue ={noticia.autorNoticia}
                         ref={autorNoticiaRef} 
                         />
@@ -152,21 +152,21 @@ const EditarNoticia = (props) => {
 
                 <Form.Group>
                     <Form.Label>Titulo Noticia<span class="text-danger">*</span></Form.Label>
-                    <Form.Control type="text" size="sm" placeholder="Titulo de la Noticia"  
+                    <Form.Control className="outlineColor" type="text" size="sm" placeholder="Titulo de la Noticia"  
                     defaultValue ={noticia.tituloNoticia}
                     ref={tituloNoticiaRef} />
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Descripción Breve<span class="text-danger">*</span></Form.Label>
-                    <Form.Control as="textarea" rows={3} size="sm" placeholder="Descripción Breve"
+                    <Form.Control className="outlineColor" as="textarea" rows={3} size="sm" placeholder="Descripción Breve"
                     defaultValue ={noticia.noticiaBreve}
                     ref={noticiaBreveRef} />
                 </Form.Group>
 
                 <Form.Group>
                     <Form.Label>Descripción Detallada<span class="text-danger">*</span></Form.Label>
-                    <Form.Control as="textarea" rows={5} size="sm" placeholder="Descripción Detallada"
+                    <Form.Control className="outlineColor" as="textarea" rows={5} size="sm" placeholder="Descripción Detallada"
                     defaultValue ={noticia.noticiaDetallada}
                     ref={noticiaDetalladaRef}
                     />
@@ -174,7 +174,7 @@ const EditarNoticia = (props) => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
-                        <Form.Control as="textarea" rows={3} placeholder="Imagen Principal"
+                        <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Principal"
                         defaultValue ={noticia.imagenPrincipal}
                         ref={imagenPrincipalRef}/>
                     </Form.Group>
@@ -186,7 +186,7 @@ const EditarNoticia = (props) => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
-                        <Form.Control as="textarea" rows={3} placeholder="Imagen Secundaria" 
+                        <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Secundaria" 
                         defaultValue ={noticia.imagenSec}
                         ref={imagenSecRef}
                         />
@@ -198,14 +198,19 @@ const EditarNoticia = (props) => {
                 </Form.Row>
                 <Form.Group className='my-2 pb-2'>
                     {
-                    (noticia.destacada === 'on') ? <Form.Check type='checkbox' label='Noticia Destacada' checked /> : <Form.Check type='checkbox' label='Noticia Destacada'  />
+                    (noticia.destacada === 'on') ? 
+                    <Form.Check type='checkbox' label='Noticia Destacada' defaultValue ={noticia.destacada}
+                    ref={destacadaRef} checked /> : 
+                    <Form.Check type='checkbox' label='Noticia Destacada' defaultValue ={noticia.destacada}
+                    ref={destacadaRef}  />
                     }
                 </Form.Group>
-                
-                <Button type='submit' className="botones w-100 mt-3">Guardar</Button>
+                <div className='d-flex justify-content-center'>  
+                <button type='submit' className='botonGuardar'>Guardar</button>
                 {
                     errorValidacion === true ? (<Alert className='text-danger my-3' variant='secondary'><b>* Todos los campos son obligatorios</b></Alert>) : (null)
                 }
+                </div>
             </Form>
         </Container>
         </div>

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, withRouter} from "react-router-dom";
 import { useState, useEffect } from "react";
 //== Para que vea app.css tiene que ir 1- BOOTSTRAP 2-APP.JS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,6 +19,11 @@ import Error from "./components/Error";
 import Nosotros from './components/Nosotros/Nosotros';
 import MostrarNoticia from "./components/noticias/MostrarNoticia";
 import Fotografia from "./components/fotografia/Fotografia";
+import Contacto from "./components/Contacto";
+import PromoSus from "./components/suscripcion/PromoSus";
+import Suscripcion from "./components/suscripcion/Suscripcion";
+import Login from "./components/login/Login";
+import Admin from "./components/login/Admin"; 
 
 function App() {
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
@@ -28,6 +33,11 @@ function App() {
   const URLcategorias = process.env.REACT_APP_API_URLcategorias;
   // URL donde estan almacenadas las noticias
   const URLnoticias = process.env.REACT_APP_API_URLnoticias;
+  // URL donde esta almacenado el admin
+  const user = process.env.REACT_APP_API_URLusers;
+  const [adminUser, setAdminUser] = useState();
+  const [usuarios, setUsuarios] = useState([]);
+  const [showLogin, setShowLogin] = useState(false);
   // state para get de categorias 
   const [categorias, setCategorias] = useState([]);
   // state para almacenar resultados del fetch
@@ -36,6 +46,7 @@ function App() {
     consultarAPIcategorias();
     consultarAPInoticias();
     cargarNoticias();
+    consultarAPIusers();
   }, []);
   const cargarNoticias = async () => {
     try {
@@ -84,7 +95,7 @@ function App() {
       }
     } catch (error) {
       console.log(error);
-      Swal.fire("Ocurrió un Error en Catgorias", "Inténtelo en unos minutos.", "error");
+      Swal.fire("Ocurrió un Error", "Inténtelo en unos minutos.", "error");
     }
   };
   // funcion GET de noticias
@@ -103,10 +114,29 @@ function App() {
         'error'
       )
     }
+  };
+ 
+  const consultarAPIusers = async() => {
+  const consulta = await fetch(user);
+  const respuesta = await consulta.json();
+  if (consulta.status !== 200) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Ocurrio un error, intentelo nuevamente",
+    });
   }
+  //Guardar en el state
+  setUsuarios(respuesta);
+  };
+
   return (
     <Router>
-      <Navegacion></Navegacion>
+      <Navegacion
+       setAdminUser={setAdminUser}
+       adminUser={adminUser}
+       usuarios={usuarios}
+      ></Navegacion>
       {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}
       <Switch>
         <Route exact path="/">
@@ -130,22 +160,26 @@ function App() {
         <Route exact path="/categorias/nueva">
           <NuevaCategoria
             consultarAPIcategorias={consultarAPIcategorias}
-          ></NuevaCategoria>
+            adminUser={adminUser}>
+          </NuevaCategoria>
         </Route>
-        <Route exact path="/categorias/listar"> 
+        <Route exact path="/categorias/listar" component={ListarCategoria}>
           {/* muestra lista de categorias existentes */}
           <ListarCategoria
             categorias={categorias}
             consultarAPIcategorias={consultarAPIcategorias}
+            adminUser={adminUser}
+            
           ></ListarCategoria>
         </Route>
         <Route exact path="/noticias/listar/:nombreCategoria">
           {/* muestra lista de noticias de una categoria */}
           <ListarNoticiasxCateg
             consultarAPIcategorias={consultarAPIcategorias}
-          ></ListarNoticiasxCateg>
-        </Route> 
-        
+            adminUser={adminUser}>
+          </ListarNoticiasxCateg>
+        </Route>
+
         <Route exact path="/noticias/mostrarNoticia/:id">
           {/* muestra la noticia completa, seleccionada en la lista de noticias */}
           <MostrarNoticia></MostrarNoticia>
@@ -154,31 +188,57 @@ function App() {
 
         <Route exact path="/noticias/nueva">
           <NuevaNoticia noticias={noticias}
-            consultarAPInoticias={consultarAPInoticias}></NuevaNoticia>
+            consultarAPInoticias={consultarAPInoticias}
+            adminUser={adminUser}>
+            
+            </NuevaNoticia>
         </Route>
         <Route exact path="/noticias/listar">
           {/* muestra lista de TODAS las noticias */}
           <ListarNoticias
             noticias={noticias}
-            consultarAPInoticias={consultarAPInoticias}>
-          </ListarNoticias>
+            consultarAPInoticias={consultarAPInoticias}
+             adminUser={adminUser}>
+
+             </ListarNoticias>
         </Route>
         <Route exact path="/noticias/editar/:id">
-          <EditarNoticia consultarAPInoticias={consultarAPInoticias}></EditarNoticia>
+          <EditarNoticia consultarAPInoticias={consultarAPInoticias}
+           adminUser={adminUser}>
+
+           </EditarNoticia>
         </Route>
         {/* -- Fin menu Administrador --*/}
-        
+
         <Route exact path="/nosotros">
           <Nosotros></Nosotros>
+        </Route>
+
+        <Route exact path="/contacto">
+          <Contacto></Contacto>
+          {/* <Contacto /> */}
+        </Route>
+        <Route exact path="/promoSus">
+          <PromoSus></PromoSus>
+          {/* <PromoSus /> */}
+        </Route>
+        <Route exact path="/suscripcion">
+          <Suscripcion></Suscripcion>
+          {/* <Suscripcion /> */}
+        </Route>
+        <Route exact path="/login" component={Login} >
+          <Login usuarios={usuarios} setAdminUser={setAdminUser} ></Login>
+        </Route>
+        <Route exact path="/admin" component={Admin}>
+          <Admin adminUser={adminUser} ></Admin>
         </Route>
         <Route path="/">
           <Error></Error>
         </Route>
-        
       </Switch>
       {/* se invoca el footer */}
       <Footer></Footer>
     </Router>
   );
 }
-export default App;
+export default App; 

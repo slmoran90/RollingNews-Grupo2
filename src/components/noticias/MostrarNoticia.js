@@ -34,7 +34,7 @@ const MostrarNoticia = () => {
     }
 
     return (
-        <div className="main-form">
+        <div className="margenFondo">
         <Container className="py-3">
             <h2 className="text-center my-3 py-3 formTitulos">Mostrar Noticia Completa</h2>
 

@@ -1,0 +1,88 @@
+.margenFondo{
+    margin-top: 15vh;
+}
+
+.foto{
+    width: 50px;
+}
+
+h1{
+    color: #f18219;
+}
+
+.logoUsuario{
+    margin-right: 5px;
+}
+
+.fotoLogin{
+    margin-left: 50px;
+}
+
+.logoShield{
+    margin-right: 10px;
+}
+
+.outlineColor{
+    border: none;
+    border-bottom: 2px solid #f18219;
+    outline-style: none;
+   
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 2px solid  #f18219;
+  }
+
+.botonGuardar{
+ width: 190px;
+ padding: 15px;
+ background-color: transparent;
+ border: 1.5px solid transparent;
+ color: #f18219;
+ border-radius: 4px;
+ transition: all 0.3s;
+ position: relative;
+ cursor: pointer;
+ font-size: 16px;
+ text-transform: uppercase;
+}
+
+.botonGuardar:after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #f18219;
+    border-left: 2px solid #f18219;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    transition: all 0.2s;
+}
+
+.botonGuardar:before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #f18219;
+    border-right: 2px solid #f18219;
+    position: absolute;
+    left: -1;
+    bottom: 0;
+    right: 0;
+    top: -1;
+    transition: all 0.2s;
+}
+
+.botonGuardar:hover:after{
+    width: 201px;
+    height: 70px;
+}
+.botonGuardar:hover:before{
+    width: 201px;
+    height: 70px;
+}

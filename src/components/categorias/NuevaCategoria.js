@@ -1,16 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Form, Button, Container, Alert, CloseButton, Col, Row } from "react-bootstrap";
+import { Form, Button, Container, Alert, Row, Col } from "react-bootstrap";
 import Swal from 'sweetalert2'
 // importo archivo de validaciones
-import { campoRequerido } from "../common/validaciones"
-// para usar fontAwesome
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-// <FontAwesomeIcon icon={faWindowClose} size='md' className='mr-2'></FontAwesomeIcon>
-import Particles from 'react-particles-js';
+import { campoRequerido } from "../common/validaciones";
+import { withRouter, useHistory} from "react-router-dom";
+
 
 const NuevaCategoria = (props) => {
-
+    let history = useHistory();
     // URL de categorias
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
 
@@ -25,6 +22,9 @@ const NuevaCategoria = (props) => {
 
     useEffect(() => {
         handleReset();
+        if(props.adminUser !== true){
+            history.push("/");
+          }
     }, []);
 
     //====== limpiar formulario ========
@@ -113,44 +113,29 @@ const NuevaCategoria = (props) => {
     }
 
     return (
-       <div className="main-form">
-            <Particles className="particles-js" params={{
-          particles: {
-            number: {
-              value: 200,
-              density: {
-                enable: true,
-                value_area: 1000,
-              }
-            },
-          },
-        }}
-      />
-        <Container className="">
-            <Row className="justify-content-center">
-                <Col xs={12} md={6}>
-            <h3 className="text-center text-light">Nueva Categoria</h3>           
-            <Form ref={formRef} className="mx-5 " onSubmit={handleSubmit}>
-                <Form.Group className='py-2'>
-                    <Form.Label>Nombre de la Categoría *</Form.Label>
-                    <Form.Control type="text" placeholder="Nombre de la Categoria" onChange={(e) => { setNombreCategoria(e.target.value) }} required />
-                </Form.Group>
+        <Container className="py-2 main-form">
+            <Row className='justify-content-center'>
+                <Col xs={12} md={6} className='border borderNC'>
+                    <h2 className="text-center my-3 py-3 formTitulos">Nueva Categoría</h2>
+                    <Form ref={formRef} className="mx-5 " onSubmit={handleSubmit}>
+                        <Form.Group className='py-2'>
+                            <Form.Label>Nombre de la Categoría<span class="text-danger">*</span></Form.Label>
+                            <Form.Control type="text" placeholder="Nombre de la Categoria" onChange={(e) => { setNombreCategoria(e.target.value) }} required />
+                        </Form.Group>
 
-                <div className="d-flex justify-content-center">
-                    <Button className='botones mb-3 px-5 py-2' type='submit'>
-                        Guardar
-                    </Button>
-                </div>
+                        <div className="d-flex justify-content-center">
+                            <Button className='botones mb-3 px-5 py-2' type='submit'>
+                                Guardar
+                            </Button>
+                        </div>
 
-                {/* muetra mensaje de errores durante la carga de datos */}
-                {(error === true) ? (<Alert variant='warning'>{mensajeError}</Alert>) : null}
-
-            </Form>
-            </Col>
-        </Row>            
+                        {/* muetra mensaje de errores durante la carga de datos */}
+                        {(error === true) ? (<Alert variant='warning'>{mensajeError}</Alert>) : null}
+                    </Form>
+                </Col>
+            </Row>
         </Container>
-        </div>
     );
 };
 
-export default NuevaCategoria;
+export default withRouter(NuevaCategoria);

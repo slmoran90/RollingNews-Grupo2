@@ -1,8 +1,3 @@
-
-body{
-    min-height: 100vh;
-}
-
 .botones {
     background: #ff6f00;
     border-color: #ffffff;
@@ -51,57 +46,19 @@ body{
     color: #8f98a0;
 }
 
-/*Nueva Categoria*/
-.nuevaCat{
-    height: 50%;
-    width: 50%;
-    position: absolute;
-   top:50%;
-   left: 50%;
-   transform: translate(-50%,-50%);
-}
-
-/*Lista Categoria*/
-.listaCat{
-    height: 50%;
-    width: 50%;
-    position: absolute;
-   top:100px;
-   left: 300px;
-}
-
-
-/* Nueva Noticia
-.nuevanot{
-    height: 50%;
-    width: 50%;
-    position: absolute;
-   top:50px;
-   left:150px;
-}
-    
-} */
-
 /*Fondo Formulario*/
 .main-form {
-
-    position: relative;
-    margin-top: 100px;
-    background-color: #ff6f00;
-    background-image: linear-gradient(62deg, #ff6f00 0%, #fe9d3e 100%); 
-    font-family: 'Helvetica Neue', sans-serif;
+    min-height: 62vh;
+    margin-top: 150px;   
 }
+
+.borderNC{
+    
+    border: #f18219;
+}
+
 .formTitulos{
     color: #f18219;
-}
-
-/*particles*/
-.particles-js {
-   height: 100vh;
-   position: absolute;
-   top: 0;
-   width: 100%;
-   z-index: -1;
 }
 
 
@@ -197,30 +154,3 @@ body{
     width: 201px;
     height: 70px;
 }
-
-/*media queris*/
-/*Nueva Categoria*/
-/* @media only screen and (max-width:1200px){
-    .nuevaCat{
-    position: absolute;
-   top:200px;
-   left: 300px;
-}
-}
-
-@media only screen and (max-width:990px){
-    .nuevaCat{
-    position: absolute;
-   top:160px;
-   left: 200px;
-}    
-}
-
-
-@media only screen and (max-width:767px){
-    .nuevaCat{
-    position: absolute;
-   top:60px;
-   left:20px;
-}
-} */

@@ -7,10 +7,11 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <section className="bg-secondary text-light text-center pt-3">
+    <section className=" bg-secondary text-light text-center pt-3 ">
       <article className="row d-flex justify-content-around align-items-center">
         <div className="col-sm-6 col-md-3">
           <h6>
@@ -90,16 +91,14 @@ const Footer = () => {
               href="#"
               src="/google-play-badge-bb.svg"
               alt="logo play store"
-            />
+            /> 
           </Link>
         </div>
       </article>
       <hr></hr>
-      <article className="row">
-        <div className="col-sm-12 col-md-6">
+      <article className="row d-flex justify-content-between ">
           <p>&copy; 2021 Team G2. | Todos los derechos reservados.</p>
-        </div>
-        <div className="col-sm-12 col-md-6">
+        <div>
           <Link><FontAwesomeIcon className="text-light" icon={faInstagram} size="lg"></FontAwesomeIcon></Link>
           <Link><FontAwesomeIcon
             className="text-light mx-4"

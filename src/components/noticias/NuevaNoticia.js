@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Alert, Container, Form, Image } from 'react-bootstrap';
 import Swal from 'sweetalert2';
-import Particles from 'react-particles-js';
-
-
+import { withRouter, useHistory} from "react-router-dom";
 //import {campoRequerido, validarFormatoFecha} from '../common/validaciones'
 const NuevaNoticia = (props) => {
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
@@ -17,6 +15,8 @@ const NuevaNoticia = (props) => {
     const [imagenPrincipal, setImagenPrincipal] = useState('');
     const [imagenSec, setImagenSec] = useState('');
     const [destacada, setDestacada] = useState('off');
+    let history = useHistory();
+    // const [id, setId] = useState("1000");
     const [arrayCategorias, setArrayCategorias] = useState([]);
     const [errorValidacion, setErrorValidacion] = useState(false);
     const formRef = useRef(null);
@@ -27,6 +27,9 @@ const NuevaNoticia = (props) => {
     };
     useEffect(() => {
         consultarAPIcategorias();
+        if(props.adminUser !== true){
+            history.push("/");
+          }
     }, []);
      // === Para armar select categorias existentes
      const consultarAPIcategorias = async () => {
@@ -97,21 +100,6 @@ const NuevaNoticia = (props) => {
         }
     };
     return (
-        <div>
-        {/* 
-        className="main-form position-relative"
-        <Particles params={{
-          particles: {
-            number: {
-              value: 200,
-              density: {
-                enable: true,
-                value_area: 1000,
-              }
-            },
-          },
-        }}
-      /> */}
         <Container className="margenFondo py-3">
             <h2 className="text-center my-3 py-3 formTitulos">Nueva Noticia</h2>
             <Form ref={formRef} className='mx-5' onSubmit={handleSubmit}>
@@ -155,6 +143,9 @@ const NuevaNoticia = (props) => {
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                         <Image className='w-75' src={imagenPrincipal} alt='Imagen Principal de la Noticia' />
+                        {/* <div className='w-75 bg-danger py-5' style={{ 'background': `url(${imagenPrincipal}) 20% 1% / cover no-repeat`}}>
+                        </div> */}
+                        {/* sistema Gonza */}
                     </Form.Group>
                 </Form.Row>
                 <Form.Row>
@@ -177,7 +168,7 @@ const NuevaNoticia = (props) => {
                 </div> 
             </Form>
         </Container>
-        </div>
     );
 };
-export default NuevaNoticia;
+
+export default withRouter(NuevaNoticia);

@@ -31,7 +31,7 @@ const Fotografia = () => {
 
     return (
         <Container className='margenListaNoticias mb-3'>
-            <h1 className='text-center my-3 py-3 fondoTitulo text-light'>Fotografias</h1>
+            <h1 className='text-center my-3 py-3 formTitulos'>Fotografias</h1>
             {/* definicion de sistema de grillas para las cards de noticias */}
             <Row xs={1} md={3}>
                 {
