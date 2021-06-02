@@ -37,6 +37,9 @@
 
 /*Footer*/
 
+h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Roboto', sans-serif;
+}
 .lista {
     list-style: none;
     padding: 0;
@@ -104,6 +107,24 @@
 }
 
 /*Botones guardar*/
+
+
+.margenSup {
+    margin-top: 95px;
+}
+
+.imgCovid {
+    height: 200px;
+    background-image: url('https://cdn.discordapp.com/attachments/836409575833337888/848919730441420821/coronavirus-banner.jpg');
+}
+
+.bannerCovid {
+    width: 100%;
+    left: 0;
+    right: auto;
+    object-fit: contain;
+}
+
 .botonGuardar{
     width: 190px;
     padding: 15px;

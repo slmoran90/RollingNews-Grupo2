@@ -7,11 +7,11 @@
 }
 
 .dolar {
-    
-    border-top:  solid rgb(1, 184, 1) 8px!important;
+    width: 200px;
+    border-top:  solid #f18219 8px!important;
     border-radius: 10px;
     background: #ffffff;
-    box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
+    box-shadow: 10px 10px 5px 0px rgba(158, 157, 157, 0.404);
 }
 
 /* .dolar-list {
