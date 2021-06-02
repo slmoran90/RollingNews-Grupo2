@@ -7,8 +7,8 @@ const PromoSus = () => {
       <hr />
       <CardSus></CardSus>
       <hr/>
-      <h4>*Puedes editar las noticias, siempre con el permiso del periodista dueño de la misma</h4>
-      <h4>*Tarjeta Premium: puedes tener descuentos en varios negocios asociados a nuestra firma (Carnicerias Roll, Supermercado CodeR y FarmaciasBackEnd</h4>
+      <h6 className="textoNoticia">*Puedes editar las noticias, siempre con el permiso del periodista dueño de la misma</h6>
+      <h6 className="textoNoticia">*Tarjeta Premium: puedes tener descuentos en varios negocios asociados a nuestra firma (Carnicerias Roll, Supermercado CodeR y FarmaciasBackEnd</h6>
     </Fragment>
   );
 };
