@@ -9,9 +9,9 @@
     border-color: #f18219;
 }
 
-.outlineColor{
+.outlineColor {
     border: none;
-    border-bottom: 2px solid  #ff6f00;
+    border-bottom: 2px solid #ff6f00;
     outline-style: none;
     outline: none;
 }
@@ -25,15 +25,18 @@
 
 
 /*Navegacion*/
+
 .botonNav {
     background: #ffffff;
     border-color: #f18219;
 }
+
 .botones:hover {
     color: #f18219;
     background-color: white;
     border-color: #f18219;
 }
+
 
 /*Footer*/
 
@@ -41,28 +44,31 @@
     list-style: none;
     padding: 0;
 }
+
 .textLink {
     text-decoration: none;
     color: #8f98a0;
 }
 
+
 /*Fondo Formulario*/
+
 .main-form {
     min-height: 62vh;
-    margin-top: 150px;   
+    margin-top: 150px;
 }
 
-.borderNC{
-    
+.borderNC {
     border: #f18219;
 }
 
-.formTitulos{
+.formTitulos {
     color: #f18219;
 }
 
 
 /* Css Error */
+
 .margenFondo {
     margin-top: 100px;
 }
@@ -72,7 +78,9 @@
     width: 50%;
 }
 
+
 /*Navegacion*/
+
 .botonNav {
     background: #ffffff;
     border-color: #f18219;
@@ -103,8 +111,10 @@
     background-color: #f18219
 }
 
+
 /*Botones guardar*/
-.botonGuardar{
+
+.botonGuardar {
     width: 190px;
     padding: 15px;
     background-color: transparent;
@@ -118,7 +128,7 @@
     text-transform: uppercase;
 }
 
-.botonGuardar:after{
+.botonGuardar:after {
     content: "";
     width: 20px;
     height: 20px;
@@ -132,7 +142,7 @@
     transition: all 0.2s;
 }
 
-.botonGuardar:before{
+.botonGuardar:before {
     content: "";
     width: 20px;
     height: 20px;
@@ -146,11 +156,12 @@
     transition: all 0.2s;
 }
 
-.botonGuardar:hover:after{
+.botonGuardar:hover:after {
     width: 201px;
     height: 70px;
 }
-.botonGuardar:hover:before{
+
+.botonGuardar:hover:before {
     width: 201px;
     height: 70px;
 }

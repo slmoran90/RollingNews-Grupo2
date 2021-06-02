@@ -1,20 +1,25 @@
 import React, { Fragment } from "react";
-import { CardGroup, Button, Card, ListGroup } from "react-bootstrap";
+import { CardGroup, Card, ListGroup } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
 const CardSus = () => {
     return (
-        <Fragment className="margenFondo">
-            <CardGroup className="row">
-                <Card className="col-sm-12 col-md-12 col-lg-4 mx-5">
-                    <Card.Img variant="top" src="holder.js/100px160" />
+        <Fragment>
+            <CardGroup className="d-flex flex-wrap mt-5">
+                <Card className="justify-content-around">
+                    <div className="text-center">
+                    <Card.Img variant="top" src="/bronce.jpg" className="w-25 "/>
+                    </div>
                     <Card.Body>
-                        <Card.Title>Suscripción Gratuita!</Card.Title>
+                        <Card.Title className="formTitulos">Suscripción Gratuita!</Card.Title>
                         <Card.Text>
+                        <hr/>
+                            <h4>Beneficios:</h4>
+                            <hr/>
                             <ListGroup>
-                                <ListGroup.Item>
+                                <ListGroup.Item className="outlineColor">
                                     Puedes comentar tu opinión en nuestras noticias!
                 </ListGroup.Item>
-                                <ListGroup.Item>
+                                <ListGroup.Item className="outlineColor">
                                     Tienes la posibilidad de que te lleguen las notificaciones de
                                     nuestras noticias destacadas
                 </ListGroup.Item>
@@ -22,27 +27,32 @@ const CardSus = () => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button className="ml-2" variant="outline-primary" type="submit" >
-                            <NavLink className='nav-link' exact={true} to="/suscripcion">
+                        <button className="ml-2"  className="botonNav" type="submit" >
+                            <NavLink className='nav-link text-dark' exact={true} to="/suscripcion">
                                 Suscribirme!
               </NavLink>
-                        </Button>
+                        </button>
                     </Card.Footer>
                 </Card>
-                <Card className="col-sm-12 col-md-12 col-lg-4 mx-5">
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                <Card className="justify-content-around">
+                <div className="text-center">
+                    <Card.Img variant="top" src="/plata.jpg" className="w-25 "/>
+                    </div>
                     <Card.Body>
-                        <Card.Title>Suscripción por 150$ por mes!</Card.Title>
+                        <Card.Title className="formTitulos">Suscripción por 150$ por mes!</Card.Title>
                         <Card.Text>
+                        <hr/>
+                            <h4>Beneficios:</h4>
+                            <hr/>
                             <ListGroup>
-                                <ListGroup.Item>
+                                <ListGroup.Item className="outlineColor tamaño">
                                     Comentar todas nuestras noticias
                 </ListGroup.Item>
-                                <ListGroup.Item>
+                                <ListGroup.Item className="outlineColor">
                                     Tienes la opción de elegir que tipo de noticias te
                                     notificaremos!
                 </ListGroup.Item>
-                                <ListGroup.Item>
+                                <ListGroup.Item className="outlineColor">
                                     Tienes la opción que dejemos el diario impreso en la puerta de
                                     tu casa!
                 </ListGroup.Item>
@@ -50,27 +60,32 @@ const CardSus = () => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button className="ml-2" variant="outline-primary" type="submit" >
-                            <NavLink className='nav-link' exact={true} to="/suscripcion">
+                    <button className="ml-2"  className="botonNav" type="submit" >
+                            <NavLink className='nav-link text-dark' exact={true} to="/suscripcion">
                                 Suscribirme!
               </NavLink>
-                        </Button>
+                        </button>
                     </Card.Footer>
                 </Card>
-                <Card className="col-sm-12 col-md-12 col-lg-4 mx-5">
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                <Card className="justify-content-around">
+                <div className="text-center">
+                    <Card.Img variant="top" src="/oro.png" className="w-25 "/>
+                    </div>
                     <Card.Body>
-                        <Card.Title>Suscripción Premium a 500$ por mes</Card.Title>
+                        <Card.Title className="formTitulos">Suscripción Premium a 500$ por mes</Card.Title>
                         <Card.Text>
+                            <hr/>
+                            <h4>Beneficios:</h4>
+                            <hr/>
                             <ListGroup>
-                                <ListGroup.Item>
+                                <ListGroup.Item className="outlineColor">
                                     Comentar todas nuestras noticias y editarlas*
                 </ListGroup.Item>
-                                <ListGroup.Item>
+                                <ListGroup.Item className="outlineColor">
                                     Tienes la opción de elegir que tipo de noticias te
                                     notificaremos!
                 </ListGroup.Item>
-                                <ListGroup.Item>
+                                <ListGroup.Item className="outlineColor">
                                     Tienes la opción que dejemos el diario impreso en la puerta de
                                     tu casa y además tienes la opción de recibir nuestra Tarjeta Premium*!
                 </ListGroup.Item>
@@ -78,11 +93,11 @@ const CardSus = () => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button className="ml-2" variant="outline-primary" type="submit" >
-                            <NavLink className='nav-link' exact={true} to="/suscripcion">
+                    <button className="ml-2"  className="botonNav" type="submit" >
+                            <NavLink className='nav-link text-dark' exact={true} to="/suscripcion">
                                 Suscribirme!
               </NavLink>
-                        </Button>
+                        </button>
                     </Card.Footer>
                 </Card>
             </CardGroup>
