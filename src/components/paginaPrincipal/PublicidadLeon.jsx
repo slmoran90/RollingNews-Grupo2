@@ -3,7 +3,7 @@ import React from "react";
 const PublicidadLeon = () => {
     
     return (
-        <div className=" publicidad">
+        <div className="d-none d-md-block publicidad">
             <img
                 src="https://www.bellezapura.com/wp-content/uploads/2007/11/1804870027_fa716143b6.jpg"
                 alt="publicidad"

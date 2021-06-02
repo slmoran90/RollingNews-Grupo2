@@ -35,7 +35,11 @@ const ListaPorCategoriaUser = () => {
                     <ol id='lista3'>
                         {listaDeNoticias &&
                             listaDeNoticias.map((noticia, indice) => (
+                                <div>
+                                    
                                 <ItemListaPorCategoria noticia={noticia} indice={indice} key={noticia.id} />
+                                <hr></hr>
+                                </div>
                             ))}
                     </ol>
                 </Col>

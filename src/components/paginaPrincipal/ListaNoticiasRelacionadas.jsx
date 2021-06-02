@@ -9,7 +9,7 @@ const ListaNoticiasRelacionadas = (props) => {
     return (
         <div>
             {props.listaNoticias && (
-                <CardDeck className='d-flex flex-wrap justify-content-around'>
+                <div className='d-flex flex-wrap justify-content-around'>
                     {props.listaNoticias.map((noticia) => (
                         <CardNoticia
                             noticia={noticia}
@@ -17,7 +17,7 @@ const ListaNoticiasRelacionadas = (props) => {
                             width={"18rem"}
                         />
                     ))}
-                </CardDeck>
+                </div>
             )}
         </div>
     );

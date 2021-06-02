@@ -48,12 +48,12 @@ const ComponenteNoticia = () => {
             { listaNoticiasCat &&
         <Fragment>
             <Row className='justify-content-around margenSup'>
-                <Col xs={6} md={8} >
+                <Col xs={12} md={8} >
                     <div className="container d-flex nowrap ">
                         <div className="mr-5">
                             <div>
                                 <div className='d-flex flex-wrap justify-content-center'>
-                                <h2 className="text-center">
+                                <h2 className="text-center tituloNoticia">
                                     {noticiaVisible.tituloNoticia}
                                 </h2>
                                 <img
@@ -62,21 +62,25 @@ const ComponenteNoticia = () => {
                                     alt="Imágen de la noticia"
                                 />
                                 </div>
-                                <p>{noticiaVisible.noticiaDetallada}</p>
+                                <div className=' d-flex flex-column align-items-center'>
+                                    
+                                <p className='cuerpoNoticia'>{noticiaVisible.noticiaDetallada}</p>
                                 <p>Categoría: {noticiaVisible.categoria}</p>
                                 <p>Autor: {noticiaVisible.autorNoticia}</p>
-                                <p>Fecha: {noticiaVisible.fechaNoticia}</p>
+                            
+                                <p className='border-top text-muted'>Fecha: {noticiaVisible.fechaNoticia}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </Col>
-                <Col xs={6} md={4} >
+                <Col xs={0} md={4} >
                     <PublicidadLeon />
                 </Col>
                 </Row>
-                <Row className='justify-content-around'>
-                    <Col xs={4} md={6} lg={9}>
-                        <h5>Noticias similares</h5>
+                <Row className='justify-content-around noticiasRelacionadas'>
+                    <Col xs={12} md={6} lg={9}>
+                        <h5 className='ml-5'>Noticias similares</h5>
                         <div className="">
                             <ListaNoticiasRelacionadas
                                 listaNoticias={listaNoticiasCat}

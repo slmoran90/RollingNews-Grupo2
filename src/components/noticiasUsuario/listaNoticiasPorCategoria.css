@@ -26,6 +26,7 @@
 }
 
 #lista3 li:hover{
+    box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404); 
     background: #eee;
     border-bottom: #f18219 5px;
 }   
@@ -43,6 +44,7 @@
     line-height: 2em;
     text-align: center;
     font-weight: bold;
+
 }
 
 #lista3 li:after{
@@ -57,5 +59,6 @@
 
 #lista3 li:hover:after{
     left: -.5em;
-    border-left-color: #f18219;             
+    border-left-color: #f18219;    
+              
 }
