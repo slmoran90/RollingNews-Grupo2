@@ -30,6 +30,10 @@
     background: #ffffff;
     border-color: #f18219;
 }
+.botonNav:focus{
+    background-color: #f18219;
+    border-color: #ffffff;
+}
 
 .botones:hover {
     color: #f18219;

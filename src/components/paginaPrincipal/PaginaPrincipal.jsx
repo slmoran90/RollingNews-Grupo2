@@ -12,7 +12,7 @@ const PaginaPrincipal = (props) => {
     return (
         <section className="margenSup">
             <Row className='justify-content-around'>
-                <Col xs={9}>
+                <Col className='' xs={9}>
                     <NoticiasDestacadas noticias={props.noticiasDestacadas} />
                 </Col>
                 {/* <Col xs={2}>
