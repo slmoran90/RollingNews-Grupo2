@@ -12,8 +12,8 @@ const NuevaNoticia = (props) => {
     const [tituloNoticia, setTituloNoticia] = useState('');
     const [noticiaBreve, setNoticiaBreve] = useState('');
     const [noticiaDetallada, setNoticiaDetallada] = useState('');
-    const [imagenPrincipal, setImagenPrincipal] = useState('');
-    const [imagenSec, setImagenSec] = useState('');
+    const [imagenPrincipal, setImagenPrincipal] = useState('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2020/02/error-404-1862483.jpg?itok=OUXEJayy');
+    const [imagenSec, setImagenSec] = useState('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2020/02/error-404-1862483.jpg?itok=OUXEJayy');
     const [destacada, setDestacada] = useState('off');
     let history = useHistory();
     // const [id, setId] = useState("1000");
@@ -142,9 +142,9 @@ const NuevaNoticia = (props) => {
                         <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Principal" onChange={(e) => setImagenPrincipal(e.target.value)} required/>
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                        <Image className='w-75' src={imagenPrincipal} alt='Imagen Principal de la Noticia' />
-                        {/* <div className='w-75 bg-danger py-5' style={{ 'background': `url(${imagenPrincipal}) 20% 1% / cover no-repeat`}}>
-                        </div> */}
+                        {/* <Image className='w-75' src={imagenPrincipal} alt='Imagen Principal de la Noticia' /> */}
+                        <div className='w-75 imageHolderForm  py-5' style={{ 'background': `url(${imagenPrincipal}) 20% 1% / cover no-repeat`}}>
+                        </div>
                         {/* sistema Gonza */}
                     </Form.Group>
                 </Form.Row>
@@ -154,7 +154,9 @@ const NuevaNoticia = (props) => {
                         <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Secundaria" onChange={(e) => setImagenSec(e.target.value)} />
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                        <Image className='w-75' src={imagenSec}  alt='Imagen Secundaria de la Noticia' />
+                        {/* <Image className='w-75' src={imagenSec}  alt='Imagen Secundaria de la Noticia' /> */}
+                        <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${imagenSec}) 20% 1% / cover no-repeat`}}>
+                        </div>
                     </Form.Group>
                 </Form.Row>
                 <Form.Group className='my-2 pb-2'>
