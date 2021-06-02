@@ -6,11 +6,11 @@ import './cardsNoticias.css';
 const CardNoticia = (props) => {
     const [fechaCard, setfechaCard] = useState(props.noticia.fechaNoticia);
     const fechaDate = fechaCard.split('-');
-    const fecha = new Date(fechaDate[2],fechaDate[1],fechaDate[0]);
+    console.log("🚀 ~ file: CardNoticia.jsx ~ line 9 ~ CardNoticia ~ fechaDate", fechaDate)
+    const fecha = new Date(fechaDate[0],fechaDate[1],fechaDate[2]);
     console.log(fecha)
     
     const fechaSplit = fecha.toString().split(' ');   
-    console.log("🚀 ~ file: CardNoticia.jsx ~ line 13 ~ CardNoticia ~ fechaSplit", fechaSplit)
     
     useEffect(() => {
             
