@@ -100,6 +100,12 @@ h1, h2, h3, h4, h5, h6, p {
     width: 100px;
     background-image: url('https://cdn.pixabay.com/photo/2013/04/07/06/42/error-101407__480.jpg');
 }
+/* boton del modal */
+.buttonModal {
+    color: white !important;
+    background-color: #F18219 !important;
+    border-color: #F18219 !important;
+}
 /* Para mejorar margenes en los titulos tapados por el navbar (valentina iramain) */
 
 .margenListaNoticias {
