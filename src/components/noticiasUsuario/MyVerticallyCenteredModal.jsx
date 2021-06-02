@@ -1,6 +1,6 @@
-import React from 'react';
-import { Button, Modal } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Button, Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const MyVerticallyCenteredModal = (props) => {
     return (
@@ -16,18 +16,33 @@ const MyVerticallyCenteredModal = (props) => {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4 className='m-3'>{props.noticia.tituloNoticia}</h4>
-                <div className='my-3'>
-                <img src={props.noticia.imagenPrincipal} alt='imágen de la noticia' className="w-100"/>
-
+                <h4 className="m-3">{props.noticia.tituloNoticia}</h4>
+                <hr></hr>
+                <div className="my-3">
+                    <img
+                        src={props.noticia.imagenPrincipal}
+                        alt="imágen de la noticia"
+                        className="w-100"
+                    />
                 </div>
-                <p className='m-3'>
-                    {props.noticia.noticiaBreve}
-                </p>
+                <hr></hr>
+                <p className="m-3">{props.noticia.noticiaBreve}</p>
             </Modal.Body>
             <Modal.Footer>
-                <Link className='btn btn-primary' to={'/noticia/'+props.noticia.categoria+'/'+props.noticia.id}>Ir a la noticia</Link>
-                <Button className='btn btn-secondary'onClick={props.onHide}>Close</Button>
+                <Link
+                    className="btn buttonModal"
+                    to={
+                        "/noticia/" +
+                        props.noticia.categoria +
+                        "/" +
+                        props.noticia.id
+                    }
+                >
+                    Ir a la noticia
+                </Link>
+                <Button className="btn btn-secondary" onClick={props.onHide}>
+                    Close
+                </Button>
             </Modal.Footer>
         </Modal>
     );

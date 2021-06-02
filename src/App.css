@@ -26,9 +26,61 @@
     left: 0;
     right: auto;
     object-fit: contain;
-    
-    
 }
+
+.botonGuardar{
+    width: 190px;
+    padding: 15px;
+    background-color: transparent;
+    border: 1.5px solid transparent;
+    color: #F18219;
+    border-radius: 4px;
+    transition: all 0.3s;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+   }
+   .botonGuardar:after{
+       content: "";
+       width: 20px;
+       height: 20px;
+       border-top: 2px solid #F18219;
+       border-left: 2px solid #F18219;
+       position: absolute;
+       left: 0;
+       bottom: 0;
+       right: 0;
+       top: 0;
+       transition: all 0.2s;
+   }
+   .botonGuardar:before{
+       content: "";
+       width: 20px;
+       height: 20px;
+       border-bottom: 2px solid #F18219;
+       border-right: 2px solid #F18219;
+       position: absolute;
+       left: -1;
+       bottom: 0;
+       right: 0;
+       top: -1;
+       transition: all 0.2s;
+   }
+   .botonGuardar:hover:after{
+       width: 201px;
+       height: 70px;
+   }
+   .botonGuardar:hover:before{
+       width: 201px;
+       height: 70px;
+   }
+
+   .buttonModal {
+        color: white !important;
+        background-color: #F18219 !important;
+        border-color: #F18219 !important;
+   }
 @media all and (min-width: 200px) and (max-width: 768px) {
     .amazon {
         margin-right: auto;

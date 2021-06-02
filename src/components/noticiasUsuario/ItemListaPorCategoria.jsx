@@ -19,9 +19,9 @@ const ItemListaPorCategoria = (props) => {
                     onHide={() => setModalShow(false)}
                 />
                 <div className='d-flex justify-content-end'>
-                <Button variant="outline-primary" onClick={() => setModalShow(true)}>
+                <button className='botonGuardar' onClick={() => setModalShow(true)}>
                     Preview de la Noticia
-                </Button>
+                </button>
                 </div>
             </li>
         
