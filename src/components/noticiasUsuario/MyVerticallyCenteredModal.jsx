@@ -35,7 +35,7 @@ const MyVerticallyCenteredModal = (props) => {
                         "/noticia/" +
                         props.noticia.categoria +
                         "/" +
-                        props.noticia.id
+                        props.noticia._id
                     }
                 >
                     Ir a la noticia

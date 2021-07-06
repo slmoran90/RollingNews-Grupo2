@@ -30,7 +30,7 @@ const CardNoticia = (props) => {
                 <div className="data">
                     <div className="content">
                         <span className="author">{props.noticia.autorNoticia}</span>
-                        <p className="title h1card"><Link to={'/noticia/'+props.noticia.categoria+'/'+props.noticia.id}>{props.noticia && props.noticia.tituloNoticia}</Link></p>
+                        <p className="title h1card"><Link to={'/noticia/'+props.noticia.categoria+'/'+props.noticia._id}>{props.noticia && props.noticia.tituloNoticia}</Link></p>
                         <p className="text clamp-line-3">{props.noticia && props.noticia.noticiaBreve}</p>
                     </div>
                     

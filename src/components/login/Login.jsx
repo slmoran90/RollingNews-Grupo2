@@ -14,27 +14,38 @@ const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-   if (nombre.trim() === "" || password === "") {
-    setError(true);
-    return;
-  } else {
-    setError(false);
-  }
-  const usuarioAdmin = props.usuarios.find(
-    (usuario) => usuario.nombre === nombre
-  );
-  if (typeof usuarioAdmin === 'undefined') {
-    setDatosErroneos(true);
-    return;
-  } else {
-    if (usuarioAdmin.password === password) {
-      history.push('/admin')
-      props.setAdminUser(true);
+  // === puesto por valentina para entrar como admin
+  setNombre('admin');
+  setPassword('admin');
+  setError(false);
+  history.push('/admin')
+  props.setAdminUser(true);
+  //=================================================
+  
+
+  // if (nombre.trim() === "" || password === "") {
+  //   setError(true);
+  //   return;
+  // } else {
+  //   setError(false);
+  // }
+  // const usuarioAdmin = props.usuarios.find(
+  //   (usuario) => usuario.nombre === nombre
+  // );
+
+  
+  // if (typeof usuarioAdmin === 'undefined') {
+  //   setDatosErroneos(true);
+  //   return;
+  // } else {
+  //   if (usuarioAdmin.password === password) {
+  //     history.push('/admin')
+  //     props.setAdminUser(true);
     
-    } else {
-      setDatosErroneos(true);
-    }
-  }
+  //   } else {
+  //     setDatosErroneos(true);
+  //   }
+  // }
 };
 
     return (

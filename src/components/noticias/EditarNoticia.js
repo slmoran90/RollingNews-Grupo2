@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Alert, Container, Form } from 'react-bootstrap';
-import {useParams, withRouter } from "react-router-dom";
+import { Alert, Container, Form, FormCheck } from 'react-bootstrap';
+import { useParams, withRouter } from "react-router-dom";
 import Swal from 'sweetalert2';
-import {campoRequerido} from '../common/validaciones';
+import { campoRequerido } from '../common/validaciones';
 
 const EditarNoticia = (props) => {
     //obtener parametro
@@ -12,7 +12,9 @@ const EditarNoticia = (props) => {
     const [categoria, setCategoria] = useState('');
     const [errorValidacion, setErrorValidacion] = useState(false);
     const [noticia, setNoticia] = useState({});
-    const URLnoticias = process.env.REACT_APP_API_URLnoticias+'/'+codigoNoticia;
+    // const URLnoticias = process.env.REACT_APP_API_URLnoticias+'/'+codigoNoticia;
+    const URLnoticias = process.env.REACT_APP_API_URLnoticias + '/noticias-por-id/' + codigoNoticia;
+
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
 
     //creo las variables useRef
@@ -28,20 +30,18 @@ const EditarNoticia = (props) => {
 
     const [arrayCategorias, setArrayCategorias] = useState([]);
 
-    useEffect(async()=>{
+    useEffect(async () => {
         consultarAPIcategorias();
-        try{
+        try {
             const respuesta = await fetch(URLnoticias);
-            if(respuesta.status === 200){
+            if (respuesta.status === 200) {
                 const noticiaSolicitada = await respuesta.json();
                 setNoticia(noticiaSolicitada);
-                // console.log('noticia solicitada', noticiaSolicitada);
             }
-
-        }catch(errorValidacion){
+        } catch (errorValidacion) {
             Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
         }
-    },[])
+    }, [])
 
     // === Para armar select categorias existentes
     const consultarAPIcategorias = async () => {
@@ -56,38 +56,44 @@ const EditarNoticia = (props) => {
         }
     };
 
-    const handleSubmit = async(e) =>{
+    const handleSubmit = async (e) => {
+
         e.preventDefault();
 
-        let categoriaModificada = (categoria === '')?(noticia.categoria):(noticia);
+        let categoriaModificada = (categoria === '') ? (noticia.categoria) : (noticia);
         //console.log(tituloNoticiaRef.current.value);
         //validar los datos
-        if(campoRequerido(autorNoticiaRef.current.value) 
-        && campoRequerido(fechaNoticiaRef.current.value) && campoRequerido(tituloNoticiaRef.current.value)
-        && campoRequerido(noticiaBreveRef.current.value) && campoRequerido(noticiaDetalladaRef.current.value)
-        && campoRequerido(imagenPrincipalRef.current.value)
-        && campoRequerido(categoriaModificada)
-        ){
+        if (campoRequerido(autorNoticiaRef.current.value)
+            && campoRequerido(fechaNoticiaRef.current.value) && campoRequerido(tituloNoticiaRef.current.value)
+            && campoRequerido(noticiaBreveRef.current.value) && campoRequerido(noticiaDetalladaRef.current.value)
+            && campoRequerido(imagenPrincipalRef.current.value)
+            && campoRequerido(categoriaRef.current.value)
+        ) {
+            //console.log(fechaNoticiaRef.current.value.toLocaleDateString());
+            console.log("antes de guardar valor destacada:", destacadaRef.current.value)
             //si son correctos hago el request
             setErrorValidacion(false);
-            try{
+            try {
                 const noticiaModificada = {
                     tituloNoticia: tituloNoticiaRef.current.value,
                     noticiaBreve: noticiaBreveRef.current.value,
                     noticiaDetallada: noticiaDetalladaRef.current.value,
                     imagenPrincipal: imagenPrincipalRef.current.value,
-                    categoria: categoriaModificada,
+                    imagenSec: imagenSecRef.current.value,
+                    categoria: categoriaRef.current.value,
                     autorNoticia: autorNoticiaRef.current.value,
                     fechaNoticia: fechaNoticiaRef.current.value,
                     destacada: destacadaRef.current.value
                 }
-                const respuesta = await fetch(URLnoticias,{
-                    method:'PUT',
-                    headers: {"Content-Type":"application/json"},
+
+                console.log('noticiaModificada antes de PUT:', noticiaModificada)
+
+                const respuesta = await fetch(URLnoticias, {
+                    method: 'PUT',
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(noticiaModificada)
                 });
-                console.log(respuesta);
-                if(respuesta.status === 200){
+                if (respuesta.status === 200) {
                     //se actualizaron los datos en la API
                     Swal.fire(
                         'Noticia Modificada',
@@ -100,123 +106,125 @@ const EditarNoticia = (props) => {
                     props.history.push('/noticias/listar');
                 }
 
-            }catch(errorValidacion){
+            } catch (errorValidacion) {
                 //mostrar cartel al usuario
                 Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
             }
 
-        }else{
+        } else {
             //si no muestro cartel de error
             setErrorValidacion(true);
             Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
         }
     }
 
-
     return (
         <div className="margenFondo py-3">
-        <Container className="my-3 ">
-            <h2 className="text-center my-3 py-3 formTitulos">Editar Noticia</h2>
+            <Container className="my-3 ">
+                <h2 className="text-center my-3 py-3 formTitulos">Editar Noticia</h2>
 
-            <Form className='mx-5' onSubmit={handleSubmit}>
-                <Form.Row>
-                    {/* select armado desde APIcategorias */}
-                    <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="outlineColor" as="select" size="sm" placeholder="Categoría"
-                        defaultValue = {noticia.categoria}
-                        ref={categoriaRef}
-                        value= {noticia.categoria}
-                        >
-                            {
-                            arrayCategorias.map((opcion, indice) => (<option value={opcion.value} selected key={indice}>{opcion.nombreCategoria}</option>))
-                            }
-                        </Form.Control>
+                <Form className='mx-5' onSubmit={handleSubmit}>
+                    <Form.Row>
+                        {/* select armado desde APIcategorias */}
+                        <Form.Group className='col-sm-6 col-md-4'>
+                            <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
+                            <Form.Control className="outlineColor" as="select" size="sm" placeholder="Categoría"
+                                //defaultValue = {noticia.categoria}
+                                ref={categoriaRef}
+                                value={noticia.categoria}
+                            >
+                                <option>Seleccione una Categoría</option>
+                                {
+                                    arrayCategorias.map((opcion, indice) => (<option value={opcion.value} selected key={indice}>{opcion.nombreCategoria}</option>))
+                                }
+                            </Form.Control>
+                        </Form.Group>
+                        <Form.Group className='col-sm-6 col-md-4'>
+                            <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
+                            <Form.Control className="outlineColor" type="date" size="sm"
+                                defaultValue={noticia.fechaNoticia}
+                                ref={fechaNoticiaRef}
+                            />
+                        </Form.Group>
+
+                        <Form.Group className='col-sm-6 col-md-4'>
+                            <Form.Label>Autor<span class="text-danger">*</span></Form.Label>
+                            <Form.Control className="outlineColor" type="text" size="sm" placeholder="Autor"
+                                defaultValue={noticia.autorNoticia}
+                                ref={autorNoticiaRef}
+                            />
+                        </Form.Group>
+                    </Form.Row>
+
+                    <Form.Group>
+                        <Form.Label>Titulo Noticia (Max 150 caracteres)<span class="text-danger">*</span></Form.Label>
+                        <Form.Control className="outlineColor" type="text" size="sm" placeholder="Titulo de la Noticia"
+                            defaultValue={noticia.tituloNoticia}
+                            ref={tituloNoticiaRef} />
                     </Form.Group>
-                    <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="outlineColor" type="date" size="sm" placeholder="dd/mm/aa" 
-                        defaultValue = {noticia.fechaNoticia}
-                        ref={fechaNoticiaRef}
+
+                    <Form.Group>
+                        <Form.Label>Noticia Breve (Max 200 caracteres)<span class="text-danger">*</span></Form.Label>
+                        <Form.Control className="outlineColor" as="textarea" rows={3} size="sm" placeholder="Descripción Breve"
+                            defaultValue={noticia.noticiaBreve}
+                            ref={noticiaBreveRef} />
+                    </Form.Group>
+
+                    <Form.Group>
+                        <Form.Label>Noticia Detallada<span class="text-danger">*</span></Form.Label>
+                        <Form.Control className="outlineColor" as="textarea" rows={5} size="sm" placeholder="Descripción Detallada"
+                            defaultValue={noticia.noticiaDetallada}
+                            ref={noticiaDetalladaRef}
                         />
                     </Form.Group>
-
-                    <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Autor<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="outlineColor" type="text" size="sm" placeholder="Autor" 
-                        defaultValue ={noticia.autorNoticia}
-                        ref={autorNoticiaRef} 
-                        />
-                    </Form.Group>
-                </Form.Row>
-
-                <Form.Group>
-                    <Form.Label>Titulo Noticia<span class="text-danger">*</span></Form.Label>
-                    <Form.Control className="outlineColor" type="text" size="sm" placeholder="Titulo de la Noticia"  
-                    defaultValue ={noticia.tituloNoticia}
-                    ref={tituloNoticiaRef} />
-                </Form.Group>
-
-                <Form.Group>
-                    <Form.Label>Descripción Breve<span class="text-danger">*</span></Form.Label>
-                    <Form.Control className="outlineColor" as="textarea" rows={3} size="sm" placeholder="Descripción Breve"
-                    defaultValue ={noticia.noticiaBreve}
-                    ref={noticiaBreveRef} />
-                </Form.Group>
-
-                <Form.Group>
-                    <Form.Label>Descripción Detallada<span class="text-danger">*</span></Form.Label>
-                    <Form.Control className="outlineColor" as="textarea" rows={5} size="sm" placeholder="Descripción Detallada"
-                    defaultValue ={noticia.noticiaDetallada}
-                    ref={noticiaDetalladaRef}
-                    />
-                </Form.Group>
-                <Form.Row>
-                    <Form.Group className='col-sm-12 col-md-8'>
-                        <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Principal"
-                        defaultValue ={noticia.imagenPrincipal}
-                        ref={imagenPrincipalRef}/>
-                    </Form.Group>
-                    <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                        {/* <img className='w-75' src={noticia.imagenPrincipal} alt='Imagen Principal de la Noticia' 
+                    <Form.Row>
+                        <Form.Group className='col-sm-12 col-md-8'>
+                            <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
+                            <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Principal"
+                                defaultValue={noticia.imagenPrincipal}
+                                ref={imagenPrincipalRef} />
+                        </Form.Group>
+                        <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
+                            {/* <img className='w-75' src={noticia.imagenPrincipal} alt='Imagen Principal de la Noticia' 
                         /> */}
-                        <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${noticia.imagenPrincipal}) 20% 1% / cover no-repeat`}}>
-                        </div>
-                    </Form.Group>
-                </Form.Row>
-                <Form.Row>
-                    <Form.Group className='col-sm-12 col-md-8'>
-                        <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
-                        <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Secundaria" 
-                        defaultValue ={noticia.imagenSec}
-                        ref={imagenSecRef}
-                        />
-                    </Form.Group>
-                    <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                        {/* <img className='w-75' src={noticia.imagenSec} alt='Imagen Secundaria de la Noticia' 
+                            <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${noticia.imagenPrincipal}) 20% 1% / cover no-repeat` }}>
+                            </div>
+                        </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
+                        <Form.Group className='col-sm-12 col-md-8'>
+                            <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
+                            <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Secundaria"
+                                defaultValue={noticia.imagenSec}
+                                ref={imagenSecRef}
+                            />
+                        </Form.Group>
+                        <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
+                            {/* <img className='w-75' src={noticia.imagenSec} alt='Imagen Secundaria de la Noticia' 
                         /> */}
-                        <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${noticia.imagenSec}) 20% 1% / cover no-repeat`}}>
-                        </div>
+                            <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${noticia.imagenSec}) 20% 1% / cover no-repeat` }}>
+                            </div>
+                        </Form.Group>
+                    </Form.Row>
+                    <Form.Group className='my-2 pb-2'>
+                        {/* <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticia.destacada} ref={destacadaRef} /> */}
+                        {
+                            (noticia.destacada === 'on') ?
+                                <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticia.destacada}
+                                    ref={destacadaRef} checked /> :
+                                <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticia.destacada}
+                                    ref={destacadaRef} />
+                        }
                     </Form.Group>
-                </Form.Row>
-                <Form.Group className='my-2 pb-2'>
-                    {
-                    (noticia.destacada === 'on') ? 
-                    <Form.Check type='checkbox' label='Noticia Destacada' defaultValue ={noticia.destacada}
-                    ref={destacadaRef} checked /> : 
-                    <Form.Check type='checkbox' label='Noticia Destacada' defaultValue ={noticia.destacada}
-                    ref={destacadaRef}  />
-                    }
-                </Form.Group>
-                <div className='d-flex justify-content-center'>  
-                <button type='submit' className='botonGuardar'>Guardar</button>
-                {
-                    errorValidacion === true ? (<Alert className='text-danger my-3' variant='secondary'><b>* Todos los campos son obligatorios</b></Alert>) : (null)
-                }
-                </div>
-            </Form>
-        </Container>
+
+                    <div className='d-flex justify-content-center'>
+                        <button type='submit' className='botonGuardar'>Guardar Cambios</button>
+                        {
+                            errorValidacion === true ? (<Alert className='text-danger my-3' variant='secondary'><b>* Todos los campos son obligatorios</b></Alert>) : (null)
+                        }
+                    </div>
+                </Form>
+            </Container>
         </div>
     );
 };

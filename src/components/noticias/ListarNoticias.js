@@ -38,7 +38,6 @@ const ListarNoticias = (props) => {
                 </tbody>
             </Table>
         </Container>
-        // </div>
     );
 };
 export default ListarNoticias;

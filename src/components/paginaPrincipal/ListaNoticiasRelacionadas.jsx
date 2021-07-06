@@ -13,7 +13,7 @@ const ListaNoticiasRelacionadas = (props) => {
                     {props.listaNoticias.map((noticia) => (
                         <CardNoticia
                             noticia={noticia}
-                            key={noticia.id}
+                            key={noticia._id}
                             width={"18rem"}
                         />
                     ))}

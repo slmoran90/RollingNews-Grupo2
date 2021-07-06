@@ -6,6 +6,7 @@ import { faPencilAlt,faTrashAlt,faClipboardCheck } from '@fortawesome/free-solid
 import Swal from 'sweetalert2'
 
 const ItemNoticia = (props) => {
+    //console.log("props listar noticias: ",props)
     
     // borrar noticia segun el ID
     const eliminaNoticia = (idNoticia)=>{
@@ -21,7 +22,7 @@ const ItemNoticia = (props) => {
     }).then(async(result) => {
         if (result.isConfirmed) {
                 try{
-                const URL = `${process.env.REACT_APP_API_URLnoticias}/${idNoticia}`;
+                const URL = `${process.env.REACT_APP_API_URLnoticias}/noticias-por-id/${idNoticia}`;
                 const respuesta = await fetch(URL,{
                     method:"DELETE",
                     headers:{"Content-Type":"application/json"}
@@ -59,8 +60,8 @@ const ItemNoticia = (props) => {
             <td>{props.info.autorNoticia}</td>
         
             <td className='in-line'>
-                <Link className='btn btn-outline-warning mb-2' to={'/noticias/editar/'+props.info.id}><FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon></Link>
-                <Button variant='' className='btn btn-outline-danger' onClick={()=> eliminaNoticia(props.info.id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Button>
+                <Link className='btn btn-outline-warning mb-2' to={'/noticias/editar/'+props.info._id}><FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon></Link>
+                <Button variant='' className='btn btn-outline-danger' onClick={()=> eliminaNoticia(props.info._id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Button>
             </td>
         </tr>
     );

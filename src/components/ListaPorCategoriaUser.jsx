@@ -37,7 +37,7 @@ const ListaPorCategoriaUser = () => {
                             listaDeNoticias.map((noticia, indice) => (
                                 <div>
                                     
-                                <ItemListaPorCategoria noticia={noticia} indice={indice} key={noticia.id} />
+                                <ItemListaPorCategoria noticia={noticia} indice={indice} key={noticia._id} />
                                 <hr></hr>
                                 </div>
                             ))}

@@ -9,7 +9,8 @@ const MostrarNoticia = () => {
     // console.log(useParams().id);
     const parametroID = useParams().id;
     // URL donde estan almacenadas las noticias
-    const URLnoticias = process.env.REACT_APP_API_URLnoticias + "/?id=" + parametroID;
+    // const URLnoticias = process.env.REACT_APP_API_URLnoticias + "/?id=" + parametroID;
+    const URLnoticias = process.env.REACT_APP_API_URLnoticias + "/noticias-por-id/" + parametroID;
     
     //=== state para almacenar resultados del fetch
     const [noticiaCompleta, setNoticiaCompleta] = useState({});
@@ -25,7 +26,10 @@ const MostrarNoticia = () => {
             const respuesta = await fetch(URLnoticias);
             if (respuesta.status === 200) {
                 const noticiaFiltrada = await respuesta.json();
-                setNoticiaCompleta(noticiaFiltrada[0]);
+                setNoticiaCompleta(noticiaFiltrada);
+                //console.log(noticiaCompleta.fechaNoticia.substring(8,10))
+                //console.log(noticiaCompleta.fechaNoticia.substring(5,7))
+                //console.log(noticiaCompleta.fechaNoticia.substring(0,4))
             }
         } catch (error) {
             console.log(error);
@@ -47,7 +51,13 @@ const MostrarNoticia = () => {
 
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
-                        <Form.Control type="date" size="sm" placeholder="" className="outlineColor" defaultValue={noticiaCompleta.fechaNoticia} disabled />
+                        <Form.Control   
+                            type="text"   
+                            size="sm" 
+                            className="outlineColor" 
+                            //defaultValue={noticiaCompleta.fechaNoticia.substring(8,10)+'-'+noticiaCompleta.fechaNoticia.substring(5,7)+'-'+noticiaCompleta.fechaNoticia.substring(0,4)}
+                            defaultValue={noticiaCompleta.fechaNoticia}
+                            disabled />
                     </Form.Group>
 
                     <Form.Group className='col-sm-6 col-md-4'>

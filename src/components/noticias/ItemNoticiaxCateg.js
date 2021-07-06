@@ -19,7 +19,7 @@ const ItemNoticiaxCateg = (props) => {
             {/* <td><Link className='btn btn-primary text-light' to={'/noticia/'+props.info.categoria+'/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></Link></td> */}
             
             {/* == enlace a componente VI == */}
-            <td className='text-center'><Link className='btn btn-outline-primary mr-3' to={'/noticias/mostrarNoticia/'+props.info.id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> </Link></td>
+            <td className='text-center'><Link className='btn btn-outline-primary mr-3' to={'/noticias/mostrarNoticia/'+props.info._id}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon> </Link></td>
         </tr>
     );
 };
