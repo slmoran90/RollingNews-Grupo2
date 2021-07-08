@@ -108,7 +108,7 @@ const NuevaNoticia = (props) => {
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
                         <Form.Control className="outlineColor" as="select" size="sm" placeholder="Categoría" onChange={(e) => setCategoria(e.target.value)} required>
-                            <option>Seleccione una Categoría</option>
+                            <option>Seleccione una Categoría...</option>
                             {
                                 arrayCategorias.map((opcion, indice) => (<option value={opcion.value} key={indice}>{opcion.nombreCategoria}</option>))
                             }

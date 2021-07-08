@@ -64,14 +64,14 @@ const EditarNoticia = (props) => {
         //console.log(tituloNoticiaRef.current.value);
         //validar los datos
         if (campoRequerido(autorNoticiaRef.current.value)
-            && campoRequerido(fechaNoticiaRef.current.value) && campoRequerido(tituloNoticiaRef.current.value)
-            && campoRequerido(noticiaBreveRef.current.value) && campoRequerido(noticiaDetalladaRef.current.value)
+            && campoRequerido(fechaNoticiaRef.current.value) 
+            && campoRequerido(tituloNoticiaRef.current.value)
+            && campoRequerido(noticiaBreveRef.current.value) 
+            && campoRequerido(noticiaDetalladaRef.current.value)
             && campoRequerido(imagenPrincipalRef.current.value)
-            && campoRequerido(categoriaRef.current.value)
-        ) {
-            //console.log(fechaNoticiaRef.current.value.toLocaleDateString());
-            console.log("antes de guardar valor destacada:", destacadaRef.current.value)
-            //si son correctos hago el request
+            && campoRequerido(categoriaRef.current.value)) {
+
+            console.log("ANTES de guardar valor destacada:", destacadaRef.current.value)
             setErrorValidacion(false);
             try {
                 const noticiaModificada = {
@@ -129,13 +129,12 @@ const EditarNoticia = (props) => {
                         <Form.Group className='col-sm-6 col-md-4'>
                             <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
                             <Form.Control className="outlineColor" as="select" size="sm" placeholder="Categoría"
-                                //defaultValue = {noticia.categoria}
-                                ref={categoriaRef}
-                                value={noticia.categoria}
-                            >
-                                <option>Seleccione una Categoría</option>
+                                defaultValue = {noticia.categoria}
+                                ref={categoriaRef}>
+                                {/* <option>Seleccione una Categoría...</option> */}
+                                <option>{noticia.categoria}</option>
                                 {
-                                    arrayCategorias.map((opcion, indice) => (<option value={opcion.value} selected key={indice}>{opcion.nombreCategoria}</option>))
+                                    arrayCategorias.map((opcion, indice) => (<option key={indice}>{opcion.nombreCategoria}</option>))
                                 }
                             </Form.Control>
                         </Form.Group>
