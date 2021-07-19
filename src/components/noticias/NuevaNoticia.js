@@ -13,7 +13,8 @@ const NuevaNoticia = (props) => {
     const [noticiaBreve, setNoticiaBreve] = useState('');
     const [noticiaDetallada, setNoticiaDetallada] = useState('');
     const [imagenPrincipal, setImagenPrincipal] = useState('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2020/02/error-404-1862483.jpg?itok=OUXEJayy');
-    const [imagenSec, setImagenSec] = useState('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2020/02/error-404-1862483.jpg?itok=OUXEJayy');
+    // const [imagenSec, setImagenSec] = useState('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2020/02/error-404-1862483.jpg?itok=OUXEJayy');
+    const [imagenSec, setImagenSec] = useState('');
     const [destacada, setDestacada] = useState('off');
     let history = useHistory();
     // const [id, setId] = useState("1000");

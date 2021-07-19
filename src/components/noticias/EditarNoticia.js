@@ -136,6 +136,7 @@ const EditarNoticia = (props) => {
                                 {
                                     arrayCategorias.map((opcion, indice) => (<option key={indice}>{opcion.nombreCategoria}</option>))
                                 }
+                                
                             </Form.Control>
                         </Form.Group>
                         <Form.Group className='col-sm-6 col-md-4'>
@@ -184,10 +185,9 @@ const EditarNoticia = (props) => {
                                 ref={imagenPrincipalRef} />
                         </Form.Group>
                         <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                            {/* <img className='w-75' src={noticia.imagenPrincipal} alt='Imagen Principal de la Noticia' 
-                        /> */}
-                            <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${noticia.imagenPrincipal}) 20% 1% / cover no-repeat` }}>
-                            </div>
+                            <img className='w-75' src={noticia.imagenPrincipal} alt='Imagen Principal de la Noticia'/> 
+                            {/* <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${noticia.imagenPrincipal}) 20% 1% / cover no-repeat` }}>
+                            </div> */}
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>
@@ -199,10 +199,9 @@ const EditarNoticia = (props) => {
                             />
                         </Form.Group>
                         <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                            {/* <img className='w-75' src={noticia.imagenSec} alt='Imagen Secundaria de la Noticia' 
-                        /> */}
-                            <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${noticia.imagenSec}) 20% 1% / cover no-repeat` }}>
-                            </div>
+                            <img className='w-75' src={noticia.imagenSec} alt='Imagen Secundaria de la Noticia'/> 
+                            {/* <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${noticia.imagenSec}) 20% 1% / cover no-repeat` }}>
+                            </div> */}
                         </Form.Group>
                     </Form.Row>
                     <Form.Group className='my-2 pb-2'>

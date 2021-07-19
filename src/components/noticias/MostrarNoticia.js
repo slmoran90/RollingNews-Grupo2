@@ -99,7 +99,7 @@ const MostrarNoticia = () => {
                     </Form.Group>
 
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                        <img className='w-75' src={noticiaCompleta.imagenSec} alt='Imagen Principal de la Noticia' />
+                        <img className='w-75' src={noticiaCompleta.imagenSec} alt='Imagen Secundaria de la Noticia' />
                     </Form.Group>
                 </Form.Row>
                 <Form.Group className='my-2 pb-2'>
