@@ -6,9 +6,9 @@ import './cardsNoticias.css';
 const CardNoticia = (props) => {
     const [fechaCard, setfechaCard] = useState(props.noticia.fechaNoticia);
     const fechaDate = fechaCard.split('-');
-    console.log("🚀 ~ file: CardNoticia.jsx ~ line 9 ~ CardNoticia ~ fechaDate", fechaDate)
+    //console.log("🚀 ~ file: CardNoticia.jsx ~ line 9 ~ CardNoticia ~ fechaDate", fechaDate)
     const fecha = new Date(fechaDate[0],fechaDate[1],fechaDate[2]);
-    console.log(fecha)
+    //console.log(fecha)
     
     const fechaSplit = fecha.toString().split(' ');   
     

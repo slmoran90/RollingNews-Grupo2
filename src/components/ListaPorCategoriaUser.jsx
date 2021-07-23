@@ -7,7 +7,9 @@ const ListaPorCategoriaUser = () => {
     const { categoria } = useParams();
     const [listaDeNoticias, setListaDeNoticias] = useState([]);
 
-    const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/?categoria=${categoria}`;
+    //const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/?categoria=${categoria}`;
+
+    const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/noticias-por-categoria/${categoria}`;
 
     useEffect(() => {
         traerListaDeCategoria();

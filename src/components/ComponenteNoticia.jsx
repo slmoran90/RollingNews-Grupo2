@@ -12,9 +12,13 @@ const ComponenteNoticia = () => {
     const [noticiaVisible, setNoticiaVisible] = useState({});
     const [listaNoticiasCat, setListaNoticiasCat] = useState([]);
 
-    const URL = `${process.env.REACT_APP_API_URLnoticias}/${id}`;
-    const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/?categoria=${categoria}`;
+    // const URL = `${process.env.REACT_APP_API_URLnoticias}/${id}`;
+    // const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/?categoria=${categoria}`;
     
+    const URL = `${process.env.REACT_APP_API_URLnoticias}/noticias-por-id/${id}`;
+    const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/noticias-por-categoria/${categoria}`;
+    
+
     useEffect(() => {
         traerNoticiaVisible();
     }, [id, categoria]);
@@ -29,14 +33,14 @@ const ComponenteNoticia = () => {
         } catch (error) {
             console.log(error);
         }
-        console.log("noticiavisible: ",noticiaVisible)
+        // console.log("noticiavisible: ",noticiaVisible)
 
         try {
             const resp = await fetch(UrlListaNoticias);
             if (resp.status === 200) {
                 const lista = await resp.json();
                 setListaNoticiasCat(lista);
-                console.log(listaNoticiasCat);
+                // console.log(listaNoticiasCat);
             }
         } catch (error) {
             console.log(error);
