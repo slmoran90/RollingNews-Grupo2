@@ -3,6 +3,8 @@ import { Alert, Container, Form, FormCheck } from 'react-bootstrap';
 import { useParams, withRouter } from "react-router-dom";
 import Swal from 'sweetalert2';
 import { campoRequerido } from '../common/validaciones';
+// libreria para trabajar con fechas
+import moment from 'moment';
 
 const EditarNoticia = (props) => {
     //obtener parametro
@@ -82,10 +84,12 @@ const EditarNoticia = (props) => {
                     imagenSec: imagenSecRef.current.value,
                     categoria: categoriaRef.current.value,
                     autorNoticia: autorNoticiaRef.current.value,
+                    //fechaNoticia: fechaNoticiaRef.current.value.moment().format("DD MMMM, YYYY"),
                     fechaNoticia: fechaNoticiaRef.current.value,
                     destacada: destacadaRef.current.value
                 }
 
+                console.log("fecha noticia: ",fechaNoticiaRef)
                 console.log('noticiaModificada antes de PUT:', noticiaModificada)
 
                 const respuesta = await fetch(URLnoticias, {
