@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Alert, Container, Form, Image } from 'react-bootstrap';
+import { Alert, Container, Form, FormCheck, Image } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { withRouter, useHistory } from "react-router-dom";
 //import {campoRequerido, validarFormatoFecha} from '../common/validaciones'
+
+//import moment from "moment";
+
 const NuevaNoticia = (props) => {
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
     const URLnoticias = process.env.REACT_APP_API_URLnoticias;
@@ -16,16 +19,13 @@ const NuevaNoticia = (props) => {
     // const [imagenSec, setImagenSec] = useState('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2020/02/error-404-1862483.jpg?itok=OUXEJayy');
     const [imagenSec, setImagenSec] = useState('');
     const [destacada, setDestacada] = useState('off');
+
     let history = useHistory();
     // const [id, setId] = useState("1000");
     const [arrayCategorias, setArrayCategorias] = useState([]);
     const [errorValidacion, setErrorValidacion] = useState(false);
     const formRef = useRef(null);
-    const handleReset = () => {
-        formRef.current.reset();
-        setImagenPrincipal('');
-        setImagenSec('');
-    };
+
     useEffect(() => {
         consultarAPIcategorias();
         if (props.adminUser !== true) {
@@ -44,12 +44,21 @@ const NuevaNoticia = (props) => {
             Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
         }
     };
+
+    const handleReset = () => {
+        formRef.current.reset();
+        setImagenPrincipal('');
+        setImagenSec('');
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         //validar los datos
         if (autorNoticia.trim() === ''
             || fechaNoticia.trim() === ''
-            || tituloNoticia.trim() === '' || noticiaBreve.trim() === '' || noticiaBreve.trim().length > 200 || noticiaDetallada.trim() === '' ||
+            || tituloNoticia.trim() === '' || tituloNoticia.trim().length > 150 ||
+            noticiaBreve.trim() === '' || noticiaBreve.trim().length > 200 ||
+            noticiaDetallada.trim() === '' ||
             categoria === '' || imagenPrincipal === ''
         ) {
             //si falla la validacion mostrar alert de error
@@ -68,6 +77,7 @@ const NuevaNoticia = (props) => {
                 categoria,
                 autorNoticia,
                 fechaNoticia,
+                //fechaNoticia: moment().format("DD MMMM, YYYY"),
                 destacada
             }
             try {
@@ -100,13 +110,19 @@ const NuevaNoticia = (props) => {
             }
         }
     };
+
+    const cambiarDestacada = (e) => {
+        setDestacada(e.target.value);
+    };
+
+
     return (
         <Container className="margenFondo py-3">
             <h2 className="text-center my-3 py-3 formTitulos">Nueva Noticia</h2>
             <Form ref={formRef} className='mx-5' onSubmit={handleSubmit}>
                 <Form.Row>
                     {/* select armado desde APIcategorias */}
-                    <Form.Group className='col-sm-6 col-md-4'>
+                    {/* <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
                         <Form.Control className="outlineColor" as="select" size="sm" placeholder="Categoría" onChange={(e) => setCategoria(e.target.value)} required>
                             <option>Seleccione una Categoría...</option>
@@ -114,7 +130,28 @@ const NuevaNoticia = (props) => {
                                 arrayCategorias.map((opcion, indice) => (<option value={opcion.value} key={indice}>{opcion.nombreCategoria}</option>))
                             }
                         </Form.Control>
+                    </Form.Group> */}
+
+                    {/* ======== */}
+                    <Form.Group className="mb-3">
+                        <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
+                        <Form.Control
+                            as="select"
+                            defaultValue="Seleccione una Categoria"
+                            onChange={(e) => setCategoria(e.target.value)}
+                        >
+                            <option>Seleccione una Categoria</option>
+                            {arrayCategorias.map((opcion, indice) => (
+                                <option
+                                    key={opcion._id}
+                                    value={opcion.nombreCategoria}
+                                >
+                                    {opcion.nombreCategoria}
+                                </option>
+                            ))}
+                        </Form.Control>
                     </Form.Group>
+                    {/* ======== */}
 
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
@@ -162,13 +199,35 @@ const NuevaNoticia = (props) => {
                         </div>
                     </Form.Group>
                 </Form.Row>
-                <Form.Group className='my-2 pb-2'>
+
+                <span className="my-2 pb-2">Noticia Destacada:  </span>
+                <span>
+                    <FormCheck
+                        name="detacada"
+                        type="radio"
+                        inline
+                        label="  Sí"
+                        value="on"
+                        onChange={cambiarDestacada}
+                    ></FormCheck>
+                    <FormCheck
+                        name="detacada"
+                        type="radio"
+                        inline
+                        label="  No"
+                        value="off"
+                        onChange={cambiarDestacada}
+                    ></FormCheck>
+                </span>
+
+                {/* <Form.Group className='my-2 pb-2'>
                     <Form.Check type='checkbox' label='Noticia Destacada' onChange={(e) => setDestacada(e.target.value)} />
-                </Form.Group>
+                </Form.Group> */}
+
                 <div className='d-flex justify-content-center'>
                     <button type='submit' className='botonGuardar'>Guardar</button>
                     {
-                        errorValidacion === true ? (<Alert className='text-danger my-3' variant='secondary'><b>* Todos los campos son obligatorios</b></Alert>) : (null)
+                        errorValidacion === true ? (<Alert className='text-danger my-3' variant='secondary'><b>* Todos los campos son obligatorios. Verifique longitud máxima permitida.</b></Alert>) : (null)
                     }
                 </div>
             </Form>

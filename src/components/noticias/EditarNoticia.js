@@ -14,6 +14,9 @@ const EditarNoticia = (props) => {
     const [categoria, setCategoria] = useState('');
     const [errorValidacion, setErrorValidacion] = useState(false);
     const [noticia, setNoticia] = useState({});
+    //valor noticia destacada
+    const [destacada, setDestacada] = useState('');
+
     // const URLnoticias = process.env.REACT_APP_API_URLnoticias+'/'+codigoNoticia;
     const URLnoticias = process.env.REACT_APP_API_URLnoticias + '/noticias-por-id/' + codigoNoticia;
 
@@ -28,7 +31,6 @@ const EditarNoticia = (props) => {
     const categoriaRef = useRef('');
     const autorNoticiaRef = useRef('');
     const fechaNoticiaRef = useRef('');
-    const destacadaRef = useRef('');
 
     const [arrayCategorias, setArrayCategorias] = useState([]);
 
@@ -61,9 +63,9 @@ const EditarNoticia = (props) => {
     const handleSubmit = async (e) => {
 
         e.preventDefault();
-
-        let categoriaModificada = (categoria === '') ? (noticia.categoria) : (noticia);
-        //console.log(tituloNoticiaRef.current.value);
+        // si el campo categoria es vacio, toma el valor que tenia, sino toma el nuevo valor
+        let destacadaModificada = (destacada === '') ? (noticia.destacada) : (destacada);
+        
         //validar los datos
         if (campoRequerido(autorNoticiaRef.current.value)
             && campoRequerido(fechaNoticiaRef.current.value) 
@@ -71,9 +73,8 @@ const EditarNoticia = (props) => {
             && campoRequerido(noticiaBreveRef.current.value) 
             && campoRequerido(noticiaDetalladaRef.current.value)
             && campoRequerido(imagenPrincipalRef.current.value)
-            && campoRequerido(categoriaRef.current.value)) {
-
-            console.log("ANTES de guardar valor destacada:", destacadaRef.current.value)
+            && campoRequerido(destacadaModificada)){
+            
             setErrorValidacion(false);
             try {
                 const noticiaModificada = {
@@ -82,15 +83,12 @@ const EditarNoticia = (props) => {
                     noticiaDetallada: noticiaDetalladaRef.current.value,
                     imagenPrincipal: imagenPrincipalRef.current.value,
                     imagenSec: imagenSecRef.current.value,
-                    categoria: categoriaRef.current.value,
+                    categoria: categoriaRef.current.value, 
                     autorNoticia: autorNoticiaRef.current.value,
                     //fechaNoticia: fechaNoticiaRef.current.value.moment().format("DD MMMM, YYYY"),
                     fechaNoticia: fechaNoticiaRef.current.value,
-                    destacada: destacadaRef.current.value
+                    destacada: destacadaModificada
                 }
-
-                console.log("fecha noticia: ",fechaNoticiaRef)
-                console.log('noticiaModificada antes de PUT:', noticiaModificada)
 
                 const respuesta = await fetch(URLnoticias, {
                     method: 'PUT',
@@ -122,6 +120,11 @@ const EditarNoticia = (props) => {
         }
     }
 
+    const cambiarDestacada = (e) => {
+        setDestacada(e.target.value);
+    };
+
+
     return (
         <div className="margenFondo py-3">
             <Container className="my-3 ">
@@ -135,14 +138,15 @@ const EditarNoticia = (props) => {
                             <Form.Control className="outlineColor" as="select" size="sm" placeholder="Categoría"
                                 defaultValue = {noticia.categoria}
                                 ref={categoriaRef}>
-                                {/* <option>Seleccione una Categoría...</option> */}
                                 <option>{noticia.categoria}</option>
                                 {
-                                    arrayCategorias.map((opcion, indice) => (<option key={indice}>{opcion.nombreCategoria}</option>))
+                                    arrayCategorias.map((opcion, indice) => (
+                                        <option key={indice}>{opcion.nombreCategoria}</option>)
+                                    )
                                 }
-                                
                             </Form.Control>
                         </Form.Group>
+
                         <Form.Group className='col-sm-6 col-md-4'>
                             <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
                             <Form.Control className="outlineColor" type="date" size="sm"
@@ -208,16 +212,31 @@ const EditarNoticia = (props) => {
                             </div> */}
                         </Form.Group>
                     </Form.Row>
-                    <Form.Group className='my-2 pb-2'>
-                        {/* <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticia.destacada} ref={destacadaRef} /> */}
-                        {
-                            (noticia.destacada === 'on') ?
-                                <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticia.destacada}
-                                    ref={destacadaRef} checked /> :
-                                <Form.Check type='checkbox' label='Noticia Destacada' defaultValue={noticia.destacada}
-                                    ref={destacadaRef} />
-                        }
-                    </Form.Group>
+                    
+                    <span className="my-2 pb-2">Noticia Destacada:  </span>
+                    <span>
+                        <FormCheck
+                            name="detacada"
+                            type="radio"
+                            inline
+                            label="  Sí"
+                            value="on"
+                            onChange={cambiarDestacada}
+                            defaultChecked={noticia.destacada && noticia.destacada === 'on'}
+                        ></FormCheck>
+                        <FormCheck
+                            name="detacada"
+                            type="radio"
+                            inline
+                            label="  No"
+                            value="off"
+                            onChange={cambiarDestacada}
+                            defaultChecked={noticia.destacada && noticia.destacada === 'off'}
+                        ></FormCheck>
+                    </span>    
+                    
+                    {/* ========================================= */}
+
 
                     <div className='d-flex justify-content-center'>
                         <button type='submit' className='botonGuardar'>Guardar Cambios</button>
