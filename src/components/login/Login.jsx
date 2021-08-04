@@ -15,37 +15,37 @@ const Login = (props) => {
         e.preventDefault();
 
         // === puesto por valentina para entrar como admin
-          setNombre('admin');
-          setPassword('admin');
-          setError(false);
-          history.push('/admin')
-          props.setAdminUser(true);
+        //   setNombre('admin');
+        //   setPassword('admin');
+        //   setError(false);
+        //   history.push('/admin')
+        //   props.setAdminUser(true);
         //=================================================
 
         // == comentado por valentina para entrar SIEMRPE como admin ===//
-            // if (nombre.trim() === "" || password === "") {
-            //     setError(true);
-            //     return;
-            // } else {
-            //     setError(false);
-            // }
-            // const usuarioAdmin = props.usuarios.find(
-            //     (usuario) => usuario.nombre === nombre
-            // );
+            if (nombre.trim() === "" || password === "") {
+                setError(true);
+                return;
+            } else {
+                setError(false);
+            }
+            const usuarioAdmin = props.usuarios.find(
+                (usuario) => usuario.nombre === nombre
+            );
 
 
-            // if (typeof usuarioAdmin === 'undefined') {
-            //     setDatosErroneos(true);
-            //     return;
-            // } else {
-            //     if (usuarioAdmin.password === password) {
-            //         history.push('/admin')
-            //         props.setAdminUser(true);
+            if (typeof usuarioAdmin === 'undefined') {
+                setDatosErroneos(true);
+                return;
+            } else {
+                if (usuarioAdmin.password === password) {
+                    history.push('/admin')
+                    props.setAdminUser(true);
 
-            //     } else {
-            //         setDatosErroneos(true);
-            //     }
-            // }
+                } else {
+                    setDatosErroneos(true);
+                }
+            }
         //================================================//
 
     };

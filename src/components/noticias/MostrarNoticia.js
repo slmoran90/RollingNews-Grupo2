@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Form } from "react-bootstrap";
+import { Container, Form,FormCheck } from "react-bootstrap";
 import Swal from "sweetalert2";
 // hoook para usar parametros
 import { useParams, Link } from "react-router-dom";
@@ -102,11 +102,34 @@ const MostrarNoticia = () => {
                         <img className='w-75' src={noticiaCompleta.imagenSec} alt='Imagen Secundaria de la Noticia' />
                     </Form.Group>
                 </Form.Row>
-                <Form.Group className='my-2 pb-2'>
+                {/* <Form.Group className='my-2 pb-2'>
                     {
                     (noticiaCompleta.destacada ==='on') ? <Form.Check type='checkbox' label='Noticia Destacada' checked disabled /> : <Form.Check type='checkbox' label='Noticia Destacada' disabled />
                     }     
-                </Form.Group>
+                </Form.Group> */}
+
+                <span className="my-2 pb-2">Noticia Destacada:  </span>
+                    <span>
+                        <FormCheck
+                            name="detacada"
+                            type="radio"
+                            inline
+                            label="  Sí"
+                            value="on"
+                            // onChange={cambiarDestacada}
+                            defaultChecked={noticiaCompleta.destacada && noticiaCompleta.destacada === 'on'}
+                        ></FormCheck>
+                        <FormCheck
+                            name="detacada"
+                            type="radio"
+                            inline
+                            label="  No"
+                            value="off"
+                            // onChange={cambiarDestacada}
+                            defaultChecked={noticiaCompleta.destacada && noticiaCompleta.destacada === 'off'}
+                        ></FormCheck>
+                    </span>
+
                 <div className='d-flex justify-content-center'> 
                     <Link className='btn botones w-50 mt-3' size='lg' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
                 </div> 
