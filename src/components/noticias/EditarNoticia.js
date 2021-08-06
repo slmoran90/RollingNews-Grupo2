@@ -180,7 +180,7 @@ const EditarNoticia = (props) => {
 
                     <Form.Group>
                         <Form.Label>Noticia Detallada<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="outlineColor" as="textarea" rows={5} size="sm" placeholder="Descripción Detallada"
+                        <Form.Control className="outlineColor" type="file" size="sm" placeholder="Descripción Detallada"
                             defaultValue={noticia.noticiaDetallada}
                             ref={noticiaDetalladaRef}
                         />
@@ -188,7 +188,7 @@ const EditarNoticia = (props) => {
                     <Form.Row>
                         <Form.Group className='col-sm-12 col-md-8'>
                             <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
-                            <Form.Control className="outlineColor" as="textarea" row={3} placeholder="Imagen Principal"
+                            <Form.Control className="outlineColor" type="file" placeholder="Imagen Principal"
                                 defaultValue={noticia.imagenPrincipal}
                                 ref={imagenPrincipalRef} />
                         </Form.Group>
