@@ -128,7 +128,7 @@ const MostrarNoticia = () => {
                     </span>
 
                 <div className='d-flex justify-content-center'> 
-                    <Link className='btn w-50 mt-3 mb-2 botonGuardar' size='lg' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
+                    <Link className='btn mt-3 mb-2 botonGuardar' size='lg' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
                 </div> 
             </Form>
         </Container>
