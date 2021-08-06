@@ -188,7 +188,7 @@ const EditarNoticia = (props) => {
                     <Form.Row>
                         <Form.Group className='col-sm-12 col-md-8'>
                             <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
-                            <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Principal"
+                            <Form.Control className="outlineColor" type="file" placeholder="Imagen Principal"
                                 defaultValue={noticia.imagenPrincipal}
                                 ref={imagenPrincipalRef} />
                         </Form.Group>
@@ -201,7 +201,7 @@ const EditarNoticia = (props) => {
                     <Form.Row>
                         <Form.Group className='col-sm-12 col-md-8'>
                             <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
-                            <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imagen Secundaria"
+                            <Form.Control className="outlineColor" type="file" placeholder="Imagen Secundaria"
                                 defaultValue={noticia.imagenSec}
                                 ref={imagenSecRef}
                             />
@@ -234,9 +234,6 @@ const EditarNoticia = (props) => {
                             defaultChecked={noticia.destacada && noticia.destacada === 'off'}
                         ></FormCheck>
                     </span>    
-                    
-                    {/* ========================================= */}
-
 
                     <div className='d-flex justify-content-center'>
                         <button type='submit' className='botonGuardar'>Guardar Cambios</button>

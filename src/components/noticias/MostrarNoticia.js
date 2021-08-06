@@ -27,9 +27,6 @@ const MostrarNoticia = () => {
             if (respuesta.status === 200) {
                 const noticiaFiltrada = await respuesta.json();
                 setNoticiaCompleta(noticiaFiltrada);
-                //console.log(noticiaCompleta.fechaNoticia.substring(8,10))
-                //console.log(noticiaCompleta.fechaNoticia.substring(5,7))
-                //console.log(noticiaCompleta.fechaNoticia.substring(0,4))
             }
         } catch (error) {
             console.log(error);
@@ -131,7 +128,7 @@ const MostrarNoticia = () => {
                     </span>
 
                 <div className='d-flex justify-content-center'> 
-                    <Link className='btn botones w-50 mt-3' size='lg' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
+                    <Link className='btn w-50 mt-3 mb-2 botonGuardar' size='lg' to={'/noticias/listar/' + noticiaCompleta.categoria}> Volver a Noticias por Categoría</Link>
                 </div> 
             </Form>
         </Container>

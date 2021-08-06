@@ -11,6 +11,7 @@ const Login = (props) => {
     const [error, setError] = useState(false);
     const [datosErroneos, setDatosErroneos] = useState(false);
     let history = useHistory();
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -32,6 +33,8 @@ const Login = (props) => {
             const usuarioAdmin = props.usuarios.find(
                 (usuario) => usuario.nombre === nombre
             );
+
+            console.log("usuario:",usuarioAdmin)
 
 
             if (typeof usuarioAdmin === 'undefined') {

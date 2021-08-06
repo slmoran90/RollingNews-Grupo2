@@ -179,7 +179,7 @@ const NuevaNoticia = (props) => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imágen Principal" onChange={(e) => setImagenPrincipal(e.target.value)} required />
+                        <Form.Control className="outlineColor" type="file" placeholder="Imágen Principal" onChange={(e) => setImagenPrincipal(e.target.value)} required />
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                         {/* <Image className='w-75' src={imagenPrincipal} alt='Imagen Principal de la Noticia' /> */}
@@ -191,7 +191,7 @@ const NuevaNoticia = (props) => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Secundaria (Opcional)</Form.Label>
-                        <Form.Control className="outlineColor" as="textarea" rows={3} placeholder="Imágen Secundaria" onChange={(e) => setImagenSec(e.target.value)} />
+                        <Form.Control className="outlineColor" type="file" placeholder="Imágen Secundaria" onChange={(e) => setImagenSec(e.target.value)} />
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                         {/* <Image className='w-75' src={imagenSec}  alt='Imagen Secundaria de la Noticia' /> */}

@@ -135,18 +135,31 @@ function App() {
   };
 
   const consultarAPIusers = async () => {
-    const consulta = await fetch(user);
-    const respuesta = await consulta.json();
-    if (consulta.status !== 200) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Ocurrio un error, intentelo nuevamente",
-      });
-    }
-    //Guardar en el state
-    setUsuarios(respuesta);
-  };
+    try {
+      const consulta = await fetch(user);
+      if (consulta.status === 200) {
+        const respuesta = await consulta.json();
+        setUsuarios(respuesta);
+      }
+    } catch (error) {
+        console.log(error);
+        Swal.fire(
+          'Oooops! Ocurrió un Error!',
+          'Inténtelo en unos minutos.',
+          'error'
+        )
+      }
+    };
+    // if (consulta.status !== 200) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Oops...",
+    //     text: "Ocurrio un error, intentelo nuevamente",
+    //   });
+    // }
+    // //Guardar en el state
+    // setUsuarios(respuesta);
+  // };
 
   return (
     <Router>
