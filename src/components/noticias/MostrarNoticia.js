@@ -3,6 +3,7 @@ import { Container, Form,FormCheck } from "react-bootstrap";
 import Swal from "sweetalert2";
 // hoook para usar parametros
 import { useParams, Link } from "react-router-dom";
+import moment from 'moment'
 
 const MostrarNoticia = () => {
     // obtener el parametro de la URL

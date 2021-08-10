@@ -121,19 +121,7 @@ const NuevaNoticia = (props) => {
             <h2 className="text-center my-3 py-3 formTitulos">Nueva Noticia</h2>
             <Form ref={formRef} className='mx-5' onSubmit={handleSubmit}>
                 <Form.Row>
-                    {/* select armado desde APIcategorias */}
-                    {/* <Form.Group className='col-sm-6 col-md-4'>
-                        <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="outlineColor" as="select" size="sm" placeholder="Categoría" onChange={(e) => setCategoria(e.target.value)} required>
-                            <option>Seleccione una Categoría...</option>
-                            {
-                                arrayCategorias.map((opcion, indice) => (<option value={opcion.value} key={indice}>{opcion.nombreCategoria}</option>))
-                            }
-                        </Form.Control>
-                    </Form.Group> */}
-
-                    {/* ======== */}
-                    <Form.Group className="mb-3">
+                    <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Categoría<span class="text-danger">*</span></Form.Label>
                         <Form.Control
                             as="select"
@@ -179,24 +167,24 @@ const NuevaNoticia = (props) => {
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="outlineColor" type="file" placeholder="Imágen Principal" onChange={(e) => setImagenPrincipal(e.target.value)} required />
+                        <Form.Control className="outlineColor" as="textarea" rows={5} placeholder="Imágen Principal" onChange={(e) => setImagenPrincipal(e.target.value)} required />
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                        {/* <Image className='w-75' src={imagenPrincipal} alt='Imagen Principal de la Noticia' /> */}
-                        <div className='w-75 imageHolderForm  py-5' style={{ 'background': `url(${imagenPrincipal}) 20% 1% / cover no-repeat` }}>
-                        </div>
+                        <Image className='w-75' src={imagenPrincipal} alt='Imagen Principal de la Noticia' />
+                        {/* <div className='w-75 imageHolderForm  py-5' style={{ 'background': `url(${imagenPrincipal}) 20% 1% / cover no-repeat` }}>
+                        </div> */}
                         {/* sistema Gonza */}
                     </Form.Group>
                 </Form.Row>
                 <Form.Row>
                     <Form.Group className='col-sm-12 col-md-8'>
                         <Form.Label>Imagen Secundaria (Opcional)</Form.Label>
-                        <Form.Control className="outlineColor" type="file" placeholder="Imágen Secundaria" onChange={(e) => setImagenSec(e.target.value)} />
+                        <Form.Control className="outlineColor" as="textarea" rows={5} placeholder="Imágen Secundaria" onChange={(e) => setImagenSec(e.target.value)} />
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
-                        {/* <Image className='w-75' src={imagenSec}  alt='Imagen Secundaria de la Noticia' /> */}
-                        <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${imagenSec}) 20% 1% / cover no-repeat` }}>
-                        </div>
+                        <Image className='w-75' src={imagenSec}  alt='Imagen Secundaria de la Noticia' />
+                        {/* <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${imagenSec}) 20% 1% / cover no-repeat` }}>
+                        </div> */}
                     </Form.Group>
                 </Form.Row>
 

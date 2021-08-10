@@ -8,7 +8,7 @@ const CardNoticia = (props) => {
     const fechaDate = fechaCard.split('-');
     //console.log("🚀 ~ file: CardNoticia.jsx ~ line 9 ~ CardNoticia ~ fechaDate", fechaDate)
     const fecha = new Date(fechaDate[0],fechaDate[1],fechaDate[2]);
-    //console.log(fecha)
+    console.log(fecha)
     
     const fechaSplit = fecha.toString().split(' ');   
     

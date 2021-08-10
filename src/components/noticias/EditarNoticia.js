@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { campoRequerido } from '../common/validaciones';
 // libreria para trabajar con fechas
 import moment from 'moment';
+import 'moment/locale/es'; 
 
 const EditarNoticia = (props) => {
     //obtener parametro
@@ -36,11 +37,17 @@ const EditarNoticia = (props) => {
 
     useEffect(async () => {
         consultarAPIcategorias();
+
+        //trae la noticia a editar
         try {
             const respuesta = await fetch(URLnoticias);
             if (respuesta.status === 200) {
                 const noticiaSolicitada = await respuesta.json();
                 setNoticia(noticiaSolicitada);
+                
+                console.log(noticia.fechaNoticia)
+                console.log(moment(noticia.fechaNoticia).locale('es').format("DD-MM-YYYY"))
+                
             }
         } catch (errorValidacion) {
             Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
@@ -61,7 +68,6 @@ const EditarNoticia = (props) => {
     };
 
     const handleSubmit = async (e) => {
-
         e.preventDefault();
         // si el campo categoria es vacio, toma el valor que tenia, sino toma el nuevo valor
         let destacadaModificada = (destacada === '') ? (noticia.destacada) : (destacada);
@@ -124,6 +130,14 @@ const EditarNoticia = (props) => {
         setDestacada(e.target.value);
     };
 
+    // const formatoFecha = ()=>{
+    //     //libreria moment
+    //     console.log("libreria MOMENT")
+    //     const m = moment();
+    //     console.log(m.toString());
+    //     console.log(moment(noticia.fechaNoticia).format('dd-mm-YYYY'))
+    // }
+
 
     return (
         <div className="margenFondo py-3">
@@ -149,8 +163,9 @@ const EditarNoticia = (props) => {
 
                         <Form.Group className='col-sm-6 col-md-4'>
                             <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
-                            <Form.Control className="outlineColor" type="date" size="sm"
-                                defaultValue={noticia.fechaNoticia}
+                            <Form.Control className="outlineColor" type="text" size="sm"
+                                //defaultValue={noticia.fechaNoticia}
+                                defaultValue={moment(noticia.fechaNoticia).locale('es').format("DD-MM-YYYY")}
                                 ref={fechaNoticiaRef}
                             />
                         </Form.Group>
@@ -180,7 +195,7 @@ const EditarNoticia = (props) => {
 
                     <Form.Group>
                         <Form.Label>Noticia Detallada<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="outlineColor" type="file" size="sm" placeholder="Descripción Detallada"
+                        <Form.Control className="outlineColor" as="textarea" row={5} size="sm" placeholder="Descripción Detallada"
                             defaultValue={noticia.noticiaDetallada}
                             ref={noticiaDetalladaRef}
                         />
@@ -188,7 +203,7 @@ const EditarNoticia = (props) => {
                     <Form.Row>
                         <Form.Group className='col-sm-12 col-md-8'>
                             <Form.Label>Imagen Principal<span class="text-danger">*</span></Form.Label>
-                            <Form.Control className="outlineColor" type="file" placeholder="Imagen Principal"
+                            <Form.Control className="outlineColor"  as="textarea" row={5} placeholder="Imagen Principal"
                                 defaultValue={noticia.imagenPrincipal}
                                 ref={imagenPrincipalRef} />
                         </Form.Group>
@@ -201,7 +216,7 @@ const EditarNoticia = (props) => {
                     <Form.Row>
                         <Form.Group className='col-sm-12 col-md-8'>
                             <Form.Label>Imagen Secundaria (Opcional):</Form.Label>
-                            <Form.Control className="outlineColor" as="textarea" row={3} placeholder="Imagen Secundaria"
+                            <Form.Control className="outlineColor"  as="textarea" row={5} placeholder="Imagen Secundaria"
                                 defaultValue={noticia.imagenSec}
                                 ref={imagenSecRef}
                             />
