@@ -2,9 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Alert, Container, Form, FormCheck, Image } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { withRouter, useHistory } from "react-router-dom";
-//import {campoRequerido, validarFormatoFecha} from '../common/validaciones'
+import {campoRequerido, validarFormatoFecha} from '../common/validaciones'
 
-//import moment from "moment";
+// libreria para trabajar con fechas
+import moment from 'moment';
+import 'moment/locale/es'; 
 
 const NuevaNoticia = (props) => {
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
@@ -16,12 +18,10 @@ const NuevaNoticia = (props) => {
     const [noticiaBreve, setNoticiaBreve] = useState('');
     const [noticiaDetallada, setNoticiaDetallada] = useState('');
     const [imagenPrincipal, setImagenPrincipal] = useState('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2020/02/error-404-1862483.jpg?itok=OUXEJayy');
-    // const [imagenSec, setImagenSec] = useState('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2020/02/error-404-1862483.jpg?itok=OUXEJayy');
     const [imagenSec, setImagenSec] = useState('');
     const [destacada, setDestacada] = useState('off');
 
     let history = useHistory();
-    // const [id, setId] = useState("1000");
     const [arrayCategorias, setArrayCategorias] = useState([]);
     const [errorValidacion, setErrorValidacion] = useState(false);
     const formRef = useRef(null);
@@ -32,6 +32,7 @@ const NuevaNoticia = (props) => {
             history.push("/");
         }
     }, []);
+    
     // === Para armar select categorias existentes
     const consultarAPIcategorias = async () => {
         try {
@@ -76,8 +77,8 @@ const NuevaNoticia = (props) => {
                 imagenSec,
                 categoria,
                 autorNoticia,
-                fechaNoticia,
-                //fechaNoticia: moment().format("DD MMMM, YYYY"),
+                //fechaNoticia,
+                fechaNoticia: moment(noticia.fechaNoticia).format("DD-MM-YYYY"),
                 destacada
             }
             try {
