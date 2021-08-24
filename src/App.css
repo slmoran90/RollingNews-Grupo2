@@ -40,6 +40,9 @@
 
 /*Footer*/
 
+h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Roboto', sans-serif;
+}
 .lista {
     list-style: none;
     padding: 0;
@@ -99,8 +102,18 @@
 .textoNoticia {
     font-size: 0.75em;
 }
-
-
+/* para los holder  de las imagenes en los forms */
+.imageHolderForm {
+    height: 150px;
+    width: 100px;
+    background-image: url('https://cdn.pixabay.com/photo/2013/04/07/06/42/error-101407__480.jpg');
+}
+/* boton del modal */
+.buttonModal {
+    color: white !important;
+    background-color: #F18219 !important;
+    border-color: #F18219 !important;
+}
 /* Para mejorar margenes en los titulos tapados por el navbar (valentina iramain) */
 
 .margenListaNoticias {
@@ -113,6 +126,24 @@
 
 
 /*Botones guardar*/
+
+
+.margenSup {
+    margin-top: 95px;
+}
+
+.imgCovid {
+    height: 200px;
+    background-image: url('https://cdn.discordapp.com/attachments/836409575833337888/848919730441420821/coronavirus-banner.jpg');
+}
+
+.bannerCovid {
+    width: 100%;
+    left: 0;
+    right: auto;
+    object-fit: contain;
+}
+
 
 .botonGuardar {
     width: 190px;
@@ -164,4 +195,71 @@
 .botonGuardar:hover:before {
     width: 201px;
     height: 70px;
+}
+
+/* Aqui traigo copiado estilos de la rama GonzaVarios, que no se habian mergeado */
+.noticiasSimilares{
+    border-bottom: 3px solid #f18219;
+}
+.cuerpoNoticia{
+    margin: 3rem;
+}
+.tituloNoticia {
+    color: #f18219;
+}
+@media all and (min-width: 200px) and (max-width: 768px) {
+ .amazon {
+     margin-right: auto;
+     margin-left: auto;
+     
+
+ }
+ .amazonLarga {
+     width: 100%;
+ }
+ .noticiaPpal {
+     width: 80% !important;
+ }
+ .tituloNoticia {
+     font-size: 1.5rem;
+ }
+ .cuerpoNoticia {
+     margin: 1rem !important;
+ }
+}
+.noticia {
+ min-width: 14rem;
+}
+
+@media all and (min-width: 787px) and (max-width: 991px) {
+ .bannerCovid {
+     width: 100%;
+ }
+ .amazon {
+     margin-right: auto;
+     margin-left: auto;
+
+ }
+ p {
+     font-size: .5rem;
+ }
+ .noticiasRelacionadas {
+     flex-direction: column;
+     align-items: center;
+
+ }
+}
+@media all and (min-width: 991px) and (max-width: 1200px) {
+ 
+}
+
+
+
+.publicidad {
+ height: 469px !important;
+ 
+}
+
+.covidContainer {
+ background-color: #f18219;
 }

@@ -1,22 +1,26 @@
 import React from "react";
+import Weather from "../APIs/Weather";
 import CardNoticia from "./CardNoticia";
 import CardNoticiaPrincipal from "./CardNoticiaPrincipal";
 
 const NoticiasDestacadas = (props) => {
     return (
-        <div className="container-fluid d-flex w-75 p-5 justify-content-around">
+        <div className="container-fluid d-flex p-3 justify-content-around flex-wrap">
             <div>
                 <h2 className="mb-5 text-center border-bottom">
                     Noticias destacadas
                 </h2>
-                {props.noticias[0] && (
-                    <CardNoticiaPrincipal
-                        noticia={props.noticias[0]}
-                        width={"30rem"}
-                    />
-                )}
+                <div className='d-flex flex-column'>
+                    {props.noticias[0] && (
+                        <CardNoticia
+                            noticia={props.noticias[0]}
+                            width={"30rem"}
+                        />
+                    )}
+                    <Weather className='mt-5'/>
+                </div>
             </div>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column justify-content-between">
                 {props.noticias[1] && (
                     <CardNoticia noticia={props.noticias[1]} width={"18rem"} />
                 )}

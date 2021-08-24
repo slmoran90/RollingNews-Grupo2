@@ -29,6 +29,7 @@ function App() {
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
   const [noticiasEco, setNoticiasEco] = useState([]);
   const [noticiasDeportes, setNoticiasDeportes] = useState([]);
+  const [noticiasActualidad, setNoticiasActualidad] = useState([]);
   // URL donde estan guardadas las categorias
   const URLcategorias = process.env.REACT_APP_API_URLcategorias;
   // URL donde estan almacenadas las noticias
@@ -48,13 +49,15 @@ function App() {
     cargarNoticias();
     consultarAPIusers();
   }, []);
+
+  //Función para filtrar y traer noticias en la página principal
   const cargarNoticias = async () => {
     try {
       const respuesta = await fetch(URLnoticias);
       if (respuesta.status === 200) {
         const noticias = await respuesta.json();
         const arrayDestacadas = noticias.filter(
-          (noticia) => noticia.destacada === "true"
+          (noticia) => noticia.destacada === "on"
         );
         const array3UltimosDestacados = arrayDestacadas.splice(
           arrayDestacadas.length - 3
@@ -79,6 +82,15 @@ function App() {
           setNoticiasDeportes(arrayDepSplice);
         } else {
           setNoticiasDeportes(arrayDeportes);
+        }
+        const arrayActualidad = noticias.filter(
+          (noticia) => noticia.categoria === "Actualidad"
+        );
+        if (arrayActualidad.length > 6) {
+          const arrayActualidadSplice = arrayActualidad.splice(arrayActualidad.length - 6);
+          setNoticiasActualidad(arrayActualidadSplice);
+        } else {
+          setNoticiasActualidad(arrayActualidad);
         }
       }
     } catch (error) {
@@ -144,6 +156,7 @@ function App() {
             noticiasDestacadas={noticiasDestacadas}
             economia={noticiasEco}
             deportes={noticiasDeportes}
+            actualidad={noticiasActualidad}
           />
         </Route>
         <Route exact path="/noticia/:categoria/:id">

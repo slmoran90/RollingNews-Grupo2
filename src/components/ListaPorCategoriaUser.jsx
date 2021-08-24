@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import { useParams } from "react-router";
+import ItemListaPorCategoria from "./noticiasUsuario/ItemListaPorCategoria";
 
 const ListaPorCategoriaUser = () => {
     const { categoria } = useParams();
@@ -9,25 +11,42 @@ const ListaPorCategoriaUser = () => {
 
     useEffect(() => {
         traerListaDeCategoria();
-    }, [])
+    }, [categoria]);
 
     const traerListaDeCategoria = async () => {
         try {
             const resp = await fetch(UrlListaNoticias);
-            console.log("🚀 ~ file: ListaPorCategoriaUser.jsx ~ line 17 ~ traerListaDeCategoria ~ resp", resp)
+            
             if (resp.status === 200) {
                 const lista = await resp.json();
-                console.log("🚀 ~ file: ListaPorCategoriaUser.jsx ~ line 20 ~ traerListaDeCategoria ~ lista", lista)
-                setListaDeNoticias(lista);
-                console.log(listaDeNoticias);
+                const listaRevertida = lista.reverse();
+                
+                setListaDeNoticias(listaRevertida);
             }
         } catch (error) {
             console.log(error);
-        }
+        };
     };
     return (
-        <div>
+        <div className="container margenSup">
+            <h1 className='text-center pt-3'>{listaDeNoticias[0] && listaDeNoticias[0].categoria}</h1>
+            <Row className='justify-content-center'>
+                <Col className='' xs={12} md={8}>
+                    <ol id='lista3'>
+                        {listaDeNoticias &&
+                            listaDeNoticias.map((noticia, indice) => (
+                                <div>
+                                    
+                                <ItemListaPorCategoria noticia={noticia} indice={indice} key={noticia.id} />
+                                <hr></hr>
+                                </div>
+                            ))}
+                    </ol>
+                </Col>
+                <Col md='auto'>
 
+                </Col>
+            </Row>
         </div>
     );
 };
