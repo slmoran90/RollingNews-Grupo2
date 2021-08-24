@@ -3,7 +3,6 @@ import {
     Navbar,
     Nav,
     NavDropdown,
-    Button,
     Row,
     Col,
     Container,
@@ -182,16 +181,16 @@ const Navegacion = (props) => {
                                     Contacto
                                 </Link>
                                 <Link exact={true} to="/login">
-                                <Button
-                                    className="ml-md-5 mt-1 botonNav"
+                                <button
+                                    className=" btn ml-md-5 mt-1 botonNav"
                                     // variant="outline-warning"
                                     onClick={() => setExpanded(!expanded)}
                                 >
                                     Iniciar Sesión
-                                </Button>
+                                </button>
                                 </Link>
                                 <Link type="button" exact={true} to="/promoSus">
-                                    <Button className="ml-md-2 mt-1 botonNav" onClick={()=> setExpanded(!expanded)}>Suscribirse</Button>
+                                    <button className="btn ml-md-2 mt-1 botonNav" onClick={()=> setExpanded(!expanded)}>Suscribirse</button>
                                 </Link>
                             </Nav>
                         </Navbar.Collapse>
