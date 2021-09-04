@@ -12,7 +12,7 @@ const NuevaNoticia = (props) => {
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
     const URLnoticias = process.env.REACT_APP_API_URLnoticias;
     const [categoria, setCategoria] = useState('');
-    const [fechaNoticia, setFechaNoticia] = useState('');
+    const [fechaNoticia, setFechaNoticia] = useState(moment().format("DD-MM-YYYY"));
     const [autorNoticia, setAutorNoticia] = useState('');
     const [tituloNoticia, setTituloNoticia] = useState('');
     const [noticiaBreve, setNoticiaBreve] = useState('');
@@ -77,8 +77,7 @@ const NuevaNoticia = (props) => {
                 imagenSec,
                 categoria,
                 autorNoticia,
-                //fechaNoticia,
-                fechaNoticia: moment(noticia.fechaNoticia).format("DD-MM-YYYY"),
+                fechaNoticia,
                 destacada
             }
             try {
@@ -116,6 +115,10 @@ const NuevaNoticia = (props) => {
         setDestacada(e.target.value);
     };
 
+    // asigna por defecto fecha de la noticia igual a getDate()
+    var curr = new Date();
+    var date = curr.toISOString().substr(0,10);
+    //---------------------------------------------------------
 
     return (
         <Container className="margenFondo py-3">
@@ -144,7 +147,8 @@ const NuevaNoticia = (props) => {
 
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
-                        <Form.Control className="outlineColor" type="date" size="sm" placeholder="dd/mm/aaaa"
+                        <Form.Control className="outlineColor" type="date" size="sm" placeholder="dd-mm-yyyy" 
+                            //defaultValue={date} 
                             onChange={(e) => setFechaNoticia(e.target.value)}
                             required />
                     </Form.Group>
@@ -172,9 +176,6 @@ const NuevaNoticia = (props) => {
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                         <Image className='w-75' src={imagenPrincipal} alt='Imagen Principal de la Noticia' />
-                        {/* <div className='w-75 imageHolderForm  py-5' style={{ 'background': `url(${imagenPrincipal}) 20% 1% / cover no-repeat` }}>
-                        </div> */}
-                        {/* sistema Gonza */}
                     </Form.Group>
                 </Form.Row>
                 <Form.Row>
@@ -184,8 +185,6 @@ const NuevaNoticia = (props) => {
                     </Form.Group>
                     <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                         <Image className='w-75' src={imagenSec}  alt='Imagen Secundaria de la Noticia' />
-                        {/* <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${imagenSec}) 20% 1% / cover no-repeat` }}>
-                        </div> */}
                     </Form.Group>
                 </Form.Row>
 

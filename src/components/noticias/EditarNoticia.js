@@ -18,7 +18,12 @@ const EditarNoticia = (props) => {
     //valor noticia destacada
     const [destacada, setDestacada] = useState('');
 
-    // const URLnoticias = process.env.REACT_APP_API_URLnoticias+'/'+codigoNoticia;
+    // para mostrar fecha
+    const [fechaCard, setfechaCard] = useState();    
+    const [formatoFecha,setFormatoFecha] = useState();
+
+
+    // URL
     const URLnoticias = process.env.REACT_APP_API_URLnoticias + '/noticias-por-id/' + codigoNoticia;
 
     const URLcategorias = process.env.REACT_APP_API_URLcategorias;
@@ -44,13 +49,9 @@ const EditarNoticia = (props) => {
             if (respuesta.status === 200) {
                 const noticiaSolicitada = await respuesta.json();
                 setNoticia(noticiaSolicitada);
-                
-                console.log(noticia.fechaNoticia)
-                console.log(moment(noticia.fechaNoticia).locale('es').format("DD-MM-YYYY"))
-                
             }
         } catch (errorValidacion) {
-            Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
+            Swal.fire("Ocurrió un Error 1!", "Inténtelo en unos minutos.", "error");
         }
     }, [])
 
@@ -63,7 +64,7 @@ const EditarNoticia = (props) => {
                 setArrayCategorias(listaCategorias);
             }
         } catch (errorValidacion) {
-            Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
+            Swal.fire("Ocurrió un Error! 2", "Inténtelo en unos minutos.", "error");
         }
     };
 
@@ -91,7 +92,6 @@ const EditarNoticia = (props) => {
                     imagenSec: imagenSecRef.current.value,
                     categoria: categoriaRef.current.value, 
                     autorNoticia: autorNoticiaRef.current.value,
-                    //fechaNoticia: fechaNoticiaRef.current.value.moment().format("DD MMMM, YYYY"),
                     fechaNoticia: fechaNoticiaRef.current.value,
                     destacada: destacadaModificada
                 }
@@ -130,15 +130,7 @@ const EditarNoticia = (props) => {
         setDestacada(e.target.value);
     };
 
-    // const formatoFecha = ()=>{
-    //     //libreria moment
-    //     console.log("libreria MOMENT")
-    //     const m = moment();
-    //     console.log(m.toString());
-    //     console.log(moment(noticia.fechaNoticia).format('dd-mm-YYYY'))
-    // }
-
-
+ 
     return (
         <div className="margenFondo py-3">
             <Container className="my-3 ">
@@ -163,9 +155,9 @@ const EditarNoticia = (props) => {
 
                         <Form.Group className='col-sm-6 col-md-4'>
                             <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
-                            <Form.Control className="outlineColor" type="text" size="sm"
-                                //defaultValue={noticia.fechaNoticia}
-                                defaultValue={moment(noticia.fechaNoticia).locale('es').format("DD-MM-YYYY")}
+                            {/* <Form.Label>Fecha<span class="text-danger">*</span> {noticia.fechaNoticia}</Form.Label> */}
+                            <Form.Control className="outlineColor" type="date" size="sm"
+                                defaultValue={noticia.fechaNoticia}
                                 ref={fechaNoticiaRef}
                             />
                         </Form.Group>
@@ -209,8 +201,6 @@ const EditarNoticia = (props) => {
                         </Form.Group>
                         <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
                             <img className='w-75' src={noticia.imagenPrincipal} alt='Imagen Principal de la Noticia'/> 
-                            {/* <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${noticia.imagenPrincipal}) 20% 1% / cover no-repeat` }}>
-                            </div> */}
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>
@@ -221,10 +211,8 @@ const EditarNoticia = (props) => {
                                 ref={imagenSecRef}
                             />
                         </Form.Group>
-                        <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center'>
+                        <Form.Group className='col-sm-12 col-md-4 align-self-center d-flex justify-content-center '>
                             <img className='w-75' src={noticia.imagenSec} alt='Imagen Secundaria de la Noticia'/> 
-                            {/* <div className='w-75 imageHolderForm py-5' style={{ 'background': `url(${noticia.imagenSec}) 20% 1% / cover no-repeat` }}>
-                            </div> */}
                         </Form.Group>
                     </Form.Row>
                     

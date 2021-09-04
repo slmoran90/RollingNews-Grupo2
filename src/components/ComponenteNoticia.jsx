@@ -4,6 +4,9 @@ import { Col, Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import ListaNoticiasRelacionadas from "./paginaPrincipal/ListaNoticiasRelacionadas";
 import PublicidadLeon from "./paginaPrincipal/PublicidadLeon";
+// libreria para trabajar con fechas
+import moment from 'moment';
+import 'moment/locale/es';
 
 const ComponenteNoticia = () => {
     console.log("en componenteNoticia")
@@ -67,12 +70,10 @@ const ComponenteNoticia = () => {
                                 />
                                 </div>
                                 <div className=' d-flex flex-column align-items-center'>
-                                    
-                                <p className='cuerpoNoticia'>{noticiaVisible.noticiaDetallada}</p>
-                                <p>Categoría: {noticiaVisible.categoria}</p>
-                                <p>Autor: {noticiaVisible.autorNoticia}</p>
-                            
-                                <p className='border-top text-muted'>Fecha: {noticiaVisible.fechaNoticia}</p>
+                                    <p className='cuerpoNoticia'>{noticiaVisible.noticiaDetallada}</p>
+                                    <p>Categoría: {noticiaVisible.categoria}</p>
+                                    <p>Autor: {noticiaVisible.autorNoticia}</p>                            
+                                    <p className='border-top text-muted'>Fecha: {moment(noticiaVisible.fechaNoticia).locale('es').format("DD-MM-YYYY")}</p>
                                 </div>
                             </div>
                         </div>

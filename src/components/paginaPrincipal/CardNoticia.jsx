@@ -12,7 +12,7 @@ const CardNoticia = (props) => {
     //console.log(fecha)
     
     const fechaSplit = fecha.toString().split(' ');   
-   
+
     useEffect(() => {
             
         }, [])
@@ -22,7 +22,9 @@ const CardNoticia = (props) => {
     return (
         
         <Card className='my-3 noticia' style={{ width: `${props.width}`}}>
-            <div className='wrapper example-1' style={{ 'background': `url(${props.noticia && props.noticia.imagenPrincipal}) 20% 1% / cover no-repeat`}}>
+            {/* <div className='wrapper example-1' style={{ 'background': `url(${props.noticia && props.noticia.imagenPrincipal}) 20% 1% / cover no-repeat`}}> */}
+            <div className='wrapper example-1'>
+                <img src={props.noticia.imagenPrincipal} alt="" className='w-100' />
                 <div className='date'>
                     <span className='day'>{fechaSplit[2]}</span>
                     <span className='month'>{fechaSplit[1]}</span>

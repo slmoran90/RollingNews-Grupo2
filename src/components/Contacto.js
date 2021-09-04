@@ -4,9 +4,10 @@ import emailjs from "emailjs-com";
 import {
     validarEmail,
     validarTextArea,
-    validarConsulta
+    validarConsulta,
+    campoReq,
 } from "../components/common/validaciones";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
 
 const Contacto = () => {
@@ -17,12 +18,13 @@ const Contacto = () => {
     const [tipoConsulta, setTipoConsulta] = useState("");
 
     const enviarMail = (e) => {
-        emailjs.sendForm(
-            "service_9vethkv",
-            "template_p8vmf2q",
-            e.target,
-            "user_sKLjQ13C83jmRiaPuDwAn"
-        )
+        emailjs
+            .sendForm(
+                "service_9vethkv",
+                "template_p8vmf2q",
+                e.target,
+                "user_sKLjQ13C83jmRiaPuDwAn"
+            )
             .then(
                 (result) => {
                     console.log(result.text);
@@ -33,16 +35,7 @@ const Contacto = () => {
             );
     };
 
-    const campoReq = (nombreCompleto) => {
-        if (nombreCompleto.trim() !== '' && nombreCompleto.length > 6 && isNaN) {
-            setError(false)
-            return;
-        } else {
-            setError(true)
-        }
-     };
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (
             campoReq(nombreCompleto.trim()) &&
@@ -53,19 +46,15 @@ const Contacto = () => {
             enviarMail(e);
             setError(false);
             Swal.fire(
-                'Enviado!',
-                'Nuestros administradores leerán tu consulta y lo resolverán en breve!',
-                'success'
-              )
+                "Enviado!",
+                "Nuestros administradores leerán tu consulta y lo resolverán en breve!",
+                "success"
+            );
+            e.target.reset();
         } else {
             setError(true);
-            Swal.fire(
-                'Ocurrio un error',
-                'Inténtelo en unos minutos',
-                'error'
-              );
+            Swal.fire("Ocurrio un error", "Inténtelo en unos minutos", "error");
         }
-        e.target.reset();
     };
 
     return (
@@ -73,7 +62,9 @@ const Contacto = () => {
             <Form.Row>
                 <Col className="mx-3">
                     <Form onSubmit={handleSubmit}>
-                        <h2 className="text-center formTitulos">¿En qué te podemos ayudar?</h2>
+                        <h2 className="text-center formTitulos">
+                            ¿En qué te podemos ayudar?
+                        </h2>
                         <hr />
                         <Form.Group>
                             <Form.Label>¿que tipo de consulta es? *</Form.Label>
@@ -98,6 +89,7 @@ const Contacto = () => {
                                 onChange={(e) => setNombreCompleto(e.target.value)}
                                 required
                                 minLength={6}
+                                maxLength={40}
                                 name="nombreCompleto"
                                 className="outlineColor"
                             />
@@ -110,6 +102,8 @@ const Contacto = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
                                 name="email"
+                                maxLength={40}
+                                minLength={10}
                                 className="outlineColor"
                             />
                         </Form.Group>
@@ -126,9 +120,13 @@ const Contacto = () => {
                                 className="outlineColor"
                             />
                         </Form.Group>
-                        <button type="submit" variant="primary" className="w-50 my-4 botonGuardar ">
+                        <button
+                            type="submit"
+                            variant="primary"
+                            className="w-50 my-4 botonGuardar "
+                        >
                             Enviar
-            </button>
+                        </button>
                     </Form>
                     {error === true ? (
                         <Alert variant="warning"> Todos los campos son Obligatorios </Alert>
@@ -152,9 +150,7 @@ const Contacto = () => {
                         </div>
                         <hr />
                         <div>
-                            <h5 className="formTitulos">
-                                Para publicitar en nuestra página
-                            </h5>
+                            <h5 className="formTitulos">Para publicitar en nuestra página</h5>
                             <p>Sigue este link</p>
                         </div>
                         <hr />

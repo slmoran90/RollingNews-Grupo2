@@ -18,7 +18,6 @@ import NuevaNoticia from "./components/noticias/NuevaNoticia";
 import EditarNoticia from "./components/noticias/EditarNoticia";
 import Error from "./components/Error";
 import Nosotros from './components/Nosotros/Nosotros';
-import MostrarNoticia from "./components/noticias/MostrarNoticia";
 import Fotografia from "./components/fotografia/Fotografia";
 import Contacto from "./components/Contacto";
 import PromoSus from "./components/suscripcion/PromoSus";
@@ -217,10 +216,10 @@ function App() {
           </ListarNoticiasxCateg>
         </Route>
 
-        <Route exact path="/noticias/mostrarNoticia/:id">
+        {/* <Route exact path="/noticias/mostrarNoticia/:id"> */}
           {/* muestra la noticia completa, seleccionada en la lista de noticias */}
-          <MostrarNoticia></MostrarNoticia>
-        </Route>
+          {/* <MostrarNoticia adminUser={adminUser}></MostrarNoticia> */}
+        {/* </Route> */}
 
 
         <Route exact path="/noticias/nueva">
