@@ -9,15 +9,11 @@ import moment from 'moment';
 import 'moment/locale/es';
 
 const ComponenteNoticia = () => {
-    console.log("en componenteNoticia")
     const { categoria, id } = useParams();
 
     const [noticiaVisible, setNoticiaVisible] = useState({});
     const [listaNoticiasCat, setListaNoticiasCat] = useState([]);
 
-    // const URL = `${process.env.REACT_APP_API_URLnoticias}/${id}`;
-    // const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/?categoria=${categoria}`;
-    
     const URL = `${process.env.REACT_APP_API_URLnoticias}/noticias-por-id/${id}`;
     const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/noticias-por-categoria/${categoria}`;
     

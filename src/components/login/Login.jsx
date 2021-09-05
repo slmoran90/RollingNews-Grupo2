@@ -15,15 +15,6 @@ const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // === puesto por valentina para entrar como admin
-        //   setNombre('admin');
-        //   setPassword('admin');
-        //   setError(false);
-        //   history.push('/admin')
-        //   props.setAdminUser(true);
-        //=================================================
-
-        // == comentado por valentina para entrar SIEMRPE como admin ===//
             if (nombre.trim() === "" || password === "") {
                 setError(true);
                 return;
@@ -33,9 +24,6 @@ const Login = (props) => {
             const usuarioAdmin = props.usuarios.find(
                 (usuario) => usuario.nombre === nombre
             );
-
-            console.log("usuario:",usuarioAdmin)
-
 
             if (typeof usuarioAdmin === 'undefined') {
                 setDatosErroneos(true);
@@ -49,7 +37,6 @@ const Login = (props) => {
                     setDatosErroneos(true);
                 }
             }
-        //================================================//
 
     };
 

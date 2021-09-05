@@ -14,7 +14,6 @@ const ItemCategoria = (props) => {
 
     // borrar categoria
     const eliminarCategoria = (idCategoria) => {
-        console.log("id categoria a eliminar:",idCategoria)
         Swal.fire({
             title: "Está seguro que quiere eliminar la Categoría?",
             text: "No podrá volver atrás esta operación luego de realizarla.",
