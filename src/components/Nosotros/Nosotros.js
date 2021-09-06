@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Container, Col } from "react-bootstrap";
 import ItemNosotros from "../Nosotros/ItemNosotros";
 import "./nosotros.css";
@@ -33,10 +33,10 @@ const Nosotros = () => {
             <Container>
                 <Row className="mb-5">
                     <div className="row justify-content-center my-5">
-                        <h1 className="col-sm-12 col-md-6 text-light display-4" id="h2">
+                        <h1 className="col-sm-12 col-md-6 display-4" id="h2">
                             Hacemos Periodismo</h1>
                         <br></br>
-                        <b className="col-sm-12 col-md-7 ml-2 text-light text-center">
+                        <b className="col-sm-12 col-md-7 ml-2 text-center">
                             El diario que supo ganarse la confianza de sus lectores
                             durante más de tres décadas por la <br></br>seriedad de sus investigaciones,
                             su edición de vanguardia y el prestigio de sus columnistas.
@@ -45,28 +45,28 @@ const Nosotros = () => {
                     <div className="row justify-content-center my-4">
                         <div className="col-sm-12 col-md-4 d-flex justify-content-end">
                             <h2 id="caja" className="d-flex align-items-end">
-                                <p className="ml-2 text-light">
+                                <p className="ml-2">
                                     El<br></br> <b>Equipo</b>
                                 </p>
                             </h2>
                         </div>
-                        <div className="d-none d-md-block col-md-5 font-weight-bold text-light align-self-center ml-4">
+                        <div className="d-none d-md-block col-md-5 font-weight-bold align-self-center ml-4 text-dark">
                             Creemos que nuestro equipo,es una gran familia. Creemos que la confianza se construye a través de la excelencia. Contribuimos a construir un futuro en el que todos tengan la ayuda que necesitan para dedicar tiempo a las personas y las cosas que más importan.
                         </div>
                     </div>
- 
-                        <div className='mt-5'>
-                            <Row xs={1} md={3}>
-                                {
-                                    equipo.map((valor, indice) => <ItemNosotros key={indice} info={valor}></ItemNosotros>)
-                                }
-                            </Row>
-                        </div>
+
+                    <div className='mt-5'>
+                        <Row xs={1} md={3}>
+                            {
+                                equipo.map((valor, indice) => <ItemNosotros key={indice} info={valor}></ItemNosotros>)
+                            }
+                        </Row>
+                    </div>
                 </Row>
 
                 {/* linea de tiempo color */}
                 <div className="container mt-5">
-                    <h1 id="h2" className="text-light justify-content-center my-5"><span>Nuestra historia</span></h1>
+                    <h1 id="h2" className="justify-content-center my-5"><span>Nuestra historia</span></h1>
                     <div className="row" responsive="md">
                         <div className="col-md-12">
                             <div className="main-timeline4">
@@ -79,7 +79,7 @@ const Nosotros = () => {
                                                 En diciembre de 2018 el canal anunció nueva programación
                                                 producida desde Buenos Aires, Argentina, sumando a su equipo a
                                                 los periodistas Marcelo Longobardi, Jonatan Viale y Jessica
-                Bossi.                                    </p>
+                                                Bossi.                                    </p>
                                         </div>
                                     </a>
                                 </div>
@@ -92,7 +92,7 @@ const Nosotros = () => {
                                                 El 2 de marzo de 2017, el canal transmitió en vivo por primera
                                                 vez desde la Antártida, con el reportero Darío Klein en la base
                                                 Artigas de Uruguay.
-                                    </p>
+                                            </p>
                                         </div>
                                     </a>
                                 </div>
@@ -120,7 +120,7 @@ const Nosotros = () => {
                                                 especial de 15 noticias que fueron cubiertas por los
                                                 presentadores de la cadena informativa.18​ También se lanzó un
                                                 sitio: Rolling Newse15.com
-                                    </p>
+                                            </p>
                                         </div>
                                     </a>
                                 </div>
@@ -129,7 +129,7 @@ const Nosotros = () => {
                                         <span className="year">2010</span>
                                         <div className="inner-content">
                                             <h3 className="title">web de Rolling
-                                                            News México</h3>
+                                                News México</h3>
                                             <p className="description">
                                                 En 2010, Rolling News en Español lanzó la página web de Rolling
                                                 News México en conjunto con el Grupo Expansión de México.El 22
@@ -196,16 +196,14 @@ const Nosotros = () => {
                                                 el Noticiero Rolling News, destinado al público de habla hispana
                                                 de los Estados Unidos y América Latina.</p>
                                         </div>
-                                    </a>
+                                        </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </Container>
         </div>
     );
 };
-
 export default Nosotros;

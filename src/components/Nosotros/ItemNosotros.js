@@ -5,7 +5,7 @@ const ItemNosotros = (props) => {
     return (
         <Container>
             {/* continuacion sistema de grillas */}
-            <div className='d-flex m-2'>
+            <div className='d-flex m-2 font-weight-bold text-dark'>
                 <div className="col-md-6 mr-4">
                     <img
                         src={props.info.avatar}
@@ -13,8 +13,8 @@ const ItemNosotros = (props) => {
                         alt={props.info.nombreApellido}
                     ></img>
                 </div>
-                <div className="col-md-6 text-light">
-                    <h6>{props.info.nombreApellido}</h6>
+                <div className="col-md-6">
+                    <h5>{props.info.nombreApellido}</h5>
                     <div className="linea"></div>
                     <p className="mt-2">{props.info.puesto}</p>
                 </div>
@@ -24,3 +24,10 @@ const ItemNosotros = (props) => {
 };
 
 export default ItemNosotros;
+
+
+
+
+
+
+

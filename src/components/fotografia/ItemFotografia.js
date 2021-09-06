@@ -3,7 +3,6 @@ import { Container, Card, Col } from "react-bootstrap";
 
 
 const ItemFotografia = (props) => {
-    console.log(props)
     return (
         <Container>
             {/* continuacion sistema de grillas */}

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, withRouter} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, withRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 //== Para que vea app.css tiene que ir 1- BOOTSTRAP 2-APP.JS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,6 +9,7 @@ import PaginaPrincipal from "./components/paginaPrincipal/PaginaPrincipal";
 import ComponenteNoticia from "./components/ComponenteNoticia";
 import ListaPorCategoriaUser from "./components/ListaPorCategoriaUser";
 import NuevaCategoria from "./components/categorias/NuevaCategoria";
+import EditarCategoria from "./components/categorias/EditarCategoria";
 import ListarCategoria from "./components/categorias/ListarCategoria";
 import ListarNoticiasxCateg from "./components/noticias/ListarNoticiasxCateg";
 import Swal from "sweetalert2";
@@ -17,32 +18,35 @@ import NuevaNoticia from "./components/noticias/NuevaNoticia";
 import EditarNoticia from "./components/noticias/EditarNoticia";
 import Error from "./components/Error";
 import Nosotros from './components/Nosotros/Nosotros';
-import MostrarNoticia from "./components/noticias/MostrarNoticia";
 import Fotografia from "./components/fotografia/Fotografia";
 import Contacto from "./components/Contacto";
 import PromoSus from "./components/suscripcion/PromoSus";
 import Suscripcion from "./components/suscripcion/Suscripcion";
 import Login from "./components/login/Login";
-import Admin from "./components/login/Admin"; 
+import Admin from "./components/login/Admin";
 
 function App() {
-  const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
-  const [noticiasEco, setNoticiasEco] = useState([]);
-  const [noticiasDeportes, setNoticiasDeportes] = useState([]);
-  const [noticiasActualidad, setNoticiasActualidad] = useState([]);
   // URL donde estan guardadas las categorias
   const URLcategorias = process.env.REACT_APP_API_URLcategorias;
   // URL donde estan almacenadas las noticias
   const URLnoticias = process.env.REACT_APP_API_URLnoticias;
   // URL donde esta almacenado el admin
   const user = process.env.REACT_APP_API_URLusers;
+
+  const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
+  const [noticiasEco, setNoticiasEco] = useState([]);
+  const [noticiasDeportes, setNoticiasDeportes] = useState([]);
+  const [noticiasActualidad, setNoticiasActualidad] = useState([]);
+
   const [adminUser, setAdminUser] = useState();
   const [usuarios, setUsuarios] = useState([]);
   const [showLogin, setShowLogin] = useState(false);
-  // state para get de categorias 
+
+  // state para almacenar categorias 
   const [categorias, setCategorias] = useState([]);
-  // state para almacenar resultados del fetch
+  // state para almacenar noticias
   const [noticias, setNoticias] = useState([]);
+
   useEffect(() => {
     consultarAPIcategorias();
     consultarAPInoticias();
@@ -97,6 +101,7 @@ function App() {
       console.log(error, "este es un error");
     }
   };
+
   // funcion GET de categorias
   const consultarAPIcategorias = async () => {
     try {
@@ -107,7 +112,7 @@ function App() {
       }
     } catch (error) {
       console.log(error);
-      Swal.fire("Ocurrió un Error", "Inténtelo en unos minutos.", "error");
+      Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
     }
   };
   // funcion GET de noticias
@@ -121,33 +126,46 @@ function App() {
     } catch (error) {
       console.log(error);
       Swal.fire(
-        'Ocurrió un Error en Noticias!',
+        'Ocurrió un Error!',
         'Inténtelo en unos minutos.',
         'error'
       )
     }
   };
- 
-  const consultarAPIusers = async() => {
-  const consulta = await fetch(user);
-  const respuesta = await consulta.json();
-  if (consulta.status !== 200) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Ocurrio un error, intentelo nuevamente",
-    });
-  }
-  //Guardar en el state
-  setUsuarios(respuesta);
-  };
+
+  const consultarAPIusers = async () => {
+    try {
+      const consulta = await fetch(user);
+      if (consulta.status === 200) {
+        const respuesta = await consulta.json();
+        setUsuarios(respuesta);
+      }
+    } catch (error) {
+        console.log(error);
+        Swal.fire(
+          'Oooops! Ocurrió un Error!',
+          'Inténtelo en unos minutos.',
+          'error'
+        )
+      }
+    };
+    // if (consulta.status !== 200) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Oops...",
+    //     text: "Ocurrio un error, intentelo nuevamente",
+    //   });
+    // }
+    // //Guardar en el state
+    // setUsuarios(respuesta);
+  // };
 
   return (
     <Router>
       <Navegacion
-       setAdminUser={setAdminUser}
-       adminUser={adminUser}
-       usuarios={usuarios}
+        setAdminUser={setAdminUser}
+        adminUser={adminUser}
+        usuarios={usuarios}
       ></Navegacion>
       {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}
       <Switch>
@@ -176,13 +194,18 @@ function App() {
             adminUser={adminUser}>
           </NuevaCategoria>
         </Route>
+        <Route exact path="/categorias/editar/:id">
+          <EditarCategoria
+            consultarAPIcategorias={consultarAPIcategorias}
+            adminUser={adminUser}>
+          </EditarCategoria>
+        </Route>
         <Route exact path="/categorias/listar" component={ListarCategoria}>
           {/* muestra lista de categorias existentes */}
           <ListarCategoria
             categorias={categorias}
             consultarAPIcategorias={consultarAPIcategorias}
             adminUser={adminUser}
-            
           ></ListarCategoria>
         </Route>
         <Route exact path="/noticias/listar/:nombreCategoria">
@@ -193,33 +216,33 @@ function App() {
           </ListarNoticiasxCateg>
         </Route>
 
-        <Route exact path="/noticias/mostrarNoticia/:id">
+        {/* <Route exact path="/noticias/mostrarNoticia/:id"> */}
           {/* muestra la noticia completa, seleccionada en la lista de noticias */}
-          <MostrarNoticia></MostrarNoticia>
-        </Route>
+          {/* <MostrarNoticia adminUser={adminUser}></MostrarNoticia> */}
+        {/* </Route> */}
 
 
         <Route exact path="/noticias/nueva">
           <NuevaNoticia noticias={noticias}
             consultarAPInoticias={consultarAPInoticias}
             adminUser={adminUser}>
-            
-            </NuevaNoticia>
+
+          </NuevaNoticia>
         </Route>
         <Route exact path="/noticias/listar">
           {/* muestra lista de TODAS las noticias */}
           <ListarNoticias
             noticias={noticias}
             consultarAPInoticias={consultarAPInoticias}
-             adminUser={adminUser}>
+            adminUser={adminUser}>
 
-             </ListarNoticias>
+          </ListarNoticias>
         </Route>
         <Route exact path="/noticias/editar/:id">
           <EditarNoticia consultarAPInoticias={consultarAPInoticias}
-           adminUser={adminUser}>
+            adminUser={adminUser}>
 
-           </EditarNoticia>
+          </EditarNoticia>
         </Route>
         {/* -- Fin menu Administrador --*/}
 
@@ -254,4 +277,4 @@ function App() {
     </Router>
   );
 }
-export default App; 
+export default App;

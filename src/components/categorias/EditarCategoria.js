@@ -3,13 +3,17 @@ import { Form, Button, Container, Alert, Row, Col } from "react-bootstrap";
 import Swal from 'sweetalert2'
 // importo archivo de validaciones
 import { campoRequerido } from "../common/validaciones";
-import { withRouter, useHistory} from "react-router-dom";
+import { withRouter, useParams, useHistory} from "react-router-dom";
 
 
-const NuevaCategoria = (props) => {
+const EditarCategoria = (props) => {
     let history = useHistory();
+
+    //obtener codigo de la categoria a modificar por parametro
+    const codigoCategoria = useParams().id;
+
     // URL de categorias
-    const URLcategorias = process.env.REACT_APP_API_URLcategorias;
+    const URLcategorias = process.env.REACT_APP_API_URLcategorias+'/por-id-categoria/'+codigoCategoria;
 
     // imputs del formulario
     const [nombreCategoria, setNombreCategoria] = useState('');
@@ -20,10 +24,25 @@ const NuevaCategoria = (props) => {
     // para mostrar por pantalla un mensaje de error durante la carga de datos
     const [mensajeError, setMensajeError] = useState('');
 
-    useEffect(() => {
-        handleReset();
+    //creo las variables useRef
+    const nombreCategoriaRef = useRef('');
+
+    useEffect(async () => {
         if(props.adminUser !== true){
             history.push("/");
+        }
+
+        handleReset();
+        // busca categoria enviada por parametro
+        try {
+            const respuesta = await fetch(URLcategorias);
+            if (respuesta.status === 200) {
+                const categoriaSolicitada = await respuesta.json();
+                setNombreCategoria(categoriaSolicitada);
+            }
+
+        } catch (errorValidacion) {
+            Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
         }
     }, []);
 
@@ -37,37 +56,34 @@ const NuevaCategoria = (props) => {
     };
     //======================================
 
-    // guardar NUEVA categoria
+    // guardar MODIFICACION categoria
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(false);
         setMensajeError('');
 
-        if (campoRequerido(nombreCategoria)) {
+        if (campoRequerido(nombreCategoriaRef.current.value)) {
             // SIN errores en los datos cargados
 
             //== verifica que NO exista el nombre de categoria ===
             const encontrada = await buscarCategoria();
             //====================================================
             if (encontrada === null ) {    
-                // === NO EXISTE CATEGORIA => guarda en la API categorias ===
-                const categoria = {
-                    nombreCategoria: nombreCategoria
-                }
                 try {
-                    const datosEnviar = {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify(categoria)
+                    const categoriaModificada = {
+                        nombreCategoria: nombreCategoriaRef.current.value
                     }
 
-                    // hace POST a la api
-                    const respuesta = await fetch(URLcategorias, datosEnviar);
-                    
-                    if (respuesta.status === 201) {
+                    const respuesta = await fetch(URLcategorias, {
+                        method: 'PUT',
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(categoriaModificada)
+                    });
+
+                    if (respuesta.status === 200) {
                         Swal.fire(
-                            'Categoría Agregada!',
-                            'Se registró la nueva categoría.',
+                            'Categoría Modificada!',
+                            'Se realizó la modificación de la categoría.',
                             'success'
                         )
                         //limpiar imputs
@@ -75,6 +91,9 @@ const NuevaCategoria = (props) => {
 
                         //actualiza lista de categorias
                         props.consultarAPIcategorias();
+
+                        //redireccionar
+                        props.history.push('/categorias/listar');
                     }
                 } catch (error) {
                     console.log(error);
@@ -119,16 +138,17 @@ const NuevaCategoria = (props) => {
         <Container className="py-2 main-form">
             <Row className='justify-content-center'>
                 <Col xs={12} md={6} className='border borderNC'>
-                    <h2 className="text-center my-3 py-3 formTitulos">Nueva Categoría</h2>
+                    <h2 className="text-center my-3 py-3 formTitulos">Editar Categoría</h2>
                     <Form ref={formRef} className="mx-5 " onSubmit={handleSubmit}>
                         <Form.Group className='py-2'>
                             <Form.Label>Nombre de la Categoría<span class="text-danger">*</span></Form.Label>
-                            <Form.Control type="text" placeholder="Nombre de la Categoria" onChange={(e) => { setNombreCategoria(e.target.value) }} required />
+                            <Form.Control type="text" placeholder="Nombre de la Categoria" defaultValue={nombreCategoria.nombreCategoria}
+                                ref={nombreCategoriaRef} required />
                         </Form.Group>
 
                         <div className="d-flex justify-content-center">
                             <Button className='botones mb-3 px-5 py-2 botonGuardar' type='submit'>
-                                Guardar
+                                Guardar Cambios
                             </Button>
                         </div>
 
@@ -141,4 +161,4 @@ const NuevaCategoria = (props) => {
     );
 };
 
-export default withRouter(NuevaCategoria);
+export default withRouter(EditarCategoria);
