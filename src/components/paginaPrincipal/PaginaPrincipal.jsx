@@ -5,7 +5,6 @@ import DolarAndWeather from "./DolarAndWeather";
 import NoticiasDestacadas from "./NoticiasDestacadas";
 import Publicidad from "./Publicidad";
 import Publicidad2 from "./Publicidad2";
-import PublicidadLeon from "./PublicidadLeon";
 import SeccionCatPrincipal from "./SeccionCatPrincipal";
 
 const PaginaPrincipal = (props) => {
@@ -15,9 +14,6 @@ const PaginaPrincipal = (props) => {
                 <Col className='' xs={9}>
                     <NoticiasDestacadas noticias={props.noticiasDestacadas} />
                 </Col>
-                {/* <Col xs={2}>
-                    <PublicidadLeon />
-                </Col> */}
             </Row>
             
                 <CoronaVirusInfo />

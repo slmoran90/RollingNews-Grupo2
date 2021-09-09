@@ -1,7 +1,5 @@
 import React from "react";
-import { CardDeck } from "react-bootstrap";
 import CardNoticia from "./CardNoticia";
-import ItemListaNoticiasRelacionadas from "./ItemListaNoticiasRelacionadas";
 import './cardsNoticias.css'
 
 const ListaNoticiasRelacionadas = (props) => {
