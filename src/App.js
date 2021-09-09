@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { useState, useEffect } from "react";
 //== Para que vea app.css tiene que ir 1- BOOTSTRAP 2-APP.JS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -149,16 +149,6 @@ function App() {
         )
       }
     };
-    // if (consulta.status !== 200) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Oops...",
-    //     text: "Ocurrio un error, intentelo nuevamente",
-    //   });
-    // }
-    // //Guardar en el state
-    // setUsuarios(respuesta);
-  // };
 
   return (
     <Router>
@@ -167,7 +157,6 @@ function App() {
         adminUser={adminUser}
         usuarios={usuarios}
       ></Navegacion>
-      {/*Usaremos operador ternario para mostrar barra de navAdmin o NavNormal*/}
       <Switch>
         <Route exact path="/">
           <PaginaPrincipal
@@ -215,13 +204,6 @@ function App() {
             adminUser={adminUser}>
           </ListarNoticiasxCateg>
         </Route>
-
-        {/* <Route exact path="/noticias/mostrarNoticia/:id"> */}
-          {/* muestra la noticia completa, seleccionada en la lista de noticias */}
-          {/* <MostrarNoticia adminUser={adminUser}></MostrarNoticia> */}
-        {/* </Route> */}
-
-
         <Route exact path="/noticias/nueva">
           <NuevaNoticia noticias={noticias}
             consultarAPInoticias={consultarAPInoticias}
@@ -245,22 +227,18 @@ function App() {
           </EditarNoticia>
         </Route>
         {/* -- Fin menu Administrador --*/}
-
         <Route exact path="/nosotros">
           <Nosotros></Nosotros>
         </Route>
 
         <Route exact path="/contacto">
           <Contacto></Contacto>
-          {/* <Contacto /> */}
         </Route>
         <Route exact path="/promoSus">
           <PromoSus></PromoSus>
-          {/* <PromoSus /> */}
         </Route>
         <Route exact path="/suscripcion">
           <Suscripcion></Suscripcion>
-          {/* <Suscripcion /> */}
         </Route>
         <Route exact path="/login" component={Login} >
           <Login usuarios={usuarios} setAdminUser={setAdminUser} ></Login>
@@ -272,7 +250,6 @@ function App() {
           <Error></Error>
         </Route>
       </Switch>
-      {/* se invoca el footer */}
       <Footer></Footer>
     </Router>
   );

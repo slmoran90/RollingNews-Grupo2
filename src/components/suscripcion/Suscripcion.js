@@ -94,11 +94,9 @@ const Suscripcion = () => {
                         "success"
                     );
                 } else if (respuesta.status === 500) {
-                    console.log("No está cumpliendo los requerimientos");
                     setError(true);
                     Swal.fire("Ocurrio un error", "Inténtelo en unos minutos", "error");
                 } else {
-                    console.log("no entró al if, puede estar mal tipeado");
                 }
             } catch (error) {
                 console.log(error);
@@ -106,18 +104,6 @@ const Suscripcion = () => {
             e.target.reset();
         }
     };
-
-    // enviarMail(e);
-    //     setError(false);
-    //     e.target.reset();
-    //     Swal.fire(
-    //       "Estas Suscripto a nuestros servicios!",
-    //       "Nuestros administradores te mandarán un mail de bienvenida!",
-    //       "success"
-    //     );
-    //   } else {
-    //     setError(true);
-    //     Swal.fire("Ocurrio un error", "Inténtelo en unos minutos", "error");
 
     return (
         <Container className="margenFondo">

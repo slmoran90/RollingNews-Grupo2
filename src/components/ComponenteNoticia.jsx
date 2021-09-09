@@ -32,14 +32,12 @@ const ComponenteNoticia = () => {
         } catch (error) {
             console.log(error);
         }
-        // console.log("noticiavisible: ",noticiaVisible)
 
         try {
             const resp = await fetch(UrlListaNoticias);
             if (resp.status === 200) {
                 const lista = await resp.json();
                 setListaNoticiasCat(lista);
-                // console.log(listaNoticiasCat);
             }
         } catch (error) {
             console.log(error);
