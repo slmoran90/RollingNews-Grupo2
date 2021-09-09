@@ -24,7 +24,6 @@ const ListarCategoria = (props) => {
                         <tbody>
                             {
                                 props.categorias.map((categoria) => <ItemCategoria categoria={categoria} key={categoria._id} consultarAPIcategorias={props.consultarAPIcategorias}></ItemCategoria>)
-                                //props.categorias.map((categoria) => <ItemCategoria categoria={categoria} consultarAPIcategorias={props.consultarAPIcategorias}></ItemCategoria>)
                             }
                         </tbody>
                     </Table>

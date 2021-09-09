@@ -10,8 +10,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const ItemCategoria = (props) => {
-    //console.log("props itemcategoria: ",props)
-
     // borrar categoria
     const eliminarCategoria = (idCategoria) => {
         Swal.fire({
@@ -60,10 +58,6 @@ const ItemCategoria = (props) => {
                     className="btn btn-outline-danger mr-2" onClick={() => eliminarCategoria(props.categoria._id)}>
                     <FontAwesomeIcon icon={faTrashAlt} size="auto"></FontAwesomeIcon>
                 </Button>
-
-                {/* <Button variant="" className="btn btn-outline-warning mr-2" size="auto">
-                    <FontAwesomeIcon icon={faPencilAlt} size="auto"></FontAwesomeIcon>
-                </Button> */}
 
                 <Link className='btn btn-outline-warning mr-2' to={'/categorias/editar/' + props.categoria._id}>
                     <FontAwesomeIcon icon={faPencilAlt} size="auto"></FontAwesomeIcon>
