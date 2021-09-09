@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Row } from "react-bootstrap";
 import "./dolar.css";
 import DolarListItem from "./DolarListItem";
 
