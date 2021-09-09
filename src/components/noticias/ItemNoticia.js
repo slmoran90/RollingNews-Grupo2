@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Button } from "react-bootstrap";
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,7 +6,6 @@ import { faPencilAlt,faTrashAlt,faClipboardCheck } from '@fortawesome/free-solid
 import Swal from 'sweetalert2'
 
 const ItemNoticia = (props) => {
-    //console.log("props listar noticias: ",props)
     
     // borrar noticia segun el ID
     const eliminaNoticia = (idNoticia)=>{

@@ -40,9 +40,7 @@ const Navegacion = (props) => {
                             />
                             Rolling News
                             </div>
-                            {/* <div className='col-sm-12 col-md-6 d-flex justify-content-end bg-warning'> */}
                                 <div className="col-sm-12 col-md-5 d-flex justify-content-center mhh-date-item">{moment().locale('es').format('LLLL')}</div>
-                            {/* </div> */}
                         </div>
                         </Navbar.Brand>
                     </Col>
@@ -193,7 +191,6 @@ const Navegacion = (props) => {
                                 <Link exact={true} to="/login">
                                     <Button
                                         className="ml-md-5 mt-1 botonNav"
-                                        // variant="outline-warning"
                                         onClick={() => setExpanded(!expanded)}
                                     >
                                         Iniciar Sesión

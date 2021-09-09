@@ -3,25 +3,16 @@ import { Alert, Container, Form, FormCheck } from 'react-bootstrap';
 import { useParams, withRouter } from "react-router-dom";
 import Swal from 'sweetalert2';
 import { campoRequerido } from '../common/validaciones';
-// libreria para trabajar con fechas
-import moment from 'moment';
 import 'moment/locale/es'; 
 
 const EditarNoticia = (props) => {
     //obtener parametro
     const codigoNoticia = useParams().id;
 
-    //creo los state
     const [categoria, setCategoria] = useState('');
     const [errorValidacion, setErrorValidacion] = useState(false);
     const [noticia, setNoticia] = useState({});
-    //valor noticia destacada
     const [destacada, setDestacada] = useState('');
-
-    // para mostrar fecha
-    const [fechaCard, setfechaCard] = useState();    
-    const [formatoFecha,setFormatoFecha] = useState();
-
 
     // URL
     const URLnoticias = process.env.REACT_APP_API_URLnoticias + '/noticias-por-id/' + codigoNoticia;
@@ -155,7 +146,6 @@ const EditarNoticia = (props) => {
 
                         <Form.Group className='col-sm-6 col-md-4'>
                             <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
-                            {/* <Form.Label>Fecha<span class="text-danger">*</span> {noticia.fechaNoticia}</Form.Label> */}
                             <Form.Control className="outlineColor" type="date" size="sm"
                                 defaultValue={noticia.fechaNoticia}
                                 ref={fechaNoticiaRef}

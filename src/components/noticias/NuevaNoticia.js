@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Alert, Container, Form, FormCheck, Image } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { withRouter, useHistory } from "react-router-dom";
-import {campoRequerido, validarFormatoFecha} from '../common/validaciones'
-
 // libreria para trabajar con fechas
 import moment from 'moment';
 import 'moment/locale/es'; 
@@ -62,11 +60,9 @@ const NuevaNoticia = (props) => {
             noticiaDetallada.trim() === '' ||
             categoria === '' || imagenPrincipal === ''
         ) {
-            //si falla la validacion mostrar alert de error
             setErrorValidacion(true);
             return;
         } else {
-            //si sta todo bien, envio los datos a la API
             setErrorValidacion(false);
             //crear objeto
             const noticia = {
@@ -90,7 +86,6 @@ const NuevaNoticia = (props) => {
                 }
                 const respuesta = await fetch(URLnoticias, datosEnviar);
                 if (respuesta.status === 201) {
-                    //mostrar cartel al usuario
                     Swal.fire(
                         'Guardado',
                         'Se registro una nueva noticia',
@@ -143,7 +138,6 @@ const NuevaNoticia = (props) => {
                             ))}
                         </Form.Control>
                     </Form.Group>
-                    {/* ======== */}
 
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
@@ -207,10 +201,6 @@ const NuevaNoticia = (props) => {
                         onChange={cambiarDestacada}
                     ></FormCheck>
                 </span>
-
-                {/* <Form.Group className='my-2 pb-2'>
-                    <Form.Check type='checkbox' label='Noticia Destacada' onChange={(e) => setDestacada(e.target.value)} />
-                </Form.Group> */}
 
                 <div className='d-flex justify-content-center'>
                     <button type='submit' className='botonGuardar'>Guardar</button>

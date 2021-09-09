@@ -1,9 +1,8 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch,faClipboardCheck, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import {faClipboardCheck, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 // libreria para trabajar con fechas
-import moment from 'moment';
 import 'moment/locale/es'; 
 
 const ItemNoticiaxCateg = (props) => {

@@ -1,10 +1,9 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 import "./login.css";
 import { Alert } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShieldAlt, faUser, faKey } from '@fortawesome/free-solid-svg-icons';
-import { withRouter, useHistory, Redirect } from "react-router-dom";
-import Swal from "sweetalert2";
+import { withRouter, useHistory} from "react-router-dom";
 const Login = (props) => {
     const [nombre, setNombre] = useState("");
     const [password, setPassword] = useState("");

@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import "./login.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShieldAlt, faUser, faKey, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faShieldAlt} from '@fortawesome/free-solid-svg-icons';
 import { withRouter, useHistory } from "react-router-dom";
 const Admin = (props) => {
     let history = useHistory();

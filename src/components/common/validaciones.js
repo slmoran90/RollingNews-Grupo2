@@ -37,7 +37,6 @@ const validarConsulta = (tipoConsulta) => {
 };
 
 const validarNumeros = (numeros) => {
-    //let expresionNum = /[0-9]{4,10}$/;
     let expresionNum = /[0-9]{10}$/;
     if (numeros.trim() !== '' && expresionNum.test(numeros)) {
         return true;
@@ -46,7 +45,7 @@ const validarNumeros = (numeros) => {
     }
 };
 
-// validaciones de Slaya ==========
+//Validacion de suscripcion
 const campoReq = (nombreCompleto) => {
     if (nombreCompleto.trim() !== "" && nombreCompleto.length > 6 && isNaN) {
         return true;

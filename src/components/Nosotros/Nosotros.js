@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Row, Container, Col } from "react-bootstrap";
+import { Row, Container } from "react-bootstrap";
 import ItemNosotros from "../Nosotros/ItemNosotros";
 import "./nosotros.css";
 import Swal from 'sweetalert2';
 
 const Nosotros = () => {
-    // state para almacenar resultados del fetch
     const [equipo, setEquipo] = useState([]);
-    // URL donde estan almacenadas las fotografias
     const URLequipo = process.env.REACT_APP_API_URLequipo;
     useEffect(async () => {
         // buscar las noticias que tengan las categoria pasada como parametro en la URL
