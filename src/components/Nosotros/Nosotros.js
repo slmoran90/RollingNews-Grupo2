@@ -7,8 +7,9 @@ import Swal from 'sweetalert2';
 const Nosotros = () => {
     const [equipo, setEquipo] = useState([]);
     const URLequipo = process.env.REACT_APP_API_URLequipo;
-    useEffect(async () => {
+    useEffect(() => {
         // buscar las noticias que tengan las categoria pasada como parametro en la URL
+       const nosotrosConsulta = async() => {
         try {
             const respuesta = await fetch(URLequipo);
             if (respuesta.status === 200) {
@@ -23,6 +24,8 @@ const Nosotros = () => {
                 'error'
             )
         }
+    }
+    nosotrosConsulta()
     }, [])
 
 

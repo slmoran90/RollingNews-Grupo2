@@ -29,10 +29,11 @@ const EditarNoticia = (props) => {
 
     const [arrayCategorias, setArrayCategorias] = useState([]);
 
-    useEffect(async () => {
+    useEffect(() => {
         consultarAPIcategorias();
 
         //trae la noticia a editar
+        const consultaURLNoticias = async() => {
         try {
             const respuesta = await fetch(URLnoticias);
             if (respuesta.status === 200) {
@@ -42,6 +43,8 @@ const EditarNoticia = (props) => {
         } catch (errorValidacion) {
             Swal.fire("Ocurrió un Error 1!", "Inténtelo en unos minutos.", "error");
         }
+    }
+    consultaURLNoticias()
     }, [])
 
     // === Para armar select categorias existentes

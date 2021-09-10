@@ -27,13 +27,14 @@ const EditarCategoria = (props) => {
     //creo las variables useRef
     const nombreCategoriaRef = useRef('');
 
-    useEffect(async () => {
+    useEffect(() => {
         if(props.adminUser !== true){
             history.push("/");
         }
 
         handleReset();
         // busca categoria enviada por parametro
+        const URLCategoriasConsulta = async() => {
         try {
             const respuesta = await fetch(URLcategorias);
             if (respuesta.status === 200) {
@@ -44,6 +45,8 @@ const EditarCategoria = (props) => {
         } catch (errorValidacion) {
             Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
         }
+    }
+    URLCategoriasConsulta()
     }, []);
 
     //====== limpiar formulario ========

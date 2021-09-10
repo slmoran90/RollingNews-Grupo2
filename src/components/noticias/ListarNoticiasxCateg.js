@@ -18,11 +18,12 @@ const ListarNoticiasxCateg = (props) => {
     "/noticias-por-categoria/" +
     parametroCategoria;
 
-  useEffect(async () => {
+  useEffect(() => {
     if (props.adminUser !== true) {
       history.push("/");
     }
     // buscar las noticias que tengan las categoria pasada como parametro en la URL
+    const consultaListarNoticias = async() => {
     try {
       const respuesta = await fetch(URLnoticias);
       if (respuesta.status === 200) {
@@ -43,6 +44,8 @@ const ListarNoticiasxCateg = (props) => {
       console.log(error);
       Swal.fire("Ocurrió un Error!", "Inténtelo en unos minutos.", "error");
     }
+  }
+  consultaListarNoticias()
   }, []);
 
   // ordenar por fecha DESCENDENTE antes de mostrarlas

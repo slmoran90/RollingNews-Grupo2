@@ -10,8 +10,6 @@ import {
 } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // para mostrar fecha actual
 import moment from 'moment';
 import 'moment/locale/es'; 

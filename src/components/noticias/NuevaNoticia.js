@@ -109,10 +109,6 @@ const NuevaNoticia = (props) => {
     const cambiarDestacada = (e) => {
         setDestacada(e.target.value);
     };
-
-    // asigna por defecto fecha de la noticia igual a getDate()
-    var curr = new Date();
-    var date = curr.toISOString().substr(0,10);
     //---------------------------------------------------------
 
     return (
@@ -142,7 +138,6 @@ const NuevaNoticia = (props) => {
                     <Form.Group className='col-sm-6 col-md-4'>
                         <Form.Label>Fecha<span class="text-danger">*</span></Form.Label>
                         <Form.Control className="outlineColor" type="date" size="sm" placeholder="dd-mm-yyyy" 
-                            //defaultValue={date} 
                             onChange={(e) => setFechaNoticia(e.target.value)}
                             required />
                     </Form.Group>

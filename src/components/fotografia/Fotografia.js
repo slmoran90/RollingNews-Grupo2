@@ -11,8 +11,9 @@ const Fotografia = () => {
     // URL donde estan almacenadas las fotografias
     const URLfotografias = process.env.REACT_APP_API_URLfotografias;
 
-    useEffect(async () => {
+    useEffect(() => {
         // buscar las noticias que tengan las categoria pasada como parametro en la URL
+        const URLFotografiaConsulta = async() => {
         try {
             const respuesta = await fetch(URLfotografias);
             if (respuesta.status === 200) {
@@ -27,6 +28,8 @@ const Fotografia = () => {
                 'error'
             )
         }
+    }
+    URLFotografiaConsulta()
     }, [])
 
     return (
