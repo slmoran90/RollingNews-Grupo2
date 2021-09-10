@@ -17,7 +17,7 @@ const Admin = (props) => {
                 <div className="row">
                     <div className="col-md-6 col-sm-12 my-5 ">
                         <h1 className="text-center text-warning">¡Bienvenido Administrador!</h1>
-                        <img src="admin.jpg" className="w-100  ml-1 fotoLogin"></img>
+                        <img src="admin.jpg" alt="admin" className="w-100  ml-1 fotoLogin"></img>
                     </div>
                     <div className="col-md-6 col-sm-12 my-5 p-5">
                         <h2 className="text-lead text-center text-danger">Panel de Control<br /></h2>

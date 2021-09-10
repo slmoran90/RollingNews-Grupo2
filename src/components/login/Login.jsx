@@ -45,10 +45,10 @@ const Login = (props) => {
                 <div className="row">
                     <div className="col-md-6  col-sm-12 my-5">
                         <h1 className="text-center">¡Bienvenido!</h1>
-                        <h2 className="text-lead text-center ">Sumate a la comunidad de Rolling News <br /><img src="logo_news.png" className="foto my-2 mb-2" /></h2>
+                        <h2 className="text-lead text-center ">Sumate a la comunidad de Rolling News <br /><img src="logo_news.png" alt="logo news" className="foto my-2 mb-2" /></h2>
                         <h4 className="text-lead text-center">Registrarte es gratis.</h4>
 
-                        <img src="modalLogin.png" className="w-75 my-4 fotoLogin"></img>
+                        <img src="modalLogin.png" alt="login" className="w-75 my-4 fotoLogin"></img>
                     </div>
                     <div className="col-md-6  col-sm-12 my-5 p-5">
                         <div className="form-group">
@@ -66,7 +66,7 @@ const Login = (props) => {
                         ) : null}
                         {datosErroneos ? (
                             <Alert variant={"danger"}>
-                                El usuario y/o la contraseña son incorrectos
+                                El usuario y/o contraseña son incorrectos
                             </Alert>
                         ) : null}
                     </div>

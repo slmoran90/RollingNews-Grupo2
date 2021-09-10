@@ -408,9 +408,14 @@
     }
 }
 
+.cursor{
+    cursor: pointer;
+}
+
 @media only screen and (max-width:767px) {
     #h2:after,
     #h2:before {
         display: none
     }
 }
+

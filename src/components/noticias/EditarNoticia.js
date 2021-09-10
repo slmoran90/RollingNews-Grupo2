@@ -8,8 +8,6 @@ import 'moment/locale/es';
 const EditarNoticia = (props) => {
     //obtener parametro
     const codigoNoticia = useParams().id;
-
-    const [categoria, setCategoria] = useState('');
     const [errorValidacion, setErrorValidacion] = useState(false);
     const [noticia, setNoticia] = useState({});
     const [destacada, setDestacada] = useState('');

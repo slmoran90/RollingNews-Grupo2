@@ -69,7 +69,7 @@ const Nosotros = () => {
                         <div className="col-md-12">
                             <div className="main-timeline4">
                                 <div className="timeline">
-                                    <a href="#" className="timeline-content text-decoration-none">
+                                    <a href="#top" className="timeline-content text-decoration-none">
                                         <span className="year">2018</span>
                                         <div className="inner-content">
                                             <h3 className="title">Argentina</h3>
@@ -82,7 +82,7 @@ const Nosotros = () => {
                                     </a>
                                 </div>
                                 <div className="timeline">
-                                    <a href="#" className="timeline-content text-decoration-none">
+                                    <a href="#top" className="timeline-content text-decoration-none">
                                         <span className="year">2017</span>
                                         <div className="inner-content">
                                             <h3 className="title">Antártida</h3>
@@ -95,7 +95,7 @@ const Nosotros = () => {
                                     </a>
                                 </div>
                                 <div className="timeline">
-                                    <a href="#" className="timeline-content text-decoration-none">
+                                    <a href="#toptop" className="timeline-content text-decoration-none">
                                         <span className="year"> 2013</span>
                                         <div className="inner-content">
                                             <h3 className="title">Rolling News Latino</h3>
@@ -109,7 +109,7 @@ const Nosotros = () => {
                                     </a>
                                 </div>
                                 <div className="timeline">
-                                    <a href="#" className="timeline-content text-decoration-none">
+                                    <a href="#top" className="timeline-content text-decoration-none">
                                         <span className="year">2012</span>
                                         <div className="inner-content">
                                             <h3 className="title">15 años</h3>
@@ -123,7 +123,7 @@ const Nosotros = () => {
                                     </a>
                                 </div>
                                 <div className="timeline">
-                                    <a href="#" className="timeline-content text-decoration-none">
+                                    <a href="#top" className="timeline-content text-decoration-none">
                                         <span className="year">2010</span>
                                         <div className="inner-content">
                                             <h3 className="title">web de Rolling
@@ -139,7 +139,7 @@ const Nosotros = () => {
                                     </a>
                                 </div>
                                 <div className="timeline">
-                                    <a href="#" className="timeline-content text-decoration-none">
+                                    <a href="#top" className="timeline-content text-decoration-none">
                                         <span className="year">2007</span>
                                         <div className="inner-content">
                                             <h3 className="title">10 años</h3>
@@ -156,7 +156,7 @@ const Nosotros = () => {
                                     </a>
                                 </div>
                                 <div className="timeline">
-                                    <a href="#" className="timeline-content text-decoration-none">
+                                    <a href="#top" className="timeline-content text-decoration-none">
                                         <span className="year">2003</span>
                                         <div className="inner-content">
                                             <h3 className="title">Premio INTE</h3>
@@ -169,7 +169,7 @@ const Nosotros = () => {
                                     </a>
                                 </div>
                                 <div className="timeline">
-                                    <a href="#" className="timeline-content text-decoration-none">
+                                    <a href="#top" className="timeline-content text-decoration-none">
                                         <span className="year">1992</span>
                                         <div className="inner-content">
                                             <h3 className="title">Rolling News Internacional</h3>
@@ -185,7 +185,7 @@ const Nosotros = () => {
                                     </a>
                                 </div>
                                 <div className="timeline">
-                                    <a href="#" className="timeline-content text-decoration-none">
+                                    <a href="#top" className="timeline-content text-decoration-none">
                                         <span className="year">1988</span>
                                         <div className="inner-content">
                                             <h3 className="title">Rolling News en español</h3>

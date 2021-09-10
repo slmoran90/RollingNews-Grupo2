@@ -169,12 +169,6 @@ const Navegacion = (props) => {
                                             onClick={() => setExpanded(!expanded)}>
                                             Nueva Categoria
                                         </Link></NavDropdown.Item>
-                                        <NavDropdown.Item>
-                                            <Link
-                                                className="nav-link text-danger"
-                                                onClick={cerrarSesion}>
-                                                <FontAwesomeIcon icon={faTimesCircle}></FontAwesomeIcon> Salir
-                                            </Link></NavDropdown.Item>
                                     </NavDropdown>
                                 ) : null}
                                 <Link className="nav-link" exact={true} to="/nosotros" onClick={() => setExpanded(!expanded)}>
@@ -188,14 +182,26 @@ const Navegacion = (props) => {
                                 >
                                     Contacto
                                 </Link>
-                                <Link exact={true} to="/login">
+                                {props.adminUser ? (
+                                <Link exact={true} to="/">
+                                    <Button
+                                        className="ml-md-5 mt-1 botonNav"
+                                        onClick={() => setExpanded(!expanded)}
+                                        onClick={cerrarSesion}
+                                    >
+                                        Cerrar Sesion
+                                    </Button>
+                                </Link> 
+                                ): (
+                                    <Link exact={true} to="/login">
                                     <Button
                                         className="ml-md-5 mt-1 botonNav"
                                         onClick={() => setExpanded(!expanded)}
                                     >
-                                        Iniciar Sesión
+                                        Iniciar Sesion
                                     </Button>
-                                </Link>
+                                </Link> 
+                                ) }
                                 <Link type="button" exact={true} to="/promoSus">
                                     <Button className="ml-md-2 mt-1 botonNav" onClick={() => setExpanded(!expanded)}>Suscribirse</Button>
                                 </Link>

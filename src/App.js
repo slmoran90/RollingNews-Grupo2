@@ -40,8 +40,6 @@ function App() {
 
   const [adminUser, setAdminUser] = useState();
   const [usuarios, setUsuarios] = useState([]);
-  const [showLogin, setShowLogin] = useState(false);
-
   // state para almacenar categorias 
   const [categorias, setCategorias] = useState([]);
   // state para almacenar noticias
