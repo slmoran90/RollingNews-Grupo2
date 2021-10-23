@@ -92,7 +92,7 @@ const Suscripcion = () => {
             "Estas Suscripto a nuestros servicios!",
             "Nuestros administradores te mandarán un mail de bienvenida!",
             "success"
-            );
+          );
         } else if (respuesta.status === 500) {
           console.log("No está cumpliendo los requerimientos");
           setError(true);

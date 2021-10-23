@@ -64,22 +64,18 @@
   "categorias": [
     {
       "nombreCategoria": "Actualidad",
-      "descripCategoria": "articulos acerca de noticias de los ultimos dias",
       "id": "1"
     },
     {
       "nombreCategoria": "Deportes",
-      "descripCategoria": "articulos acerca de deportes",
       "id": "2"
     },
     {
       "nombreCategoria": "Politica",
-      "descripCategoria": "informacion sobre la actividad politica",
       "id": "01XZMun"
     },
     {
       "nombreCategoria": "Salud",
-      "descripCategoria": "Noticias asociadas a todas las areas de la salud",
       "id": "-HP-A5G"
     },
     {
@@ -93,6 +89,10 @@
     {
       "nombreCategoria": "Tecnologia",
       "id": "k6n41Oq"
+    },
+    {
+      "nombreCategoria": "vale",
+      "id": "F3jPHTA"
     }
   ],
   "equipo": [

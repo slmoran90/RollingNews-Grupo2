@@ -30,6 +30,10 @@
     background: #ffffff;
     border-color: #f18219;
 }
+.botonNav:focus{
+    background-color: #f18219;
+    border-color: #ffffff;
+}
 
 .botones:hover {
     color: #f18219;
@@ -40,9 +44,16 @@
 
 /*Footer*/
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     font-family: 'Roboto', sans-serif;
 }
+
 .lista {
     list-style: none;
     padding: 0;
@@ -102,18 +113,26 @@ h1, h2, h3, h4, h5, h6, p {
 .textoNoticia {
     font-size: 0.75em;
 }
+
+
 /* para los holder  de las imagenes en los forms */
+
 .imageHolderForm {
     height: 150px;
     width: 100px;
     background-image: url('https://cdn.pixabay.com/photo/2013/04/07/06/42/error-101407__480.jpg');
 }
+
+
 /* boton del modal */
+
 .buttonModal {
     color: white !important;
     background-color: #F18219 !important;
     border-color: #F18219 !important;
 }
+
+
 /* Para mejorar margenes en los titulos tapados por el navbar (valentina iramain) */
 
 .margenListaNoticias {
@@ -126,7 +145,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 /*Botones guardar*/
-
 
 .margenSup {
     margin-top: 95px;
@@ -143,7 +161,6 @@ h1, h2, h3, h4, h5, h6, p {
     right: auto;
     object-fit: contain;
 }
-
 
 .botonGuardar {
     width: 190px;
@@ -197,69 +214,96 @@ h1, h2, h3, h4, h5, h6, p {
     height: 70px;
 }
 
+
 /* Aqui traigo copiado estilos de la rama GonzaVarios, que no se habian mergeado */
-.noticiasSimilares{
+
+.noticiasSimilares {
     border-bottom: 3px solid #f18219;
 }
-.cuerpoNoticia{
+
+.cuerpoNoticia {
     margin: 3rem;
 }
+
 .tituloNoticia {
     color: #f18219;
 }
-@media all and (min-width: 200px) and (max-width: 768px) {
- .amazon {
-     margin-right: auto;
-     margin-left: auto;
-     
 
- }
- .amazonLarga {
-     width: 100%;
- }
- .noticiaPpal {
-     width: 80% !important;
- }
- .tituloNoticia {
-     font-size: 1.5rem;
- }
- .cuerpoNoticia {
-     margin: 1rem !important;
- }
+@media all and (min-width: 200px) and (max-width: 768px) {
+    .amazon {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .amazonLarga {
+        width: 100%;
+    }
+    .noticiaPpal {
+        width: 80% !important;
+    }
+    .tituloNoticia {
+        font-size: 1.5rem;
+    }
+    .cuerpoNoticia {
+        margin: 1rem !important;
+    }
 }
+
 .noticia {
- min-width: 14rem;
+    min-width: 14rem;
 }
 
 @media all and (min-width: 787px) and (max-width: 991px) {
- .bannerCovid {
-     width: 100%;
- }
- .amazon {
-     margin-right: auto;
-     margin-left: auto;
-
- }
- p {
-     font-size: .5rem;
- }
- .noticiasRelacionadas {
-     flex-direction: column;
-     align-items: center;
-
- }
-}
-@media all and (min-width: 991px) and (max-width: 1200px) {
- 
+    .bannerCovid {
+        width: 100%;
+    }
+    .amazon {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    p {
+        font-size: .5rem;
+    }
+    .noticiasRelacionadas {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-
+@media all and (min-width: 991px) and (max-width: 1200px) {}
 
 .publicidad {
- height: 469px !important;
- 
+    height: 469px !important;
 }
 
 .covidContainer {
- background-color: #f18219;
+    background-color: #f18219;
+}
+
+
+/* ===== Fecha actual en el menu de navegacion ========*/
+
+.mhh-date-container {
+    flex-direction: row;
+    align-items: center;
+}
+
+.mhh-date-line {
+    border-bottom: 1px solid #f18219;
+    width: 100%;
+}
+
+.mhh-date-item {
+    color: #666b70;
+    ;
+    flex-shrink: 0;
+    font-size: 14px;
+    font-style: italic;
+    max-height: 20px;
+    padding: 0 10px;
+    /* text-align: center; */
+}
+
+.fechaActual {
+    display: flex;
+    flex-direction: row-reverse;
 }

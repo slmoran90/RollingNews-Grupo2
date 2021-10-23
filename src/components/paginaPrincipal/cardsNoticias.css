@@ -104,8 +104,7 @@
  .card input[type="checkbox"]:checked + .menu-content {
 	 transform: translateY(-60px);
 }
- .example-1 .wrapper {
-	 }
+
  .example-1 .date {
 	 position: absolute;
 	 top: 0;

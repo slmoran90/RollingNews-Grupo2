@@ -1,7 +1,5 @@
 import React from "react";
-import { CardDeck } from "react-bootstrap";
 import CardNoticia from "./CardNoticia";
-import ItemListaNoticiasRelacionadas from "./ItemListaNoticiasRelacionadas";
 import './cardsNoticias.css'
 
 const ListaNoticiasRelacionadas = (props) => {
@@ -13,7 +11,7 @@ const ListaNoticiasRelacionadas = (props) => {
                     {props.listaNoticias.map((noticia) => (
                         <CardNoticia
                             noticia={noticia}
-                            key={noticia.id}
+                            key={noticia._id}
                             width={"18rem"}
                         />
                     ))}

@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
 import { Container, Table } from 'react-bootstrap';
 import ItemNoticia from './ItemNoticia';
-import Swal from 'sweetalert2';
-import { withRouter, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 const ListarNoticias = (props) => {
     // ordenar por fecha DESCENDENTE antes de mostrarlas    
@@ -14,7 +13,6 @@ const ListarNoticias = (props) => {
           history.push("/");
         }
       });
-    // console.log('PROPS en ListarNoticias: ', props)
     return (
         <Container className="py-2 margenFondo">
             <h2 className="text-center my-3 py-3 formTitulos">Listado de Noticias</h2>
@@ -38,7 +36,6 @@ const ListarNoticias = (props) => {
                 </tbody>
             </Table>
         </Container>
-        // </div>
     );
 };
 export default ListarNoticias;

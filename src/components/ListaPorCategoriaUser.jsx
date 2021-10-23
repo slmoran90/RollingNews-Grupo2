@@ -6,8 +6,7 @@ import ItemListaPorCategoria from "./noticiasUsuario/ItemListaPorCategoria";
 const ListaPorCategoriaUser = () => {
     const { categoria } = useParams();
     const [listaDeNoticias, setListaDeNoticias] = useState([]);
-
-    const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/?categoria=${categoria}`;
+    const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/noticias-por-categoria/${categoria}`;
 
     useEffect(() => {
         traerListaDeCategoria();
@@ -37,7 +36,7 @@ const ListaPorCategoriaUser = () => {
                             listaDeNoticias.map((noticia, indice) => (
                                 <div>
                                     
-                                <ItemListaPorCategoria noticia={noticia} indice={indice} key={noticia.id} />
+                                <ItemListaPorCategoria noticia={noticia} indice={indice} key={noticia._id} />
                                 <hr></hr>
                                 </div>
                             ))}

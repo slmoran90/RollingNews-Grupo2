@@ -7,7 +7,6 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-import { Container } from "react-bootstrap";
 
 const Footer = () => {
   return (
@@ -18,17 +17,17 @@ const Footer = () => {
             <span className="font-weight-bold">Rolling News</span>
           </h6>
           <div>
-            <Link className="text-light">
+            <Link className="text-light" to="/error">
               <b>Dirección:</b> Calle 123 -<br></br> S.M. de Tucumán - Tucumán
             </Link>
           </div>
           <div>
-            <Link className="text-light">
+            <Link className="text-light" to="/error">
               <b>Teléfono:</b> (381)0303456
             </Link>
           </div>
           <div>
-            <Link className="text-light">
+            <Link className="text-light" to="/error">
               <b>Email:</b> rollingnews@gmail.com
             </Link>
           </div>
@@ -39,17 +38,17 @@ const Footer = () => {
             <span className="font-weight-bold">Soporte</span>
           </h6>
           <div>
-            <Link className="text-light">
+            <Link className="text-light" to="/error">
               Centro de Ayuda
             </Link>
           </div>
           <div>
-            <Link className="text-light">
+            <Link className="text-light" to="/contacto">
               Contacto
             </Link>
           </div>
           <div>
-            <Link className="text-light">
+            <Link className="text-light" to="/error">
               Redacción
             </Link>
           </div>
@@ -59,17 +58,17 @@ const Footer = () => {
             <span className="font-weight-bold">Legales</span>
           </h6>
           <div>
-            <Link className="text-light">
+            <Link className="text-light" to="/error">
               Política de Cookies
             </Link>
           </div>
           <div>
-            <Link className="text-light">
+            <Link className="text-light" to="/error">
               Política de Privacidad
             </Link>
           </div>
           <div>
-            <Link className="text-light">
+            <Link className="text-light" to="/error">
               Términos y Condiciones
             </Link>
           </div>
@@ -78,15 +77,16 @@ const Footer = () => {
           <h6>
             <span className="font-weight-bold">Instala nuestra app</span>
           </h6>
-          <Link>
+          <Link to="/error">
             <img className="w-50 mb-2"
               src="/badge-apple-store.svg"
               alt="logo app store"
               href="#"
+              
             />
           </Link>
           <br></br>
-          <Link>
+          <Link to="/error">
             <img className="w-50"
               href="#"
               src="/google-play-badge-bb.svg"
@@ -99,14 +99,14 @@ const Footer = () => {
       <article className="row d-flex justify-content-between ">
           <p>&copy; 2021 Team G2. | Todos los derechos reservados.</p>
         <div>
-          <Link><FontAwesomeIcon className="text-light" icon={faInstagram} size="lg"></FontAwesomeIcon></Link>
-          <Link><FontAwesomeIcon
+          <Link to="/error"><FontAwesomeIcon className="text-light" icon={faInstagram} size="lg"></FontAwesomeIcon></Link>
+          <Link to="/error"><FontAwesomeIcon
             className="text-light mx-4"
             icon={faFacebook}
             size="lg"
           ></FontAwesomeIcon></Link>
-          <Link><FontAwesomeIcon className="text-light" icon={faTwitter} size="lg"></FontAwesomeIcon></Link>
-          <Link><FontAwesomeIcon
+          <Link to="/error"><FontAwesomeIcon className="text-light" icon={faTwitter} size="lg"></FontAwesomeIcon></Link>
+          <Link to="/error"><FontAwesomeIcon
             className="text-light ml-4 mr-5"
             icon={faYoutube}
             size="lg"

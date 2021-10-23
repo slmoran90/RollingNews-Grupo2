@@ -1,7 +1,6 @@
 import React from "react";
 import Weather from "../APIs/Weather";
 import CardNoticia from "./CardNoticia";
-import CardNoticiaPrincipal from "./CardNoticiaPrincipal";
 
 const NoticiasDestacadas = (props) => {
     return (

@@ -5,19 +5,15 @@ import DolarAndWeather from "./DolarAndWeather";
 import NoticiasDestacadas from "./NoticiasDestacadas";
 import Publicidad from "./Publicidad";
 import Publicidad2 from "./Publicidad2";
-import PublicidadLeon from "./PublicidadLeon";
 import SeccionCatPrincipal from "./SeccionCatPrincipal";
 
 const PaginaPrincipal = (props) => {
     return (
         <section className="margenSup">
             <Row className='justify-content-around'>
-                <Col xs={9}>
+                <Col className='' xs={9}>
                     <NoticiasDestacadas noticias={props.noticiasDestacadas} />
                 </Col>
-                {/* <Col xs={2}>
-                    <PublicidadLeon />
-                </Col> */}
             </Row>
             
                 <CoronaVirusInfo />

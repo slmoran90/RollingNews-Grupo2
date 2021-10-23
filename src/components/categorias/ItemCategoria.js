@@ -10,12 +10,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const ItemCategoria = (props) => {
-
     // borrar categoria
     const eliminarCategoria = (idCategoria) => {
         Swal.fire({
-            title: "Quiere eliminar la Categoría?",
-            text: "No puede volver atrás esta operación luego de eliminar",
+            title: "Está seguro que quiere eliminar la Categoría?",
+            text: "No podrá volver atrás esta operación luego de realizarla.",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
@@ -25,8 +24,7 @@ const ItemCategoria = (props) => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const URL = `${process.env.REACT_APP_API_URLcategorias}/${idCategoria}`;
-                    // console.log(URL);
+                    const URL = `${process.env.REACT_APP_API_URLcategorias}/por-id-categoria/${idCategoria}`;
                     const respuesta = await fetch(URL, {
                         method: "DELETE",
                         headers: { "Content-Type": "application/json" },
@@ -39,9 +37,8 @@ const ItemCategoria = (props) => {
                         );
                         //actualizar los datos de la api
                         props.consultarAPIcategorias();
-                    }
+                    } 
                 } catch (error) {
-                    console.log("error en catch item noticia");
                     console.log(error);
                     // agregar ventana de error
                     Swal.fire(
@@ -58,13 +55,13 @@ const ItemCategoria = (props) => {
             <td className='font-weight-bold text-dark pl-3'> {props.categoria.nombreCategoria}</td>
             <td className='text-center'>
                 <Button variant=""
-                    className="btn btn-outline-danger mr-2" onClick={() => eliminarCategoria(props.categoria.id)}>
+                    className="btn btn-outline-danger mr-2" onClick={() => eliminarCategoria(props.categoria._id)}>
                     <FontAwesomeIcon icon={faTrashAlt} size="auto"></FontAwesomeIcon>
                 </Button>
 
-                <Button variant="" className="btn btn-outline-warning mr-2" size="auto">
+                <Link className='btn btn-outline-warning mr-2' to={'/categorias/editar/' + props.categoria._id}>
                     <FontAwesomeIcon icon={faPencilAlt} size="auto"></FontAwesomeIcon>
-                </Button>
+                </Link>
 
                 <Link className='btn btn-outline-primary' to={'/noticias/listar/' + props.categoria.nombreCategoria}>
                     <FontAwesomeIcon icon={faSearch} size="auto"></FontAwesomeIcon>

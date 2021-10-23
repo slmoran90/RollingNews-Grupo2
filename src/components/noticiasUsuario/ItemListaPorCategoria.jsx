@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Card, Modal } from "react-bootstrap";
+import {Card } from "react-bootstrap";
 import MyVerticallyCenteredModal from "./MyVerticallyCenteredModal";
 import './listaNoticiasPorCategoria.css'
 

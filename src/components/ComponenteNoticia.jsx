@@ -4,17 +4,20 @@ import { Col, Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import ListaNoticiasRelacionadas from "./paginaPrincipal/ListaNoticiasRelacionadas";
 import PublicidadLeon from "./paginaPrincipal/PublicidadLeon";
+// libreria para trabajar con fechas
+import moment from 'moment';
+import 'moment/locale/es';
 
 const ComponenteNoticia = () => {
-    console.log("en componenteNoticia")
     const { categoria, id } = useParams();
 
     const [noticiaVisible, setNoticiaVisible] = useState({});
     const [listaNoticiasCat, setListaNoticiasCat] = useState([]);
 
-    const URL = `${process.env.REACT_APP_API_URLnoticias}/${id}`;
-    const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/?categoria=${categoria}`;
+    const URL = `${process.env.REACT_APP_API_URLnoticias}/noticias-por-id/${id}`;
+    const UrlListaNoticias = `${process.env.REACT_APP_API_URLnoticias}/noticias-por-categoria/${categoria}`;
     
+
     useEffect(() => {
         traerNoticiaVisible();
     }, [id, categoria]);
@@ -29,14 +32,12 @@ const ComponenteNoticia = () => {
         } catch (error) {
             console.log(error);
         }
-        console.log("noticiavisible: ",noticiaVisible)
 
         try {
             const resp = await fetch(UrlListaNoticias);
             if (resp.status === 200) {
                 const lista = await resp.json();
                 setListaNoticiasCat(lista);
-                console.log(listaNoticiasCat);
             }
         } catch (error) {
             console.log(error);
@@ -63,12 +64,10 @@ const ComponenteNoticia = () => {
                                 />
                                 </div>
                                 <div className=' d-flex flex-column align-items-center'>
-                                    
-                                <p className='cuerpoNoticia'>{noticiaVisible.noticiaDetallada}</p>
-                                <p>Categoría: {noticiaVisible.categoria}</p>
-                                <p>Autor: {noticiaVisible.autorNoticia}</p>
-                            
-                                <p className='border-top text-muted'>Fecha: {noticiaVisible.fechaNoticia}</p>
+                                    <p className='cuerpoNoticia'>{noticiaVisible.noticiaDetallada}</p>
+                                    <p>Categoría: {noticiaVisible.categoria}</p>
+                                    <p>Autor: {noticiaVisible.autorNoticia}</p>                            
+                                    <p className='border-top text-muted'>Fecha: {moment(noticiaVisible.fechaNoticia).locale('es').format("DD-MM-YYYY")}</p>
                                 </div>
                             </div>
                         </div>
