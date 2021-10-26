@@ -96,7 +96,7 @@ const Footer = () => {
         </div>
       </article>
       <hr></hr>
-      <article className="row d-flex justify-content-between ">
+      <article className="row d-flex justify-content-center ">
           <p>&copy; 2021 Team G2. | Todos los derechos reservados.</p>
         <div>
           <Link to="/error"><FontAwesomeIcon className="text-light" icon={faInstagram} size="lg"></FontAwesomeIcon></Link>

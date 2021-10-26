@@ -13,7 +13,6 @@ const NoticiasDestacadas = (props) => {
                     {props.noticias[0] && (
                         <CardNoticia
                             noticia={props.noticias[0]}
-                            width={"30rem"}
                         />
                     )}
                     <Weather className='mt-5'/>
