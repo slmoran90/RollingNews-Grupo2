@@ -4,7 +4,7 @@ Es una pagina de noticias internacional con reporte de hechos producidos y distr
 
 ## 💻 Demo del Proyecto
 
-_Mira una demo del_ [Proyecto Steam] *https://rollingnewsg2.netlify.app/*
+_Mira una demo del_ [Proyecto Diario digital](https://rollingnewsg2.netlify.app/)
 
 ## 📄 Pasos a seguir para usar el proyecto
 _Para utilizar una copia del proyecto ejecutar el siguiente comando en una terminal :_
